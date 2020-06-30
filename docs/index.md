@@ -1,6 +1,6 @@
-# Welcome to did:tyron:zil
+# tyronZIL DID method specification
 
-A W3C Sidetree-based DID method specification for Zilliqa
+A W3C Sidetree-based DID method for the Zilliqa blockchain
 
 Funded by [ZILHive](https://zilhive.org/)
 
@@ -25,3 +25,10 @@ middleman, by anchoring decentralized identifiers (DIDs) on blockchain
 platforms. However, most DLTs still can't provide SSI applications at scale. The
 Sidetree protocol aims to solve this issue.
 
+## Table of contents
+
+- [W3C definitions](./W3C-definitions.md)
+- [tyronZIL DID scheme](./DID-scheme.md)
+- [tyronZIL DID documents](./DID-document.md)
+
+MUST requirements:
