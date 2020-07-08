@@ -1,4 +1,4 @@
-# tyronZIL DID method specification
+# tyronZIL DID method specification to-do add version
 
 A W3C Sidetree-based DID method for the Zilliqa blockchain
 
@@ -6,7 +6,7 @@ Funded by [ZILHive](https://zilhive.org/)
 
 Developed by [Julio Cabrapan Duarte](https://github.com/julio-cabdu)
 
-Conforming to the requirements specified in the:
+Conformant to the requirements specified in the:
 
 i. World Wide Web Consortium (W3C) DID specification: [Decentralized
 Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/)
@@ -15,20 +15,16 @@ ii. Decentralized Identity Foundation (DIF) [Sidetree protocol specification](ht
 
 ## Problem summary
 
-Identities on the internet remain centralized, mainly by identity providers such
-as Facebook and Google. Thus, when people shop online and login with these
-accounts, they don't have enough control nor understanding of how their data
-is used and shared with third parties.
+Identities on the internet remain centralized, mainly by identity providers such as Facebook and Google. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties.
 
-Self-sovereign identity (SSI) allows people to prove who they are without a
-middleman, by anchoring decentralized identifiers (DIDs) on blockchain
-platforms. However, most DLTs still can't provide SSI applications at scale. The
-Sidetree protocol aims to solve this issue.
+Self-sovereign identity (SSI) allows people to manage their digital identities and prove who they are without a centralized authority, by anchoring decentralized identifiers (DIDs) on blockchain platforms. However, most DLTs still can't provide SSI applications at scale. By implementing the Sidetree protocol on top of Zilliqa, tyronZIL aims to solve this issue and enable user-controlled digital identities in the Zilliqa ecosystem.
 
 ## Table of contents
 
-- [W3C definitions](./W3C-definitions.md)
+- [W3C DIDs terminology](./W3C-terminology.md)
+- [Sidetree protocol terminology and default parameters in tyronZIL](./Sidetree-terminology.md)
 - [tyronZIL DID scheme](./DID-scheme.md)
-- [tyronZIL DID documents](./DID-document.md)
-
-MUST requirements:
+- [tyronZIL DID document](./DID-document.md)
+- [tyronZIL operations](./tyronZIL-operations/method-operations.md)
+    - [DID resolution](./tyronZIL-operations/DID-resolution.md)
+- [Security and privacy considerations](./to-do)

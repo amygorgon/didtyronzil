@@ -1,4 +1,4 @@
-# W3C definitions in tyronZIL
+# W3C DIDs terminology utilized by tyronZIL
 
 ## DID method
 
@@ -14,11 +14,11 @@ A DID consists of three parts:
 - The DID method identifier: "tyron:zil"
 - The DID method-specific identifier, which must be unique
 
-More information at [tyronZIL DID scheme](./DID-scheme.md).
+> More information at [tyronZIL DID scheme](./DID-scheme.md).
 
 ### DID URL
 
-A DID URL extends the syntax of a basic DID to incorporate other standard URI components:
+A DID URL identifies a particular resource to be located, e.g a specific part of the DID document. It extends the syntax of a basic DID to incorporate other standard URI components:
 
 - Path: The portion of a DID URL that begins with and includes the first forward slash character, "/".
 - Query: The portion of a DID URL that follows the first question mark character, "?".
@@ -38,4 +38,14 @@ The DID controller is the entity that has the capability - as defined by the DID
 
 A DID is resolvable to a DID document, which contains metadata associated with the DID, such as cryptographic material, verification methods and service endpoints relevant to interactions with the DID subject. The DID itself is the value of the id property.
 
-More information at [tyronZIL DID documents](./DID-document.md).
+> More information at [tyronZIL DID document](./DID-document.md).
+
+## Verification method
+
+A verification method is a set of parameters that can be used to independently verify a proof according to the particular method, e.g. a public key.
+
+### Verification relationship
+
+It expresses the relationship between the DID subject and a verification method, e.g. authentication. All verification methods must be associated with a particular verification relationship.
+
+to-do: add producer and consumer
