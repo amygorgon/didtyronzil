@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Julio Cabrapan Duarte">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Document - tyronZIL</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">tyronZIL</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Method</a>
+                            </li>
+                            <li >
+                                <a href="../W3C-dids/">W3C</a>
+                            </li>
+                            <li >
+                                <a href="../sidetree/">Sidetree</a>
+                            </li>
+                            <li >
+                                <a href="../did-scheme/">Scheme</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Document</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Operations <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../operations/tyronZIL-operations/">About</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">CRUD</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../operations/CRUD/did-create/">Create</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-resolution/">Resolve</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-recover/">Recover</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-update/">Update</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-deactivate/">Deactivate</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Implementation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="https://github.com/julio-cabdu/tyronZIL-js">Node.js</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../did-scheme/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../operations/tyronZIL-operations/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/did-document.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tyronzil-did-document">tyronZIL DID document</a></li>
+            <li><a href="#core-properties-in-a-tyronzil-did-document">Core properties in a tyronZIL DID document</a></li>
+            <li><a href="#sidetree-implementation">Sidetree implementation</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tyronzil-did-document">tyronZIL DID document</h1>
+<blockquote>
+<p>For an introduction, read <a href="../W3C-dids/#DID-document">this</a>.</p>
+</blockquote>
+<p>A DID document is a graph-based data structure, serialized according to a particular syntax.</p>
+<p>As a Sidetree-based DID method, tyronZIL's serialization format is JSON.</p>
+<p>Core representation in JSON:</p>
+<ul>
+<li>It defines an unambiguous encoding and decoding of all properties and their associated values.</li>
+<li>It is associated with an IANA-registered MIME type.</li>
+<li>
+<p>It defines fragment processing rules for its MIME type. to-do: what is MIME</p>
+</li>
+<li>
+<p>Producers MUST indicate JSON as the media type in the document's metadata. Consumers MUST determine that the "content-type" DID resolver metadata field is <strong>application/did+json</strong></p>
+</li>
+</ul>
+<p>6.1.1 Production to-do
+6.1.2 Consumption</p>
+<p>Unknown object properties MUST be ignored.</p>
+<p>to-do: add features</p>
+<p><em>A DID document consists of a collection of property-value pairs. The definitions of each of these properties are specified in section §5. Core Properties. Specific representations are defined in section §6. Core Representations.</em></p>
+<h2 id="core-properties-in-a-tyronzil-did-document">Core properties in a tyronZIL DID document</h2>
+<h3 id="id">id</h3>
+<p><mark> W3C DID documents MUST include the "id" property. </mark></p>
+<p>The "id" property denotes the DID subject, and its value MUST be a single valid tyronZIL DID, e.g.:</p>
+<pre><code class="json">{
+    &quot;id&quot;: &quot;did:tyron:zil:91tDAKCERh95uGgKbJNHYp&quot;,
+    ...
+}
+</code></pre>
+
+<h3 id="verificationmethod">verificationMethod</h3>
+<p><mark> tyronZIL DID documents MUST include the "verificationMethod" property. </mark></p>
+<blockquote>
+<p>Read the verification method definition [here]](./W3C-dids.md#verification-method)</p>
+</blockquote>
+<p>The "verificationMethod" value MUST be an array of verification method objects. The "verificationMethod" property can be, e.g. a "publicKey" property: to-do: check sidetree requirement</p>
+<pre><code class="json">{
+    &quot;id&quot;: &quot;did:tyron:zil:91tDAKCERh95uGgKbJNHYp&quot;,
+    to-do: add example
+    ...
+}
+</code></pre>
+
+<p>Each verification method object MUST have the following properties:</p>
+<ul>
+<li>"id": Its value MUST be a unique DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the DID document processor MUST produce an error. to-do: test sidetree processor</li>
+<li>"type": Its value MUST be exactly one verification method type. to-do: check sidetree key type.</li>
+<li>"controller": Its value MUST be a valid tyronZIL DID. If the verification method is a public key, then the controller property identifies the DID that controls the corresponding private key. to-do: can tyron have a controller property pointing to a different self-owned DID as a backup/recovery - see sidetree recovery.</li>
+<li>Specific verification method properties.</li>
+</ul>
+<p>5.4 Public keys
+5.5 Authentication to-do
+5.6 Authorization and delegation &gt; maybe for under age subjects.</p>
+<h2 id="sidetree-implementation">Sidetree implementation</h2>
+<h3 id="public-key">Public key</h3>
+<p>/sidetree/lib/core/versions/latest/models/PublicKeyModel.ts</p>
+<pre><code class="js">/**
+ * Data model representing a public key in the 'publicKey' array in patches.
+ */
+export default interface PublicKeyModel {
+  id: string;
+  type: string;
+  jwk: any;
+  purpose: PublicKeyPurpose[];
+}
+</code></pre>
+
+<blockquote>
+<p>The purpose property is an array with elements of type PublicKeyPurpose.</p>
+</blockquote>
+<p>The PublicKeyPurpose enum has two members: Auth and General, both constant-initialized with a string literal ("auth" and "general" respectively).</p>
+<p>to-do: why?</p>
+<p>/sidetree/lib/core/versions/latest/PublicKeyPurpose.ts</p>
+<pre><code class="js">/**
+ * Sidetree public key purpose.
+ */
+enum PublicKeyPurpose {
+  Auth = 'auth',
+  General = 'general'
+}
+
+export default PublicKeyPurpose;
+</code></pre>
+
+<h3 id="documentcomposer">DocumentComposer</h3>
+<p>to-do: explore</p>
+<p>import DocumentComposer from '../../lib/core/versions/latest/DocumentComposer';</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright (C) 2020 Julio Cesar Cabrapan Duarte</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
