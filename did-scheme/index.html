@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Julio Cabrapan Duarte">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Scheme - tyronZIL</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">tyronZIL</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Method</a>
+                            </li>
+                            <li >
+                                <a href="../W3C-dids/">W3C</a>
+                            </li>
+                            <li >
+                                <a href="../sidetree/">Sidetree</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Scheme</a>
+                            </li>
+                            <li >
+                                <a href="../did-document/">Document</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Operations <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../operations/tyronZIL-operations/">About</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">CRUD</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../operations/CRUD/did-create/">Create</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-resolution/">Resolve</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-recover/">Recover</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-update/">Update</a>
+</li>
+            
+<li >
+    <a href="../operations/CRUD/did-deactivate/">Deactivate</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Implementation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="https://github.com/julio-cabdu/tyronZIL-js">Node.js</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../sidetree/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../did-document/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/did-scheme.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tyronzil-did-scheme">tyronZIL DID scheme</a></li>
+            <li><a href="#tyronzil-method-specific-id">tyronZIL method-specific id</a></li>
+            <li><a href="#tyronzil-did-method-namespace-zil">tyronZIL DID method namespace: 'zil'</a></li>
+            <li><a href="#tyronzil-did-url-syntax">tyronZIL DID URL syntax</a></li>
+            <li><a href="#tyronzil-did-url-components">tyronZIL DID URL components</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tyronzil-did-scheme">tyronZIL DID scheme</h1>
+<p>A DID scheme is the formal syntax of a decentralized identifier.</p>
+<p>The generic W3C DID scheme is a URI scheme conformant with [RFC3986]. The following is the ABNF definition using the syntax in [RFC5234], which defines ALPHA and DIGIT. All other rule names not defined in this ABNF are defined in [RFC3986].</p>
+<pre><code class="json">did                = &quot;did:&quot; method-name &quot;:&quot; method-specific-id
+
+method-name        = 1*method-char
+
+method-char        = %x61-7A / DIGIT
+
+method-specific-id = *( &quot;:&quot; *idchar ) 1*idchar
+
+idchar             = ALPHA / DIGIT / &quot;.&quot; / &quot;-&quot; / &quot;_&quot;
+</code></pre>
+
+<p>The tyronZIL DID method further restricts the generic W3C DID syntax by defining its method-name, method-namespace and method-specific-id syntax:</p>
+<pre><code class="json">method-name = tyron
+
+method-namespace = zil
+
+method-specific-id = to-do
+</code></pre>
+
+<h2 id="tyronzil-method-specific-id">tyronZIL method-specific id</h2>
+<p>The method-specific-id component of a tyronZIL DID MUST be generated as follows:</p>
+<p>to-to</p>
+<p>It MUST be globally unique.</p>
+<h2 id="tyronzil-did-method-namespace-zil">tyronZIL DID method namespace: 'zil'</h2>
+<p>The tyronZIL method-specific-id format include colons to establish a hierarchically partitioned namespace 'zil', and to identify specific networks of Zilliqa, such as mainnet and testnet.</p>
+<p>Therefore, the method-specific-id ABFN rule for tyronZIL is as follows:</p>
+<p>Example:</p>
+<h3 id="normalization">Normalization</h3>
+<ul>
+<li>The DID scheme name (did) MUST be lowercase.</li>
+<li>The DID method name (tyron) MUST be lowercase.</li>
+<li>Case sensitivity and normalization of the value of the method-specific-id rule MUST be defined by the governing DID method specification. to-do</li>
+</ul>
+<h3 id="persistence">Persistence</h3>
+<p>A tyronZIL DID is bound exclusively and permanently to its one and only <a href="../W3C-dids/#DID-subject">subject</a>, even after deactivation.</p>
+<h2 id="tyronzil-did-url-syntax">tyronZIL DID URL syntax</h2>
+<p>The following is the ABNF definition using the syntax in [RFC5324]. The path-abempty and fragment components are identical to the ABNF rules defined in [RFC3986], and the did-query component is derived from the query ABNF rule."</p>
+<pre><code class="json">did-url     = did path-abempty [ &quot;?&quot; did-query ] [ &quot;#&quot; fragment ]
+
+did-query   = param *( &quot;&amp;&quot; param )
+
+param       = param-name &quot;=&quot; param-value
+
+param-name  = 1*pchar
+
+param-value = *pchar
+</code></pre>
+
+<h2 id="tyronzil-did-url-components">tyronZIL DID URL components</h2>
+<h3 id="path">Path</h3>
+<p>To be used to address resources available through a service endpoint. It MUST conform to the path-abempty ABFN rule in [RFC3986].</p>
+<h3 id="query">Query</h3>
+<p>The W3C did-query component is derived from the query ABFN rule. It MUST be used with DID parameters as follows.</p>
+<h4 id="did-url-parameters">DID URL parameters</h4>
+<p>DID URL parameters are part on the query component of the DID URL to specify what resource is being requested.</p>
+<p>W3C DID parameter names:</p>
+<ul>
+<li>
+<p><strong>hl</strong>: A resource hash of the DID document to add integrity protection. to-do: see HASHLINK</p>
+</li>
+<li>
+<p><strong>service</strong>: Identifies a service from the DID document by service ID.</p>
+<p><code>did:tyron:zil:91tDAKCERh95uGgKbJNHYp?service=agent</code></p>
+</li>
+<li>
+<p><strong>version-id</strong>: Identifies a specific version of the DID document to be resolved.</p>
+</li>
+<li>
+<p><strong>version-time</strong>: Identifies a certain version timestamp of the DID document to be resolved (the document that was valid at that specific time).</p>
+<p><code>did:tyron:zil:91tDAKCERh95uGgKbJNHYp?version-time=2020-09-09T17:00:00Z</code></p>
+</li>
+</ul>
+<h4 id="additional-method-specific-did-url-parameters">Additional method-specific DID URL parameters</h4>
+<p>A method-specific parameter name MUST be prefixed by the method name, as defined by the method-name rule.</p>
+<p>A method-specific parameter name defined by one DID method MAY be used byother DID methods.</p>
+<p>to-do: see how this relates to initial-value in sidetree - sugest to use sidetree as the method name.</p>
+<blockquote>
+<p>Method-specific parameter names MAY be combined with generic parameter names in any order. Method-specific parameter namespaces MAY include colons to be partitioned hierarchically.</p>
+</blockquote>
+<h3 id="fragment">Fragment</h3>
+<p>A W3C DID fragment is used as a method-independent reference into the DID document to identify a component of the document, e.g. a unique public key description or service endpoint. It MUST conform to the generic URI fragment syntax in [RFC3986]. to-do: read the RFC.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright (C) 2020 Julio Cesar Cabrapan Duarte</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
