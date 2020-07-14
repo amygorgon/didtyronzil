@@ -1,10 +1,10 @@
 # tyronZIL DID document
 
-> For an introduction, read [this](./W3C-dids.md#DID-document).
+> For an introduction, read [this](./W3C-dids.md#did-document).
 
 A DID document is a graph-based data structure, serialized according to a particular syntax.
 
-As a Sidetree-based DID method, tyronZIL's serialization format is JSON.
+TyronZIL's serialization format is JSON. (to-do check if sidetree is json-ld)
 
 Core representation in JSON:
 
@@ -17,19 +17,17 @@ Core representation in JSON:
 6.1.1 Production to-do
 6.1.2 Consumption
 
-Unknown object properties MUST be ignored.
+As defined by W3C, a DID document consists of a collection of property-value pairs.
 
-to-do: add features
+## Core properties
 
-_A DID document consists of a collection of property-value pairs. The definitions of each of these properties are specified in section §5. Core Properties. Specific representations are defined in section §6. Core Representations._
-
-## Core properties in a tyronZIL DID document
+A TyronZIL DID document MUST have the following properties. Unknown properties MUST be ignored.
 
 ### id
 
-<mark> W3C DID documents MUST include the "id" property. </mark>
+All W3C DID documents MUST include the "id" property.
 
-The "id" property denotes the DID subject, and its value MUST be a single valid tyronZIL DID, e.g.:
+The "id" property denotes the DID [subject](./W3C-dids.md#did-subject), and its value MUST be a single valid tyronZIL DID, e.g.:
 
 ```json
 {

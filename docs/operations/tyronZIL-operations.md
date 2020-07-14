@@ -3,7 +3,7 @@
 The tyronZIL DID client performs the following operations:
 
 - [Create](#create)
-- [Resolve](#resolve)
+- [Read](#resolve)
 - [Recover](#recover)
 - [Update](#update)
 - [Deactivate](#create)
@@ -12,35 +12,29 @@ The tyronZIL DID client performs the following operations:
 
 How to create a DID and its associated DID document.
 
-to-do: explore
-
-import CreateOperation from '../../lib/core/versions/latest/CreateOperation';
-
 ## Read
 
-How to use a DID to request its DID document. This operation corresponds to the [DID resolution](./CRUD/did-resolution.md) process.
+How to use a DID to request its DID document. This operation corresponds to the [DID resolution](./CRUD/did-resolve.md) process.
 
 ## Update
 
 How to update a DID document, including the cryptographic operations necessary to establish proof of control.
 
-to-do specify what properties can be updated
-
 ## Deactivate
 
 How to deactivate a DID, including the cryptographic operations necessary to establish proof of deactivation.
 
-## Sidetree OperationType
+## Sidetree operation type
 
-The Sidetree OperationType MUST be an enum defined as follows:
+In compliance with the Sidetree protocol, tyronZIL DID operations MUST have a type equal to one variant of the OperationType enum, defined as follows:
 
-```js
+```ts
 enum OperationType {
   Create = 'create',
+  Recover = 'recover'
   Update = 'update',
   Deactivate = 'deactivate',
-  Recover = 'recover'
 }
 ```
 
-> Defined in _sidetree/lib/core/enums/OperationType.ts_.
+> Defined in _sidetree/lib/core/enums/OperationType.ts_

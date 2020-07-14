@@ -13,7 +13,7 @@ nav:
       - 'About': 'operations/tyronZIL-operations.md'
       - 'CRUD':
           - 'Create': 'operations/CRUD/did-create.md'
-          - 'Resolve': 'operations/CRUD/did-resolution.md'
+          - 'Resolve': 'operations/CRUD/did-resolve.md'
           - 'Recover': 'operations/CRUD/did-recover.md'
           - 'Update': 'operations/CRUD/did-update.md'
           - 'Deactivate': 'operations/CRUD/did-deactivate.md'

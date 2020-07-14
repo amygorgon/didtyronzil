@@ -26,5 +26,8 @@ Self-sovereign identity (SSI) allows people to manage their digital identities a
 - [tyronZIL DID scheme](./did-scheme.md)
 - [tyronZIL DID document](./did-document.md)
 - [tyronZIL DID operations](./operations/tyronZIL-operations.md)
-    - [DID resolution](./operations/CRUD/did-resolution.md)
-- [Security and privacy considerations]to-do
+    - [Create DID](./operations/CRUD/did-create.md)
+    - [Resolve DID](./operations/CRUD/did-resolve.md)
+    - [Recover DID](./operations/CRUD/did-recover.md)
+    - [Update DID](./operations/CRUD/did-update.md)
+    - [Deactivate DID](./operations/CRUD/did-deactivate.md)
