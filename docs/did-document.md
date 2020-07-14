@@ -1,6 +1,6 @@
 # tyronZIL DID document
 
-> For an introduction, read [this](./W3C-definitions.md#DID-document).
+> For an introduction, read [this](./W3C-dids.md#DID-document).
 
 A DID document is a graph-based data structure, serialized according to a particular syntax.
 
@@ -42,7 +42,7 @@ The "id" property denotes the DID subject, and its value MUST be a single valid 
 
 <mark> tyronZIL DID documents MUST include the "verificationMethod" property. </mark>
 
-> Read the verification method definition [here]](./W3C-definitions.md#verification-method)
+> Read the verification method definition [here]](./W3C-dids.md#verification-method)
 
 The "verificationMethod" value MUST be an array of verification method objects. The "verificationMethod" property can be, e.g. a "publicKey" property: to-do: check sidetree requirement
 

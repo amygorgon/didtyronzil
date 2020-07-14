@@ -1,4 +1,8 @@
-# Sidetree protocol terminology and default parameters in tyronZIL
+# Sidetree protocol
+
+Sidetree protocol terminology and default parameters in tyronZIL.
+
+Intro. to-do
 
 ## Anchor file
 
@@ -64,9 +68,44 @@ The DATA_ENCODING_SCHEME is the encoding for various data structures such as JSO
 
 ## Key algorithm
 
-> code-name: keyAlgorithm
-
 The KEY_ALGORITHM is the asymmetric public key algorithm to sign DID operations, which MUST be a valid JWK "crv". The default parameter is secp256k1.
+
+## Operation key pair
+
+> code-name: operationKeyPair
+
+Generates a cryptographic key pair to operate with.
+
+to-do
+used to produce an Operation Request JWS. Public key representation MAY be present in the DID Document. Public key representation MUST be used to produce Operation Request commitment."
+
+## Public key commitment
+
+The resulting commitment obtained by applying the defined commitment scheme to a public key.
+
+- Update commitment
+    > code-name: updateCommitment
+
+The resulting commitment obtained by applying the defined commitment scheme to the public key of an update key pair.
+
+- Recovery commitment
+    > code-name: recoveryCommitment
+
+The resulting commitment obtained by applying the defined commitment scheme to the public key of a recovery key pair.
+
+## Commitment scheme
+
+A cryptographic primitive that allows one to commit to a chosen value, known as the commit value resulting in the generation of a commitment. A commitment can then be shared without revealing the commit value forming a proof of commitment where the possessor of the commit value can then later reveal the commit value proving the original commitment.
+
+### Public key commitment scheme
+
+Commitment scheme steps to generate a public key commitment from a public key:
+
+1. Encode the public key into the form of a valid JWK.
+2. Canonicalize the JWK encoded public key using the JSON Canonicalization Scheme
+3. Apply the defined HASH_ALGORITHM to the canonicalized public key to produce the public key commitment.
+
+Implementers MUST NOT re-use public keys across different commitment invocations.
 
 ## Signature algorithm
 

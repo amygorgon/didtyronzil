@@ -50,7 +50,7 @@ Example:
 
 ### Persistence
 
-A tyronZIL DID is bound exclusively and permanently to its one and only [subject](./W3C-terminology.md#DID-subject), even after deactivation.
+A tyronZIL DID is bound exclusively and permanently to its one and only [subject](./W3C-dids.md#DID-subject), even after deactivation.
 
 ## tyronZIL DID URL syntax
 

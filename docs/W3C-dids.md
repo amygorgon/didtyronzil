@@ -1,4 +1,6 @@
-# W3C DIDs terminology utilized by tyronZIL
+# W3C DIDs
+
+Terminology utilized by tyronZIL:
 
 ## DID method
 
@@ -14,7 +16,7 @@ A DID consists of three parts:
 - The DID method identifier: "tyron:zil"
 - The DID method-specific identifier, which must be unique
 
-> More information at [tyronZIL DID scheme](./DID-scheme.md).
+> More information at [tyronZIL DID scheme](./did-scheme.md).
 
 ### DID URL
 
@@ -38,7 +40,7 @@ The DID controller is the entity that has the capability - as defined by the DID
 
 A DID is resolvable to a DID document, which contains metadata associated with the DID, such as cryptographic material, verification methods and service endpoints relevant to interactions with the DID subject. The DID itself is the value of the id property.
 
-> More information at [tyronZIL DID document](./DID-document.md).
+> More information at [tyronZIL DID document](./did-document.md).
 
 ## Verification method
 

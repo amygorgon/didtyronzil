@@ -1,10 +1,14 @@
-# tyronZIL DID method operations
+# tyronZIL DID operations
 
-> code-name: tyronOperations
+TyronZIL DID operations are: to-do
 
-This section specifies how a [tyronZIL-js](to-do add link) client is used to perform the create, read, update and deactivate operations.
+> code-name:
+
+This section specifies how the [tyronZIL-js client](https://github.com/julio-cabdu/tyronZIL-js) is used to perform the create, read, update and deactivate operations.
 
 ## Create
+
+> code-name: DidCreate
 
 How to create a DID and its associated DID document.
 
@@ -14,7 +18,7 @@ import CreateOperation from '../../lib/core/versions/latest/CreateOperation';
 
 ## Read
 
-How to use a DID to request its DID document. This operation corresponds to the [DID resolution](./DID-resolution.md) process.
+How to use a DID to request its DID document. This operation corresponds to the [DID resolution](./CRUD/did-resolution.md) process.
 
 ## Update
 
