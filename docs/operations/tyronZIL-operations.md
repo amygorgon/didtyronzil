@@ -1,14 +1,14 @@
 # tyronZIL DID operations
 
-TyronZIL DID operations are: to-do
+The tyronZIL DID client performs the following operations:
 
-> code-name:
-
-This section specifies how the [tyronZIL-js client](https://github.com/julio-cabdu/tyronZIL-js) is used to perform the create, read, update and deactivate operations.
+- [Create](#create)
+- [Resolve](#resolve)
+- [Recover](#recover)
+- [Update](#update)
+- [Deactivate](#create)
 
 ## Create
-
-> code-name: DidCreate
 
 How to create a DID and its associated DID document.
 
