@@ -6,7 +6,7 @@ Intro. to-do
 
 ## Anchor file
 
-An Anchor file is a JSON document containing proving and index data for the create, recovery and deactivate operations, as well as a CAS URI for the associated Map file. This file is anchored to the Zilliqa blockchain through a [Sidetree transaction](#Sidetree-transaction). The maximum size of a compressed Anchor file (MAX_ANCHOR_FILE_SIZE) has a default parameter of 1 MB.
+An Anchor file is a JSON document containing proving and index data for the create, recovery and deactivate operations, as well as a CAS URI for the associated Map file. This file is anchored to the Zilliqa blockchain through a [Sidetree transaction](#sidetree-transaction). The maximum size of a compressed Anchor file (MAX_ANCHOR_FILE_SIZE) has a default parameter of 1 MB.
 
 ## Map file
 

@@ -19,7 +19,7 @@ Identities on the internet remain centralized, mainly by identity providers such
 
 Self-sovereign identity (SSI) allows people to manage their digital identities and prove who they are without a centralized authority, by anchoring decentralized identifiers (DIDs) on blockchain platforms. However, most DLTs still can't provide SSI applications at scale. By implementing the Sidetree protocol on top of Zilliqa, tyronZIL aims to solve this issue and enable user-controlled digital identities in the Zilliqa ecosystem.
 
-## Table of contents
+## Index
 
 - [W3C DIDs](./W3C-dids.md)
 - [Sidetree protocol and default parameters](./sidetree.md)

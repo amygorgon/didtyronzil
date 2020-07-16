@@ -16,7 +16,7 @@ A DID consists of three parts:
 - The DID method identifier: "tyron:zil"
 - The DID method-specific identifier, which must be unique
 
-> More information at [tyronZIL DID scheme](./did-scheme.md).
+> More information at [tyronZIL DID scheme](./did-scheme.md)
 
 ### DID URL
 
@@ -34,7 +34,7 @@ The DID subject is the entity identified by the DID and described by the DID doc
 
 The DID controller is the entity that has the capability - as defined by the DID method - to make changes to a DID document.
 
-> tyronZIL DID subjects are also the controllers of their own DIDs.
+tyronZIL DID subjects are also the controllers of their own DIDs ?? to-do
 
 ## DID document
 

@@ -4,69 +4,79 @@ A DID scheme is the formal syntax of a decentralized identifier.
 
 ## Generic W3C DID scheme
 
-URI scheme conformant with [RFC3986]. 
+URI scheme conformant with [RFC3986].
 
 ABNF definition with ALPHA and DIGIT:
 > Using the syntax in [RFC5234]  
 > Generic rule names not defined here are defined in [RFC3986]
 
 ```json
-did                = "did:" method-name ":" method-specific-id
+did                     = "did:" method-name ":" method-specific-id
 
-method-name        = 1*method-char
+method-name             = 1*method-char
 
-method-char        = %x61-7A / DIGIT
+method-char             = %x61-7A / DIGIT
 
-method-specific-id = *( ":" *idchar ) 1*idchar
+method-specific-id      = *( *idchar ":" ) 1*idchar
 
-idchar             = ALPHA / DIGIT / "." / "-" / "_"
+idchar                  = ALPHA / DIGIT / "." / "-" / "_"
 ```
 
 ## tyronZIL DID scheme
 
-The tyronZIL DID method defines its method-name, method-namespace and method-specific-id syntax:
+The tyronZIL DID method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:
 
 ```json
-method-name = tyron
+method-name             = "tyron"
 
-method-namespace = zil
+method-specific-id      = blockchain-namespace ":" network-namespace ":" did-suffix
 
-method-specific-id = to-do
+blockchain-namespace    = "zil:"
+
+network-namespace       = 1*idchar
+
+did-suffix              = 1*idchar
 ```
 
-### Method namespace: 'zil'
+The network-namespace can be, e.g. "main" or "test".
 
-A tyronZIL DID includes colons to establish a hierarchically partitioned namespace 'zil', and to identify Zilliqa specific networks, such as mainnet and testnet.
+### DID suffix
 
-Therefore, the method-specific-id ABFN rule for tyronZIL is as follows:
+The did-suffix MUST be globally unique and generated as follows, in compliance with the Sidetree protocol:
 
-### Method specific ID
+1. Create key pairs using the [operationKeyPair](./sidetree/sidetree.md#operation-key-pair):
 
-The method-specific-id component of a tyronZIL DID MUST MUST be globally unique and generated as follows:
+    - The public keys are of type [PublicKeyModel](./sidetree/models.md#public-key-model)
+    - The private keys have type JwkEs256k - to-do clarify type
 
-- In compliance with the Sidetree protocol:
+2. Create service endpoints of type [ServiceEndpointModel](./sidetree/models.md#service-endpoint-model)
 
-1.
+Create a new DOCUMENT of type DocumentModel:
+
+```json
+{
+    publicKeys: SIGNING_KEY
+}
 2.
 3.
 4.
 
-#### Normalization
+### Normalization
 
 - The DID scheme name (did) MUST be lowercase.
 - The DID method name (tyron) MUST be lowercase.
-- Case sensitivity and normalization of the value of the method-specific-id rule MUST be defined by the governing DID method specification. to-do
+- TyronZIL's specific-id MUST follow the rules stated above.
 
-#### Persistence
+### Persistence
 
-A tyronZIL DID is bound exclusively and permanently to its one and only [subject](./W3C-dids.md#DID-subject), even after deactivation.
+A tyronZIL DID is bound exclusively and permanently to its one and only [subject](./W3C-dids.md#did-subject), even after deactivation.
 
-### tyronZIL DID URL syntax
+## tyronZIL DID URL syntax
 
 ABNF definition using the syntax in [RFC5324]:
 
 > The path-abempty and fragment components are identical to the ABNF rules defined in [RFC3986]  
-> The did-query component is derived from the query ABNF rule."
+> The did-query component is derived from the query ABNF rule
 
 ```json
 did-url     = did path-abempty [ "?" did-query ] [ "#" fragment ]
