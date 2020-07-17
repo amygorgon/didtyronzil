@@ -1,8 +1,6 @@
 # Sidetree protocol
 
-Sidetree protocol terminology and default parameters in tyronZIL.
-
-Intro. to-do
+Here you can learn about Sidetree terminology and default parameters in tyronZIL's implementation.
 
 ## Anchor file
 
@@ -22,7 +20,7 @@ CAS stands for content-addressable storage. The CAS protocol utilized by tyronZI
 
 ### CAS URI
 
-- A CAS URI is a unique content-bound identifier used to locate a specific resource via the CAS protocol. The default CAS_URI_ALGORITHM to generate the CAS URI is IPFS CID.
+A CAS URI is a unique content-bound identifier used to locate a specific resource via the CAS protocol. The default CAS_URI_ALGORITHM to generate the CAS URI is IPFS CID.
 
 ## DID suffix
 
@@ -30,7 +28,7 @@ A DID suffix is the unique identifier string in a Decentralized Identifier, the 
 
 ## Sidetree operation request
 
-A Sidetree operation request is a wweration in a batch of operations.
+A Sidetree operation request is a wweration in a batch of operations. to-do
 
 ## Sidetree DID operation
 
@@ -42,17 +40,15 @@ A Sidetree transaction writes an Anchor string in a DLT transaction of the under
 
 ### Anchor string
 
-- An Anchor string is the string anchored to the ledger, composed of the CAS URI of an Anchor file prefixed with the declared operation count. The maximum number of operations per batch (MAX_OPERATION_COUNT) has a default parameter of 10,000.
+An Anchor string is the string anchored to the ledger, composed of the CAS URI of an Anchor file prefixed with the declared operation count. The maximum number of operations per batch (MAX_OPERATION_COUNT) has a default parameter of 10,000.
 
 ### Sidetree transaction number
 
-- The Sidetreee transaction number is a monotonically increasing number deterministically ordered and assigned to every transaction relative to its position in the ledger time.
+The Sidetreee transaction number is a monotonically increasing number deterministically ordered and assigned to every transaction relative to its position in the ledger time.
 
 ### Ledger time
 
-> code-name: ledgerTime
-
-- The ledger time is the deterministic clock variable of the underlying blockchain that is used as a deterministic chronological reference.
+The ledger time is the deterministic clock variable of the underlying blockchain that is used as a deterministic chronological reference.
 
 ## Hash algorithm
 
@@ -72,25 +68,16 @@ The KEY_ALGORITHM is the asymmetric public key algorithm to sign DID operations,
 
 ## Operation key pair
 
-> code-name: operationKeyPair
-
-Generates a cryptographic key pair to operate with.
-
-to-do
-used to produce an Operation Request JWS. Public key representation MAY be present in the DID Document. Public key representation MUST be used to produce Operation Request commitment."
+Generates a cryptographic key pair to operate with, using the KEY_ALGORITHM. It returns the public key as a [PublicKeyModel](./models.md#public-key-model) and the private key as a secp256k1 key.
 
 ## Public key commitment
 
 The resulting commitment obtained by applying the defined commitment scheme to a public key.
 
-- Update commitment
-    > code-name: updateCommitment
-
+- Update commitment:  
 The resulting commitment obtained by applying the defined commitment scheme to the public key of an update key pair.
 
-- Recovery commitment
-    > code-name: recoveryCommitment
-
+- Recovery commitment:  
 The resulting commitment obtained by applying the defined commitment scheme to the public key of a recovery key pair.
 
 ## Commitment scheme

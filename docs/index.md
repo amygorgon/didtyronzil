@@ -1,6 +1,6 @@
 # tyronZIL DID method specification
 
-A W3C Sidetree-based DID method for the Zilliqa blockchain platform
+A W3C Sidetree-based DID method for the [Zilliqa blockchain platform](https://zilliqa.com)
 
 Developed by [Julio Cabrapan Duarte](https://github.com/julio-cabdu)
 

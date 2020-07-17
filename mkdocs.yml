@@ -28,4 +28,4 @@ nav:
         - 'Update': 'operations/CRUD/did-update.md'
         - 'Deactivate': 'operations/CRUD/did-deactivate.md'
   - 'Implementation':
-    - 'Node.js': https://github.com/julio-cabdu/tyronZIL-js
+    - 'Node.js: tyronZIL-js': https://github.com/julio-cabdu/tyronZIL-js

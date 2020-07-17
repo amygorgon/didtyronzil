@@ -3,7 +3,7 @@
 The tyronZIL DID client performs the following operations:
 
 - [Create](#create)
-- [Read](#resolve)
+- [Read](#read)
 - [Recover](#recover)
 - [Update](#update)
 - [Deactivate](#create)
@@ -36,5 +36,3 @@ enum OperationType {
   Deactivate = 'deactivate',
 }
 ```
-
-> Defined in _sidetree/lib/core/enums/OperationType.ts_

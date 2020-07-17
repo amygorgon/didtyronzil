@@ -1,6 +1,6 @@
 # Sidetree models
 
-The Sidetree protocol requires the following data structures for its implementation:
+The Sidetree protocol requires the following data structures, which are in TypeScript for the tyronZIL-js implementation:
 
 ## Public key model
 
@@ -72,12 +72,21 @@ enum PatchAction {
 
 Replace acts as a complete state reset that replaces a DID's current PKI metadata with the state provided - also used to create new DIDs.
 
+## Delta model
+
+```js
+interface DeltaModel {
+    patches: PatchModel[];
+    update_commitment: string;
+}
+```
+
 ## Suffix Data Model
 
 ```js
 interface SuffixDataModel {
-    deltaHash: string;
-    recoveryCommitment: string;
+    delta_hash: string;
+    recovery_commitment: string;
 }
 ```
 
