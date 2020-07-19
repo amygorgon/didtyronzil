@@ -38,7 +38,14 @@ network-namespace       = 1*idchar
 did-suffix              = 1*idchar
 ```
 
-The network-namespace can be, e.g. "main" or "test".
+The network-namespace is currently defined by:
+
+```js
+enum NetworkNamespace {
+    Mainnet = 'main',
+    Testnet = 'test',
+}
+```
 
 ### DID suffix
 

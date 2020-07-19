@@ -28,7 +28,7 @@ A DID suffix is the unique identifier string in a Decentralized Identifier, the 
 
 ## Sidetree operation request
 
-A Sidetree operation request is a wweration in a batch of operations. to-do
+JWS formatted request sent to a client to include a DID operation in a batch of operations.
 
 ## Sidetree DID operation
 

@@ -81,12 +81,52 @@ interface DeltaModel {
 }
 ```
 
-## Suffix Data Model
+## Suffix data model
 
 ```js
 interface SuffixDataModel {
+    /** Encoded representation of the Create Operation Delta Object */
     delta_hash: string;
     recovery_commitment: string;
+}
+```
+
+## Signed data models
+
+Define the model for the JWS payload object required by the Update, Recover and Deactivate Operation Signed Data Object, respectively.
+
+### Update
+
+```js
+interface UpdateSignedDataModel {
+    /** Encoded representation of the Update Operation Delta Object hash */
+    delta_hash: string;
+    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous update commitment value */
+    update_key: JwkEs256k;
+}
+```
+
+### Recover
+
+```js
+export interface RecoverSignedDataModel {
+    /** Encoded representation of the Recovery Operation Delta Object hash */
+    delta_hash: string;
+    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value */
+    recovery_key: JwkEs256k;
+    /** A new recovery commitment for the next recover operation */
+    recovery_commitment: string;
+}
+```
+
+### Deactivate
+
+```js
+export interface DeactivateSignedDataModel {
+    /** The unique suffix of the DID to deactivate */
+    did_suffix: string;
+    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value */
+    recovery_key: JwkEs256k;
 }
 ```
 
