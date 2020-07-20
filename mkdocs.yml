@@ -1,4 +1,4 @@
-site_name: tyronZIL
+site_name: tyronZIL DID method
 theme:
     name: material
     font: 
@@ -6,21 +6,21 @@ theme:
         code: Ubuntu Mono
     palette:
         primary: teal
+    features:
+      - tabs
     
 repo_url: https://github.com/julio-cabdu/didtyronZIL
 site_description: A W3C Sidetree-based DID method for the Zilliqa blockchain platform
 site_author: Julio Cabrapan Duarte
 copyright: Copyright (C) 2020 Julio Cesar Cabrapan Duarte
 nav: 
-  - Method: 'index.md'
-  - W3C: 'W3C-dids.md'
-  - 'Sidetree':
-    - 'Terms & parameters': 'sidetree/sidetree.md'
-    - 'Models': 'sidetree/models.md'
-  - Scheme: 'did-scheme.md'
-  - Document: 'did-document.md'
+  - Home: 'index.md'
+  - W3C DIDs: 'W3C-dids.md'
+  - Sidetree protocol: 'sidetree.md'
+  - DID scheme: 'did-scheme.md'
+  - DID document: 'did-document.md'
   - 'Operations':
-    - 'About': 'operations/tyronZIL-operations.md'
+    - 'Operations': 'operations/tyronZIL-operations.md'
     - 'CRUD':
         - 'Create': 'operations/CRUD/did-create.md'
         - 'Resolve': 'operations/CRUD/did-resolve.md'
@@ -28,4 +28,7 @@ nav:
         - 'Update': 'operations/CRUD/did-update.md'
         - 'Deactivate': 'operations/CRUD/did-deactivate.md'
   - 'Implementation':
-    - 'Node.js: tyronZIL-js': https://github.com/julio-cabdu/tyronZIL-js
+    - 'tyronZIL-js scheme': 'implementation/tyronZIL-js-scheme.md'
+    - 'tyronZIL-js models': 'implementation/models.md'
+    - 'GitHub/tyronZIL-js': https://github.com/julio-cabdu/tyronZIL-js
+  

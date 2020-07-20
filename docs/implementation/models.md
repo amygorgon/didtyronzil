@@ -1,6 +1,6 @@
-# Sidetree models
+# tyronZIL-js Sidetree models
 
-The Sidetree protocol requires the following data structures, which are in TypeScript for the tyronZIL-js implementation:
+The Sidetree protocol requires the following data structures, which are in TypeScript for tyronZIL-js, the Node.js implementation:
 
 ## Public key model
 
@@ -12,6 +12,8 @@ interface PublicKeyModel {
     purpose: PublicKeyPurpose[];
 }
 ```
+
+The type defaults to 'EcdsaSecp256k1VerificationKey2019'.
 
 ### Public key purpose
 
@@ -25,6 +27,44 @@ enum PublicKeyPurpose {
   Invocation = 'invocation'
 }
 ```
+
+### JwkEs256k
+
+Model to represent a secp256k1 key in a JWK format:
+
+```js
+interface JwkEs256k {
+  kty: string;
+  crv: string;
+  x: string;
+  y: string;
+  d?: string; // Only used by a private key
+}
+```
+
+### Sidetree verification methods
+
+Sidetree requires verification methods to fulfil the [Sidetree verification relationships](./sidetree.md#sidetree-verification-relationships):
+
+```js
+interface Operation {
+    id: TyronZILScheme + '#' + UPDATE_KEY;
+    type: string;
+    publicKeyJwk: UPDATE_KEY;
+    purpose: SidetreeVerificationRelationship.Operation;
+}
+
+interface Recovery {
+    id: TyronZILScheme + '#' + RECOVERY_KEY;
+    type: string;
+    publicKeyJwk: RECOVERY_KEY;
+    purpose: SidetreeVerificationRelationship.Recover;
+}
+```
+
+The UPDATE_KEY and RECOVERY_KEY are of type JwkEs256k and correspond to the [update and recovery commitment](./sidetree.md#public-key-commitment), respectively.
+
+The type defaults to 'EcdsaSecp256k1VerificationKey2019'.
 
 ## Service endpoint model
 
@@ -61,11 +101,11 @@ interface PatchModel {
 
 ```js
 enum PatchAction {
+    Replace = 'replace',
     AddKeys = 'add-public-keys',
     RemoveKeys = 'remove-public-keys',
     AddServices = 'add-service-endpoints',
     RemoveServices = 'remove-service-endpoints',
-    Replace = 'replace',
     CustomAction = '-custom-action',
 }
 ```

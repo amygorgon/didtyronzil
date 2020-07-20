@@ -1,14 +1,13 @@
 # DID scheme
 
-A DID scheme is the formal syntax of a decentralized identifier.
+A DID scheme is the formal syntax of a Decentralized Identifier.
 
 ## Generic W3C DID scheme
 
-URI scheme conformant with [RFC3986].
+It is a URI scheme conformant with [RFC3986, Uniform Resource Identifier (URI): Generic Syntax](https://tools.ietf.org/html/rfc3986).
 
-ABNF definition with ALPHA and DIGIT:
-> Using the syntax in [RFC5234]  
-> Generic rule names not defined here are defined in [RFC3986]
+The following is the ABNF definition with ALPHA and DIGIT:
+> Using the syntax in [RFC5234, Augmented BNF for Syntax Specifications: ABNF](https://tools.ietf.org/html/rfc5234). Generic rule names not defined there, are defined in [RFC3986](https://tools.ietf.org/html/rfc3986)
 
 ```json
 did                     = "did:" method-name ":" method-specific-id
@@ -21,6 +20,8 @@ method-specific-id      = *( *idchar ":" ) 1*idchar
 
 idchar                  = ALPHA / DIGIT / "." / "-" / "_"
 ```
+
+Both the scheme identifier (did) and the method name MUST be an [ASCII lowercase string](https://infra.spec.whatwg.org/#ascii-lowercase).
 
 ## tyronZIL DID scheme
 
@@ -38,35 +39,22 @@ network-namespace       = 1*idchar
 did-suffix              = 1*idchar
 ```
 
-The network-namespace is currently defined by:
+The network-namespace MUST be one of the following variants:
 
 ```js
 enum NetworkNamespace {
-    Mainnet = 'main',
-    Testnet = 'test',
+    Mainnet = 'main:',
+    Testnet = 'test:',
 }
 ```
 
+**Example of a tyronZIL DID**:
+
+```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g```
+
 ### DID suffix
 
-The did-suffix MUST be globally unique and generated as follows, in compliance with the Sidetree protocol:
-
-1. Create key pairs using the [operationKeyPair](./sidetree/sidetree.md#operation-key-pair):
-
-    - The public keys are of type [PublicKeyModel](./sidetree/models.md#public-key-model)
-    - The private keys have type JwkEs256k - to-do clarify type
-
-2. Create service endpoints of type [ServiceEndpointModel](./sidetree/models.md#service-endpoint-model)
-
-Create a new DOCUMENT of type DocumentModel:
-
-```json
-{
-    publicKeys: SIGNING_KEY
-}
-2.
-3.
-4.
+The did-suffix MUST be globally unique and generated as specified in the [tyronZIL DID-create operation](./operations/CRUD/did-create.md).
 
 ### Normalization
 
@@ -80,9 +68,9 @@ A tyronZIL DID is bound exclusively and permanently to its one and only [subject
 
 ## tyronZIL DID URL syntax
 
-ABNF definition using the syntax in [RFC5324]:
+The following is the ABNF definition using the syntax in [RFC5324](https://tools.ietf.org/html/rfc5234):
 
-> The path-abempty and fragment components are identical to the ABNF rules defined in [RFC3986]  
+> The path-abempty and fragment components are identical to the ABNF rules defined in [RFC3986](https://tools.ietf.org/html/rfc3986)  
 > The did-query component is derived from the query ABNF rule
 
 ```json
@@ -97,41 +85,40 @@ param-name  = 1*pchar
 param-value = *pchar
 ```
 
-#### Path
+### Path
 
-To be used to address resources available through a service endpoint. It MUST conform to the path-abempty ABFN rule in [RFC3986].
+To be used to address resources available through a service endpoint. It MUST conform to the path-abempty ABFN rule in [RFC3986](https://tools.ietf.org/html/rfc3986).
 
-#### Query
+### Query
 
-The W3C did-query component is derived from the query ABFN rule. It MUST be used with DID parameters as follows.
+The W3C did-query component derives from the query ABFN rule. It MUST be used with DID parameters as follows.
 
-**DID URL parameters** are part on the query component of the DID URL to specify what resource is being requested.
+#### DID URL parameters
+
+These parameters are part of the query component of the DID URL to specify what resource is requested.
 
 W3C DID parameter names:
 
-- **hl**: A resource hash of the DID document to add integrity protection. to-do: see HASHLINK
+- **hl**: A resource hash of the DID document to add integrity protection.
 
 - **service**: Identifies a service from the DID document by service ID.
 
-    ```did:tyron:zil:91tDAKCERh95uGgKbJNHYp?service=agent```
+    ```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?service=agentId1```
 
 - **version-id**: Identifies a specific version of the DID document to be resolved.
 
-- **version-time**: Identifies a certain version timestamp of the DID document to be resolved (the document that was valid at that specific time).
+- **version-time**: Identifies a specific version timestamp of the DID document to be resolved (the doc that was valid at that particular time).
 
-    ```did:tyron:zil:91tDAKCERh95uGgKbJNHYp?version-time=2020-09-09T17:00:00Z```
+    ```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?version-time=2020-09-07T17:00:00Z```
 
-**Additional parameters** MUST be prefixed by the method name 'tyron', e.g.:
-
-- **tyron-dns**
-
-tyronZIL method-specific parameter names MAY be used by other DID methods.
-
-to-do: see how this relates to initial-value in sidetree - sugest to use sidetree as the method name.
+Additional parameters MUST be prefixed by the method name 'tyron', e.g.: 'tyron-dns'. TyronZIL method-specific parameter names MAY be used by other DID methods.
 
 > Method-specific parameter names MAY be combined with generic parameter names in any order. Method-specific parameter namespaces MAY include colons to be partitioned hierarchically.
 
-#### Fragment
+### Fragment
 
-A W3C DID fragment is used as a method-independent reference into the DID document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in [RFC3986].
-to-do: read the RFC.
+A W3C DID fragment is used as a method-independent reference into the DID document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in [RFC3986](https://tools.ietf.org/html/rfc3986).
+
+## Implementation
+
+Go to: [tyronZIL-js DID scheme implementation](./implementation/tyronZIL-js-scheme.md)

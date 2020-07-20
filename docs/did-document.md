@@ -36,13 +36,25 @@ The "id" property denotes the DID [subject](./W3C-dids.md#did-subject), and its 
 }
 ```
 
-### verificationMethod
+### Verification methods
 
-<mark> tyronZIL DID documents MUST include the "verificationMethod" property. </mark>
+tyronZIL DID documents MUST include [verification methods](./W3C-dids.md#verification-method).
 
-> Read the verification method definition [here]](./W3C-dids.md#verification-method)
+tyronZIL-js supports 3 types of verification methods, with the following properties:
 
-The "verificationMethod" value MUST be an array of verification method objects. The "verificationMethod" property can be, e.g. a "publicKey" property: to-do: check sidetree requirement
+- publicKey: its value MUST be an array of public key objects.
+
+    publicKey: [PublicKeyModel[]](./implementation/models.md#public-key-model)
+
+The Sidetree protocol requires the verification methods ['operation' and 'recovery'](./implementation/models.md#sidetree-verification-methods):
+
+- operation: its value MUST be the Operation object corresponding to the next update commitment.
+
+    operation: [Operation](./implementation/models.md#sidetree-verification-methods)
+
+- recovery: its value MUST be the Recovery object corresponding to the next recovery commitment.
+
+    recovery: [Recovery](./implementation/models.md#sidetree-verification-methods)
 
 ```json
 {
@@ -59,50 +71,6 @@ Each verification method object MUST have the following properties:
 - "controller": Its value MUST be a valid tyronZIL DID. If the verification method is a public key, then the controller property identifies the DID that controls the corresponding private key. to-do: can tyron have a controller property pointing to a different self-owned DID as a backup/recovery - see sidetree recovery.
 - Specific verification method properties.
 
-5.4 Public keys
 5.5 Authentication to-do
 5.6 Authorization and delegation > maybe for under age subjects.
 
-## Sidetree implementation
-
-### Public key
-
-/sidetree/lib/core/versions/latest/models/PublicKeyModel.ts
-
-```js
-/**
- * Data model representing a public key in the 'publicKey' array in patches.
- */
-export default interface PublicKeyModel {
-  id: string;
-  type: string;
-  jwk: any;
-  purpose: PublicKeyPurpose[];
-}
-```
-
-> The purpose property is an array with elements of type PublicKeyPurpose.
-
-The PublicKeyPurpose enum has two members: Auth and General, both constant-initialized with a string literal ("auth" and "general" respectively).
-
-to-do: why?
-
-/sidetree/lib/core/versions/latest/PublicKeyPurpose.ts
-
-```js
-/**
- * Sidetree public key purpose.
- */
-enum PublicKeyPurpose {
-  Auth = 'auth',
-  General = 'general'
-}
-
-export default PublicKeyPurpose;
-```
-
-### DocumentComposer
-
-to-do: explore
-
-import DocumentComposer from '../../lib/core/versions/latest/DocumentComposer';

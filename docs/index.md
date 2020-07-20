@@ -6,12 +6,14 @@ Developed by [Julio Cabrapan Duarte](https://github.com/julio-cabdu)
 
 Funded by [ZILHive](https://zilhive.org/)
 
-Conformant to the requirements specified in the:
+## Conformance
 
-i. World Wide Web Consortium (W3C) DID specification: [Decentralized
+The tyronZIL DID method is conformant with the following specifications:
+
+i. World Wide Web Consortium (W3C) [Decentralized
 Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/)
 
-ii. Decentralized Identity Foundation (DIF) [Sidetree protocol specification](https://identity.foundation/sidetree/spec/)
+ii. Decentralized Identity Foundation (DIF) [Sidetree protocol](https://identity.foundation/sidetree/spec/)
 
 ## Problem summary
 
@@ -31,3 +33,6 @@ Self-sovereign identity (SSI) allows people to manage their digital identities a
     - [Recover DID](./operations/CRUD/did-recover.md)
     - [Update DID](./operations/CRUD/did-update.md)
     - [Deactivate DID](./operations/CRUD/did-deactivate.md)
+- tyronZIL-js: the Node.js implementation [> GitHub](https://github.com/julio-cabdu/didtyronZIL)
+    - [tyronZIL-js DID scheme](./implementation/tyronZIL-js-scheme.md)
+    - [tyronZIL-js Sidetree models](./implementation/models.md)
