@@ -1,6 +1,8 @@
 # tyronZIL-js Sidetree models
 
-The Sidetree protocol requires the following data structures, which are in TypeScript for tyronZIL-js, the Node.js implementation:
+**tyronZIL-js** is the open-source reference implementation for Node.js, written in TypeScript.
+
+The Sidetree protocol requires the following data structures:
 
 ## Public key model
 
@@ -177,11 +179,11 @@ export interface DeactivateSignedDataModel {
 ## DID state
 
 ```js
-interface DidState {
+interface DidStateModel {
     document: DocumentModel;
-    nextRecoveryCommitmentHash: string | undefined;
-    nextUpdateCommitmentHash: string | undefined;
-    lastOperationTransactionNumber: number;
+    updateCommitment: string | undefined;
+    recoverCommitment: string | undefined;
+    lastTransactionNumber?: number;
 }
 ```
 

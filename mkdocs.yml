@@ -17,18 +17,19 @@ nav:
   - Home: 'index.md'
   - W3C DIDs: 'W3C-dids.md'
   - Sidetree protocol: 'sidetree.md'
-  - DID scheme: 'did-scheme.md'
-  - DID document: 'did-document.md'
+  - DID-document: 'did-document.md'
+  - 'Scheme':
+    - 'DID-scheme': 'scheme/did-scheme.md'
+    - 'DID URL syntax': 'scheme/did-url-syntax.md'
   - 'Operations':
-    - 'Operations': 'operations/tyronZIL-operations.md'
-    - 'DID-CRUD':
-        - 'DID-create': 'operations/CRUD/did-create.md'
-        - 'DID-resolve': 'operations/CRUD/did-resolve.md'
-        - 'DID-recover': 'operations/CRUD/did-recover.md'
-        - 'DID-update': 'operations/CRUD/did-update.md'
-        - 'DID-deactivate': 'operations/CRUD/did-deactivate.md'
+    - 'Introduction': 'operations/tyronZIL-operations.md'
+    - 'DID CRUD':
+        - 'Create': 'operations/CRUD/did-create.md'
+        - 'Resolve': 'operations/CRUD/did-resolve.md'
+        - 'Recover': 'operations/CRUD/did-recover.md'
+        - 'Update': 'operations/CRUD/did-update.md'
+        - 'Deactivate': 'operations/CRUD/did-deactivate.md'
   - 'Implementation':
-    - 'tyronZIL-js scheme': 'implementation/tyronZIL-js-scheme.md'
     - 'tyronZIL-js models': 'implementation/models.md'
     - 'GitHub/tyronZIL-js': https://github.com/julio-cabdu/tyronZIL-js
   

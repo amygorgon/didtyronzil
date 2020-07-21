@@ -1,4 +1,4 @@
-# tyronZIL DID document
+# tyronZIL DID-document
 
 > For an introduction, read [this](./W3C-dids.md#did-document)
 
@@ -73,4 +73,3 @@ Each verification method object MUST have the following properties:
 
 5.5 Authentication to-do
 5.6 Authorization and delegation > maybe for under age subjects.
-

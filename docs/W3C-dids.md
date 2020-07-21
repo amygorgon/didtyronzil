@@ -7,8 +7,8 @@ The tyronZIL DID method conforms with the following terms specified in [W3C Dece
 A DID method is the specification for the precise scheme of a DID, and it also specifies the methods creating, resolving, updating and deactivating such a DID and its DID document, using a specific type of verifiable data registry, in tyronZIL's case Zilliqa.
 
 > Learn about the precise tyronZIL:  
-- [DID scheme](./did-scheme.md)  
-- [Operations](./operations/tyronZIL-operations.md)
+- [DID-scheme](./scheme/did-scheme.md)  
+- [DID-operations](./operations/tyronZIL-operations.md)
 
 ## Decentralized Identifier (DID)
 

@@ -25,14 +25,17 @@ Self-sovereign identity (SSI) allows people to manage their digital identities a
 
 - [W3C DIDs](./W3C-dids.md)
 - [Sidetree protocol and default parameters](./sidetree.md)
-- [tyronZIL DID scheme](./did-scheme.md)
-- [tyronZIL DID document](./did-document.md)
-- [tyronZIL DID operations](./operations/tyronZIL-operations.md)
-    - [Create DID](./operations/CRUD/did-create.md)
-    - [Resolve DID](./operations/CRUD/did-resolve.md)
-    - [Recover DID](./operations/CRUD/did-recover.md)
-    - [Update DID](./operations/CRUD/did-update.md)
-    - [Deactivate DID](./operations/CRUD/did-deactivate.md)
-- tyronZIL-js: the Node.js implementation [> GitHub](https://github.com/julio-cabdu/didtyronZIL)
-    - [tyronZIL-js DID scheme](./implementation/tyronZIL-js-scheme.md)
-    - [tyronZIL-js Sidetree models](./implementation/models.md)
+- [DID-document](./did-document.md)
+- Scheme:
+      - [DID-scheme](./scheme/did-scheme.md)
+      - [DID URL syntax](./scheme/did-url-syntax.md)
+- Operations:
+      - [Introduction](./operations/tyronZIL-operations.md)
+      - DID CRUD:
+        - [Create](./operations/CRUD/did-create.md)
+        - [Resolve](./operations/CRUD/did-resolve.md)
+        - [Recover](./operations/CRUD/did-recover.md)
+        - [Update](./operations/CRUD/did-update.md)
+        - [Deactivate](./operations/CRUD/did-deactivate.md)
+- Implementation: tyronZIL-js for Node.js [> GitHub](https://github.com/julio-cabdu/didtyronZIL)
+      - [tyronZIL-js Sidetree models](./implementation/models.md)
