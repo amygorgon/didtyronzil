@@ -4,90 +4,145 @@ A tyronZIL DID-create operation is conformant with a Sidetree Create operation, 
 
 Follow these steps:
 
-## 1. Generate the verification methods
+## 1. Verification methods
 
-1.1 publicKeys: [PublicKeyModel[]](../../implementation/models.md#public-key-model)     -->     using the [operation key pair](../../sidetree.md#operation-key-pair)
+tyronZIL supports 3 verification methods: 'publicKey', 'operation' and 'recovery'.
 
-1.2 operation: [Operation](../../implementation/models.md#sidetree-verification-methods)
+1.1 Under the property 'publicKey', assing to its value an array of keys of type [PublicKeyModel](../../implementation/models.md#public-key-model), generated using the [operation key pair](../../sidetree.md#operation-key-pair):
 
-1.3 recovery: [Recovery](../../implementation/models.md#sidetree-verification-methods)
+```publicKeys: PublicKeyModel[]```
 
-## 2. Generate the [public key commitments](../../sidetree.md#public-key-commitment)
+1.2 Under the property 'operation', assign to its value an [Operation](../../implementation/models.md#sidetree-verification-methods) verification method object:
 
-2.1 Use the UPDATE_KEY to generate the update-commitment:
+```operation: Operation```
 
-UPDATE_KEY = operation.publicKeyJwk
+1.3 Under the property 'recovery', assign to its value a [Recovery](../../implementation/models.md#sidetree-verification-methods) verification method object:
 
-UPDATE_COMMITMENT = [Multihash](../../sidetree.md#hash-protocol).canonicalize[ThenHash](../../sidetree.md#commitment-hash)[ThenEncode](../../sidetree.md#data-encoding-scheme)(UPDATE_KEY)
+```recovery: Recovery```
 
-2.2 Use the RECOVERY_KEY to generate the recovery-commitment:
+## 2. Public key commitments
 
-RECOVERY_KEY = recovery.publicKeyJwk
+2.1 For the [public key commitments](../../sidetree.md#public-key-commitment), first, generate two key-pairs:
 
-RECOVERY_COMMITMENT = [Multihash](../../sidetree.md#hash-protocol).canonicalize[ThenHash](../../sidetree.md#commitment-hash)[ThenEncode](../../sidetree.md#data-encoding-scheme)(RECOVERY_KEY)
+```[UPDATE_KEY, UPDATE_PRIVATE_KEY]```
 
-## 3. Generate the service endpoints
+```[RECOVERY_KEY, RECOVERY_PRIVATE_KEY]```
 
-service: [ServiceEndpointModel[]](../../implementation/models.md#service-endpoint-model)
+2.2 Use the ```UPDATE_KEY``` to generate the update-commitment:
 
-## 4. Generate the document model
+```UPDATE_COMMITMENT``` = [Multihash](../../sidetree.md#hash-protocol).canonicalize[ThenHash](../../sidetree.md#commitment-hash)[ThenEncode](../../sidetree.md#data-encoding-scheme)(```UPDATE_KEY```)
 
-DOCUMENT: [DocumentModel](../../implementation/models.md#document-model) = {  
-public_keys: publicKeys,  
-service_endpoints: service  
+2.2 Use the ```RECOVERY_KEY``` to generate the recovery-commitment:
+
+```RECOVERY_COMMITMENT``` = [Multihash](../../sidetree.md#hash-protocol).canonicalize[ThenHash](../../sidetree.md#commitment-hash)[ThenEncode](../../sidetree.md#data-encoding-scheme)(```RECOVERY_KEY```)
+
+## 3. Service endpoints
+
+Under the property 'service', assign to its value an array of service endpoint objects of type [ServiceEndpointModel](../../implementation/models.md#service-endpoint-model):
+
+```service: ServiceEndpointModel[]```
+
+## 4. Document model
+
+Generate a document of type [DocumentModel](../../implementation/models.md#document-model):
+
+```js
+DOCUMENT = {  
+    public_keys: publicKeys,  
+    service_endpoints: service  
 }
+```
 
-## 5. Generate the patch
+## 5. DID state patch
 
-For the DID-create operation, the patch action is 'replace'.
+Put the previously generated document inside of a [DID state patch](../../sidetree.md#did-state-patch). For the DID-create operation, the patch action is 'replace':
 
-PATCH: [PatchModel](../../implementation/models.md#patch-model) = {  
-action: [PatchAction](../../implementation/models.md#patch-action).Replace,  
-document: DOCUMENT  
+```js
+PATCH = {  
+    action: PatchAction.Replace,  
+    document: DOCUMENT  
 }
+```
 
-## 6. Generate the Create Operation Delta Object
+> ```PATCH``` is of type [PatchModel](../../implementation/models.md#patch-model), with a Replace [PatchAction](../../implementation/models.md#patch-action)
 
-DELTA: [DeltaModel](../../implementation/models.md#delta-model) = {  
-patches: [PATCH],  
-updateCommitment: UPDATE_COMMITMENT  
+## 6. Create Operation Delta Object
+
+6.1 Using the DID state patch and the update-commitment, generate an instance of the Create Operation Delta Object as follows:
+
+```js
+DELTA = {
+    patches: [PATCH],  
+    updateCommitment: UPDATE_COMMITMENT  
 }
+```
+
+> ```DELTA``` is of type [DeltaModel](../../implementation/models.md#delta-model)
 
 Then apply the following operations to the object:
 
-6.1 Stringify  
-6.2 Turn it into a buffer  
-6.3 Encode it with the [data encoding scheme](../../sidetree.md#data-encoding-scheme)  
-6.4 Hash it with the [hash algorithm](../../sidetree.md#hash-algorithm) and the [hash protocol](../../sidetree.md#hash-protocol)  
-6.4 Encode it again and call it DELTA_HASH  
+6.2 Stringify it and turn it into a buffer  
+6.3 Encode it with the [data encoding scheme](../../sidetree.md#data-encoding-scheme) as ```ENCODED_DELTA```  
+6.4 Hash it with the [hash algorithm](../../sidetree.md#hash-algorithm) & [hash protocol](../../sidetree.md#hash-protocol) and then encode it again as ```DELTA_HASH```
 
-### DID suffix
+## 7. Create Operation Suffix Data Object
 
-The did-suffix MUST be globally unique and generated as follows, in conformance with the Sidetree protocol:
+7.1 Using the ```DELTA_HASH``` from the previous step, and the recovery-commitment, generate an instance of the Create Operation Suffix Data Object as follows:
 
-1. Generate verification-methods/signing-key-pairs using the [operationKeyPair](./sidetree/sidetree.md#operation-key-pair):
+```js
+SUFFIX_DATA = {  
+    delta_hash: DELTA_HASH,  
+    recovery_commitment: RECOVERY_COMMITMENT  
+}
+```
 
-    - The public keys are of type [PublicKeyModel](./sidetree/models.md#public-key-model)
-    - The private keys have type [JwkEs256k](./sidetree/models.md#jwkes256k)
+> ```SUFFIX_DATA``` is of type [SuffixDataModel](../../implementation/models.md#suffix-data-model)
 
-2. Generate service endpoints of type [ServiceEndpointModel](./sidetree/models.md#service-endpoint-model)
+Then stringify it and encode it with the [data encoding scheme](../../sidetree.md#data-encoding-scheme) as ```ENCODED_SUFFIX_DATA```.
 
-3. Create a new document of type [DocumentModel](./sidetree/models.md#service-endpoint-model) as follows:
+## 8. Sidetree request
 
-        const DOCUMENT: DocumentModel {
-            publicKeys: [PublicKeyModel],
-            service_endpoints: [ServiceEndpointModel]
-        }
+8.1 Generate the following object:
 
-4. Put the document inside of a [PatchModel](./sidetree/models.md#patch-model), with a 'replace' [PatchAction](./sidetree/models.md#patch-action):
+```js
+SIDETREE_REQUEST = {  
+    suffix_data: ENCODED_SUFFIX_DATA,  
+    type: OperationType.Create,  
+    delta: ENCODED_DELTA  
+}
+```
 
-        const PATCH: PatchModel {
-            action: PatchAction.Replace,
-            document: DOCUMENT
-        }
+8.2 Stringify it and turn it into a buffer as ```OPERATION_BUFFER```  
+8.3 Send the ```OPERATION_BUFFER``` to the Sidetree's library CreateOperation, which returns a class with the following properties:
 
-5. Generate an update key-pair of type [JwkEs256k](./sidetree/models.md#jwkes256k) and use its public key for the [update-commitment](./sidetree/sidetree.md#public-key-commitment).
+- The original request buffer sent by the requester:
 
-6. Produce the Create Operation Delta Object of type [DeltaModel](./sidetree/models.md#delta-model) using the patch and the update-commitment:
+```operationBuffer: Buffer```
 
+- The unique suffix of the DID, globally unique:
 
+```didUniqueSuffix: string```
+
+- The type of operation:
+
+```type: OperationType.Create```
+
+- The data used to generate the unique DID suffix:
+
+```suffixData: SuffixDataModel```
+
+- The encoded string of the suffix data:
+
+```encodedSuffixData: string```
+
+- The Create Operation Delta Object:
+
+```delta: DeltaModel | undefined```
+
+- The encoded string of the delta:
+
+```encodedDelta: string | undefined```
+
+## 9. tyronZIL DID-create operation result
+
+The return value of a tyronZIL-js DID-create operation is an instance of the class [DidCreate](https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/did-operations/did-create.ts), which includes all the previously mentioned properties plus additional such as public, private keys, commitments and service endpoints.

@@ -24,8 +24,7 @@ A Sidetree Anchor string is the string anchored to the ledger, composed of the C
 
 ### Sidetree transaction number
 
-The Sidetreee transaction number is a monotonically increasing number. 
-Its order is deterministic and assigned to every transaction according to its position in the ledger time.
+The Sidetreee transaction number is a monotonically increasing number. Its order is deterministic and assigned to every transaction according to its position in the ledger time.
 
 ### Ledger time
 
@@ -106,6 +105,10 @@ The SIGNATURE_ALGORITHM is the asymmetric public key signature algorithm, which 
 ## Commitment hash
 
 The COMMITMENT_HASH is a cryptographically random hash of a value to be revealed in the next operation. The default parameter is 32 bytes.
+
+## DID state patch
+
+A DID state patch is the Sidetree format to describe the mutations of the DID's metadata state. Its data structure corresponds with the [Patch model](./implementation/models.md#patch-model), which MUST include a [Patch action](./implementation/models.md#patch-action) and the [document](./implementation/models.md#document-model) to be patched.
 
 ## Sidetree verification relationships
 

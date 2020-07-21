@@ -21,12 +21,12 @@ nav:
   - DID document: 'did-document.md'
   - 'Operations':
     - 'Operations': 'operations/tyronZIL-operations.md'
-    - 'CRUD':
-        - 'Create': 'operations/CRUD/did-create.md'
-        - 'Resolve': 'operations/CRUD/did-resolve.md'
-        - 'Recover': 'operations/CRUD/did-recover.md'
-        - 'Update': 'operations/CRUD/did-update.md'
-        - 'Deactivate': 'operations/CRUD/did-deactivate.md'
+    - 'DID-CRUD':
+        - 'DID-create': 'operations/CRUD/did-create.md'
+        - 'DID-resolve': 'operations/CRUD/did-resolve.md'
+        - 'DID-recover': 'operations/CRUD/did-recover.md'
+        - 'DID-update': 'operations/CRUD/did-update.md'
+        - 'DID-deactivate': 'operations/CRUD/did-deactivate.md'
   - 'Implementation':
     - 'tyronZIL-js scheme': 'implementation/tyronZIL-js-scheme.md'
     - 'tyronZIL-js models': 'implementation/models.md'

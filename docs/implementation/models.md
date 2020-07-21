@@ -44,25 +44,25 @@ interface JwkEs256k {
 
 ### Sidetree verification methods
 
-Sidetree requires verification methods to fulfil the [Sidetree verification relationships](./sidetree.md#sidetree-verification-relationships):
+Sidetree requires these verification methods to fulfil the [Sidetree verification relationships](../sidetree.md#sidetree-verification-relationships):
 
 ```js
 interface Operation {
-    id: TyronZILScheme + '#' + UPDATE_KEY;
+    id: string      // TyronZILScheme.did_tyronZIL + '#' + 'UPDATE_KEY';
     type: string;
-    publicKeyJwk: UPDATE_KEY;
+    jwk: UPDATE_KEY;
     purpose: SidetreeVerificationRelationship.Operation;
 }
 
 interface Recovery {
-    id: TyronZILScheme + '#' + RECOVERY_KEY;
+    id: string      // TyronZILScheme.did_tyronZIL + '#' + RECOVERY_KEY;
     type: string;
-    publicKeyJwk: RECOVERY_KEY;
+    jwk: RECOVERY_KEY;
     purpose: SidetreeVerificationRelationship.Recover;
 }
 ```
 
-The UPDATE_KEY and RECOVERY_KEY are of type JwkEs256k and correspond to the [update and recovery commitment](./sidetree.md#public-key-commitment), respectively.
+The UPDATE_KEY and RECOVERY_KEY are of type JwkEs256k and correspond to the [update and recovery commitment](../sidetree.md#public-key-commitment), respectively.
 
 The type defaults to 'EcdsaSecp256k1VerificationKey2019'.
 
@@ -90,7 +90,7 @@ interface DocumentModel {
 ```js
 interface PatchModel {
     action: PatchAction;
-    publicKeys?: PublicKeyModel[]; // if action = RemoveKeys => publicKeys = PublicKeyModel .. to-do
+    publicKeys?: PublicKeyModel[];
     serviceEndpoints?: ServiceEndpointModel[];
     ids?: string[];
     document: DocumentModel;
@@ -139,9 +139,10 @@ Define the model for the JWS payload object required by the Update, Recover and 
 
 ```js
 interface UpdateSignedDataModel {
-    /** Encoded representation of the Update Operation Delta Object hash */
+    // Encoded representation of the Update Operation Delta Object hash
     delta_hash: string;
-    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous update commitment value */
+    
+    // The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous update commitment value
     update_key: JwkEs256k;
 }
 ```
@@ -150,11 +151,13 @@ interface UpdateSignedDataModel {
 
 ```js
 export interface RecoverSignedDataModel {
-    /** Encoded representation of the Recovery Operation Delta Object hash */
+    // Encoded representation of the Recovery Operation Delta Object hash
     delta_hash: string;
-    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value */
+    
+    // The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value
     recovery_key: JwkEs256k;
-    /** A new recovery commitment for the next recover operation */
+    
+    // A new recovery commitment for the next recover operation
     recovery_commitment: string;
 }
 ```
@@ -163,9 +166,10 @@ export interface RecoverSignedDataModel {
 
 ```js
 export interface DeactivateSignedDataModel {
-    /** The unique suffix of the DID to deactivate */
+    // The unique suffix of the DID to deactivate
     did_suffix: string;
-    /** The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value */
+
+    // The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value
     recovery_key: JwkEs256k;
 }
 ```
@@ -181,7 +185,7 @@ interface DidState {
 }
 ```
 
-The commitments are undefined after the deactivate operation.
+The commitments are ```undefined``` after the deactivate operation.
 
 ## Anchored operation model
 
@@ -189,14 +193,19 @@ The commitments are undefined after the deactivate operation.
 interface AnchoredOperationModel {
   // The original request buffer sent by the requester
   operationBuffer: Buffer;
+  
   // The DID unique suffix
   didUniqueSuffix: string;
+  
   // The type of operation
   type: OperationType;
+  
   // The logical blockchain time that this operation was anchored on the blockchain
   ledgerTime: number;
+  
   // The transaction number of the transaction this operation was batched within
   transactionNumber: number;
+  
   // The index this operation was assigned to in the batch
   operationIndex: number;
 }

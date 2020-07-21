@@ -1,4 +1,6 @@
-# Resolution
+# tyronZIL DID-resolve operation
+
+## Resolution
 
 It corresponds to the READ operation of a DID. The DID resolution function resolves a DID into its DID document by performing the process called DID resolution.
 

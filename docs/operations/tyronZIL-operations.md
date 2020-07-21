@@ -12,7 +12,7 @@ The tyronZIL DID client performs the following operations:
 
 How to generate a DID and its associated DID document.
 
-> Details at [tyronZIL DID-create](./CRUD/did-create.md)
+  Details at [tyronZIL DID-create](./CRUD/did-create.md)
 
 ## Read
 
