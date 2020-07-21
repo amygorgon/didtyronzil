@@ -121,6 +121,6 @@ enum SidetreeVerificationRelationship {
 }
 ```
 
-- Operation: This verification relationship corresponds to a verification method of type update key, the key used to create the [update-commitment](#public-key-commitment), required by the [DID-update operation](../operations/CRUD/did-update.md).
+- Operation: This verification relationship corresponds to a verification method of type update key, the key used to create the [update-commitment](#public-key-commitment), required by the [DID-update operation](./operations/CRUD/did-update.md).
 
-- Recovery: This verification relationship corresponds to a verification method of type recovery key, the key used to create the [recovery-commitment](#public-key-commitment), required by the operations [DID-recover](../operations/CRUD/did-recover.md) and [DID-deactivate](../operations/CRUD/did-deactivate.md).
+- Recovery: This verification relationship corresponds to a verification method of type recovery key, the key used to create the [recovery-commitment](#public-key-commitment), required by the operations [DID-recover](./operations/CRUD/did-recover.md) and [DID-deactivate](./operations/CRUD/did-deactivate.md).
