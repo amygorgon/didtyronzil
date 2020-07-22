@@ -20,9 +20,6 @@ TyronZIL's serialization format is JSON:
         - [Producers](./W3C-dids.md#producer) MUST write this type in the document's metadata, and [consumers](./W3C-dids.md#consumer) MUST validate it as well
 - Consumers MUST ignore unknown object member names as unknown properties
 
-<<<<<<< HEAD
-> More info coming soon
-=======
 ## Core properties
 
 ### id
@@ -187,4 +184,3 @@ All services MUST have the following properties:
 - "endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://) OR a cryptocurrency address, with a length of no more than one hundred (100) ASCII encoded characters
 
 If any of the values exceed the specified lengths, the [consumer](./W3C-dids.md#consumer) MUST produce an error.
->>>>>>> tyron
