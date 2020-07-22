@@ -4,12 +4,38 @@
 
 The Sidetree protocol requires the following data structures:
 
+## JwkEs256k
+
+Model to represent a secp256k1 key in a JWK format:
+
+```js
+interface JwkEs256k {
+  kty: string;
+  crv: string;
+  x: string;
+  y: string;
+  d?: string; // Only used by a private key
+}
+```
+
+## Verification method model
+
+```js
+interface VerificationMethodModel {
+    id: string;
+    type: string;
+    controller?: string;
+    jwk: JwkEs256k;
+}
+```
+
 ## Public key model
 
 ```js
 interface PublicKeyModel {
     id: string;
     type: string;
+    controller?: string;
     jwk: JwkEs256k;
     purpose: PublicKeyPurpose[];
 }
@@ -30,20 +56,6 @@ enum PublicKeyPurpose {
 }
 ```
 
-### JwkEs256k
-
-Model to represent a secp256k1 key in a JWK format:
-
-```js
-interface JwkEs256k {
-  kty: string;
-  crv: string;
-  x: string;
-  y: string;
-  d?: string; // Only used by a private key
-}
-```
-
 ### Sidetree verification methods
 
 Sidetree requires these verification methods to fulfil the [Sidetree verification relationships](../sidetree.md#sidetree-verification-relationships):
@@ -52,6 +64,7 @@ Sidetree requires these verification methods to fulfil the [Sidetree verificatio
 interface Operation {
     id: string      // TyronZILScheme.did_tyronZIL + '#' + 'UPDATE_KEY';
     type: string;
+    controller?: string;
     jwk: UPDATE_KEY;
     purpose: SidetreeVerificationRelationship.Operation;
 }
@@ -59,6 +72,7 @@ interface Operation {
 interface Recovery {
     id: string      // TyronZILScheme.did_tyronZIL + '#' + RECOVERY_KEY;
     type: string;
+    controller?: string;
     jwk: RECOVERY_KEY;
     purpose: SidetreeVerificationRelationship.Recover;
 }
@@ -82,8 +96,8 @@ interface ServiceEndpointModel {
 
 ```js
 interface DocumentModel {
-    publicKeys?: PublicKeyModel[];
-    serviceEndpoints: ServiceEndpointModel[];
+    public_keys: PublicKeyModel[];
+    service_endpoints?: ServiceEndpointModel[];
 }
 ```
 
