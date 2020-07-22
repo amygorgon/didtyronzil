@@ -553,6 +553,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jwkes256k" class="md-nav__link">
+    JwkEs256k
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-method-model" class="md-nav__link">
+    Verification method model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-key-model" class="md-nav__link">
     Public key model
   </a>
@@ -563,13 +577,6 @@
           <li class="md-nav__item">
   <a href="#public-key-purpose" class="md-nav__link">
     Public key purpose
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jwkes256k" class="md-nav__link">
-    JwkEs256k
   </a>
   
 </li>
@@ -732,6 +739,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jwkes256k" class="md-nav__link">
+    JwkEs256k
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-method-model" class="md-nav__link">
+    Verification method model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-key-model" class="md-nav__link">
     Public key model
   </a>
@@ -742,13 +763,6 @@
           <li class="md-nav__item">
   <a href="#public-key-purpose" class="md-nav__link">
     Public key purpose
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jwkes256k" class="md-nav__link">
-    JwkEs256k
   </a>
   
 </li>
@@ -884,10 +898,32 @@
                 <h1 id="tyronzil-js-sidetree-models">tyronZIL-js Sidetree models</h1>
 <p><strong>tyronZIL-js</strong> is the open-source reference implementation for Node.js, written in TypeScript.</p>
 <p>The Sidetree protocol requires the following data structures:</p>
+<h2 id="jwkes256k">JwkEs256k</h2>
+<p>Model to represent a secp256k1 key in a JWK format:</p>
+<pre><code class="js">interface JwkEs256k {
+  kty: string;
+  crv: string;
+  x: string;
+  y: string;
+  kid?: string;
+  d?: string; // Only used by a private key
+}
+</code></pre>
+
+<h2 id="verification-method-model">Verification method model</h2>
+<pre><code class="js">interface VerificationMethodModel {
+    id: string;
+    type: string;
+    controller?: string;
+    jwk: JwkEs256k;
+}
+</code></pre>
+
 <h2 id="public-key-model">Public key model</h2>
 <pre><code class="js">interface PublicKeyModel {
     id: string;
     type: string;
+    controller?: string;
     jwk: JwkEs256k;
     purpose: PublicKeyPurpose[];
 }
@@ -905,22 +941,12 @@
 }
 </code></pre>
 
-<h3 id="jwkes256k">JwkEs256k</h3>
-<p>Model to represent a secp256k1 key in a JWK format:</p>
-<pre><code class="js">interface JwkEs256k {
-  kty: string;
-  crv: string;
-  x: string;
-  y: string;
-  d?: string; // Only used by a private key
-}
-</code></pre>
-
 <h3 id="sidetree-verification-methods">Sidetree verification methods</h3>
 <p>Sidetree requires these verification methods to fulfil the <a href="../../sidetree/#sidetree-verification-relationships">Sidetree verification relationships</a>:</p>
 <pre><code class="js">interface Operation {
     id: string      // TyronZILScheme.did_tyronZIL + '#' + 'UPDATE_KEY';
     type: string;
+    controller?: string;
     jwk: UPDATE_KEY;
     purpose: SidetreeVerificationRelationship.Operation;
 }
@@ -928,6 +954,7 @@
 interface Recovery {
     id: string      // TyronZILScheme.did_tyronZIL + '#' + RECOVERY_KEY;
     type: string;
+    controller?: string;
     jwk: RECOVERY_KEY;
     purpose: SidetreeVerificationRelationship.Recover;
 }
@@ -945,8 +972,8 @@ interface Recovery {
 
 <h2 id="document-model">Document model</h2>
 <pre><code class="js">interface DocumentModel {
-    publicKeys?: PublicKeyModel[];
-    serviceEndpoints: ServiceEndpointModel[];
+    public_keys: PublicKeyModel[];
+    service_endpoints?: ServiceEndpointModel[];
 }
 </code></pre>
 

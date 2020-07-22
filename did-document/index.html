@@ -299,9 +299,90 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        DID-document
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="DID-document" class="md-nav__link md-nav__link--active">
       DID-document
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-properties" class="md-nav__link">
+    Core properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Core properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publickey" class="md-nav__link">
+    publicKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery" class="md-nav__link">
+    recovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoints" class="md-nav__link">
+    Service endpoints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -563,6 +644,71 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-properties" class="md-nav__link">
+    Core properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Core properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publickey" class="md-nav__link">
+    publicKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery" class="md-nav__link">
+    recovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoints" class="md-nav__link">
+    Service endpoints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -581,92 +727,163 @@
                   
                 
                 
-                <h1 id="tyronzil-did-document">tyronZIL DID-document</h1>
+                <h1 id="tyronzil-did-document">tyronZIL DID document</h1>
 <blockquote>
 <p>For an introduction, read <a href="../W3C-dids/#did-document">this</a></p>
 </blockquote>
-<p>A DID document is a graph-based data structure, serialized according to a particular syntax.</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<blockquote>
-<h1 id="more-info-coming-soon">More info coming soon</h1>
-<p>TyronZIL's serialization format is JSON. (to-do check if sidetree is json-ld)</p>
-</blockquote>
-<p>Core representation in JSON:</p>
+<p>A DID-document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.</p>
+<p>TyronZIL's serialization format is JSON:  </p>
 <ul>
-<li>It defines an unambiguous encoding and decoding of all properties and their associated values.</li>
-<li>It is associated with an IANA-registered MIME type.</li>
-<li>
-<p>It defines fragment processing rules for its MIME type. to-do: what is MIME</p>
-</li>
-<li>
-<p>Producers MUST indicate JSON as the media type in the document's metadata. Consumers MUST determine that the "content-type" DID resolver metadata field is <strong>application/did+json</strong></p>
-</li>
+<li>It defines an unambiguous encoding and decoding of all properties and their associated values</li>
+<li>It MUST be a single JSON object conforming to <a href="https://tools.ietf.org/html/rfc8259">RFC8259, The JavaScript Object Notation (JSON) Data Interchange Format</a>  </li>
+<li>The names of the members of the JSON object MUST correspond to the <a href="#core-properties">core property names</a> of the DID-document  </li>
+<li>Property values MUST be:<br />
+        - <a href="https://tools.ietf.org/html/rfc8259#section-6">Numbers</a> for number values representable as IEEE754<br />
+        - <a href="https://tools.ietf.org/html/rfc8259#section-3">Literal values</a> for boolean ('false', 'true') and empty values ('null')<br />
+        - <a href="https://tools.ietf.org/html/rfc8259#section-5">Arrays</a> for sequence values and unordered sets of values<br />
+                - <a href="https://tools.ietf.org/html/rfc8259#section-4">Objects</a> for sets of properties<br />
+                - <a href="https://tools.ietf.org/html/rfc8259#section-7">Strings</a> for all other values. Consumers MAY further parse these strings into more specific data types such as URIs and date stamps  </li>
+<li>The content-type property in the resolver's metadata MUST be <code>application/did+json</code>:<br />
+        - Which is the associated IANA-registered MIME type, with its corresponding rules to process the fragment<br />
+        - <a href="../W3C-dids/#producer">Producers</a> MUST write this type in the document's metadata, and <a href="../W3C-dids/#consumer">consumers</a> MUST validate it as well</li>
+<li>Consumers MUST ignore unknown object member names as unknown properties</li>
 </ul>
-<p>6.1.1 Production to-do
-6.1.2 Consumption</p>
-<p>As defined by W3C, a DID document consists of a collection of property-value pairs.</p>
 <h2 id="core-properties">Core properties</h2>
-<p>A TyronZIL DID document MUST have the following properties. Unknown properties MUST be ignored.</p>
 <h3 id="id">id</h3>
-<p>All W3C DID documents MUST include the "id" property.</p>
-<p>The "id" property denotes the DID <a href="../W3C-dids/#did-subject">subject</a>, and its value MUST be a single valid tyronZIL DID, e.g.:</p>
+<p>The <code>id</code> value MUST be a single valid tyronZIL DID itself, e.g.:</p>
 <pre><code class="json">{
-    &quot;id&quot;: &quot;did:tyron:zil:91tDAKCERh95uGgKbJNHYp&quot;,
-    ...
+  &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w&quot;
 }
 </code></pre>
 
-<h3 id="verification-methods">Verification methods</h3>
-<p>tyronZIL DID documents MUST include <a href="../W3C-dids/#verification-method">verification methods</a>.</p>
-<p>tyronZIL-js supports 3 types of verification methods, with the following properties:</p>
-<ul>
-<li>
-<p>publicKey: its value MUST be an array of public key objects.</p>
-<p>publicKey: <a href="../implementation/models/#public-key-model">PublicKeyModel[]</a></p>
-</li>
-</ul>
-<p>The Sidetree protocol requires the verification methods <a href="../implementation/models/#sidetree-verification-methods">'operation' and 'recovery'</a>:</p>
-<ul>
-<li>
-<p>operation: its value MUST be the Operation object corresponding to the next update commitment.</p>
-<p>operation: <a href="../implementation/models/#sidetree-verification-methods">Operation</a></p>
-</li>
-<li>
-<p>recovery: its value MUST be the Recovery object corresponding to the next recovery commitment.</p>
-<p>recovery: <a href="../implementation/models/#sidetree-verification-methods">Recovery</a></p>
-</li>
-</ul>
+<p>All W3C DID documents MUST include the "id" property, which denotes the <a href="../W3C-dids/#did-subject">DID subject</a>.</p>
+<h3 id="publickey">publicKey</h3>
+<p>The <code>publicKey</code> property is one of the three supported <a href="../W3C-dids/#verification-method">verification methods</a>, the other two being <code>operation</code> and <code>recovery</code>.</p>
+<p>The <code>publicKey</code> value MUST be an array of objects of type [VerificationMethodModel(./implementation/models.md#verification-method-model), e.g.:</p>
 <pre><code class="json">{
-    &quot;id&quot;: &quot;did:tyron:zil:91tDAKCERh95uGgKbJNHYp&quot;,
-    to-do: add example
-    ...
+  &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w&quot;,
+  &quot;publicKey&quot;: [
+    {
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#primarySigningKey&quot;,
+      &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;secp256k1&quot;,
+        &quot;x&quot;: &quot;ksEhVIcb7JGKp_zNL0NJJxFBNzGgERzSQrZjEfkvPJc&quot;,
+        &quot;y&quot;: &quot;J3h3PgSqdUXkDt1CIZHbWmKvhlD1bedJX6VE3u1o7bE&quot;,
+        &quot;kid&quot;: &quot;G0cATxTiiCC4Xt3NnANRCrfBOexYpQhB0Sy616E5LTE&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherSigningKey&quot;,
+      &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;secp256k1&quot;,
+        &quot;x&quot;: &quot;ynsq5eFLNaV-rIJxpT_QMBZ3dXv2kQwHzw7VZKjU8fs&quot;,
+        &quot;y&quot;: &quot;q_Nw9PhUkWpt0mV5C62qydBokP09p8gkSKy9nFNTq60&quot;,
+        &quot;kid&quot;: &quot;ofnZh1sI0we7eYfiDfIxcqK10NezOLvcQfCEBacbzOQ&quot;
+      }
+    }
+  ]
 }
 </code></pre>
 
-<p>Each verification method object MUST have the following properties:</p>
+<h3 id="operation">operation</h3>
+<p>The Sidetree protocol requires the verification methods <a href="../implementation/models/#sidetree-verification-methods">'operation' and 'recovery'</a>, which correspond to the update and recovery commitment, respectively.</p>
+<p>The <code>operation</code> value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:</p>
+<pre><code class="json">{
+  &quot;operation&quot;: {
+    &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg&quot;,
+    &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
+    &quot;jwk&quot;: {
+      &quot;kty&quot;: &quot;EC&quot;,
+      &quot;crv&quot;: &quot;secp256k1&quot;,
+      &quot;x&quot;: &quot;qvPcMNez90MzDLgv0FYs3fzSNMowkkOVGYGR8d2P8p4&quot;,
+      &quot;y&quot;: &quot;64TifxdUbqjrajAlfLEP6_SYn1uomge9rIW_uH8p6XM&quot;,
+      &quot;kid&quot;: &quot;-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="recovery">recovery</h3>
+<p>The <code>recovery</code> value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:</p>
+<pre><code class="json">{
+  &quot;recovery&quot;: {
+    &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs&quot;,
+    &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
+    &quot;jwk&quot;: {
+      &quot;kty&quot;: &quot;EC&quot;,
+      &quot;crv&quot;: &quot;secp256k1&quot;,
+      &quot;x&quot;: &quot;-EFWN26jzAMk8LXFPU8Jw5YX-r1_avdB5lhD2eagJP4&quot;,
+      &quot;y&quot;: &quot;XvJ5qYBSiXPv09y_M1C2IobbGxMdJlDySwNeGEd4p84&quot;,
+      &quot;kid&quot;: &quot;cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs&quot;
+    }
+  }
+}
+</code></pre>
+
+<hr />
+<p>All verification methods MUST have the following properties:</p>
 <ul>
-<li>"id": Its value MUST be a unique DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the DID document processor MUST produce an error. to-do: test sidetree processor</li>
-<li>"type": Its value MUST be exactly one verification method type. to-do: check sidetree key type.</li>
-<li>"controller": Its value MUST be a valid tyronZIL DID. If the verification method is a public key, then the controller property identifies the DID that controls the corresponding private key. to-do: can tyron have a controller property pointing to a different self-owned DID as a backup/recovery - see sidetree recovery.</li>
-<li>Specific verification method properties.</li>
+<li>"id": Its value MUST be a unique tyronZIL DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
+<li>"type": Its value MUST be exactly one verification method type. The default type is currently <code>EcdsaSecp256k1VerificationKey2019</code></li>
+<li>"controller": Its value MUST be a valid tyronZIL DID representing the entity that controls the corresponding private key</li>
+<li>"jwk": The cryptographic key itself expressed as a <a href="https://tools.ietf.org/html/rfc7517">IETF RFC 7517</a> compliant JSON Web Key (JWK) representation for the <a href="../sidetree/#key-algorithm">KEY_ALGORITHM</a></li>
 </ul>
-<p>5.5 Authentication to-do
-5.6 Authorization and delegation &gt; maybe for under age subjects.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>tyron</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>Before processing them into the DID-document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>. For the verification methods <code>operation</code> and <code>recovery</code>, the purpose value MUST be the corresponding variant of the <a href="../sidetree/#sidetree-verification-relationships">SidetreeVerificationRelationship enum</a>.</p>
+<hr />
+<h3 id="authentication">authentication</h3>
+<p>At least one public key MUST have its purpose as <code>PublicKeyPurpose.Auth = 'auth'</code>.</p>
+<p>The <code>authentication</code> value MUST be an array of verification methods. Each verification method MAY be embedded or referenced, e.g.:</p>
+<pre><code class="json">{
+  &quot;authentication&quot;: [
+    // referenced key:
+    &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#primarySigningKey&quot;,
+    // embedded key:
+    {
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#authentication-key&quot;,
+      &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
+      &quot;jwk&quot;: {
+        &quot;kty&quot;: &quot;EC&quot;,
+        &quot;crv&quot;: &quot;secp256k1&quot;,
+        &quot;x&quot;: &quot;W5-Wa5xk6rtIyC4b0cp3JAb8-Rmhc_CIRPt-JPexZWY&quot;,
+        &quot;y&quot;: &quot;XD15geXy_UBRByhnI_fuAZhvWSsaYR0L92jTLr63xk8&quot;,
+        &quot;kid&quot;: &quot;Juvzhd0beV-bR8Oq12JYt4wyYYZ8Zndrb9oM_WMxoF4&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="service-endpoints">Service endpoints</h3>
+<p>tyronZIL service endpoints are used to express ways of communicating with the <a href="../W3C-dids/#did-subject">DID subject</a>, from privacy preserving messaging services to cryptocurrency addresses.</p>
+<p>The <code>service</code> value MUST be an array of objects of type <a href="../implementation/models/#service-endpoint-model">ServiceEndpointModel</a>, e.g.:</p>
+<pre><code class="json">{
+  &quot;service&quot;: [
+    {
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#tyronZIL-website&quot;,
+      &quot;type&quot;: &quot;method-specification&quot;,
+      &quot;endpoint&quot;: &quot;https://tyronZIL.com&quot;
+    },
+    {
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#ZIL-address&quot;,
+      &quot;type&quot;: &quot;cryptocurrency-address&quot;,
+      &quot;endpoint&quot;: &quot;zil1egvj6ketfydy48uqzu8qphhj5w4xrkratv85ht&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<p>All services MUST have the following properties:</p>
+<ul>
+<li>"id": Its value MUST be a unique tyronZIL DID URL with a length no more than fifty (50) ASCII encoded characters. There MUST NOT be multiple service objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
+<li>"type": Its value MUST be a string with a length of no more than thirty (30) ASCII encoded characters</li>
+<li>"endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://) OR a cryptocurrency address, with a length of no more than one hundred (100) ASCII encoded characters</li>
+</ul>
+<p>If any of the values exceed the specified lengths, the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error.</p>
                 
               
               
