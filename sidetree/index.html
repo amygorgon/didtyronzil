@@ -417,6 +417,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#long-form-did-uri" class="md-nav__link">
+    Long-Form DID URI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hash-algorithm" class="md-nav__link">
     Hash algorithm
   </a>
@@ -894,6 +901,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#long-form-did-uri" class="md-nav__link">
+    Long-Form DID URI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hash-algorithm" class="md-nav__link">
     Hash algorithm
   </a>
@@ -1031,6 +1045,11 @@
 <p>A CAS URI is a unique content-bound identifier used to locate a specific resource via the CAS protocol. The default CAS_URI_ALGORITHM to generate the CAS URI is IPFS CID.</p>
 <h2 id="did-suffix">DID suffix</h2>
 <p>A DID suffix is the unique identifier string in a Decentralized Identifier, the last part of the DID after the final colon.</p>
+<h2 id="long-form-did-uri">Long-Form DID URI</h2>
+<p>This type of <a href="../W3C-dids/#did-url">DID URL</a> has the necessary information to immediately use a DID without anchoring it to the underlying ledger (therefore, the DID is unpropagated/unpublished).</p>
+<p>Format:<br />
+<code>DID?-sidetree-initial-state=&lt;create-operation-suffix-data-object&gt;.&lt;create-operation-delta-object&gt;</code></p>
+<p>More info <a href="../scheme/did-url-syntax/#sidetree-long-form-did">here</a></p>
 <h2 id="hash-algorithm">Hash algorithm</h2>
 <p>The HASH_ALGORITH is the algorithm to generate hashes of protocol-related values. The default parameter is SHA256.</p>
 <h2 id="hash-protocol">Hash protocol</h2>
