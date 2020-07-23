@@ -37,5 +37,5 @@ Self-sovereign identity (SSI) allows people to manage their digital identities a
         - [Recover](./operations/CRUD/did-recover.md)
         - [Update](./operations/CRUD/did-update.md)
         - [Deactivate](./operations/CRUD/did-deactivate.md)
-- Implementation: tyronZIL-js for Node.js [> GitHub](https://github.com/julio-cabdu/didtyronZIL)
+- Implementation: [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) for Node.js
       - [tyronZIL-js Sidetree models](./implementation/models.md)

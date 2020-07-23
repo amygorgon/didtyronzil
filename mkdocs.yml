@@ -22,7 +22,7 @@ nav:
     - 'DID-scheme': 'scheme/did-scheme.md'
     - 'DID URL syntax': 'scheme/did-url-syntax.md'
   - 'Operations':
-    - 'Introduction': 'operations/tyronZIL-operations.md'
+    - 'tyronZIL operations': 'operations/tyronZIL-operations.md'
     - 'DID CRUD':
         - 'Create': 'operations/CRUD/did-create.md'
         - 'Resolve': 'operations/CRUD/did-resolve.md'

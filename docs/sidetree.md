@@ -54,6 +54,15 @@ A CAS URI is a unique content-bound identifier used to locate a specific resourc
 
 A DID suffix is the unique identifier string in a Decentralized Identifier, the last part of the DID after the final colon.
 
+## Long-Form DID URI
+
+This type of [DID URL](./W3C-dids.md#did-url) has the necessary information to immediately use a DID without anchoring it to the underlying ledger (therefore, the DID is unpropagated/unpublished).
+
+Format:  
+```DID?-sidetree-initial-state=<create-operation-suffix-data-object>.<create-operation-delta-object>```
+
+More info [here](./scheme/did-url-syntax.md#sidetree-long-form-did)
+
 ## Hash algorithm
 
 The HASH_ALGORITH is the algorithm to generate hashes of protocol-related values. The default parameter is SHA256.
