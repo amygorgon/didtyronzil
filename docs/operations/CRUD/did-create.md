@@ -53,7 +53,7 @@ DOCUMENT = {
 }
 ```
 
-## 5. DID state patch
+## 5. DID-state patch
 
 Put the previously generated document inside of a [DID state patch](../../sidetree.md#did-state-patch). For the DID-create operation, the patch action is 'replace':
 

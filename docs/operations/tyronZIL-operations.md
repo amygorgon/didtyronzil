@@ -6,7 +6,7 @@ The tyronZIL DID client performs the following operations:
 - [Read](#read)
 - [Recover](#recover)
 - [Update](#update)
-- [Deactivate](#create)
+- [Deactivate](#deactivate)
 
 ## Create
 
