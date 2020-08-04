@@ -581,13 +581,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sidetree-verification-methods" class="md-nav__link">
-    Sidetree verification methods
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -767,13 +760,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sidetree-verification-methods" class="md-nav__link">
-    Sidetree verification methods
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -924,7 +910,7 @@
     id: string;
     type: string;
     controller?: string;
-    jwk: JwkEs256k;
+    publicKeyJwk: JwkEs256k;
     purpose: PublicKeyPurpose[];
 }
 </code></pre>
@@ -941,27 +927,6 @@
 }
 </code></pre>
 
-<h3 id="sidetree-verification-methods">Sidetree verification methods</h3>
-<p>Sidetree requires these verification methods to fulfil the <a href="../../sidetree/#sidetree-verification-relationships">Sidetree verification relationships</a>:</p>
-<pre><code class="js">interface Operation {
-    id: string      // TyronZILScheme.did_tyronZIL + '#' + 'UPDATE_KEY';
-    type: string;
-    controller?: string;
-    jwk: UPDATE_KEY;
-    purpose: SidetreeVerificationRelationship.Operation;
-}
-
-interface Recovery {
-    id: string      // TyronZILScheme.did_tyronZIL + '#' + RECOVERY_KEY;
-    type: string;
-    controller?: string;
-    jwk: RECOVERY_KEY;
-    purpose: SidetreeVerificationRelationship.Recover;
-}
-</code></pre>
-
-<p>The UPDATE_KEY and RECOVERY_KEY are of type JwkEs256k and correspond to the <a href="../../sidetree/#public-key-commitment">update and recovery commitment</a>, respectively.</p>
-<p>The type defaults to 'EcdsaSecp256k1VerificationKey2019'.</p>
 <h2 id="service-endpoint-model">Service endpoint model</h2>
 <pre><code class="js">interface ServiceEndpointModel {
     id: string;
