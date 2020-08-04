@@ -743,7 +743,7 @@
         - <a href="https://tools.ietf.org/html/rfc8259#section-5">Arrays</a> for sequence values and unordered sets of values<br />
                 - <a href="https://tools.ietf.org/html/rfc8259#section-4">Objects</a> for sets of properties<br />
                 - <a href="https://tools.ietf.org/html/rfc8259#section-7">Strings</a> for all other values. Consumers MAY further parse these strings into more specific data types such as URIs and date stamps  </li>
-<li>The content-type property in the resolver's metadata MUST be <code>application/did+json</code>:<br />
+<li>The 'contentType' property in the resolver's metadata MUST be <code>application/did+json</code>:<br />
         - Which is the associated IANA-registered MIME type, with its corresponding rules to process the fragment<br />
         - <a href="../W3C-dids/#producer">Producers</a> MUST write this type in the document's metadata, and <a href="../W3C-dids/#consumer">consumers</a> MUST validate it as well</li>
 <li>Consumers MUST ignore unknown object member names as unknown properties</li>
