@@ -15,7 +15,7 @@ TyronZIL's serialization format is JSON:
         - [Arrays](https://tools.ietf.org/html/rfc8259#section-5) for sequence values and unordered sets of values  
                 - [Objects](https://tools.ietf.org/html/rfc8259#section-4) for sets of properties  
                 - [Strings](https://tools.ietf.org/html/rfc8259#section-7) for all other values. Consumers MAY further parse these strings into more specific data types such as URIs and date stamps  
-- The content-type property in the resolver's metadata MUST be ```application/did+json```:  
+- The 'contentType' property in the resolver's metadata MUST be ```application/did+json```:  
         - Which is the associated IANA-registered MIME type, with its corresponding rules to process the fragment  
         - [Producers](./W3C-dids.md#producer) MUST write this type in the document's metadata, and [consumers](./W3C-dids.md#consumer) MUST validate it as well
 - Consumers MUST ignore unknown object member names as unknown properties
@@ -36,9 +36,9 @@ All W3C DID documents MUST include the "id" property, which denotes the [DID sub
 
 ### publicKey
 
-The ```publicKey``` property is one of the three supported [verification methods](./W3C-dids.md#verification-method), the other two being ```operation``` and ```recovery```.
+The ```publicKey``` property is the main [verification method](./W3C-dids.md#verification-method).
 
-The ```publicKey``` value MUST be an array of objects of type [VerificationMethodModel(./implementation/models.md#verification-method-model), e.g.:
+The ```publicKey``` value MUST be an array of objects of type [VerificationMethodModel](./implementation/models.md#verification-method-model), e.g.:
 
 ```json
 {
@@ -58,7 +58,7 @@ The ```publicKey``` value MUST be an array of objects of type [VerificationMetho
     {
       "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherSigningKey",
       "type": "EcdsaSecp256k1VerificationKey2019",
-      "jwk": {
+      "publicKeyJwk": {
         "kty": "EC",
         "crv": "secp256k1",
         "x": "ynsq5eFLNaV-rIJxpT_QMBZ3dXv2kQwHzw7VZKjU8fs",
@@ -70,48 +70,6 @@ The ```publicKey``` value MUST be an array of objects of type [VerificationMetho
 }
 ```
 
-### operation
-
-The Sidetree protocol requires the verification methods ['operation' and 'recovery'](./implementation/models.md#sidetree-verification-methods), which correspond to the update and recovery commitment, respectively.
-
-The ```operation``` value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:
-
-```json
-{
-  "operation": {
-    "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg",
-    "type": "EcdsaSecp256k1VerificationKey2019",
-    "jwk": {
-      "kty": "EC",
-      "crv": "secp256k1",
-      "x": "qvPcMNez90MzDLgv0FYs3fzSNMowkkOVGYGR8d2P8p4",
-      "y": "64TifxdUbqjrajAlfLEP6_SYn1uomge9rIW_uH8p6XM",
-      "kid": "-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg"
-    }
-  }
-}
-```
-
-### recovery
-
-The ```recovery``` value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:
-
-```json
-{
-  "recovery": {
-    "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs",
-    "type": "EcdsaSecp256k1VerificationKey2019",
-    "jwk": {
-      "kty": "EC",
-      "crv": "secp256k1",
-      "x": "-EFWN26jzAMk8LXFPU8Jw5YX-r1_avdB5lhD2eagJP4",
-      "y": "XvJ5qYBSiXPv09y_M1C2IobbGxMdJlDySwNeGEd4p84",
-      "kid": "cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs"
-    }
-  }
-}
-```
-
 ---
 
 All verification methods MUST have the following properties:
@@ -119,9 +77,9 @@ All verification methods MUST have the following properties:
 - "id": Its value MUST be a unique tyronZIL DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the [consumer](./W3C-dids.md#consumer) MUST produce an error
 - "type": Its value MUST be exactly one verification method type. The default type is currently ```EcdsaSecp256k1VerificationKey2019```
 - "controller": Its value MUST be a valid tyronZIL DID representing the entity that controls the corresponding private key
-- "jwk": The cryptographic key itself expressed as a [IETF RFC 7517](https://tools.ietf.org/html/rfc7517) compliant JSON Web Key (JWK) representation for the [KEY_ALGORITHM](./sidetree.md#key-algorithm)
+- "publicKeyJwk": The cryptographic key itself expressed as a [IETF RFC 7517](https://tools.ietf.org/html/rfc7517) compliant JSON Web Key (JWK) representation for the [KEY_ALGORITHM](./sidetree.md#key-algorithm)
 
-Before processing them into the DID-document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose). For the verification methods ```operation``` and ```recovery```, the purpose value MUST be the corresponding variant of the [SidetreeVerificationRelationship enum](./sidetree.md#sidetree-verification-relationships).
+Before processing them into the DID-document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose).
 
 ---
 

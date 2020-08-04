@@ -151,6 +151,6 @@ SIDETREE_REQUEST = {
 
 ## 9. tyronZIL DID-recover operation result
 
-The return value of a tyronZIL-js DID-recover operation is an instance of the class [Didrecover](https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/did-operations/did-recover.ts), which includes all the previously mentioned properties plus additional such as the DID in format tyronZIL DID-scheme, the Operation and Recovery verification method, commitments, public and private keys.
+The return value of a tyronZIL-js DID-recover operation is an instance of the class [DidRecover](https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/did-operations/did-recover.ts), which includes all the previously mentioned properties plus additional such as the DID in format tyronZIL DID-scheme, the Operation and Recovery verification method, commitments, public and private keys.
 
 ```type: OperationType.Recover```

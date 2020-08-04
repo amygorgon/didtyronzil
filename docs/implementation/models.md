@@ -26,7 +26,7 @@ interface VerificationMethodModel {
     id: string;
     type: string;
     controller?: string;
-    jwk: JwkEs256k;
+    publicKeyJwk: JwkEs256k;
 }
 ```
 
@@ -56,32 +56,6 @@ enum PublicKeyPurpose {
   Invocation = 'invocation'
 }
 ```
-
-### Sidetree verification methods
-
-Sidetree requires these verification methods to fulfil the [Sidetree verification relationships](../sidetree.md#sidetree-verification-relationships):
-
-```js
-interface Operation {
-    id: string      // TyronZILScheme.did_tyronZIL + '#' + 'UPDATE_KEY';
-    type: string;
-    controller?: string;
-    jwk: UPDATE_KEY;
-    purpose: SidetreeVerificationRelationship.Operation;
-}
-
-interface Recovery {
-    id: string      // TyronZILScheme.did_tyronZIL + '#' + RECOVERY_KEY;
-    type: string;
-    controller?: string;
-    jwk: RECOVERY_KEY;
-    purpose: SidetreeVerificationRelationship.Recover;
-}
-```
-
-The UPDATE_KEY and RECOVERY_KEY are of type JwkEs256k and correspond to the [update and recovery commitment](../sidetree.md#public-key-commitment), respectively.
-
-The type defaults to 'EcdsaSecp256k1VerificationKey2019'.
 
 ## Service endpoint model
 

@@ -35,7 +35,7 @@ PATCH = {
 }
 ```
 
-> ```PATCH``` is of type [PatchModel](../../implementation/models.md#patch-model), and the action any of the [PatchAction](../../implementation/models.md#patch-action) enum variants from step 1
+> ```PATCH``` is of type [PatchModel](../../implementation/models.md#patch-model), and the action any of the [PatchAction](../../implementation/models.md#patch-action) variants from step 1
 
 ## 4. Update Operation Delta Object
 
