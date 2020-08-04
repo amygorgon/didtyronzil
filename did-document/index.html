@@ -348,20 +348,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#operation" class="md-nav__link">
-    operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recovery" class="md-nav__link">
-    recovery
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     authentication
   </a>
@@ -675,20 +661,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#operation" class="md-nav__link">
-    operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recovery" class="md-nav__link">
-    recovery
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     authentication
   </a>
@@ -758,8 +730,8 @@
 
 <p>All W3C DID documents MUST include the "id" property, which denotes the <a href="../W3C-dids/#did-subject">DID subject</a>.</p>
 <h3 id="publickey">publicKey</h3>
-<p>The <code>publicKey</code> property is one of the three supported <a href="../W3C-dids/#verification-method">verification methods</a>, the other two being <code>operation</code> and <code>recovery</code>.</p>
-<p>The <code>publicKey</code> value MUST be an array of objects of type [VerificationMethodModel(./implementation/models.md#verification-method-model), e.g.:</p>
+<p>The <code>publicKey</code> property is the main <a href="../W3C-dids/#verification-method">verification method</a>.</p>
+<p>The <code>publicKey</code> value MUST be an array of objects of type <a href="../implementation/models/#verification-method-model">VerificationMethodModel</a>, e.g.:</p>
 <pre><code class="json">{
   &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w&quot;,
   &quot;publicKey&quot;: [
@@ -777,7 +749,7 @@
     {
       &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherSigningKey&quot;,
       &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
-      &quot;jwk&quot;: {
+      &quot;publicKeyJwk&quot;: {
         &quot;kty&quot;: &quot;EC&quot;,
         &quot;crv&quot;: &quot;secp256k1&quot;,
         &quot;x&quot;: &quot;ynsq5eFLNaV-rIJxpT_QMBZ3dXv2kQwHzw7VZKjU8fs&quot;,
@@ -789,50 +761,15 @@
 }
 </code></pre>
 
-<h3 id="operation">operation</h3>
-<p>The Sidetree protocol requires the verification methods <a href="../implementation/models/#sidetree-verification-methods">'operation' and 'recovery'</a>, which correspond to the update and recovery commitment, respectively.</p>
-<p>The <code>operation</code> value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:</p>
-<pre><code class="json">{
-  &quot;operation&quot;: {
-    &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg&quot;,
-    &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
-    &quot;jwk&quot;: {
-      &quot;kty&quot;: &quot;EC&quot;,
-      &quot;crv&quot;: &quot;secp256k1&quot;,
-      &quot;x&quot;: &quot;qvPcMNez90MzDLgv0FYs3fzSNMowkkOVGYGR8d2P8p4&quot;,
-      &quot;y&quot;: &quot;64TifxdUbqjrajAlfLEP6_SYn1uomge9rIW_uH8p6XM&quot;,
-      &quot;kid&quot;: &quot;-reKn00OlXduVOqrPtxB2_wsO0dJGaJsJX7ONxlpojg&quot;
-    }
-  }
-}
-</code></pre>
-
-<h3 id="recovery">recovery</h3>
-<p>The <code>recovery</code> value MUST be an object of type [VerificationMethodModel(./implementation/models.md#verification-method-model) OR an empty value ('null') after deactivation, e.g.:</p>
-<pre><code class="json">{
-  &quot;recovery&quot;: {
-    &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs&quot;,
-    &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
-    &quot;jwk&quot;: {
-      &quot;kty&quot;: &quot;EC&quot;,
-      &quot;crv&quot;: &quot;secp256k1&quot;,
-      &quot;x&quot;: &quot;-EFWN26jzAMk8LXFPU8Jw5YX-r1_avdB5lhD2eagJP4&quot;,
-      &quot;y&quot;: &quot;XvJ5qYBSiXPv09y_M1C2IobbGxMdJlDySwNeGEd4p84&quot;,
-      &quot;kid&quot;: &quot;cRvb0PTPB4DZR0RRbsmVrzi0Y592gHfKqcsurxGfjJs&quot;
-    }
-  }
-}
-</code></pre>
-
 <hr />
 <p>All verification methods MUST have the following properties:</p>
 <ul>
 <li>"id": Its value MUST be a unique tyronZIL DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
 <li>"type": Its value MUST be exactly one verification method type. The default type is currently <code>EcdsaSecp256k1VerificationKey2019</code></li>
 <li>"controller": Its value MUST be a valid tyronZIL DID representing the entity that controls the corresponding private key</li>
-<li>"jwk": The cryptographic key itself expressed as a <a href="https://tools.ietf.org/html/rfc7517">IETF RFC 7517</a> compliant JSON Web Key (JWK) representation for the <a href="../sidetree/#key-algorithm">KEY_ALGORITHM</a></li>
+<li>"publicKeyJwk": The cryptographic key itself expressed as a <a href="https://tools.ietf.org/html/rfc7517">IETF RFC 7517</a> compliant JSON Web Key (JWK) representation for the <a href="../sidetree/#key-algorithm">KEY_ALGORITHM</a></li>
 </ul>
-<p>Before processing them into the DID-document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>. For the verification methods <code>operation</code> and <code>recovery</code>, the purpose value MUST be the corresponding variant of the <a href="../sidetree/#sidetree-verification-relationships">SidetreeVerificationRelationship enum</a>.</p>
+<p>Before processing them into the DID-document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>.</p>
 <hr />
 <h3 id="authentication">authentication</h3>
 <p>At least one public key MUST have its purpose as <code>PublicKeyPurpose.Auth = 'auth'</code>.</p>
