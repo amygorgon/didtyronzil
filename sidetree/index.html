@@ -199,17 +199,6 @@
 
       
         
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../implementation/models/" class="md-tabs__link">
-          Implementation
-        </a>
-      
-    </li>
-  
-
       
     </ul>
   </div>
@@ -318,29 +307,8 @@
     Sidetree DID operation
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sidetree-operation-request" class="md-nav__link">
-    Sidetree operation request
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sidetree-transaction" class="md-nav__link">
-    Sidetree transaction
-  </a>
-  
-    <nav class="md-nav" aria-label="Sidetree transaction">
+    <nav class="md-nav" aria-label="Sidetree DID operation">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tyronzil-transaction" class="md-nav__link">
-    tyronZIL transaction
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#anchor-string" class="md-nav__link">
@@ -723,52 +691,10 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
+  <li class="md-nav__item">
+    <a href="../implementation/models/" title="Implementation" class="md-nav__link">
       Implementation
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Implementation" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Implementation
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../implementation/models/" title="tyronZIL-js models" class="md-nav__link">
-      tyronZIL-js models
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronZIL-js" title="GitHub/tyronZIL-js" class="md-nav__link">
-      GitHub/tyronZIL-js
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -802,29 +728,8 @@
     Sidetree DID operation
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sidetree-operation-request" class="md-nav__link">
-    Sidetree operation request
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sidetree-transaction" class="md-nav__link">
-    Sidetree transaction
-  </a>
-  
-    <nav class="md-nav" aria-label="Sidetree transaction">
+    <nav class="md-nav" aria-label="Sidetree DID operation">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tyronzil-transaction" class="md-nav__link">
-    tyronZIL transaction
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#anchor-string" class="md-nav__link">
@@ -1018,15 +923,9 @@
                 
                 
                 <h1 id="sidetree-protocol">Sidetree protocol</h1>
-<p>Here you can learn about the Sidetree protocol terminology and the default parameters in tyronZIL's implementation.</p>
+<p>Here you can learn about the Sidetree protocol terminology and the default parameters used by tyronZIL.</p>
 <h2 id="sidetree-did-operation">Sidetree DID operation</h2>
-<p>A Sidetree DID operation is a set of delta-based modifications that change the state of a DID document when applied. The maximum uncompressed operation size (MAX_OPERATION_SIZE) has a default parameter of 1 kb.</p>
-<h2 id="sidetree-operation-request">Sidetree operation request</h2>
-<p>JWS formatted request sent to a client to include a Sidetree DID operation in a batch of operations.</p>
-<h2 id="sidetree-transaction">Sidetree transaction</h2>
-<p>A Sidetree transaction writes an Anchor string in a DLT transaction of the underlying ledger.</p>
-<h3 id="tyronzil-transaction">tyronZIL transaction</h3>
-<p>A tyronZIL transaction is a Sidetree transaction on the Zilliqa blockchain platform.</p>
+<p>A Sidetree DID operation is a set of delta-based modifications that change the state of a DID document when applied.</p>
 <h3 id="anchor-string">Anchor string</h3>
 <p>A Sidetree Anchor string is the string anchored to the ledger, composed of the CAS URI of an <a href="#anchor-file">Anchor file</a> prefixed with the declared operation count. The maximum number of operations per batch (MAX_OPERATION_COUNT) has a default parameter of 10,000.</p>
 <h3 id="sidetree-transaction-number">Sidetree transaction number</h3>

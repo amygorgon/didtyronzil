@@ -199,17 +199,6 @@
 
       
         
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="implementation/models/" class="md-tabs__link">
-          Implementation
-        </a>
-      
-    </li>
-  
-
       
     </ul>
   </div>
@@ -544,52 +533,10 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
+  <li class="md-nav__item">
+    <a href="implementation/models/" title="Implementation" class="md-nav__link">
       Implementation
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Implementation" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Implementation
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="implementation/models/" title="tyronZIL-js models" class="md-nav__link">
-      tyronZIL-js models
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronZIL-js" title="GitHub/tyronZIL-js" class="md-nav__link">
-      GitHub/tyronZIL-js
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -660,17 +607,15 @@
                 
                 
                 <h1 id="tyronzil-did-method-specification">tyronZIL DID method specification</h1>
-<p>A W3C Sidetree-based DID method for the <a href="https://zilliqa.com">Zilliqa blockchain platform</a></p>
+<p>A W3C DID method for the <a href="https://zilliqa.com">Zilliqa blockchain platform</a></p>
 <p>Developed by <a href="https://github.com/julio-cabdu">Julio Cabrapan Duarte</a></p>
 <p>Funded by <a href="https://zilhive.org/">ZILHive</a></p>
 <h2 id="conformance">Conformance</h2>
-<p>The tyronZIL DID method is conformant with the following specifications:</p>
-<p>i. World Wide Web Consortium (W3C) <a href="https://w3c.github.io/did-core/">Decentralized
-Identifiers (DIDs) v1.0</a></p>
-<p>ii. Decentralized Identity Foundation (DIF) <a href="https://identity.foundation/sidetree/spec/">Sidetree protocol</a></p>
+<p>The tyronZIL DID method is conformant with the World Wide Web Consortium (W3C) <a href="https://w3c.github.io/did-core/">Decentralized Identifiers (DIDs) v1.0</a> specification.</p>
+<p>Tyron implements <a href="https://identity.foundation/sidetree/spec/#did-operations">Sidetree delta-based DID operations</a> and saves the state in a <a href="https://scilla-lang.org/">Scilla smart-contract</a> that is owned by the user.</p>
 <h2 id="problem-summary">Problem summary</h2>
 <p>Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties.</p>
-<p>Self-sovereign identity (SSI) allows people to manage their digital identities and prove who they are without a centralized authority, by anchoring decentralized identifiers (DIDs) on blockchain platforms. However, most DLTs still can't provide SSI applications at scale. By implementing the Sidetree protocol on top of Zilliqa, tyronZIL aims to solve this issue and enable user-controlled digital identities in the Zilliqa ecosystem.</p>
+<p>Self-Sovereign Identity (SSI) allows people to manage their digital identities, proving who they are without a middleman, by anchoring Decentralized Identifiers (DIDs) on blockchain platforms/distributed-ledgers as a shared root of trust. However, most DLTs still can't provide decentralized identity at scale. By implementing Decentralized Identifiers powered by Sidetree &amp; Scilla, tyronZIL aims to solve this issue to enable user-controlled digital identities.</p>
 <h2 id="index">Index</h2>
 <ul>
 <li><a href="W3C-dids/">W3C DIDs</a></li>
