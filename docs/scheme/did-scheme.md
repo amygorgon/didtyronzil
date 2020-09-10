@@ -1,8 +1,8 @@
-# DID-scheme
+# DID-Scheme
 
-A DID-scheme is the formal syntax of a Decentralized Identifier.
+A DID-Scheme is the formal syntax of a Decentralized Identifier.
 
-## Generic W3C DID-scheme
+## Generic W3C DID-Scheme
 
 It is a URI scheme conformant with [RFC3986, Uniform Resource Identifier (URI): Generic Syntax](https://tools.ietf.org/html/rfc3986).
 
@@ -23,9 +23,9 @@ idchar                  = ALPHA / DIGIT / "." / "-" / "_"
 
 Both the scheme identifier (did) and the method name MUST be an [ASCII lowercase string](https://infra.spec.whatwg.org/#ascii-lowercase).
 
-## tyronZIL DID-scheme
+## tyronZIL DID-Scheme
 
-The tyronZIL DID method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:
+The tyronZIL DID-Method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:
 
 ```json
 method-name             = "tyron"
@@ -52,14 +52,14 @@ enum NetworkNamespace {
 
 ```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g```
 
-### DID-suffix
+### DID-Suffix
 
-The did-suffix MUST be globally unique and generated as specified in the [tyronZIL DID-create operation](../operations/CRUD/did-create.md).
+The DID-Suffix MUST be globally unique and generated as specified in the [tyronZIL DID-create operation](../operations/CRUD/did-create.md).
 
 ### Normalization
 
-- The DID-scheme name (did) MUST be lowercase.
-- The DID method-name (tyron) MUST be lowercase.
+- The DID-Scheme name (did) MUST be lowercase.
+- The DID-Method name (tyron) MUST be lowercase.
 - TyronZIL's specific-id MUST follow the rules stated above.
 
 ### Persistence
@@ -68,7 +68,7 @@ A tyronZIL DID is bound exclusively and permanently to its one and only [subject
 
 ## Implementation
 
-The tyronZIL-js DID-scheme corresponds to the class [TyronZILScheme](https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/tyronZIL-scheme.ts), which has the following properties:
+The tyronZIL-js DID-Scheme corresponds to the class [TyronZILScheme](https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/tyronZIL-schemes/did-scheme.ts), which has the following properties:
 
 - schemeIdentifier = 'did:'
 - methodName = 'tyron:'

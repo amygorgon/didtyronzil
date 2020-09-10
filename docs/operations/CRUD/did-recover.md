@@ -1,32 +1,24 @@
-# tyronZIL DID-recover operation
+# tyronZIL DID-Recover operation
 
-A tyronZIL DID-recover operation is conformant with a Sidetree Recover operation, and its goal is to recover a tyronZIL DID and reset its DID-state. This way the user can keep using the same Decentralized Identifier with brand new PKI.
+A tyronZIL DID-Recover operation is conformant with a Sidetree Recover Operation, and its goal is to recover a tyronZIL DID and fully reset its DID-state, except for the Decentralized Identifier itself. This way, the user can keep using the same DID with brand new PKI.
 
 Follow these steps:
 
 ## 0. User input
 
-Get the DID to recover and the corresponding recovery private key.
+Ask the user for the recovery-private key corresponding to the previous recovery-commitment, as well as the address of the user's Tyron-Smart-Contract(TSM) to recover their DID. The client MUST fetch the TSM-State and check that the key given by the user corresponds to the recovery-commitment in the TSM-State.
 
 ## 1. Verification methods
 
-Generate the 3 tyronZIL-supported verification methods: 'publicKey', 'operation' and 'recovery'.
+Generate new 'publicKey' verification methods.
 
 1.1 Under the property 'publicKey', assing to its value an array of keys of type [PublicKeyModel](../../implementation/models.md#public-key-model), generated using the [operation key pair](../../sidetree.md#operation-key-pair):
 
 ```publicKeys: PublicKeyModel[]```
 
-1.2 Under the property 'operation', assign to its value an [Operation](../../implementation/models.md#sidetree-verification-methods) verification method object:
+## 2. Public-key commitments
 
-```operation: Operation```
-
-1.3 Under the property 'recovery', assign to its value a [Recovery](../../implementation/models.md#sidetree-verification-methods) verification method object:
-
-```recovery: Recovery```
-
-## 2. Public key commitments
-
-2.1 For the [public key commitments](../../sidetree.md#public-key-commitment), first, generate two key-pairs:
+2.1 For the [public-key commitments](../../sidetree.md#public-key-commitment), first, generate two key-pairs:
 
 ```[UPDATE_KEY, UPDATE_PRIVATE_KEY]```
 
@@ -57,9 +49,9 @@ DOCUMENT = {
 }
 ```
 
-## 5. DID-state patch
+## 5. DID-State patch
 
-Put the previously generated document inside of a [DID state patch](../../sidetree.md#did-state-patch). For the DID-recover operation, the patch action is 'replace':
+Put the previously generated document inside of a [DID-State patch](../../sidetree.md#did-state-patch). For the DID-Recover operation, the patch action is 'Replace':
 
 ```js
 PATCH = {  
@@ -70,9 +62,9 @@ PATCH = {
 
 > ```PATCH``` is of type [PatchModel](../../implementation/models.md#patch-model), with a Replace [PatchAction](../../implementation/models.md#patch-action)
 
-## 6. The Recovery Operation Delta Object
+## 6. Recovery Operation Delta Object
 
-6.1 Using the DID-state patch and the update-commitment, generate an instance of the Recovery Operation Delta Object as follows:
+6.1 Using the DID-State patch and the update-commitment, generate an instance of the Recovery Operation Delta Object as follows:
 
 ```js
 DELTA = {
@@ -87,26 +79,26 @@ Then apply the following operations to the object:
 
 6.2 Stringify it and turn it into a buffer  
 6.3 Encode it with the [data encoding scheme](../../sidetree.md#data-encoding-scheme) as ```ENCODED_DELTA```  
-6.4 Hash it with the [hash algorithm](../../sidetree.md#hash-algorithm) & [hash protocol](../../sidetree.md#hash-protocol) and then encode it again as ```DELTA_HASH```
+6.4 Hash it with the [hash algorithm](../../sidetree.md#hash-algorithm) & [hash protocol](../../sidetree.md#hash-protocol), and then encode it again as ```DELTA_HASH```
 
-## 7. The Recovery Operation Signed Data Object
+## 7. Recovery Operation Signed Data Object
 
-7.1 Using this ```DELTA_HASH```, the ```RECOVERY_KEY``` from the previous recover operation and the new recovery-commitment, generate an instance of the Recover Operation Signed Data Object as follows:
+7.1 Using the ```DELTA_HASH```, the ```RECOVERY_KEY``` corresponding to the previous recovery-commitment and the new recovery-commitment, generate an instance of the Recovery Operation Signed Data Object as follows:
 
 ```js
 SIGNED_DATA = {  
     delta_hash: DELTA_HASH,
     recovery_key: PREVIOUS_RECOVERY_KEY,
-    recovery_commitment: RECOVERY_COMMITMENT  
+    recovery_commitment: NEW_RECOVERY_COMMITMENT  
 }
 ```
 
 > ```SIGNED_DATA``` is of type [RecoverSignedDataModel](../../implementation/models.md#recover)
 
-7.2 Then sign this object as a e256k compact JWS, signing it with the private key from the previous recover operation (user input).
+7.2 Then sign this object as a e256k compact JWS, signing it with the private-key corresponding to the previous recovery-commitment.
 
 ```ts
-const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, recoverPrivateKey);
+const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, previousRecoverPrivateKey);
 ```
 
 ## 8. Sidetree request
@@ -115,15 +107,15 @@ const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, recoverP
 
 ```js
 SIDETREE_REQUEST = {  
-    did_suffix: did_tyronZIL.didUniqueSuffix,
+    did_suffix: did_tyronZIL,
     signed_data: SIGNED_DATA_JWS,
     type: OperationType.Recover,
     delta: ENCODED_DELTA
 }
 ```
 
-8.2 Stringify it and turn it into a buffer as ```OPERATION_BUFFER```  
-8.3 Send the ```OPERATION_BUFFER``` to the Sidetree's library RecoverOperation, which returns a class with the following properties:
+8.2 Stringify it and turn it into a buffer as ```SIDETREE_REQUEST_BUFFER```  
+8.3 Process the ```SIDETREE_REQUEST_BUFFER``` with the Sidetree's library RecoverOperation, which returns a class with the following properties:
 
 - The original request buffer sent by the requester:
 
@@ -133,7 +125,7 @@ SIDETREE_REQUEST = {
 
 ```didUniqueSuffix: string```
 
-- The data used to generate the Recover Operation Signed Data Object:
+- The data used to generate the Recovery Operation Signed Data Object:
 
 ```signedDataModel: RecoverSignedDataModel```
 
@@ -141,16 +133,18 @@ SIDETREE_REQUEST = {
 
 ```signedDataJws: Jws```
 
-- The Recover Operation Delta Object:
+- The Recovery Operation Delta Object:
 
-```delta: DeltaModel | undefined```
+```delta: DeltaModel```
 
-- The encoded string of the delta:
+- The encoded delta:
 
-```encodedDelta: string | undefined```
+```encodedDelta: string```
 
-## 9. tyronZIL DID-recover operation result
+## 9. Tyron-Smart-Contract(TSM)
 
-The return value of a tyronZIL-js DID-recover operation is an instance of the class [DidRecover](https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/did-operations/did-recover.ts), which includes all the previously mentioned properties plus additional such as the DID in format tyronZIL DID-scheme, the Operation and Recovery verification method, commitments, public and private keys.
+Once the Sidetree Recover Operation has been successful, continue by retrieving the DID-Document from the encoded delta. Then the client MUST submit a transaction that calls the 'DidRecover' transition of the user's TSM. The required parameters are the previous recovery-commitment, the new Base64URL-encoded DID-document, the new update-commitment and the new recovery-commitment.
 
-```type: OperationType.Recover```
+---
+
+A tyronZIL DID-Recover operation consumes approximately 3,500 units of GAS (around 3.5 ZIL, currently less than 0.07 USD).

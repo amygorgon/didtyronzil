@@ -1,8 +1,6 @@
-# tyronZIL-js Sidetree models
+# Sidetree models
 
-**tyronZIL-js** is the open-source reference implementation for Node.js, written in TypeScript.
-
-The Sidetree protocol requires the following data structures:
+[tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) implements the following data structures from the Sidetree protocol:
 
 ## JwkEs256k
 
@@ -15,7 +13,7 @@ interface JwkEs256k {
   x: string;
   y: string;
   kid?: string;
-  d?: string; // Only used by a private key
+  d?: string;   //Only used by the private key
 }
 ```
 
@@ -25,7 +23,6 @@ interface JwkEs256k {
 interface VerificationMethodModel {
     id: string;
     type: string;
-    controller?: string;
     publicKeyJwk: JwkEs256k;
 }
 ```
@@ -36,7 +33,6 @@ interface VerificationMethodModel {
 interface PublicKeyModel {
     id: string;
     type: string;
-    controller?: string;
     jwk: JwkEs256k;
     purpose: PublicKeyPurpose[];
 }
@@ -56,6 +52,8 @@ enum PublicKeyPurpose {
   Invocation = 'invocation'
 }
 ```
+
+The current version only supports 'General' and 'Auth' purposes.
 
 ## Service endpoint model
 
@@ -101,7 +99,7 @@ enum PatchAction {
 }
 ```
 
-Replace acts as a complete state reset that replaces a DID's current PKI metadata with the state provided - also used to create new DIDs.
+'Replace' acts as a complete state reset that replaces a DID's current PKI metadata with the state provided - also used to create a new DID.
 
 ## Delta model
 
@@ -162,42 +160,5 @@ export interface DeactivateSignedDataModel {
 
     // The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value
     recovery_key: JwkEs256k;
-}
-```
-
-## DID state
-
-```js
-interface DidStateModel {
-    document: DocumentModel;
-    updateCommitment: string | undefined;
-    recoverCommitment: string | undefined;
-    lastTransactionNumber?: number;
-}
-```
-
-The commitments are ```undefined``` after the deactivate operation.
-
-## Anchored operation model
-
-```js
-interface AnchoredOperationModel {
-  // The original request buffer sent by the requester
-  operationBuffer: Buffer;
-  
-  // The DID unique suffix
-  didUniqueSuffix: string;
-  
-  // The type of operation
-  type: OperationType;
-  
-  // The logical blockchain time that this operation was anchored on the blockchain
-  ledgerTime: number;
-  
-  // The transaction number of the transaction this operation was batched within
-  transactionNumber: number;
-  
-  // The index this operation was assigned to in the batch
-  operationIndex: number;
 }
 ```

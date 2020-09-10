@@ -1,40 +1,16 @@
-# tyronZIL DID-operations
+# tyronZIL DID operations
 
-The tyronZIL DID client performs the following operations:
+TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments to establish proof-of-control.
 
-- [Create](#create)
-- [Read](#read)
-- [Recover](#recover)
-- [Update](#update)
-- [Deactivate](#deactivate)
+Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.
 
-## Create
+The tyronZIL DID-Client performs the following operations:
 
-How to generate a DID and its associated DID document.
-
-> Details at [tyronZIL DID-create](./CRUD/did-create.md)
-
-## Read
-
-How to use a DID to request its DID document. This operation corresponds to the [DID resolution](./CRUD/did-resolve.md) process.
-
-## Update
-
-How to update a DID document, including the cryptographic operations necessary to establish proof of control.
-
-> Details at [tyronZIL DID-update](./CRUD/did-update.md)
-
-## Recover
-
-To fully reset your DID document while keeping the same DID.
-
-> Details at [tyronZIL DID-recover](./CRUD/did-recover.md)
-
-## Deactivate
-
-To deactivate a DID, including the cryptographic operations necessary to establish proof of deactivation.
-
-> Details at [tyronZIL DID-deactivate](./CRUD/did-deactivate.md)
+- [Create](./CRUD/did-create.md): How to generate a DID and its associated DID-Document. Plus how to save the DID on Zilliqa by deploying a Scilla smart-contract.
+- [Read](./CRUD/did-resolve.md): How to use a DID to request its DID-Document. This operation corresponds to the DID-Resolution process.
+- [Recover](./CRUD/did-recover.md): To fully reset your DID-Document while keeping the same DID.
+- [Update](./CRUD/did-recover.md): How to update verification methods/ service endpoints in the DID-Document.
+- [Deactivate](./CRUD/did-deactivate.md): How to deactivate a DID, forever. It turns all DID-State variables to undefined.
 
 ## Sidetree operation type
 

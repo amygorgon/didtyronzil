@@ -1,14 +1,14 @@
-# tyronZIL DID document
+# tyronZIL DID-Document
 
 > For an introduction, read [this](./W3C-dids.md#did-document)
 
-A DID-document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.
+A DID-Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.
 
 TyronZIL's serialization format is JSON:  
 
 - It defines an unambiguous encoding and decoding of all properties and their associated values
 - It MUST be a single JSON object conforming to [RFC8259, The JavaScript Object Notation (JSON) Data Interchange Format](https://tools.ietf.org/html/rfc8259)  
-- The names of the members of the JSON object MUST correspond to the [core property names](#core-properties) of the DID-document  
+- The names of the members of the JSON object MUST correspond to the [core property names](#core-properties) of the DID-Document  
 - Property values MUST be:  
         - [Numbers](https://tools.ietf.org/html/rfc8259#section-6) for number values representable as IEEE754  
         - [Literal values](https://tools.ietf.org/html/rfc8259#section-3) for boolean ('false', 'true') and empty values ('null')  
@@ -32,7 +32,7 @@ The ```id``` value MUST be a single valid tyronZIL DID itself, e.g.:
 }
 ```
 
-All W3C DID documents MUST include the "id" property, which denotes the [DID subject](./W3C-dids.md#did-subject).
+All W3C DID-Documents MUST include the "id" property, which denotes the [DID-Subject](./W3C-dids.md#did-subject).
 
 ### publicKey
 
@@ -45,7 +45,7 @@ The ```publicKey``` value MUST be an array of objects of type [VerificationMetho
   "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w",
   "publicKey": [
     {
-      "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#primarySigningKey",
+      "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#keyID",
       "type": "EcdsaSecp256k1VerificationKey2019",
       "jwk": {
         "kty": "EC",
@@ -56,7 +56,7 @@ The ```publicKey``` value MUST be an array of objects of type [VerificationMetho
       }
     },
     {
-      "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherSigningKey",
+      "id": "did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherKeyID",
       "type": "EcdsaSecp256k1VerificationKey2019",
       "publicKeyJwk": {
         "kty": "EC",
@@ -74,12 +74,12 @@ The ```publicKey``` value MUST be an array of objects of type [VerificationMetho
 
 All verification methods MUST have the following properties:
 
-- "id": Its value MUST be a unique tyronZIL DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the [consumer](./W3C-dids.md#consumer) MUST produce an error
+- "id": Its value MUST be a unique tyronZIL DID-URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the [consumer](./W3C-dids.md#consumer) MUST produce an error
 - "type": Its value MUST be exactly one verification method type. The default type is currently ```EcdsaSecp256k1VerificationKey2019```
 - "controller": Its value MUST be a valid tyronZIL DID representing the entity that controls the corresponding private key
 - "publicKeyJwk": The cryptographic key itself expressed as a [IETF RFC 7517](https://tools.ietf.org/html/rfc7517) compliant JSON Web Key (JWK) representation for the [KEY_ALGORITHM](./sidetree.md#key-algorithm)
 
-Before processing them into the DID-document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose).
+Before processing them into the DID-Document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose).
 
 ---
 
@@ -137,8 +137,8 @@ The ```service``` value MUST be an array of objects of type [ServiceEndpointMode
 
 All services MUST have the following properties:
 
-- "id": Its value MUST be a unique tyronZIL DID URL with a length no more than fifty (50) ASCII encoded characters. There MUST NOT be multiple service objects with the same id-value - otherwise the [consumer](./W3C-dids.md#consumer) MUST produce an error
+- "id": Its value MUST be a unique tyronZIL DID-URL with a length no more than fifty (50) ASCII encoded characters. There MUST NOT be multiple keys with the same id-value - otherwise the [consumer](./W3C-dids.md#consumer) MUST produce an error
 - "type": Its value MUST be a string with a length of no more than thirty (30) ASCII encoded characters
-- "endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://) OR a cryptocurrency address, with a length of no more than one hundred (100) ASCII encoded characters
+- "endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://), with a length of no more than one hundred (100) ASCII encoded characters
 
 If any of the values exceed the specified lengths, the [consumer](./W3C-dids.md#consumer) MUST produce an error.
