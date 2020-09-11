@@ -646,16 +646,16 @@
                   
                 
                 
-                <h1 id="tyronzil-did-document">tyronZIL DID document</h1>
+                <h1 id="tyronzil-did-document">tyronZIL DID-Document</h1>
 <blockquote>
 <p>For an introduction, read <a href="../W3C-dids/#did-document">this</a></p>
 </blockquote>
-<p>A DID-document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.</p>
+<p>A DID-Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.</p>
 <p>TyronZIL's serialization format is JSON:  </p>
 <ul>
 <li>It defines an unambiguous encoding and decoding of all properties and their associated values</li>
 <li>It MUST be a single JSON object conforming to <a href="https://tools.ietf.org/html/rfc8259">RFC8259, The JavaScript Object Notation (JSON) Data Interchange Format</a>  </li>
-<li>The names of the members of the JSON object MUST correspond to the <a href="#core-properties">core property names</a> of the DID-document  </li>
+<li>The names of the members of the JSON object MUST correspond to the <a href="#core-properties">core property names</a> of the DID-Document  </li>
 <li>Property values MUST be:<br />
         - <a href="https://tools.ietf.org/html/rfc8259#section-6">Numbers</a> for number values representable as IEEE754<br />
         - <a href="https://tools.ietf.org/html/rfc8259#section-3">Literal values</a> for boolean ('false', 'true') and empty values ('null')<br />
@@ -675,7 +675,7 @@
 }
 </code></pre>
 
-<p>All W3C DID documents MUST include the "id" property, which denotes the <a href="../W3C-dids/#did-subject">DID subject</a>.</p>
+<p>All W3C DID-Documents MUST include the "id" property, which denotes the <a href="../W3C-dids/#did-subject">DID-Subject</a>.</p>
 <h3 id="publickey">publicKey</h3>
 <p>The <code>publicKey</code> property is the main <a href="../W3C-dids/#verification-method">verification method</a>.</p>
 <p>The <code>publicKey</code> value MUST be an array of objects of type <a href="../implementation/models/#verification-method-model">VerificationMethodModel</a>, e.g.:</p>
@@ -683,7 +683,7 @@
   &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w&quot;,
   &quot;publicKey&quot;: [
     {
-      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#primarySigningKey&quot;,
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#keyID&quot;,
       &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
       &quot;jwk&quot;: {
         &quot;kty&quot;: &quot;EC&quot;,
@@ -694,7 +694,7 @@
       }
     },
     {
-      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherSigningKey&quot;,
+      &quot;id&quot;: &quot;did:tyron:zil:test:EiBtH2NHC5nOdcp6iMTjq2rvuQj5gbvnSwgqYIMMXne38w#anotherKeyID&quot;,
       &quot;type&quot;: &quot;EcdsaSecp256k1VerificationKey2019&quot;,
       &quot;publicKeyJwk&quot;: {
         &quot;kty&quot;: &quot;EC&quot;,
@@ -711,12 +711,12 @@
 <hr />
 <p>All verification methods MUST have the following properties:</p>
 <ul>
-<li>"id": Its value MUST be a unique tyronZIL DID URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
+<li>"id": Its value MUST be a unique tyronZIL DID-URL. There MUST NOT be multiple verification method objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
 <li>"type": Its value MUST be exactly one verification method type. The default type is currently <code>EcdsaSecp256k1VerificationKey2019</code></li>
 <li>"controller": Its value MUST be a valid tyronZIL DID representing the entity that controls the corresponding private key</li>
 <li>"publicKeyJwk": The cryptographic key itself expressed as a <a href="https://tools.ietf.org/html/rfc7517">IETF RFC 7517</a> compliant JSON Web Key (JWK) representation for the <a href="../sidetree/#key-algorithm">KEY_ALGORITHM</a></li>
 </ul>
-<p>Before processing them into the DID-document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>.</p>
+<p>Before processing them into the DID-Document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>.</p>
 <hr />
 <h3 id="authentication">authentication</h3>
 <p>At least one public key MUST have its purpose as <code>PublicKeyPurpose.Auth = 'auth'</code>.</p>
@@ -763,9 +763,9 @@
 <hr />
 <p>All services MUST have the following properties:</p>
 <ul>
-<li>"id": Its value MUST be a unique tyronZIL DID URL with a length no more than fifty (50) ASCII encoded characters. There MUST NOT be multiple service objects with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
+<li>"id": Its value MUST be a unique tyronZIL DID-URL with a length no more than fifty (50) ASCII encoded characters. There MUST NOT be multiple keys with the same id-value - otherwise the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error</li>
 <li>"type": Its value MUST be a string with a length of no more than thirty (30) ASCII encoded characters</li>
-<li>"endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://) OR a cryptocurrency address, with a length of no more than one hundred (100) ASCII encoded characters</li>
+<li>"endpoint": Its value MUST be a valid URI string (including a scheme segment: i.e. http://, git://), with a length of no more than one hundred (100) ASCII encoded characters</li>
 </ul>
 <p>If any of the values exceed the specified lengths, the <a href="../W3C-dids/#consumer">consumer</a> MUST produce an error.</p>
                 

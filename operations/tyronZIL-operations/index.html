@@ -410,41 +410,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create" class="md-nav__link">
-    Create
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read" class="md-nav__link">
-    Read
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    Update
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recover" class="md-nav__link">
-    Recover
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deactivate" class="md-nav__link">
-    Deactivate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sidetree-operation-type" class="md-nav__link">
     Sidetree operation type
   </a>
@@ -591,41 +556,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create" class="md-nav__link">
-    Create
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read" class="md-nav__link">
-    Read
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    Update
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recover" class="md-nav__link">
-    Recover
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deactivate" class="md-nav__link">
-    Deactivate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sidetree-operation-type" class="md-nav__link">
     Sidetree operation type
   </a>
@@ -653,36 +583,18 @@
                 
                 
                 <h1 id="tyronzil-did-operations">tyronZIL DID-operations</h1>
-<p>The tyronZIL DID client performs the following operations:</p>
+<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments.</p>
+<p>Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.</p>
+<p>The tyronZIL DID-Client performs the following operations:</p>
 <ul>
-<li><a href="#create">Create</a></li>
-<li><a href="#read">Read</a></li>
-<li><a href="#recover">Recover</a></li>
-<li><a href="#update">Update</a></li>
-<li><a href="#deactivate">Deactivate</a></li>
+<li><a href="../CRUD/did-create/">Create</a>: How to generate a DID and its associated DID-Document. Plus how to save the DID on Zilliqa by deploying a Scilla smart-contract.</li>
+<li><a href="../CRUD/did-resolve/">Read</a>: How to use a DID to request its DID-Document. This operation corresponds to the DID-Resolution process.</li>
+<li><a href="../CRUD/did-recover/">Recover</a>: To fully reset your DID-Document while keeping the same DID.</li>
+<li><a href="../CRUD/did-recover/">Update</a>: How to update verification methods/ service endpoints in the DID-Document.</li>
+<li><a href="../CRUD/did-deactivate/">Deactivate</a>: How to deactivate a DID, forever. It turns all DID-State variables to undefined.</li>
 </ul>
-<h2 id="create">Create</h2>
-<p>How to generate a DID and its associated DID document.</p>
-<blockquote>
-<p>Details at <a href="../CRUD/did-create/">tyronZIL DID-create</a></p>
-</blockquote>
-<h2 id="read">Read</h2>
-<p>How to use a DID to request its DID document. This operation corresponds to the <a href="../CRUD/did-resolve/">DID resolution</a> process.</p>
-<h2 id="update">Update</h2>
-<p>How to update a DID document, including the cryptographic operations necessary to establish proof of control.</p>
-<blockquote>
-<p>Details at <a href="../CRUD/did-update/">tyronZIL DID-update</a></p>
-</blockquote>
-<h2 id="recover">Recover</h2>
-<p>To fully reset your DID document while keeping the same DID.</p>
-<blockquote>
-<p>Details at <a href="../CRUD/did-recover/">tyronZIL DID-recover</a></p>
-</blockquote>
-<h2 id="deactivate">Deactivate</h2>
-<p>To deactivate a DID, including the cryptographic operations necessary to establish proof of deactivation.</p>
-<blockquote>
-<p>Details at <a href="../CRUD/did-deactivate/">tyronZIL DID-deactivate</a></p>
-</blockquote>
+<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments to establish proof-of-control.</p>
+<p>Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.</p>
 <h2 id="sidetree-operation-type">Sidetree operation type</h2>
 <p>Conforming with the Sidetree protocol, tyronZIL DID operations MUST have a type equal to one variant of the OperationType enum, defined as follows:</p>
 <pre><code class="ts">enum OperationType {

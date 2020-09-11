@@ -384,10 +384,10 @@
         
           <li class="md-nav__item">
   <a href="#did-url-parameters" class="md-nav__link">
-    DID URL parameters
+    DID-URL parameters
   </a>
   
-    <nav class="md-nav" aria-label="DID URL parameters">
+    <nav class="md-nav" aria-label="DID-URL parameters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -612,10 +612,10 @@
         
           <li class="md-nav__item">
   <a href="#did-url-parameters" class="md-nav__link">
-    DID URL parameters
+    DID-URL parameters
   </a>
   
-    <nav class="md-nav" aria-label="DID URL parameters">
+    <nav class="md-nav" aria-label="DID-URL parameters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -662,7 +662,7 @@
                   
                 
                 
-                <h1 id="tyronzil-did-url-syntax">tyronZIL DID URL syntax</h1>
+                <h1 id="tyronzil-did-url-syntax">tyronZIL DID-URL syntax</h1>
 <p>The following is the ABNF definition using the syntax in <a href="https://tools.ietf.org/html/rfc5234">RFC5324</a>:</p>
 <blockquote>
 <p>The path-abempty and fragment components are identical to the ABNF rules defined in <a href="https://tools.ietf.org/html/rfc3986">RFC3986</a><br />
@@ -683,22 +683,22 @@ param-value = *pchar
 <p>To be used to address resources available through a service endpoint. It MUST conform to the path-abempty ABFN rule in <a href="https://tools.ietf.org/html/rfc3986">RFC3986</a>.</p>
 <h2 id="query">Query</h2>
 <p>The W3C did-query component derives from the query ABFN rule. It MUST be used with DID parameters as follows.</p>
-<h3 id="did-url-parameters">DID URL parameters</h3>
-<p>These parameters are part of the query component of the DID URL to specify what resource is requested.</p>
+<h3 id="did-url-parameters">DID-URL parameters</h3>
+<p>These parameters are part of the query component of the DID-URL to specify what resource is requested.</p>
 <p>W3C DID parameter-names:</p>
 <ul>
 <li>
-<p><strong>hl</strong>: A resource hash of the DID-document to add integrity protection.</p>
+<p><strong>hl</strong>: A resource hash of the DID-Document to add integrity protection.</p>
 </li>
 <li>
-<p><strong>service</strong>: Identifies a service from the DID-document by service ID.</p>
+<p><strong>service</strong>: Identifies a service from the DID-Document by service ID.</p>
 <p><code>did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?service=agentId1</code></p>
 </li>
 <li>
-<p><strong>version-id</strong>: Identifies a specific version of the DID-document to be resolved.</p>
+<p><strong>version-id</strong>: Identifies a specific version of the DID-Document to be resolved.</p>
 </li>
 <li>
-<p><strong>version-time</strong>: Identifies a specific version timestamp of the DID-document to be resolved (the doc that was valid at that particular time).</p>
+<p><strong>version-time</strong>: Identifies a specific version timestamp of the DID-Document to be resolved (the doc that was valid at that particular time).</p>
 <p><code>did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?version-time=2020-09-07T17:00:00Z</code></p>
 </li>
 </ul>
@@ -706,11 +706,13 @@ param-value = *pchar
 <blockquote>
 <p>Method-specific parameter names MAY be combined with generic parameter names in any order. Method-specific parameter namespaces MAY include colons to be partitioned hierarchically.</p>
 </blockquote>
+<p>At the current version, the tyronZIL-Method does not support DID-URL parameters, EXCEPT the following:</p>
 <h4 id="sidetree-long-form-did">Sidetree Long-Form DID</h4>
-<p>By using the DID URL parameter, <code>sidetree-initial-state</code> you can utilize the <a href="../../sidetree/#long-form-did-uri">Long-Form DID URI</a>. It is composed by the <a href="../../operations/CRUD/did-create/#create-operation-suffix-data-object">Create Operation Suffix Data Object</a> and the <a href="../../operations/CRUD/did-create/#create-operation-delta-object">Create Operation Delta Object</a>, separated by a period '<code>.</code>':</p>
+<p>By using a DID with the DID-URL parameter <code>sidetree-initial-state</code>, a tyronZIL user can utilize their <a href="../../sidetree/#long-form-did-uri">Long-Form DID URI</a>. It is composed by the <a href="../../operations/CRUD/did-create/#create-operation-suffix-data-object">Create Operation Suffix Data Object</a> and the <a href="../../operations/CRUD/did-create/#create-operation-delta-object">Create Operation Delta Object</a>, separated by a period '<code>.</code>':</p>
 <p><code>did:tyron:zil:test:EiApcQfeTVd3aCGb07Cj3MfZBaBv6KA7kdCAokuM6qxNWQ?sidetree-initial-state=eyJkZWx0YV9oYXNoIjoiRWlCWS1yRm1NVDNESlV0ZktaYnNqSFJyVXRjbXVCUHZ2M2htemhZb3pia3g0dyIsInJlY292ZXJ5X2NvbW1pdG1lbnQiOiJFaUF0LVJpV29uU1Nsc1U5SWVsbUY3MHZsZ1oybVpyU29QT0Y2RWJybmMya1dBIn0.eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljX2tleXMiOlt7ImlkIjoicHJpbWFyeVNpZ25pbmdLZXkiLCJ0eXBlIjoiRWNkc2FTZWNwMjU2azFWZXJpZmljYXRpb25LZXkyMDE5IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2Ijoic2VjcDI1NmsxIiwieCI6IjFsQlBRaGtoNS02U3plNUlkbWZFeUZWVXdXUWFsYTVjcE5QWkJ6bU4zd1kiLCJ5IjoidEdYTkZIWDhjMkVsdkdyS2xPeHdxOXNHUDFVVFh2aW1SZmJUQy1yd3F5RSIsImtpZCI6IkplOEVOSk4ydm1oNVAwS0FXeEVwbTJQSllaMjBPZzNNSlFGSm1kdVE2T0EifSwicHVycG9zZSI6WyJnZW5lcmFsIiwiYXV0aCJdfV0sInNlcnZpY2VfZW5kcG9pbnRzIjpbeyJpZCI6InR5cm9uWklMLXdlYnNpdGUiLCJ0eXBlIjoibWV0aG9kLXNwZWNpZmljYXRpb24iLCJlbmRwb2ludCI6Imh0dHBzOi8vdHlyb25aSUwuY29tIn0seyJpZCI6IlpJTC1hZGRyZXNzIiwidHlwZSI6ImNyeXB0b2N1cnJlbmN5LWFkZHJlc3MiLCJlbmRwb2ludCI6InppbDFlZ3ZqNmtldGZ5ZHk0OHVxenU4cXBoaGo1dzR4cmtyYXR2ODVodCJ9XX19XSwidXBkYXRlQ29tbWl0bWVudCI6IkVpQjFnZkZtUVY4b0w3ZFJ5S3hrLU9xeEJ5amJwNTZkd1otNm9sRkpfRWRlWkEifQ</code></p>
+<p>Find the tyronZIL DID-URL implementation <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/tyronZIL-schemes/did-url-scheme.ts">here</a></p>
 <h2 id="fragment">Fragment</h2>
-<p>A W3C DID fragment is used as a method-independent reference into the DID-document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in <a href="https://tools.ietf.org/html/rfc3986">RFC3986</a>.</p>
+<p>A W3C DID fragment is used as a method-independent reference into the DID-Document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in <a href="https://tools.ietf.org/html/rfc3986">RFC3986</a>.</p>
                 
               
               

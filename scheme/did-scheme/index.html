@@ -357,22 +357,22 @@
       
         <li class="md-nav__item">
   <a href="#generic-w3c-did-scheme" class="md-nav__link">
-    Generic W3C DID-scheme
+    Generic W3C DID-Scheme
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tyronzil-did-scheme" class="md-nav__link">
-    tyronZIL DID-scheme
+    tyronZIL DID-Scheme
   </a>
   
-    <nav class="md-nav" aria-label="tyronZIL DID-scheme">
+    <nav class="md-nav" aria-label="tyronZIL DID-Scheme">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#did-suffix" class="md-nav__link">
-    DID-suffix
+    DID-Suffix
   </a>
   
 </li>
@@ -598,22 +598,22 @@
       
         <li class="md-nav__item">
   <a href="#generic-w3c-did-scheme" class="md-nav__link">
-    Generic W3C DID-scheme
+    Generic W3C DID-Scheme
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tyronzil-did-scheme" class="md-nav__link">
-    tyronZIL DID-scheme
+    tyronZIL DID-Scheme
   </a>
   
-    <nav class="md-nav" aria-label="tyronZIL DID-scheme">
+    <nav class="md-nav" aria-label="tyronZIL DID-Scheme">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#did-suffix" class="md-nav__link">
-    DID-suffix
+    DID-Suffix
   </a>
   
 </li>
@@ -664,9 +664,9 @@
                   
                 
                 
-                <h1 id="did-scheme">DID-scheme</h1>
-<p>A DID-scheme is the formal syntax of a Decentralized Identifier.</p>
-<h2 id="generic-w3c-did-scheme">Generic W3C DID-scheme</h2>
+                <h1 id="did-scheme">DID-Scheme</h1>
+<p>A DID-Scheme is the formal syntax of a Decentralized Identifier.</p>
+<h2 id="generic-w3c-did-scheme">Generic W3C DID-Scheme</h2>
 <p>It is a URI scheme conformant with <a href="https://tools.ietf.org/html/rfc3986">RFC3986, Uniform Resource Identifier (URI): Generic Syntax</a>.</p>
 <p>The following is the ABNF definition with ALPHA and DIGIT:</p>
 <blockquote>
@@ -684,8 +684,8 @@ idchar                  = ALPHA / DIGIT / &quot;.&quot; / &quot;-&quot; / &quot;
 </code></pre>
 
 <p>Both the scheme identifier (did) and the method name MUST be an <a href="https://infra.spec.whatwg.org/#ascii-lowercase">ASCII lowercase string</a>.</p>
-<h2 id="tyronzil-did-scheme">tyronZIL DID-scheme</h2>
-<p>The tyronZIL DID method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:</p>
+<h2 id="tyronzil-did-scheme">tyronZIL DID-Scheme</h2>
+<p>The tyronZIL DID-Method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:</p>
 <pre><code class="json">method-name             = &quot;tyron&quot;
 
 method-specific-id      = blockchain-namespace &quot;:&quot; network-namespace &quot;:&quot; did-suffix
@@ -706,18 +706,18 @@ did-suffix              = 1*idchar
 
 <p><strong>Example of a tyronZIL DID</strong>:</p>
 <p><code>did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g</code></p>
-<h3 id="did-suffix">DID-suffix</h3>
-<p>The did-suffix MUST be globally unique and generated as specified in the <a href="../../operations/CRUD/did-create/">tyronZIL DID-create operation</a>.</p>
+<h3 id="did-suffix">DID-Suffix</h3>
+<p>The DID-Suffix MUST be globally unique and generated as specified in the <a href="../../operations/CRUD/did-create/">tyronZIL DID-create operation</a>.</p>
 <h3 id="normalization">Normalization</h3>
 <ul>
-<li>The DID-scheme name (did) MUST be lowercase.</li>
-<li>The DID method-name (tyron) MUST be lowercase.</li>
+<li>The DID-Scheme name (did) MUST be lowercase.</li>
+<li>The DID-Method name (tyron) MUST be lowercase.</li>
 <li>TyronZIL's specific-id MUST follow the rules stated above.</li>
 </ul>
 <h3 id="persistence">Persistence</h3>
 <p>A tyronZIL DID is bound exclusively and permanently to its one and only <a href="../../W3C-dids/#did-subject">subject</a>, even after deactivation.</p>
 <h2 id="implementation">Implementation</h2>
-<p>The tyronZIL-js DID-scheme corresponds to the class <a href="https://github.com/julio-cabdu/tyronZIL-js/tree/master/src/lib/tyronZIL-scheme.ts">TyronZILScheme</a>, which has the following properties:</p>
+<p>The tyronZIL-js DID-Scheme corresponds to the class <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/tyronZIL-schemes/did-scheme.ts">TyronZILScheme</a>, which has the following properties:</p>
 <ul>
 <li>schemeIdentifier = 'did:'</li>
 <li>methodName = 'tyron:'</li>

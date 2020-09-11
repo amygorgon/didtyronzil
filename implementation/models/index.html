@@ -630,14 +630,7 @@
       
         <li class="md-nav__item">
   <a href="#did-state" class="md-nav__link">
-    DID state
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anchored-operation-model" class="md-nav__link">
-    Anchored operation model
+    DID-State
   </a>
   
 </li>
@@ -792,14 +785,7 @@
       
         <li class="md-nav__item">
   <a href="#did-state" class="md-nav__link">
-    DID state
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anchored-operation-model" class="md-nav__link">
-    Anchored operation model
+    DID-State
   </a>
   
 </li>
@@ -835,7 +821,7 @@
   x: string;
   y: string;
   kid?: string;
-  d?: string; // Only used by a private key
+  d?: string;   //Only used by the private key
 }
 </code></pre>
 
@@ -843,7 +829,6 @@
 <pre><code class="js">interface VerificationMethodModel {
     id: string;
     type: string;
-    controller?: string;
     publicKeyJwk: JwkEs256k;
 }
 </code></pre>
@@ -852,7 +837,6 @@
 <pre><code class="js">interface PublicKeyModel {
     id: string;
     type: string;
-    controller?: string;
     jwk: JwkEs256k;
     purpose: PublicKeyPurpose[];
 }
@@ -870,6 +854,7 @@
 }
 </code></pre>
 
+<p>The current version only supports 'General' and 'Auth' purposes.</p>
 <h2 id="service-endpoint-model">Service endpoint model</h2>
 <pre><code class="js">interface ServiceEndpointModel {
     id: string;
@@ -906,7 +891,7 @@
 }
 </code></pre>
 
-<p>Replace acts as a complete state reset that replaces a DID's current PKI metadata with the state provided - also used to create new DIDs.</p>
+<p>'Replace' acts as a complete state reset that replaces a DID's current PKI metadata with the state provided - also used to create a new DID.</p>
 <h2 id="delta-model">Delta model</h2>
 <pre><code class="js">interface DeltaModel {
     patches: PatchModel[];
@@ -957,35 +942,12 @@
 }
 </code></pre>
 
-<h2 id="did-state">DID state</h2>
+<h2 id="did-state">DID-State</h2>
 <pre><code class="js">interface DidStateModel {
     document: DocumentModel;
-    updateCommitment: string | undefined;
-    recoverCommitment: string | undefined;
+    updateCommitment: string;
+    recoverCommitment: string;
     lastTransactionNumber?: number;
-}
-</code></pre>
-
-<p>The commitments are <code>undefined</code> after the deactivate operation.</p>
-<h2 id="anchored-operation-model">Anchored operation model</h2>
-<pre><code class="js">interface AnchoredOperationModel {
-  // The original request buffer sent by the requester
-  operationBuffer: Buffer;
-
-  // The DID unique suffix
-  didUniqueSuffix: string;
-
-  // The type of operation
-  type: OperationType;
-
-  // The logical blockchain time that this operation was anchored on the blockchain
-  ledgerTime: number;
-
-  // The transaction number of the transaction this operation was batched within
-  transactionNumber: number;
-
-  // The index this operation was assigned to in the batch
-  operationIndex: number;
 }
 </code></pre>
                 

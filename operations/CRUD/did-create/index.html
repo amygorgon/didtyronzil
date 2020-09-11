@@ -457,7 +457,7 @@
       
         <li class="md-nav__item">
   <a href="#2-public-key-commitments" class="md-nav__link">
-    2. Public key commitments
+    2. Public-key commitments
   </a>
   
 </li>
@@ -478,7 +478,7 @@
       
         <li class="md-nav__item">
   <a href="#5-did-state-patch" class="md-nav__link">
-    5. DID-state patch
+    5. DID-State patch
   </a>
   
 </li>
@@ -505,8 +505,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-tyronzil-did-create-operation-result" class="md-nav__link">
-    9. tyronZIL DID-create operation result
+  <a href="#9-tyron-smart-contract" class="md-nav__link">
+    9. Tyron-Smart-Contract
   </a>
   
 </li>
@@ -622,7 +622,7 @@
       
         <li class="md-nav__item">
   <a href="#2-public-key-commitments" class="md-nav__link">
-    2. Public key commitments
+    2. Public-key commitments
   </a>
   
 </li>
@@ -643,7 +643,7 @@
       
         <li class="md-nav__item">
   <a href="#5-did-state-patch" class="md-nav__link">
-    5. DID-state patch
+    5. DID-State patch
   </a>
   
 </li>
@@ -670,8 +670,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-tyronzil-did-create-operation-result" class="md-nav__link">
-    9. tyronZIL DID-create operation result
+  <a href="#9-tyron-smart-contract" class="md-nav__link">
+    9. Tyron-Smart-Contract
   </a>
   
 </li>
@@ -696,19 +696,15 @@
                   
                 
                 
-                <h1 id="tyronzil-did-create-operation">tyronZIL DID-create operation</h1>
-<p>A tyronZIL DID-create operation is conformant with a Sidetree Create operation, and its goal is to generate a brand new tyronZIL Decentralized Identifier.</p>
+                <h1 id="tyronzil-did-create-operation">tyronZIL DID-Create operation</h1>
+<p>A tyronZIL DID-Create operation is conformant with a Sidetree Create operation, and its goal is to generate a brand new tyronZIL Decentralized Identifier.</p>
 <p>Follow these steps:</p>
 <h2 id="1-verification-methods">1. Verification methods</h2>
-<p>tyronZIL supports 3 verification methods: 'publicKey', 'operation' and 'recovery'.</p>
+<p>tyronZIL supports 1 verification method: 'publicKey'</p>
 <p>1.1 Under the property 'publicKey', assing to its value an array of keys of type <a href="../../../implementation/models/#public-key-model">PublicKeyModel</a>, generated using the <a href="../../../sidetree/#operation-key-pair">operation key pair</a>:</p>
 <p><code>publicKeys: PublicKeyModel[]</code></p>
-<p>1.2 Under the property 'operation', assign to its value an <a href="../../../implementation/models/#sidetree-verification-methods">Operation</a> verification method object:</p>
-<p><code>operation: Operation</code></p>
-<p>1.3 Under the property 'recovery', assign to its value a <a href="../../../implementation/models/#sidetree-verification-methods">Recovery</a> verification method object:</p>
-<p><code>recovery: Recovery</code></p>
-<h2 id="2-public-key-commitments">2. Public key commitments</h2>
-<p>2.1 For the <a href="../../../sidetree/#public-key-commitment">public key commitments</a>, first, generate two key-pairs:</p>
+<h2 id="2-public-key-commitments">2. Public-key commitments</h2>
+<p>2.1 For the <a href="../../../sidetree/#public-key-commitment">public-key commitments</a>, first, generate two key-pairs:</p>
 <p><code>[UPDATE_KEY, UPDATE_PRIVATE_KEY]</code></p>
 <p><code>[RECOVERY_KEY, RECOVERY_PRIVATE_KEY]</code></p>
 <p>2.2 Use the <code>UPDATE_KEY</code> to generate the update-commitment:</p>
@@ -726,8 +722,8 @@
 }
 </code></pre>
 
-<h2 id="5-did-state-patch">5. DID-state patch</h2>
-<p>Put the previously generated document inside of a <a href="../../../sidetree/#did-state-patch">DID state patch</a>. For the DID-create operation, the patch action is 'replace':</p>
+<h2 id="5-did-state-patch">5. DID-State patch</h2>
+<p>Put the previously generated document inside of a <a href="../../../sidetree/#did-state-patch">DID-State patch</a>. For the DID-Create operation, the patch action is 'Replace':</p>
 <pre><code class="js">PATCH = {  
     action: PatchAction.Replace,  
     document: DOCUMENT  
@@ -738,7 +734,7 @@
 <p><code>PATCH</code> is of type <a href="../../../implementation/models/#patch-model">PatchModel</a>, with a Replace <a href="../../../implementation/models/#patch-action">PatchAction</a></p>
 </blockquote>
 <h2 id="6-create-operation-delta-object">6. Create Operation Delta Object</h2>
-<p>6.1 Using the DID state patch and the update-commitment, generate an instance of the Create Operation Delta Object as follows:</p>
+<p>6.1 Using the DID-State patch and the update-commitment, generate an instance of the Create Operation Delta Object as follows:</p>
 <pre><code class="js">DELTA = {
     patches: [PATCH],  
     updateCommitment: UPDATE_COMMITMENT  
@@ -774,7 +770,7 @@
 </code></pre>
 
 <p>8.2 Stringify it and turn it into a buffer as <code>OPERATION_BUFFER</code><br />
-8.3 Send the <code>OPERATION_BUFFER</code> to the Sidetree's library CreateOperation, which returns a class with the following properties:</p>
+8.3 Process the <code>OPERATION_BUFFER</code> with the Sidetree's library CreateOperation, which returns a class with the following properties:</p>
 <ul>
 <li>The original request buffer sent by the requester:</li>
 </ul>
@@ -791,7 +787,7 @@
 </ul>
 <p><code>type: OperationType.Create</code></p>
 <ul>
-<li>The data used to generate the unique DID suffix:</li>
+<li>The data used to generate the unique DID-Suffix:</li>
 </ul>
 <p><code>suffixData: SuffixDataModel</code></p>
 <ul>
@@ -806,8 +802,15 @@
 <li>The encoded string of the delta:</li>
 </ul>
 <p><code>encodedDelta: string | undefined</code></p>
-<h2 id="9-tyronzil-did-create-operation-result">9. tyronZIL DID-create operation result</h2>
-<p>The return value of a tyronZIL-js DID-create operation is an instance of the class DidCreate, which includes all the previously mentioned properties plus additional such as public, private keys, commitments and service endpoints.</p>
+<h2 id="9-tyron-smart-contract">9. Tyron-Smart-Contract</h2>
+<p>Every tyronZIL DID MUST deploy a Scilla smart contract called the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyron0.4.scilla">Tyron-Smart-Contract(TSM)</a>, except when using the DID as an unpropagated <a href="../../../sidetree/#long-form-did-uri">Sidetree Long-Form DID-URI</a>.</p>
+<p>The TSM is instantiated from the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyronInit0.1.1.scilla">TyronInit smart-contract</a>, currently deployed at this Zilliqa address: '0x75d8297b8bd2e35de1c17e19d2c13504de623793'. The client decodes and decompresses the TSM, and then deploys it with the user's Zilliqa address as the <code>contract_owner</code>.</p>
+<p>To initialize their TSM, the user MUST call its 'ContractInit' transition and provide the address of the client. This transition sends a message to the 'Initialize' 'transition' of the TyronInit contract that knows how to set the operation cost, client commission and the address of the Pungtas Danish Foundation at the user's TSM-State.</p>
+<blockquote>
+<p>The Pungtas Danish Foundation will be the socio-economic enterprise developing Tyron</p>
+</blockquote>
+<p>Once the TSM gets initialized, the client MUST submit the DID-Create operation by calling the DidCreate transition, which takes as input the Decentralized Identifier, the encoded DID-Document, the update-commitment and the recovery commitment. The smart-contract then saves these in the TSM-State.</p>
+<p>The complete submission of a tyronZIL DID-Create operation (incl. the TSM deployment and initialization) consumes approximately 15,000 units of GAS (around 15 ZIL, currently less than 0.3 USD) :zap:</p>
                 
               
               

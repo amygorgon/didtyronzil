@@ -311,13 +311,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#anchor-string" class="md-nav__link">
-    Anchor string
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#sidetree-transaction-number" class="md-nav__link">
     Sidetree transaction number
   </a>
@@ -337,56 +330,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anchor-file" class="md-nav__link">
-    Anchor file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#map-file" class="md-nav__link">
-    Map file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chunk-file" class="md-nav__link">
-    Chunk file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cas" class="md-nav__link">
-    CAS
-  </a>
-  
-    <nav class="md-nav" aria-label="CAS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cas-uri" class="md-nav__link">
-    CAS URI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#did-suffix" class="md-nav__link">
-    DID suffix
+    DID-Suffix
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#long-form-did-uri" class="md-nav__link">
-    Long-Form DID URI
+    Long-Form DID-URI
   </a>
   
 </li>
@@ -469,7 +421,7 @@
       
         <li class="md-nav__item">
   <a href="#did-state-patch" class="md-nav__link">
-    DID state patch
+    DID-State patch
   </a>
   
 </li>
@@ -732,13 +684,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#anchor-string" class="md-nav__link">
-    Anchor string
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#sidetree-transaction-number" class="md-nav__link">
     Sidetree transaction number
   </a>
@@ -758,56 +703,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anchor-file" class="md-nav__link">
-    Anchor file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#map-file" class="md-nav__link">
-    Map file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chunk-file" class="md-nav__link">
-    Chunk file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cas" class="md-nav__link">
-    CAS
-  </a>
-  
-    <nav class="md-nav" aria-label="CAS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cas-uri" class="md-nav__link">
-    CAS URI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#did-suffix" class="md-nav__link">
-    DID suffix
+    DID-Suffix
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#long-form-did-uri" class="md-nav__link">
-    Long-Form DID URI
+    Long-Form DID-URI
   </a>
   
 </li>
@@ -890,7 +794,7 @@
       
         <li class="md-nav__item">
   <a href="#did-state-patch" class="md-nav__link">
-    DID state patch
+    DID-State patch
   </a>
   
 </li>
@@ -925,27 +829,16 @@
                 <h1 id="sidetree-protocol">Sidetree protocol</h1>
 <p>Here you can learn about the Sidetree protocol terminology and the default parameters used by tyronZIL.</p>
 <h2 id="sidetree-did-operation">Sidetree DID operation</h2>
-<p>A Sidetree DID operation is a set of delta-based modifications that change the state of a DID document when applied.</p>
-<h3 id="anchor-string">Anchor string</h3>
-<p>A Sidetree Anchor string is the string anchored to the ledger, composed of the CAS URI of an <a href="#anchor-file">Anchor file</a> prefixed with the declared operation count. The maximum number of operations per batch (MAX_OPERATION_COUNT) has a default parameter of 10,000.</p>
+<p>A Sidetree DID operation is a set of delta-based modifications that change the state of a DID-Document when applied.</p>
 <h3 id="sidetree-transaction-number">Sidetree transaction number</h3>
 <p>The Sidetreee transaction number is a monotonically increasing number. Its order is deterministic and assigned to every transaction according to its position in the ledger time.</p>
+<p>In tyronZIL's implementation, each DID has a corresponding Tyron-Smart-Contract that keeps track of the DID-State and assigns a Sidetree transaction number to every consecutive transaction modifying the DID-State.</p>
 <h3 id="ledger-time">Ledger time</h3>
 <p>The ledger time is the blockchain clock variable, used as a deterministic chronological reference.</p>
-<h2 id="anchor-file">Anchor file</h2>
-<p>An Anchor file is a JSON document containing proving and index data for the create, recovery and deactivate operations, as well as a CAS URI for the associated Map file. This file is anchored to the Zilliqa blockchain through a <a href="#sidetree-transaction">Sidetree transaction</a>. The maximum size of a compressed Anchor file (MAX_ANCHOR_FILE_SIZE) has a default parameter of 1 MB.</p>
-<h2 id="map-file">Map file</h2>
-<p>A Map file is a JSON document containing proving and index data for the DID-update operation, as well as a CAS URI for the associated Chunk file. The maximum size of a compressed Map file (MAX_MAP_FILE_SIZE) has a default parameter of 1 MB.</p>
-<h2 id="chunk-file">Chunk file</h2>
-<p>A Chunk file is a JSON document containing all the operation delta objects corresponding to the set of DIDs specified in the Map file. The maximum size of a compressed Chunk file (MAX_CHUNK_FILE_SIZE) has a default parameter of 10 MB.</p>
-<h2 id="cas">CAS</h2>
-<p>CAS stands for content-addressable storage. The CAS protocol utilized by tyronZIL is <a href="https://ipfs.io/">IPFS</a>.</p>
-<h3 id="cas-uri">CAS URI</h3>
-<p>A CAS URI is a unique content-bound identifier used to locate a specific resource via the CAS protocol. The default CAS_URI_ALGORITHM to generate the CAS URI is IPFS CID.</p>
-<h2 id="did-suffix">DID suffix</h2>
-<p>A DID suffix is the unique identifier string in a Decentralized Identifier, the last part of the DID after the final colon.</p>
-<h2 id="long-form-did-uri">Long-Form DID URI</h2>
-<p>This type of <a href="../W3C-dids/#did-url">DID URL</a> has the necessary information to immediately use a DID without anchoring it to the underlying ledger (therefore, the DID is unpropagated/unpublished).</p>
+<h2 id="did-suffix">DID-Suffix</h2>
+<p>A DID-Suffix is the unique identifier string in a Decentralized Identifier, the last part of the DID after the final colon.</p>
+<h2 id="long-form-did-uri">Long-Form DID-URI</h2>
+<p>This type of <a href="../W3C-dids/#did-url">DID-URL</a> has the necessary information to immediately use a DID without anchoring it to the underlying ledger (therefore, the DID is unpropagated/unpublished).</p>
 <p>Format:<br />
 <code>DID?-sidetree-initial-state=&lt;create-operation-suffix-data-object&gt;.&lt;create-operation-delta-object&gt;</code></p>
 <p>More info <a href="../scheme/did-url-syntax/#sidetree-long-form-did">here</a></p>
@@ -972,7 +865,7 @@ The resulting commitment obtained by applying the defined commitment scheme to t
 </li>
 </ul>
 <h3 id="commitment-scheme">Commitment scheme</h3>
-<p>A cryptographic primitive that commits to a chosen value, known as the commit value resulting in the generation of a commitment. Then, that commitment written in the DID document acts as a proof-of-commitment, without revealing the secret. The possessor of the corresponding private key can later use the commit value, to prove the right signature over the original commitment.</p>
+<p>A cryptographic primitive that commits to a chosen value, known as the commit value resulting in the generation of a commitment. Then, that commitment written in the DID-Resolution-Result acts as a proof-of-commitment, without revealing the secret. The possessor of the corresponding private key can later produce the commit value, proving its validity against the original commitment.</p>
 <h3 id="public-key-commitment-scheme">Public key commitment scheme</h3>
 <p>Commitment scheme steps to generate a public key commitment from a public key:</p>
 <ol>
@@ -985,10 +878,10 @@ The resulting commitment obtained by applying the defined commitment scheme to t
 <p>The SIGNATURE_ALGORITHM is the asymmetric public key signature algorithm, which MUST be a valid JWS "alg". The default parameter is ES256K.</p>
 <h2 id="commitment-hash">Commitment hash</h2>
 <p>The COMMITMENT_HASH is a cryptographically random hash of a value to be revealed in the next operation. The default parameter is 32 bytes.</p>
-<h2 id="did-state-patch">DID state patch</h2>
-<p>A DID state patch is the Sidetree format to describe the mutations of the DID's metadata state. Its data structure corresponds with the <a href="../implementation/models/#patch-model">Patch model</a>, which MUST include a <a href="../implementation/models/#patch-action">Patch action</a> and the <a href="../implementation/models/#document-model">document</a> to be patched.</p>
+<h2 id="did-state-patch">DID-State patch</h2>
+<p>A DID-State patch is the Sidetree format to describe the mutations of the DID's metadata state. Its data structure corresponds with the <a href="../implementation/models/#patch-model">Patch model</a>, which MUST include a <a href="../implementation/models/#patch-action">Patch action</a> and the <a href="../implementation/models/#document-model">document</a> to be patched.</p>
 <h2 id="sidetree-verification-relationships">Sidetree verification relationships</h2>
-<p>As defined in <a href="../W3C-dids/#verification-relationship">W3C verification relationship</a>, the Sidetree protocol requires the following verification relationships:</p>
+<p>As defined by the <a href="../W3C-dids/#verification-relationship">W3C verification relationship</a>, the Sidetree protocol requires the following verification relationships:</p>
 <pre><code class="js">enum SidetreeVerificationRelationship {
     Operation = 'operation',
     Recovery = 'recovery'
@@ -997,10 +890,10 @@ The resulting commitment obtained by applying the defined commitment scheme to t
 
 <ul>
 <li>
-<p>Operation: This verification relationship corresponds to a verification method of type update key, the key used to create the <a href="#public-key-commitment">update-commitment</a>, required by the <a href="../operations/CRUD/did-update/">DID-update operation</a>.</p>
+<p>Operation: This verification relationship corresponds to a verification method of type update key, the key used to create the <a href="#public-key-commitment">update-commitment</a>, required by the <a href="../operations/CRUD/did-update/">DID-Update operation</a>.</p>
 </li>
 <li>
-<p>Recovery: This verification relationship corresponds to a verification method of type recovery key, the key used to create the <a href="#public-key-commitment">recovery-commitment</a>, required by the operations <a href="../operations/CRUD/did-recover/">DID-recover</a> and <a href="../operations/CRUD/did-deactivate/">DID-deactivate</a>.</p>
+<p>Recovery: This verification relationship corresponds to a verification method of type recovery key, the key used to create the <a href="#public-key-commitment">recovery-commitment</a>, required by the operations <a href="../operations/CRUD/did-recover/">DID-Recover</a> and <a href="../operations/CRUD/did-deactivate/">DID-Deactivate</a>.</p>
 </li>
 </ul>
                 
