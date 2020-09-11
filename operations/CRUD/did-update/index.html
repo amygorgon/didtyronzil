@@ -533,6 +533,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-tyron-smart-contracttsm" class="md-nav__link">
+    7. Tyron-Smart-Contract(TSM)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -648,6 +655,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-tyron-smart-contracttsm" class="md-nav__link">
+    7. Tyron-Smart-Contract(TSM)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -669,10 +683,10 @@
                 
                 
                 <h1 id="tyronzil-did-update-operation">tyronZIL DID-Update operation</h1>
-<p>A tyronZIL DID-Update operation is conformant with a Sidetree Update operation, and its goal is to update a tyronZIL DID according to a predetermined set of patches.</p>
+<p>A tyronZIL DID-Update operation is conformant with a Sidetree Update Operation, and its goal is to update a tyronZIL DID according to a predetermined set of patches.</p>
 <p>Follow these steps:</p>
 <h2 id="0-user-input">0. User input</h2>
-<p>Get the address of the user's Tyron-Smart-Contract to update their DID and the corresponding DID-State.</p>
+<p>Ask the user for the update-private key corresponding to the previous update-commitment, as well as the address of the user's Tyron-Smart-Contract(TSM) to update their DID and the corresponding DID-State. The client MUST fetch the TSM-State and check that the key given by the user corresponds to the update-commitment in the TSM-State.</p>
 <h2 id="1-patch-action">1. Patch action</h2>
 <p>The user can choose among these <a href="../../../implementation/models/#patch-action">patch actions</a>.</p>
 <h2 id="2-new-update-commitment">2. New update-commitment</h2>
@@ -718,7 +732,7 @@
 <blockquote>
 <p><code>SIGNED_DATA</code> is of type <a href="../../../implementation/models/#update">UpdateSignedDataModel</a></p>
 </blockquote>
-<p>Then sign this object as a e256k compact JWS, signing it with the private key from the previous update operation (user input).</p>
+<p>Then sign this object as a e256k compact JWS, signing it with the private-key corresponding to the previous update-commitment.</p>
 <pre><code class="ts">const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, previousUpdatePrivateKey);
 </code></pre>
 
@@ -755,9 +769,11 @@
 </ul>
 <p><code>delta: DeltaModel</code></p>
 <ul>
-<li>The encoded string of the delta:</li>
+<li>The encoded delta:</li>
 </ul>
 <p><code>encodedDelta: string</code></p>
+<h2 id="7-tyron-smart-contracttsm">7. Tyron-Smart-Contract(TSM)</h2>
+<p>Once the Sidetree Update Operation has been successful, continue by retrieving the updated DID-Document. Then the client MUST submit a transaction that calls the 'DidUpdate' transition of the user's TSM. The required parameters are the previous update-commitment, the new Base64URL-encoded DID-document and the new update-commitment.</p>
                 
               
               

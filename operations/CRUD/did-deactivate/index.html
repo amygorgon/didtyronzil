@@ -504,8 +504,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-the-deactivate-operation-signed-data-object" class="md-nav__link">
-    1. The Deactivate Operation Signed Data Object
+  <a href="#1-deactivate-operation-signed-data-object" class="md-nav__link">
+    1. Deactivate Operation Signed Data Object
   </a>
   
 </li>
@@ -518,8 +518,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tyronzil-did-deactivate-operation-result" class="md-nav__link">
-    3. tyronZIL DID-deactivate operation result
+  <a href="#3-tyron-smart-contracttsm" class="md-nav__link">
+    3. Tyron-Smart-Contract(TSM)
   </a>
   
 </li>
@@ -586,8 +586,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-the-deactivate-operation-signed-data-object" class="md-nav__link">
-    1. The Deactivate Operation Signed Data Object
+  <a href="#1-deactivate-operation-signed-data-object" class="md-nav__link">
+    1. Deactivate Operation Signed Data Object
   </a>
   
 </li>
@@ -600,8 +600,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tyronzil-did-deactivate-operation-result" class="md-nav__link">
-    3. tyronZIL DID-deactivate operation result
+  <a href="#3-tyron-smart-contracttsm" class="md-nav__link">
+    3. Tyron-Smart-Contract(TSM)
   </a>
   
 </li>
@@ -626,15 +626,15 @@
                   
                 
                 
-                <h1 id="tyronzil-did-deactivate-operation">tyronZIL DID-deactivate operation</h1>
-<p>A tyronZIL DID-deactivate operation is conformant with a Sidetree Deactivate operation, and its goal is to deactivate the given tyronZIL DID and set its DID-state to 'deactivate'.</p>
+                <h1 id="tyronzil-did-deactivate-operation">tyronZIL DID-Deactivate operation</h1>
+<p>A tyronZIL DID-Deactivate operation is conformant with a Sidetree Deactivate operation, and its goal is to deactivate the given tyronZIL DID and set its DID-State to 'deactivate'.</p>
 <p>Follow these steps:</p>
 <h2 id="0-user-input">0. User input</h2>
-<p>Get the DID to deactivate and the recovery private key.</p>
-<h2 id="1-the-deactivate-operation-signed-data-object">1. The Deactivate Operation Signed Data Object</h2>
-<p>1.1 Use the recovery private key to get the <code>RECOVERY_KEY</code> from the previous recovery operation.Then generate an instance of the Deactivate Operation Signed Data Object as follows:</p>
+<p>Ask the user for the recovery-private key corresponding to the previous recovery-commitment, as well as the address of the user's Tyron-Smart-Contract(TSM) to deactivate their DID. The client MUST fetch the TSM-State and check that the key given by the user corresponds to the recovery-commitment in the TSM-State.</p>
+<h2 id="1-deactivate-operation-signed-data-object">1. Deactivate Operation Signed Data Object</h2>
+<p>1.1 Use the recovery private-key to get the <code>RECOVERY_KEY</code> corresponding to the previous recovery-commitment. Then generate an instance of the Deactivate Operation Signed Data Object as follows:</p>
 <pre><code class="js">SIGNED_DATA = {  
-    did_suffix: did_tyronZIL.didUniqueSuffix,
+    did_suffix: did_tyronZIL,
     recovery_key: PREVIOUS_RECOVERY_KEY  
 }
 </code></pre>
@@ -642,21 +642,21 @@
 <blockquote>
 <p><code>SIGNED_DATA</code> is of type <a href="../../../implementation/models/#deactivate">DeactivateSignedDataModel</a></p>
 </blockquote>
-<p>1.2 Then sign this object as a e256k compact JWS, signing it with the private key from the previous recovery operation (user input).</p>
-<pre><code class="ts">const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, recoveryPrivateKey);
+<p>1.2 Then sign this object as a e256k compact JWS, signing it with the private-key corresponding to the previous recovery-commitment.</p>
+<pre><code class="ts">const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, previousRecoveryPrivateKey);
 </code></pre>
 
 <h2 id="2-sidetree-request">2. Sidetree request</h2>
 <p>2.1 Generate the following object:</p>
 <pre><code class="js">SIDETREE_REQUEST = {  
-    did_suffix: did_tyronZIL.didUniqueSuffix,
+    did_suffix: did_tyronZIL,
     signed_data: SIGNED_DATA_JWS,
     type: OperationType.deactivate
 }
 </code></pre>
 
-<p>1.2 Stringify it and turn it into a buffer as <code>OPERATION_BUFFER</code><br />
-2.3 Send the <code>OPERATION_BUFFER</code> to the Sidetree's library DeactivateOperation, which returns a class with the following properties:</p>
+<p>1.2 Stringify it and turn it into a buffer as <code>SIDETREE_REQUEST_BUFFER</code><br />
+2.3 Process the <code>SIDETREE_REQUEST_BUFFER</code> with the Sidetree's library DeactivateOperation, which returns a class with the following properties:</p>
 <ul>
 <li>The original request buffer sent by the requester:</li>
 </ul>
@@ -670,16 +670,12 @@
 </ul>
 <p><code>signedDataModel: DeactivateSignedDataModel</code></p>
 <ul>
-<li>The compact JWS signature that deactivated the DID</li>
+<li>The compact JWS signature that deactivated the DID:</li>
 </ul>
 <p><code>signedDataJws: Jws</code></p>
-<ul>
-<li>The deactivate Operation Delta Object:</li>
-</ul>
-<h2 id="3-tyronzil-did-deactivate-operation-result">3. tyronZIL DID-deactivate operation result</h2>
-<p>The return value of a tyronZIL-js DID-deactivate operation is an instance of the class DidDeactivate, which includes all the previously mentioned properties plus the DID in format tyronZIL DID-scheme.</p>
-<p>After deactivation, the DID cannot be utilized again and its DID-state will always in status 'deactivate'.</p>
-<p><code>type: OperationType.Deactivate</code></p>
+<h2 id="3-tyron-smart-contracttsm">3. Tyron-Smart-Contract(TSM)</h2>
+<p>Once the Sidetree Deactivate Operation has been successful, the client MUST submit a transaction that calls the 'DidDeactivate' transition of the user's TSM. The required parameter is the previous recovery-commitment. This transition sets the status field to 'deactivate' and all other DID-State fields to 'undefined'.</p>
+<p>After deactivation, the DID cannot be utilized again and trying to resolve it MUST throw a 'DidDeactivated' error.</p>
                 
               
               

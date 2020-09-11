@@ -487,6 +487,19 @@
     Output variables
   </a>
   
+    <nav class="md-nav" aria-label="Output variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolving-a-deactivated-did" class="md-nav__link">
+    Resolving a deactivated DID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -618,6 +631,19 @@
     Output variables
   </a>
   
+    <nav class="md-nav" aria-label="Output variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolving-a-deactivated-did" class="md-nav__link">
+    Resolving a deactivated DID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -662,7 +688,7 @@
 <li><strong>did</strong>: A conformant DID as a single string. This is the DID to resolve. This input is REQUIRED.</li>
 <li><strong>network</strong>: The 'NetworkNamespace' referring to the testnet or the mainnet.</li>
 <li><strong>tyronAddr</strong>: The Zilliqa address of the user's Tyron-Smart-Contract. In upcoming versions, the tyronAddr will get retrieved from a DNS-like smart-contract.</li>
-<li><strong>metadata</strong>: The DID-Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-0.4 only supports the 'Accept' option that defines if the result shall be the corresponding DID-Document with or without the Document-metadata. The former produces an output called DID-Resolution-Result.</li>
+<li><strong>metadata</strong>: The DID-Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-v0.4 only supports the 'Accept' option that defines if the result shall be the corresponding DID-Document with or without the Document-metadata. The former produces an output called DID-Resolution-Result.</li>
 </ul>
 <h3 id="output-variables">Output variables</h3>
 <ul>
@@ -674,8 +700,10 @@ TyronZIL's 'resolutionMetadata' refers to the Zilliqa's 'GetBlockchainInfo' meth
 <blockquote>
 <p>Find the tyronZIL DID-Resolution method <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/did-document.ts">here</a></p>
 </blockquote>
+<h4 id="resolving-a-deactivated-did">Resolving a deactivated DID</h4>
+<p>If a tyronZIL DID status is 'deactivate' in its corresponding Tyron-Smart-Contract-State, then the DID-Resolver MUST throw a 'DidDeactivated' error.</p>
 <h2 id="did-url-dereferencing">DID-URL dereferencing</h2>
-<p>DID-URL dereferencing is the process that returns the particular resource specified by the DID-URL. It can use the DID-Resolution process to fetch the DID-Document and then it performs additional processing on the DID-Document to return the dereferenced resource that was requested.</p>
+<p>DD-URL dereferencing is the process that returns the particular resource specified by the DID-URL. It can use the DID-Resolution process to fetch the DID-Document and then it performs additional processing on the DID-Document to return the dereferenced resource that was requested.</p>
 <p>The software component is called DID-URL-Dereferencer, and it takes as input a DID-URL, a DID-Document and a set of dereferencing options and returns the specific resource. The dereferencing options control how the resource is dereferenced.</p>
 <blockquote>
 <p>DID-URL dereferencing will be supported in future versions of tyronZIL</p>
