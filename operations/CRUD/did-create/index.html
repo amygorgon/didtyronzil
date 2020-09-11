@@ -769,8 +769,8 @@
 }
 </code></pre>
 
-<p>8.2 Stringify it and turn it into a buffer as <code>OPERATION_BUFFER</code><br />
-8.3 Process the <code>OPERATION_BUFFER</code> with the Sidetree's library CreateOperation, which returns a class with the following properties:</p>
+<p>8.2 Stringify it and turn it into a buffer as <code>SIDETREE_REQUEST_BUFFER</code><br />
+8.3 Process the <code>SIDETREE_REQUEST_BUFFER</code> with the Sidetree's library CreateOperation, which returns a class with the following properties:</p>
 <ul>
 <li>The original request buffer sent by the requester:</li>
 </ul>
@@ -797,11 +797,11 @@
 <ul>
 <li>The Create Operation Delta Object:</li>
 </ul>
-<p><code>delta: DeltaModel | undefined</code></p>
+<p><code>delta: DeltaModel</code></p>
 <ul>
 <li>The encoded string of the delta:</li>
 </ul>
-<p><code>encodedDelta: string | undefined</code></p>
+<p><code>encodedDelta: string</code></p>
 <h2 id="9-tyron-smart-contract">9. Tyron-Smart-Contract</h2>
 <p>Every tyronZIL DID MUST deploy a Scilla smart contract called the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyron0.4.scilla">Tyron-Smart-Contract(TSM)</a>, except when using the DID as an unpropagated <a href="../../../sidetree/#long-form-did-uri">Sidetree Long-Form DID-URI</a>.</p>
 <p>The TSM is instantiated from the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyronInit0.1.1.scilla">TyronInit smart-contract</a>, currently deployed at this Zilliqa address: '0x75d8297b8bd2e35de1c17e19d2c13504de623793'. The client decodes and decompresses the TSM, and then deploys it with the user's Zilliqa address as the 'contract_owner'.</p>

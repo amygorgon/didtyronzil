@@ -500,14 +500,14 @@
       
         <li class="md-nav__item">
   <a href="#2-new-update-commitment" class="md-nav__link">
-    2. New update commitment
+    2. New update-commitment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-generate-the-did-state-patch" class="md-nav__link">
-    3. Generate the DID-state patch
+  <a href="#3-generate-the-did-state-patch-array" class="md-nav__link">
+    3. Generate the DID-state patch array
   </a>
   
 </li>
@@ -529,13 +529,6 @@
         <li class="md-nav__item">
   <a href="#6-sidetree-request" class="md-nav__link">
     6. Sidetree request
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-tyronzil-did-update-operation-result" class="md-nav__link">
-    7. tyronZIL DID-update operation result
   </a>
   
 </li>
@@ -622,14 +615,14 @@
       
         <li class="md-nav__item">
   <a href="#2-new-update-commitment" class="md-nav__link">
-    2. New update commitment
+    2. New update-commitment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-generate-the-did-state-patch" class="md-nav__link">
-    3. Generate the DID-state patch
+  <a href="#3-generate-the-did-state-patch-array" class="md-nav__link">
+    3. Generate the DID-state patch array
   </a>
   
 </li>
@@ -655,13 +648,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-tyronzil-did-update-operation-result" class="md-nav__link">
-    7. tyronZIL DID-update operation result
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -682,35 +668,34 @@
                   
                 
                 
-                <h1 id="tyronzil-did-update-operation">tyronZIL DID-update operation</h1>
-<p>A tyronZIL DID-create operation is conformant with a Sidetree Update operation, and its goal is to update a tyronZIL DID according to a predetermined set of patches.</p>
+                <h1 id="tyronzil-did-update-operation">tyronZIL DID-Update operation</h1>
+<p>A tyronZIL DID-Update operation is conformant with a Sidetree Update operation, and its goal is to update a tyronZIL DID according to a predetermined set of patches.</p>
 <p>Follow these steps:</p>
 <h2 id="0-user-input">0. User input</h2>
-<p>Get the DID to update and the corresponding update private key.</p>
+<p>Get the address of the user's Tyron-Smart-Contract to update their DID and the corresponding DID-State.</p>
 <h2 id="1-patch-action">1. Patch action</h2>
 <p>The user can choose among these <a href="../../../implementation/models/#patch-action">patch actions</a>.</p>
-<h2 id="2-new-update-commitment">2. New update commitment</h2>
+<h2 id="2-new-update-commitment">2. New update-commitment</h2>
 <p>2.1 Generate the update keys:</p>
 <p><code>[UPDATE_KEY, UPDATE_PRIVATE_KEY]</code></p>
-<p>2.2 Generate the new update commitment:</p>
+<p>2.2 Generate the new update-commitment:</p>
 <p><code>UPDATE_COMMITMENT</code> = <a href="../../../sidetree/#hash-protocol">Multihash</a>.canonicalize<a href="../../../sidetree/#commitment-hash">ThenHash</a><a href="../../../sidetree/#data-encoding-scheme">ThenEncode</a>(<code>UPDATE_KEY</code>)</p>
-<p>2.3 Generate the corresponding Operation verification method</p>
-<h2 id="3-generate-the-did-state-patch">3. Generate the <a href="../../../sidetree/#did-state-patch">DID-state patch</a></h2>
+<h2 id="3-generate-the-did-state-patch-array">3. Generate the <a href="../../../sidetree/#did-state-patch">DID-state patch</a> array</h2>
 <pre><code class="js">PATCH = {  
     action: PatchAction,
-    public_keys?: PublicKeyModel[] | string[];  // array of key ids to remove those keys
-    ids?: string [];    // array of service ids to remove those services
-    service_endpoints?: ServiceEndpointModel[];         // when adding services
-}
+    public_keys?: PublicKeyModel[] | string[];   //array of key to add OR key-ids to remove
+    ids?: string [];   //array of service ids to remove those services
+    service_endpoints?: ServiceEndpointModel[];         //when adding services
+}[]
 </code></pre>
 
 <blockquote>
-<p><code>PATCH</code> is of type <a href="../../../implementation/models/#patch-model">PatchModel</a>, and the action any of the <a href="../../../implementation/models/#patch-action">PatchAction</a> variants from step 1</p>
+<p><code>PATCH</code> is of type <a href="../../../implementation/models/#patch-model">PatchModel</a>, and the action is any of the <a href="../../../implementation/models/#patch-action">PatchAction</a> variants from step 1</p>
 </blockquote>
 <h2 id="4-update-operation-delta-object">4. Update Operation Delta Object</h2>
-<p>4.1 Using the DID state patch and the update-commitment, generate an instance of the Update Operation Delta Object as follows:</p>
+<p>4.1 Using the DID-State patch and the update-commitment, generate an instance of the Update Operation Delta Object as follows:</p>
 <pre><code class="js">DELTA = {
-    patches: [PATCH],  
+    patches: PATCH,  
     updateCommitment: UPDATE_COMMITMENT  
 }
 </code></pre>
@@ -721,13 +706,12 @@
 <p>Then apply the following operations to the object:</p>
 <p>4.2 Stringify it and turn it into a buffer<br />
 4.3 Encode it with the <a href="../../../sidetree/#data-encoding-scheme">data encoding scheme</a> as <code>ENCODED_DELTA</code><br />
-4.4 Hash it with the <a href="../../../sidetree/#hash-algorithm">hash algorithm</a> &amp; <a href="../../../sidetree/#hash-protocol">hash protocol</a> and then encode it again as <code>DELTA_HASH</code></p>
+4.4 Hash it with the <a href="../../../sidetree/#hash-algorithm">hash algorithm</a> &amp; <a href="../../../sidetree/#hash-protocol">hash protocol</a>, and then encode it again as <code>DELTA_HASH</code></p>
 <h2 id="5-update-operation-signed-data-object">5. Update Operation Signed Data Object</h2>
-<p>5.1 Using this <code>DELTA_HASH</code> and the <code>UPDATE_KEY</code> from the previous update operation, generate an instance of the Update Operation Signed Data Object as follows:</p>
+<p>5.1 Using the <code>DELTA_HASH</code>, and the <code>UPDATE_KEY</code> from the previous update operation, generate an instance of the Update Operation Signed Data Object as follows:</p>
 <pre><code class="js">SIGNED_DATA = {  
     delta_hash: DELTA_HASH,
-    update_key: PREVIOUS_UPDATE_KEY,
-    recovery_commitment: RECOVERY_COMMITMENT  
+    update_key: PREVIOUS_UPDATE_KEY 
 }
 </code></pre>
 
@@ -735,21 +719,21 @@
 <p><code>SIGNED_DATA</code> is of type <a href="../../../implementation/models/#update">UpdateSignedDataModel</a></p>
 </blockquote>
 <p>Then sign this object as a e256k compact JWS, signing it with the private key from the previous update operation (user input).</p>
-<pre><code class="ts">const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, input.updatePrivateKey);
+<pre><code class="ts">const SIGNED_DATA_JWS = await Cryptography.signUsingEs256k(SIGNED_DATA, previousUpdatePrivateKey);
 </code></pre>
 
 <h2 id="6-sidetree-request">6. Sidetree request</h2>
 <p>6.1 Generate the following object:</p>
 <pre><code class="js">SIDETREE_REQUEST = {  
-    did_suffix: did_tyronZIL.didUniqueSuffix,
+    did_suffix: did_tyronZIL,
     signed_data: SIGNED_DATA_JWS,
     type: OperationType.Update,
     delta: ENCODED_DELTA
 }
 </code></pre>
 
-<p>6.2 Stringify it and turn it into a buffer as <code>OPERATION_BUFFER</code><br />
-6.3 Send the <code>OPERATION_BUFFER</code> to the Sidetree's library UpdateOperation, which returns a class with the following properties:</p>
+<p>6.2 Stringify it and turn it into a buffer as <code>SIDETREE_REQUEST_BUFFER</code><br />
+6.3 Process the <code>SIDETREE_REQUEST_BUFFER</code> with the Sidetree's library UpdateOperation, which returns a class with the following properties:</p>
 <ul>
 <li>The original request buffer sent by the requester:</li>
 </ul>
@@ -769,14 +753,11 @@
 <ul>
 <li>The Update Operation Delta Object:</li>
 </ul>
-<p><code>delta: DeltaModel | undefined</code></p>
+<p><code>delta: DeltaModel</code></p>
 <ul>
 <li>The encoded string of the delta:</li>
 </ul>
-<p><code>encodedDelta: string | undefined</code></p>
-<h2 id="7-tyronzil-did-update-operation-result">7. tyronZIL DID-update operation result</h2>
-<p>The return value of a tyronZIL-js DID-update operation is an instance of the class DidUpdate, which includes all the previously mentioned properties plus additional such as the DID in format tyronZIL DID-scheme, the Operation verification method, the updated DID-state, private keys, the update key and commitment.</p>
-<p><code>type: OperationType.Update</code></p>
+<p><code>encodedDelta: string</code></p>
                 
               
               
