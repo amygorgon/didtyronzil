@@ -676,6 +676,8 @@
 <h2 id="3-tyron-smart-contracttsm">3. Tyron-Smart-Contract(TSM)</h2>
 <p>Once the Sidetree Deactivate Operation has been successful, the client MUST submit a transaction that calls the 'DidDeactivate' transition of the user's TSM. The required parameter is the previous recovery-commitment. This transition sets the status field to 'deactivate' and all other DID-State fields to 'undefined'.</p>
 <p>After deactivation, the DID cannot be utilized again and trying to resolve it MUST throw a 'DidDeactivated' error.</p>
+<hr />
+<p>A tyronZIL DID-Deactivate operation consumes approximately 1,500 units of GAS (around 1.5 ZIL, currently less than 0.03 USD).</p>
                 
               
               
