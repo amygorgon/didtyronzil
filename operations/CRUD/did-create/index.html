@@ -282,8 +282,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../did-document/" title="DID-document" class="md-nav__link">
-      DID-document
+    <a href="../../../did-document/" title="DID-Document" class="md-nav__link">
+      DID-Document
     </a>
   </li>
 
@@ -319,8 +319,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../scheme/did-scheme/" title="DID-scheme" class="md-nav__link">
-      DID-scheme
+    <a href="../../../scheme/did-scheme/" title="DID-Scheme" class="md-nav__link">
+      DID-Scheme
     </a>
   </li>
 
@@ -331,8 +331,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../scheme/did-url-syntax/" title="DID URL syntax" class="md-nav__link">
-      DID URL syntax
+    <a href="../../../scheme/did-url-syntax/" title="DID-URL syntax" class="md-nav__link">
+      DID-URL syntax
     </a>
   </li>
 
@@ -804,13 +804,13 @@
 <p><code>encodedDelta: string | undefined</code></p>
 <h2 id="9-tyron-smart-contract">9. Tyron-Smart-Contract</h2>
 <p>Every tyronZIL DID MUST deploy a Scilla smart contract called the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyron0.4.scilla">Tyron-Smart-Contract(TSM)</a>, except when using the DID as an unpropagated <a href="../../../sidetree/#long-form-did-uri">Sidetree Long-Form DID-URI</a>.</p>
-<p>The TSM is instantiated from the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyronInit0.1.1.scilla">TyronInit smart-contract</a>, currently deployed at this Zilliqa address: '0x75d8297b8bd2e35de1c17e19d2c13504de623793'. The client decodes and decompresses the TSM, and then deploys it with the user's Zilliqa address as the <code>contract_owner</code>.</p>
+<p>The TSM is instantiated from the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/tyronInit0.1.1.scilla">TyronInit smart-contract</a>, currently deployed at this Zilliqa address: '0x75d8297b8bd2e35de1c17e19d2c13504de623793'. The client decodes and decompresses the TSM, and then deploys it with the user's Zilliqa address as the 'contract_owner'.</p>
 <p>To initialize their TSM, the user MUST call its 'ContractInit' transition and provide the address of the client. This transition sends a message to the 'Initialize' 'transition' of the TyronInit contract that knows how to set the operation cost, client commission and the address of the Pungtas Danish Foundation at the user's TSM-State.</p>
 <blockquote>
 <p>The Pungtas Danish Foundation will be the socio-economic enterprise developing Tyron</p>
 </blockquote>
 <p>Once the TSM gets initialized, the client MUST submit the DID-Create operation by calling the DidCreate transition, which takes as input the Decentralized Identifier, the encoded DID-Document, the update-commitment and the recovery commitment. The smart-contract then saves these in the TSM-State.</p>
-<p>The complete submission of a tyronZIL DID-Create operation (incl. the TSM deployment and initialization) consumes approximately 15,000 units of GAS (around 15 ZIL, currently less than 0.3 USD) :zap:</p>
+<p>The complete submission of a tyronZIL DID-Create operation (incl. the TSM deployment and initialization) consumes approximately 15,000 units of GAS (around 15 ZIL, currently less than 0.3 USD).</p>
                 
               
               
