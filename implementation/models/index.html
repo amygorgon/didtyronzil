@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tyronzil-js-sidetree-models" class="md-skip">
+        <a href="#sidetree-models" class="md-skip">
           Skip to content
         </a>
       
@@ -628,13 +628,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#did-state" class="md-nav__link">
-    DID-State
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -783,13 +776,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#did-state" class="md-nav__link">
-    DID-State
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -810,9 +796,8 @@
                   
                 
                 
-                <h1 id="tyronzil-js-sidetree-models">tyronZIL-js Sidetree models</h1>
-<p><a href="https://github.com/julio-cabdu/tyronZIL-js">tyronZIL-js</a> is the open-source reference implementation for Node.js, written in TypeScript.</p>
-<p>The Sidetree protocol requires the following data structures:</p>
+                <h1 id="sidetree-models">Sidetree models</h1>
+<p><a href="https://github.com/julio-cabdu/tyronZIL-js">tyronZIL-js</a> implements the following data structures from the Sidetree protocol:</p>
 <h2 id="jwkes256k">JwkEs256k</h2>
 <p>Model to represent a secp256k1 key in a JWK format:</p>
 <pre><code class="js">interface JwkEs256k {
@@ -939,15 +924,6 @@
 
     // The JCS canonicalized IETF RFC 7517 compliant JWK representation matching the previous recovery commitment value
     recovery_key: JwkEs256k;
-}
-</code></pre>
-
-<h2 id="did-state">DID-State</h2>
-<pre><code class="js">interface DidStateModel {
-    document: DocumentModel;
-    updateCommitment: string;
-    recoverCommitment: string;
-    lastTransactionNumber?: number;
 }
 </code></pre>
                 
