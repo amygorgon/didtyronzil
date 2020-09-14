@@ -583,7 +583,7 @@
                 
                 
                 <h1 id="tyronzil-did-operations">tyronZIL DID operations</h1>
-<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recovery or deactivation by utilizing Sidetree public-key commitments.</p>
+<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments to establish proof-of-control.</p>
 <p>Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.</p>
 <p>The tyronZIL DID-Client performs the following operations:</p>
 <ul>
@@ -593,8 +593,6 @@
 <li><a href="../CRUD/did-recover/">Update</a>: How to update verification methods/ service endpoints in the DID-Document.</li>
 <li><a href="../CRUD/did-deactivate/">Deactivate</a>: How to deactivate a DID, forever. It turns all DID-State variables to undefined.</li>
 </ul>
-<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments to establish proof-of-control.</p>
-<p>Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.</p>
 <h2 id="sidetree-operation-type">Sidetree operation type</h2>
 <p>Conforming with the Sidetree protocol, tyronZIL DID operations MUST have a type equal to one variant of the OperationType enum, defined as follows:</p>
 <pre><code class="ts">enum OperationType {
