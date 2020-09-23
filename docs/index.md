@@ -10,7 +10,9 @@ Funded by [ZILHive](https://zilhive.org/)
 
 ## Conformance
 
-The tyronZIL DID-Method is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/) specification.
+The tyronZIL DID-Method is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0 specification](https://w3c.github.io/did-core/) and the first DID-Method for the Zilliqa blockchain platform registered in the [DID Specification Registries](https://w3c.github.io/did-spec-registries/).
+
+## Framework
 
 TyronZIL implements [Sidetree delta-based DID operations](https://identity.foundation/sidetree/spec/#did-operations) and saves the state in a [Scilla smart-contract](https://scilla-lang.org/) that is owned by the user. The user is both the DID-Subject and DID-Controller of their Decentralized Identifier.
 
@@ -19,6 +21,12 @@ TyronZIL implements [Sidetree delta-based DID operations](https://identity.found
 Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties.
 
 Self-Sovereign Identity (SSI) allows people to manage their digital identities, proving who they are without a middleman, by anchoring Decentralized Identifiers (DIDs) on blockchain platforms/distributed-ledgers as a shared root of trust. However, most DLTs still can't provide decentralized identity at scale. By implementing Decentralized Identifiers powered by Sidetree & Scilla, tyronZIL aims to solve this issue to enable user-controlled digital identities.
+
+## The purpose of Tyron
+
+**To give people sovereignty over their data.**
+
+The word Tyron derives from the Greek *turannos* that means sovereign, and Tyron's purpose is to give people sovereignty over their data.
 
 ## Index
 
