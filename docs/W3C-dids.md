@@ -36,8 +36,6 @@ The DID-Subject is the entity identified by the DID and described by the DID-Doc
 
 The DID-Controller is the entity that has the capability - as defined by the DID-Method - to make changes to a DID-Document.
 
-For the current version of the tyronZIL DID-Method, the user is the sole Controller of their DID.
-
 ## DID-Document
 
 A DID is resolvable to a DID-Document, which contains data associated with the DID, such as cryptographic material, verification methods and service endpoints relevant to interactions with the DID-Subject. The DID itself is the value of the 'id' property.

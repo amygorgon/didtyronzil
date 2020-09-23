@@ -39,4 +39,4 @@ Self-Sovereign Identity (SSI) allows people to manage their digital identities, 
 - Implementation:
       - [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js): The open-source reference implementation for Node.js, written in TypeScript
       - [Sidetree models](./implementation/models.md)
-- [Privacy Considerations](https://w3c.github.io/did-core/#privacy-considerations)
+- [Security & privacy considerations](./security-privacy.md)

@@ -31,4 +31,5 @@ nav:
         - 'Update': 'operations/CRUD/did-update.md'
         - 'Deactivate': 'operations/CRUD/did-deactivate.md'
   - 'Implementation': 'implementation/models.md'
+  - Security & privacy: 'security-privacy.md'
   
