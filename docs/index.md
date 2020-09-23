@@ -30,6 +30,7 @@ The word Tyron derives from the Greek *turannos* that means sovereign, and Tyron
 
 ## Index
 
+- [Roadmap](./roadmap.md)
 - [W3C DIDs](./W3C-dids.md)
 - [Sidetree protocol and default parameters](./sidetree.md)
 - [DID-Document](./did-document.md)

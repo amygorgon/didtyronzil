@@ -16,6 +16,7 @@ site_author: Julio Cabrapan Duarte
 copyright: Copyright (C) 2020 Julio Cesar Cabrapan Duarte
 nav: 
   - Home: 'index.md'
+  - Roadmap: 'roadmap.md'
   - W3C DIDs: 'W3C-dids.md'
   - Sidetree protocol: 'sidetree.md'
   - DID-Document: 'did-document.md'
