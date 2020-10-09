@@ -1,4 +1,4 @@
-site_name: tyronZIL DID-Method
+site_name: tyronZIL Decentralized Identifiers
 theme:
     name: material
     font: 
@@ -16,21 +16,26 @@ site_author: Julio Cabrapan Duarte
 copyright: Copyright (C) 2020 Julio Cesar Cabrapan Duarte
 nav: 
   - Home: 'index.md'
-  - Roadmap: 'roadmap.md'
   - W3C DIDs: 'W3C-dids.md'
-  - Sidetree protocol: 'sidetree.md'
-  - DID-Document: 'did-document.md'
-  - 'Scheme':
-    - 'DID-Scheme': 'scheme/did-scheme.md'
-    - 'DID-URL syntax': 'scheme/did-url-syntax.md'
-  - 'Operations':
-    - 'tyronZIL operations': 'operations/tyronZIL-operations.md'
-    - 'DID CRUD':
-        - 'Create': 'operations/CRUD/did-create.md'
-        - 'Resolve': 'operations/CRUD/did-resolve.md'
-        - 'Recover': 'operations/CRUD/did-recover.md'
-        - 'Update': 'operations/CRUD/did-update.md'
-        - 'Deactivate': 'operations/CRUD/did-deactivate.md'
-  - 'Implementation': 'implementation/models.md'
-  - Security & privacy: 'security-privacy.md'
+  - DID-Method:
+    - Scheme:
+      - DID-Scheme: 'scheme/did-scheme.md'
+      - DID-URL syntax: 'scheme/did-url-syntax.md'
+    - DID-Document: 'did-document.md'
+    - CRUD Operations:
+      - DID-Create: 'CRUD-operations/did-create.md'
+      - DID-Resolve: 'CRUD-operations/did-resolve.md'
+      - DID-Recover: 'CRUD-operations/did-recover.md'
+      - DID-Update: 'CRUD-operations/did-update.md'
+      - DID-Deactivate: 'CRUD-operations/did-deactivate.md'
+    - Security & privacy: 'security-privacy.md'
+  - Tyron DID Protocol:
+    - Protocol parameters: 'protocol-parameters.md'
+    - Smart-contracts:
+      - DID-Smart-Contract: 'smart-contracts/DID-SC.md'
+  - Implementation:
+    - Client: 'https://github.com/julio-cabdu/tyronzil-js'
+    - Models: 'implementation/models.md'
+  - Development: 'roadmap.md'
+  
   

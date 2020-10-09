@@ -1,6 +1,6 @@
 ![tyronZIL-logo](./tyronzil-logo.png){: width="400" loading=lazy}
 
-# tyronZIL DID-Method specification v0.4
+# tyronZIL's DID-Method specification v1.0
 
 A W3C DID-Method powered by [Zilliqa](https://zilliqa.com)
 
@@ -8,44 +8,62 @@ Developed by [Julio Cabrapan Duarte](https://github.com/julio-cabdu)
 
 Funded by [ZILHive](https://zilhive.org/)
 
-## Conformance
-
-The tyronZIL DID-Method is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0 specification](https://w3c.github.io/did-core/) and the first DID-Method for the Zilliqa blockchain platform registered in the [DID Specification Registries](https://w3c.github.io/did-spec-registries/).
-
-## Framework
-
-TyronZIL implements [Sidetree delta-based DID operations](https://identity.foundation/sidetree/spec/#did-operations) and saves the state in a [Scilla smart-contract](https://scilla-lang.org/) that is owned by the user. The user is both the DID-Subject and DID-Controller of their Decentralized Identifier.
-
 ## Problem summary
 
-Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties.
+Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties. Furthermore, decentralized applications are still difficult to grasp for most regular users, and Decentralized Identifiers(DIDs) can make the user experience much better while increasing privacy and security.
 
-Self-Sovereign Identity (SSI) allows people to manage their digital identities, proving who they are without a middleman, by anchoring Decentralized Identifiers (DIDs) on blockchain platforms/distributed-ledgers as a shared root of trust. However, most DLTs still can't provide decentralized identity at scale. By implementing Decentralized Identifiers powered by Sidetree & Scilla, tyronZIL aims to solve this issue to enable user-controlled digital identities.
+Self-Sovereign Identity (SSI) allows people to manage their digital identities, proving who they are without a middleman, by anchoring DIDs on blockchain platforms as a shared root of trust. However, most blockchains still can't provide decentralized identity at scale. By implementing the Tyron SSI Protocol, tyronZIL aims to solve this issue and enable user-controlled digital identities.
 
 ## The purpose of Tyron
 
-**To give people sovereignty over their data.**
+***To give people sovereignty over their data.***
 
 The word Tyron derives from the Greek *turannos* that means sovereign, and Tyron's purpose is to give people sovereignty over their data.
 
-## Index
+## Conformance
 
-- [Roadmap](./roadmap.md)
-- [W3C DIDs](./W3C-dids.md)
-- [Sidetree protocol and default parameters](./sidetree.md)
-- [DID-Document](./did-document.md)
+The tyronZIL DID-Method is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/) specification and the first DID-Method for the Zilliqa blockchain platform registered in the [DID Specification Registries](https://w3c.github.io/did-spec-registries/).
+
+- [Intro to W3C DIDs](./W3C-dids.md)
+
+## DID-Method
+
+The tyronZIL DID-Method is part of the open-source Tyron SSI Protocol that defines its:
+
 - Scheme:
       - [DID-Scheme](./scheme/did-scheme.md)
       - [DID-URL syntax](./scheme/did-url-syntax.md)
-- Operations:
-      - [Introduction](./operations/tyronZIL-operations.md)
-      - DID CRUD:
-        - [Create](./operations/CRUD/did-create.md)
-        - [Resolve](./operations/CRUD/did-resolve.md)
-        - [Recover](./operations/CRUD/did-recover.md)
-        - [Update](./operations/CRUD/did-update.md)
-        - [Deactivate](./operations/CRUD/did-deactivate.md)
-- Implementation:
-      - [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js): The open-source reference implementation for Node.js, written in TypeScript
-      - [Sidetree models](./implementation/models.md)
+
+- [DID-Document](./did-document.md)
+
+- CRUD operations:
+      - [DID-Create](./operations/CRUD/did-create.md)
+      - [DID-Resolve](./operations/CRUD/did-resolve.md)
+      - [DID-Recover](./operations/CRUD/did-recover.md)
+      - [DID-Update](./operations/CRUD/did-update.md)
+      - [DID-Deactivate](./operations/CRUD/did-deactivate.md)
+
 - [Security & privacy considerations](./security-privacy.md)
+
+
+## Protocol
+
+The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the DID-Method and the cryptographic information to instantiate, deploy and manage the DID-Smart-Contract that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier.
+
+- [Protocol default parameters](./protocole-parameters.md)
+- Smart contracts (SCs):
+      - [Decentralized Identifier SC](./smart-contracts/DID-SC.md)
+      - [init.tyron SC](./roadmap.md)
+
+Smart contracts on Zilliqa get written in Scilla (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.
+
+> Scilla provides formal verification with embedding into the [Coq proof assistant](https://coq.inria.fr/).
+
+## Implementation
+
+- DID-Client: [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) is the open-source reference implementation for Node.js, written in TypeScript
+- [Models](./implementation/models.md)
+
+## Development
+
+- [Roadmap](./roadmap.md)
