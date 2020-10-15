@@ -728,19 +728,19 @@ did-suffix              = 1*idchar
 <p><strong>Example of a Tyron DID</strong>:</p>
 <p><code>did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9</code></p>
 <h3 id="did-suffix">DID-Suffix</h3>
-<p>The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract</a>.</p>
+<p>The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract (DID-SC)</a>.</p>
 <p>Every Zilliqa address is unique. As explained in <a href="https://docs.zilliqa.com/whitepaper.pdf">Zilliqa's white-paper</a>, the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": </p>
 <pre><code>contract_address = LSB160(SHA3-256(address||nonce))
 </code></pre>
 <p>where:</p>
 <ul>
-<li>LSB160() returns the rightmost 160 bits of the input,</li>
-<li>SHA3-256() is the SHA-3 hash function that produces 256-bit digests,</li>
-<li><em>address</em> is the address of the creator account, and </li>
+<li>LSB160() returns the rightmost 160 bits of the input;</li>
+<li>SHA3-256() is the SHA-3 hash function that produces 256-bit digests;</li>
+<li><em>address</em> is the address of the creator account; and </li>
 <li><em>nonce</em> is the creator’s nonce value.</li>
 </ul>
 <h3 id="implementation">Implementation</h3>
-<p>The Tyron DID-Scheme gets implemented by the DidScheme procedure of the DID-SC that generates the Decentralized Identifier and its Tyron Hash.</p>
+<p>The Tyron DID-Scheme gets implemented by the <strong><em>DidScheme</em></strong> procedure of the DID-SC that generates the Decentralized Identifier and its <a href="../../protocol-parameters/#tyron-hash">Tyron Hash</a>.</p>
 <p>On testnet:</p>
 <pre><code>procedure DidScheme()
     this_did =
