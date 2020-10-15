@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -15,27 +13,29 @@
         <meta name="author" content="Julio Cabrapan Duarte">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
     
     
       
-        <title>tyronZIL operations - tyronZIL DID-Method</title>
+        <title>DID-Create - tyronZIL Decentralized Identifiers</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
         
-        <meta name="theme-color" content="#009485">
+          
+          
+          <meta name="theme-color" content="#009485">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
         <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -53,16 +53,18 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
-  
     
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#tyronzil-did-operations" class="md-skip">
+        <a href="#tyron-did-create-operation" class="md-skip">
           Skip to content
         </a>
       
@@ -73,7 +75,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="tyronZIL DID-Method" class="md-header-nav__button md-logo" aria-label="tyronZIL DID-Method">
+    <a href="../.." title="tyronZIL Decentralized Identifiers" class="md-header-nav__button md-logo" aria-label="tyronZIL Decentralized Identifiers">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -86,11 +88,11 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            tyronZIL DID-Method
+            tyronZIL Decentralized Identifiers
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              tyronZIL operations
+              DID-Create
             
           </span>
         </div>
@@ -146,69 +148,7 @@
     
     <div class="md-container" data-md-component="container">
       
-        
       
-      
-        
-          
-
-  
-
-<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="../.." class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../scheme/did-scheme/" class="md-tabs__link">
-          Scheme
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="./" class="md-tabs__link md-tabs__link--active">
-          Operations
-        </a>
-      
-    </li>
-  
-
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
         
       
       <main class="md-main" data-md-component="main">
@@ -220,13 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="tyronZIL DID-Method" class="md-nav__button md-logo" aria-label="tyronZIL DID-Method">
+    <a href="../.." title="tyronZIL Decentralized Identifiers" class="md-nav__button md-logo" aria-label="tyronZIL Decentralized Identifiers">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    tyronZIL DID-Method
+    tyronZIL Decentralized Identifiers
   </label>
   
     <div class="md-nav__source">
@@ -250,7 +190,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
   </li>
@@ -262,95 +202,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../../roadmap/" title="Roadmap" class="md-nav__link">
-      Roadmap
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../W3C-dids/" title="W3C DIDs" class="md-nav__link">
+    <a href="../../W3C-dids/" class="md-nav__link">
       W3C DIDs
     </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../sidetree/" title="Sidetree protocol" class="md-nav__link">
-      Sidetree protocol
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../did-document/" title="DID-Document" class="md-nav__link">
-      DID-Document
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Scheme
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Scheme" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
-        Scheme
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scheme/did-scheme/" title="DID-Scheme" class="md-nav__link">
-      DID-Scheme
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scheme/did-url-syntax/" title="DID-URL syntax" class="md-nav__link">
-      DID-URL syntax
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -363,16 +217,101 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-7">
-      Operations
+    <label class="md-nav__link" for="nav-3">
+      DID-Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Operations" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+    <nav class="md-nav" aria-label="DID-Method" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        Operations
+        DID-Method
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Scheme
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Scheme" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Scheme
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scheme/did-scheme/" class="md-nav__link">
+      DID-Scheme
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scheme/did-url-syntax/" class="md-nav__link">
+      DID-URL syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../did-document/" class="md-nav__link">
+      DID-Document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      CRUD Operations
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon"></span>
+        CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -392,12 +331,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        tyronZIL operations
+        DID-Create
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="tyronZIL operations" class="md-nav__link md-nav__link--active">
-      tyronZIL operations
+    <a href="./" class="md-nav__link md-nav__link--active">
+      DID-Create
     </a>
     
       
@@ -414,8 +353,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sidetree-operation-type" class="md-nav__link">
-    Sidetree operation type
+  <a href="#on-the-clients-side" class="md-nav__link">
+    On the client's side:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
+    On the DID-Smart-Contract's side
   </a>
   
 </li>
@@ -432,18 +378,88 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../did-resolve/" class="md-nav__link">
+      DID-Resolve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../did-recover/" class="md-nav__link">
+      DID-Recover
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../did-update/" class="md-nav__link">
+      DID-Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../did-deactivate/" class="md-nav__link">
+      DID-Deactivate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security-privacy/" class="md-nav__link">
+      Security & privacy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-7-2">
-      DID CRUD
+    <label class="md-nav__link" for="nav-4">
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID CRUD" data-md-level="2">
-      <label class="md-nav__title" for="nav-7-2">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        DID CRUD
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -454,8 +470,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../CRUD/did-create/" title="Create" class="md-nav__link">
-      Create
+    <a href="../../protocol-parameters/" class="md-nav__link">
+      Protocol parameters
     </a>
   </li>
 
@@ -465,12 +481,21 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../CRUD/did-resolve/" title="Resolve" class="md-nav__link">
-      Resolve
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Smart-contracts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Smart-contracts" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon"></span>
+        Smart-contracts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -478,32 +503,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../CRUD/did-recover/" title="Recover" class="md-nav__link">
-      Recover
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CRUD/did-update/" title="Update" class="md-nav__link">
-      Update
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CRUD/did-deactivate/" title="Deactivate" class="md-nav__link">
-      Deactivate
+    <a href="../../smart-contracts/DID-SC/" class="md-nav__link">
+      DID-Smart-Contract
     </a>
   </li>
 
@@ -523,10 +524,48 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../implementation/models/" title="Implementation" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Implementation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Implementation" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Implementation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
+      Client
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../implementation/models/" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -536,8 +575,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../security-privacy/" title="Security & privacy" class="md-nav__link">
-      Security & privacy
+    <a href="../../roadmap/" class="md-nav__link">
+      Development
     </a>
   </li>
 
@@ -566,8 +605,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sidetree-operation-type" class="md-nav__link">
-    Sidetree operation type
+  <a href="#on-the-clients-side" class="md-nav__link">
+    On the client's side:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
+    On the DID-Smart-Contract's side
   </a>
   
 </li>
@@ -584,34 +630,51 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/operations/tyronZIL-operations.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/CRUD-operations/did-create.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  
-                
-                
-                <h1 id="tyronzil-did-operations">tyronZIL DID operations</h1>
-<p>TyronZIL implements Sidetree delta-based operations to generate the DID-Suffix and the DID-Document as well as any following update, recover or deactivation by utilizing Sidetree public-key commitments to establish proof-of-control.</p>
-<p>Once the Sidetree operation request is validated, the DID-Client MUST submit the DID-State modifications to the user's Tyron-Smart-Contract, which is deployed by the DID-Create operation.</p>
-<p>The tyronZIL DID-Client performs the following operations:</p>
-<ul>
-<li><a href="../CRUD/did-create/">Create</a>: How to generate a DID and its associated DID-Document. Plus how to save the DID on Zilliqa by deploying a Scilla smart-contract.</li>
-<li><a href="../CRUD/did-resolve/">Read</a>: How to use a DID to request its DID-Document. This operation corresponds to the DID-Resolution process.</li>
-<li><a href="../CRUD/did-recover/">Recover</a>: To fully reset your DID-Document while keeping the same DID.</li>
-<li><a href="../CRUD/did-recover/">Update</a>: How to update verification methods/ service endpoints in the DID-Document.</li>
-<li><a href="../CRUD/did-deactivate/">Deactivate</a>: How to deactivate a DID, forever. It turns all DID-State variables to undefined.</li>
-</ul>
-<h2 id="sidetree-operation-type">Sidetree operation type</h2>
-<p>Conforming with the Sidetree protocol, tyronZIL DID operations MUST have a type equal to one variant of the OperationType enum, defined as follows:</p>
-<pre><code class="ts">enum OperationType {
-  Create = 'create',
-  Recover = 'recover'
-  Update = 'update',
-  Deactivate = 'deactivate',
-}
-</code></pre>
+                <h1 id="tyron-did-create-operation">Tyron DID-Create operation</h1>
+<p>A Tyron DID-Create operation generates a brand new Decentralized Identifier, its <a href="../../did-document/">DID-Document</a> and DID-State, and stores these data in a new <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract (DID-SC)</a>.</p>
+<h2 id="on-the-clients-side">On the client's side:</h2>
+<ol>
+<li>Initialize with the Zilliqa network (mainnet or testnet), the user's address, the client's private key and the gas limit.</li>
+<li>Get the user's input regarding cryptographic keys and service endpoints for the DID.</li>
+<li>Verification methods: With the public key input generate an array of keys of type <a href="../../implementation/models/#public-key-model">PublicKeyModel</a>, generated using the <a href="../../protocol-parameters/#operation-key-pair">operation key pair</a>.</li>
+<li>Service endpoints: An array of endpoints of type <a href="../../implementation/models/#did-service-endpoint-model">DidServiceEndpointModel</a>.</li>
+<li>With the verification methods and service endpoints, generate a document of type <a href="../../implementation/models/#document-model">DocumentModel</a> and hex-encode it.</li>
+<li>Sign the document with the <strong><em>did_contract_owner</em></strong> key-pair. </li>
+<li>Generate the <a href="../../protocol-parameters/#did-keys">DID-Keys</a> using the <a href="../../protocol-parameters/#operation-key-algorithm">KEY_ALGORITH</a>: The update key-pair (necessary for the following Update operation) &amp; the recovery key-pair (needed for any future Recovery or Deactivate operation).</li>
+<li>
+<p>Return the document, Schnorr signature &amp; public DID-Keys as hex-encoded strings.</p>
+<blockquote>
+<p>All private keys MUST be in control of the user.</p>
+</blockquote>
+</li>
+<li>
+<p>Download, decode (Base64) &amp; decompress the DID-SC-template from the <strong><em>init.tyron</em></strong> smart-contract.</p>
+</li>
+<li>Instantiate the DID-SC with the user's address as the <strong><em>contract_owner</em></strong> and deploy it on the Zilliqa blockchain platform.</li>
+<li>Call the <a href="../../smart-contracts/DID-SC/#transitions"><strong><em>ContractInit</em></strong></a> transition of the user's DID-SC.</li>
+<li>Produce the <strong><em>DidCreate</em></strong> transition parameters with the output from step 7.</li>
+<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidCreate</em></strong> transition of the user's DID-SC.</li>
+</ol>
+<h2 id="on-the-did-smart-contracts-side">On the DID-Smart-Contract's side</h2>
+<p>When the <strong><em>DidCreate</em></strong> transition gets called with the proper hex-encoded arguments (document of type ByStr, signature of type ByStr64 &amp; <a href="../../protocol-parameters/#did-keys">DID-Keys</a> of type ByStr33), the DID-SC proceeds as follows:</p>
+<ol>
+<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DID-SC work only if the payment is correct.</li>
+<li>Executes the <strong><em>IsClient</em></strong> procedure to verify that the call comes from the user's client.</li>
+<li>Executes the <strong><em>IsInitialized</em></strong> procedure to verify that the DID-Status is <strong><em>Initialized</em></strong>.</li>
+<li>Executes the <strong><em>DidScheme</em></strong> procedure, which generates the user's Decentralized Identifier according to the <a href="../../scheme/did-scheme/">DID-Scheme</a> with the DID-SC address as the <a href="../../protocol-parameters/#did-suffix">DID-Suffix</a>. This procedure also produces the <strong><em>tyron_hash</em></strong> by applying the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITH</a> to the DID.</li>
+<li>Executes the <strong><em>IsOwnerKey</em></strong> procedure to verify that the <strong><em>did_contract_owner</em></strong> public key matches the DID-SC's <strong><em>contract_owner</em></strong> address.</li>
+<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got done with the <strong><em>did_contract_owner</em></strong> key-pair by applying the Schnorr signature algorithm. If it's correct, then saves the hex-encoded-document in the <strong><em>did_document</em></strong> field.</li>
+<li>Applies the <strong><em>IsValidKey</em></strong> procedure to verify that all DID-Keys are unique, and then sets the fields <strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong>.</li>
+<li>Sets the DID-Status to <em>Created</em> and saves the blocknumber into the <strong><em>created</em></strong> field.</li>
+<li>Executes the <strong><em>Timestamp</em></strong> procedure.</li>
+</ol>
+<hr />
+<p>A tyronZIL DID-Create transaction (incl. the DID-SC deployment and initialization) consumes approximately 2,100 units of GAS (4.2 ZIL, currently less than 0.09 USD).</p>
                 
               
               
@@ -630,7 +693,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../scheme/did-url-syntax/" title="DID-URL syntax" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../did-document/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -639,19 +702,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                DID-URL syntax
+                DID-Document
               </div>
             </div>
           </a>
         
         
-          <a href="../CRUD/did-create/" title="Create" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../did-resolve/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Create
+                DID-Resolve
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -682,15 +745,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
-          features: ["tabs"],
+          features: ['tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
