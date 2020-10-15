@@ -668,7 +668,8 @@
 <li>Executes the <strong><em>IsInitialized</em></strong> procedure to verify that the DID-Status is <strong><em>Initialized</em></strong>.</li>
 <li>Executes the <strong><em>DidScheme</em></strong> procedure, which generates the user's Decentralized Identifier according to the <a href="../../scheme/did-scheme/">DID-Scheme</a> with the DID-SC address as the <a href="../../protocol-parameters/#did-suffix">DID-Suffix</a>. This procedure also produces the <strong><em>tyron_hash</em></strong> by applying the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITH</a> to the DID.</li>
 <li>Executes the <strong><em>IsOwnerKey</em></strong> procedure to verify that the <strong><em>did_contract_owner</em></strong> public key matches the DID-SC's <strong><em>contract_owner</em></strong> address.</li>
-<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got done with the <strong><em>did_contract_owner</em></strong> key-pair by applying the Schnorr signature algorithm. If it's correct, then saves the hex-encoded-document in the <strong><em>did_document</em></strong> field.</li>
+<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got produced with the <strong><em>did_contract_owner</em></strong> key-pair by applying the Schnorr signature algorithm.</li>
+<li>Saves the hex-encoded-document in the <strong><em>did_document</em></strong> field.</li>
 <li>Applies the <strong><em>IsValidKey</em></strong> procedure to verify that all DID-Keys are unique, and then sets the fields <strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong>.</li>
 <li>Sets the DID-Status to <em>Created</em> and saves the blocknumber into the <strong><em>created</em></strong> field.</li>
 <li>Executes the <strong><em>Timestamp</em></strong> procedure.</li>
