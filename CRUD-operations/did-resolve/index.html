@@ -711,7 +711,7 @@
 <h3 id="input-variables">Input variables</h3>
 <ul>
 <li><strong><em>network</em></strong>: The 'NetworkNamespace' referring to the testnet or mainnet.</li>
-<li><strong><em>tyronAddr</em></strong>: The Zilliqa address of the user's <a href="../smart-contracts/DSC.md">DID-Smart-Contract</a>.</li>
+<li><strong><em>tyronAddr</em></strong>: The Zilliqa address of the user's <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract</a>.</li>
 <li><strong><em>metadata</em></strong>: The DID-Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID-Document with or without the document metadata. The former produces an output called DID-Resolution-Result.</li>
 </ul>
 <h3 id="output-variables">Output variables</h3>
@@ -724,7 +724,7 @@ Tyron's <strong><em>resolutionMetadata</em></strong> refers to Zilliqa's <strong
 <p><strong><em>document</em></strong>: This MUST be the resolved DID-Document serialized in JSON format.</p>
 </li>
 <li><strong><em>documentMetadata</em></strong>: This structure contains metadata that typically does not change between invocations of the resolve method unless the DID-Document changes.<br />
-Tyron's <strong><em>documentMetadata</em></strong> includes three properties: the <strong><em>contentType</em></strong> equal to "application/did+json" and the <a href="../tyron-did-protocol.md#did-keys">DID-Keys</a> update &amp; recovery.</li>
+Tyron's <strong><em>documentMetadata</em></strong> includes three properties: the <strong><em>contentType</em></strong> equal to "application/did+json" and the <a href="../../protocol-parameters/#did-keys">DID-Keys</a> update &amp; recovery.</li>
 </ul>
 <blockquote>
 <p>Find the Tyron DID-Resolution method <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/did-document.ts">here</a>.</p>
