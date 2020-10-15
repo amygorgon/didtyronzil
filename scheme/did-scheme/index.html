@@ -728,7 +728,7 @@ did-suffix              = 1*idchar
 <p><strong>Example of a Tyron DID</strong>:</p>
 <p><code>did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9</code></p>
 <h3 id="did-suffix">DID-Suffix</h3>
-<p>The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../smart-contracts/DSC.md">DID-Smart-Contract (DSC)</a>.</p>
+<p>The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract</a>.</p>
 <p>Every Zilliqa address is unique. As explained in <a href="https://docs.zilliqa.com/whitepaper.pdf">Zilliqa's white-paper</a>, the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": </p>
 <pre><code>contract_address = LSB160(SHA3-256(address||nonce))
 </code></pre>
