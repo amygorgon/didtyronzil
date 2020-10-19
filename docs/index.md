@@ -55,7 +55,7 @@ The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology t
 - [Protocol default parameters](./protocol-parameters.md)
 - Smart contracts (SCs):
       - [Decentralized Identifier SC](./smart-contracts/DID-SC.md)
-      - [init.tyron SC](./roadmap.md)
+      - [init.tyron SC](./smart-contracts/init.tyron.md)
 
 Smart contracts on Zilliqa get written in Scilla (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.
 
