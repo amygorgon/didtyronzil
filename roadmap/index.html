@@ -402,13 +402,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -583,19 +583,23 @@
 <tbody>
 <tr>
 <td>29/6 - 24/7/2020</td>
-<td>Create the tyronZIL DID-Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate)</td>
+<td>Creates the tyronZIL DID-Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate).</td>
 </tr>
 <tr>
 <td>27/7 - 21/8/2020</td>
-<td>Integrate the DID-Client with the Zilliqa blockchain platform</td>
+<td>Integrates the DID-Client with the Zilliqa blockchain platform</td>
 </tr>
 <tr>
 <td>24/8 - 18/9/2020</td>
-<td>Implement the Tyron-Smart-Contract to immutably save and distribute DID-States</td>
+<td>Implements the <a href="../smart-contracts/DID-SC/">DID-Smart-Contract (DID-SC)</a> to immutably save and distribute DID-States.</td>
 </tr>
 <tr>
 <td>21/9 - 11/12/2020</td>
-<td>Tyron Improvement Proposal #1 - TIP1 consists of 3 sprints - details will get published soon enough</td>
+<td><strong>Tyron Improvement Proposal #1</strong> - TIP1 consists of 3 sprints that aim to increase security and discoverability of Tyron Decentralized Identifiers (DIDs).</td>
+</tr>
+<tr>
+<td>21/9 - 16/10/2020</td>
+<td>TIP1.1 implements Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DID-SC. The contract also produces the SHA-256 hash of the Decentralized Identifier, which must be signed to deactivate the DID. And the DID-SC can verify that all Schnorr signatures correspond to the <a href="../protocol-parameters/#did-keys">DID-Keys</a> that have their public keys stored in the contract. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -674,7 +678,7 @@
       <script>
         app = initialize({
           base: "..",
-          features: ['tabs'],
+          features: ['navigation.instant'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
