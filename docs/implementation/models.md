@@ -1,8 +1,20 @@
 # Models
 
-[TyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) implements the following data structures from the Sidetree protocol:
+[TyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) extends the implementation of the following data structures from the [Sidetree protocol](https://identity.foundation/sidetree/spec/):
+
+## Public key model
+
+```js
+interface PublicKeyModel {
+    id: string;
+    key?: string;
+}
+```
+The ID MUST be unique and correspond to one of the Public Key Purposes.
 
 ## Verification method model
+
+It extends the public key model:
 
 ```js
 interface VerificationMethodModel {
@@ -11,21 +23,11 @@ interface VerificationMethodModel {
     publicKeyBase58: string;
 }
 ```
-
-## Public key model
-
-```js
-interface PublicKeyModel {
-    id: string;
-    type: string;
-    publicKeyBase58: string;
-    purpose: PublicKeyPurpose[];
-}
-```
-
 The type defaults to "SchnorrSecp256k1VerificationKey2019".
 
 ### Public key purpose
+
+It corresponds to the [Verification Relationship](../W3C-dids.md#verification-relationship) for a public key aka verification method.
 
 ```js
 enum PublicKeyPurpose {
@@ -34,11 +36,10 @@ enum PublicKeyPurpose {
   Agreement = 'agreement',
   Assertion = 'assertion',
   Delegation = 'delegation',
-  Invocation = 'invocation'
+  Invocation = 'invocation',
+  XSGD = 'xsgd'
 }
 ```
-
-The current version only supports 'General' and 'Auth' purposes.
 
 ## DID Service endpoint model
 
