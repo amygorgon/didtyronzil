@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Smart-Contract - Tyron</title>
+        <title>DID-Smart-Contract - tyron</title>
       
     
     
@@ -75,9 +75,10 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Tyron" class="md-header-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-header-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -87,7 +88,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            Tyron
+            tyron
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -159,12 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Tyron" class="md-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tyron
+    tyron
   </label>
   
     <div class="md-nav__source">
@@ -404,13 +406,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -656,19 +658,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/smart-contracts/DID-SC.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/smart-contracts/DIDC.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
                 <h1 id="decentralized-identifier-smart-contract">Decentralized Identifier Smart-Contract</h1>
-<p>The user's DID-Smart-Contract (DID-SC) gets instantiated from a template that is stored online in the <strong>init.tyron</strong> smart-contract. For that, the user MUST give their Zilliqa address as the <strong><em>contract_owner</em></strong>. Once the DID-SC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DID-SC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.</p>
+<p>The user's DID-Smart-Contract (DID-SC) gets instantiated from a template that is stored online in the <strong>init.tyron</strong> smart-contract. For that, the user MUST give their Zilliqa address as the <strong><em>contract_owner</em></strong>. Once the DIDC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DIDC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.</p>
 <p>Tyron aims to evolve to a client-free architecture where the user can interact more directly with their DID-SC, with fewer intermediaries. Therefore, the Tyron DID Protocol's goal is to make the DID-Smart-Contract smarter while keeping it as simple as possible.</p>
 <blockquote>
 <p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/DID-SC-latest.scilla">DID-SC's code</a> on GitHub.</p>
 </blockquote>
 <h2 id="immutable-fields">Immutable fields</h2>
-<p>The DID-SC gets deployed with the following immutable fields:</p>
+<p>The DIDC gets deployed with the following immutable fields:</p>
 <ol>
 <li><strong><em>contract_owner</em></strong>: the address of the user who is the owner of the contract.</li>
 <li><strong><em>init_tyron</em></strong>: the address of the <strong>init.tyron</strong> smart contract.</li>
@@ -684,7 +686,7 @@
 <li><strong><em>tyron_hash</em></strong>: The SHA256 hash of the DID. It is necessary to sign this hash to perform certain operations, such as deactivation of the DID.</li>
 <li><strong><em>did_status</em></strong>: The status can be <em>Undefined</em>, <em>Initialized</em>, <em>Created</em>, <em>Updated</em>, <em>Recovered</em> or <em>Deactivated</em>.</li>
 <li><strong><em>did_document</em></strong>: Formatted as <a href="../../implementation/models/#document-model">Sidetree Document Model</a> and hexadecimal encoded.</li>
-<li><strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong>: The public <a href="../../protocol-parameters/#did-keys">DID-Keys</a> to enable future operations are stored in the DID-SC to execute the <strong><em>IsRightSignature</em></strong> procedure.</li>
+<li><strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong>: The public <a href="../../protocol-parameters/#did-keys">DID-Keys</a> to enable future operations are stored in the DIDC to execute the <strong><em>IsRightSignature</em></strong> procedure.</li>
 <li><strong><em>client_address</em></strong>: The address of the user's client.</li>
 <li><strong><em>created</em></strong>: The block number when the DID-Create operation occurred.</li>
 <li><strong><em>ledger_time</em></strong>: The block number when the last DID operation occurred.</li>
@@ -816,7 +818,7 @@
       <script>
         app = initialize({
           base: "../..",
-          features: ['navigation.instant'],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

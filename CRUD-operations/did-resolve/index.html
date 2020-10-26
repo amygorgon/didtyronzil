@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Resolve - Tyron</title>
+        <title>DID-Resolve - tyron</title>
       
     
     
@@ -75,9 +75,10 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Tyron" class="md-header-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-header-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -87,7 +88,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            Tyron
+            tyron
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -159,12 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Tyron" class="md-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tyron
+    tyron
   </label>
   
     <div class="md-nav__source">
@@ -485,13 +487,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -535,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DID-SC/" class="md-nav__link">
+    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
       DID-Smart-Contract
     </a>
   </li>
@@ -709,7 +711,7 @@
 <h3 id="input-variables">Input variables</h3>
 <ul>
 <li><strong><em>network</em></strong>: The 'NetworkNamespace' referring to the testnet or mainnet.</li>
-<li><strong><em>tyronAddr</em></strong>: The Zilliqa address of the user's <a href="../../smart-contracts/DID-SC/">DID-Smart-Contract</a>.</li>
+<li><strong><em>tyronAddr</em></strong>: The Zilliqa address of the user's <a href="../../smart-contracts/DIDC/">DID-Smart-Contract</a>.</li>
 <li><strong><em>metadata</em></strong>: The DID-Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID-Document with or without the document metadata. The former produces an output called DID-Resolution-Result.</li>
 </ul>
 <h3 id="output-variables">Output variables</h3>
@@ -824,7 +826,7 @@ Tyron's <strong><em>documentMetadata</em></strong> includes three properties: th
       <script>
         app = initialize({
           base: "../..",
-          features: ['navigation.instant'],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

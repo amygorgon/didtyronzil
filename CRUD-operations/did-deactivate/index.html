@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Deactivate - Tyron</title>
+        <title>DID-Deactivate - tyron</title>
       
     
     
@@ -75,9 +75,10 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Tyron" class="md-header-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-header-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -87,7 +88,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            Tyron
+            tyron
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -159,12 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Tyron" class="md-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tyron
+    tyron
   </label>
   
     <div class="md-nav__source">
@@ -451,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -501,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DID-SC/" class="md-nav__link">
+    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
       DID-Smart-Contract
     </a>
   </li>
@@ -636,22 +638,22 @@
                 <h1 id="tyron-did-deactivate-operation">Tyron DID-Deactivate operation</h1>
 <p>A Tyron DID-Deactivate operation completely deactivates the Decentralized Identifier by setting the DID-Status to <strong><em>Deactivated</em></strong> and the DID-State mutable fields to None.</p>
 <p>To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><strong><em>did_recovery_key</em></strong></a>.</p>
-<p>Once the operation request is processed, the client makes the call to the <strong><em>DidDeactivate</em></strong> transition of the user's <a href="../../smart-contracts/DID-SC/">DID-SC</a>. This transition is irreversible - after deactivation, the DID-SC will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <strong><em>DidDeactivated</em></strong> error.</p>
+<p>Once the operation request is processed, the client makes the call to the <strong><em>DidDeactivate</em></strong> transition of the user's <a href="../../smart-contracts/DIDC/">DIDC</a>. This transition is irreversible - after deactivation, the DIDC will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <strong><em>DidDeactivated</em></strong> error.</p>
 <h2 id="on-the-clients-side">On the client's side:</h2>
 <ol>
-<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DID-SC address to fetch the DID-State from the blockchain.</li>
-<li>Get the user's private <strong><em>did_recovery_key</em></strong> and verify that icorresponds to the public <strong><em>did_recovery_key</em></strong> stored in the DID-SC.</li>
-<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><strong><em>tyron_hash</em></strong></a> from the user's DID-SC and sign it with the pair <strong><em>did_recovery_keys</em></strong>. </li>
+<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DIDC address to fetch the DID-State from the blockchain.</li>
+<li>Get the user's private <strong><em>did_recovery_key</em></strong> and verify that icorresponds to the public <strong><em>did_recovery_key</em></strong> stored in the DIDC.</li>
+<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><strong><em>tyron_hash</em></strong></a> from the user's DIDC and sign it with the pair <strong><em>did_recovery_keys</em></strong>. </li>
 <li>Return the Schnorr signature as a hex-encoded string, and with it produce the <strong><em>DidDeactivate</em></strong> transition parameter.</li>
-<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidDeactivate</em></strong> transition of the user's DID-SC. For that, the client MUST provide their private key and choose the gas limit.</li>
+<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidDeactivate</em></strong> transition of the user's DIDC. For that, the client MUST provide their private key and choose the gas limit.</li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID-Smart-Contract's side</h2>
-<p>When the <strong><em>DidDeactivate</em></strong> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DID-SC proceeds as follows:</p>
+<p>When the <strong><em>DidDeactivate</em></strong> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DIDC proceeds as follows:</p>
 <ol>
-<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DID-SC work only if the payment is correct.</li>
+<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DIDC work only if the payment is correct.</li>
 <li>Executes the <strong><em>IsClient</em></strong> procedure to verify that the call comes from the user's client.</li>
 <li>Executes the <strong><em>IsRightStatus</em></strong> procedure to verify that the DID-Status is neither <strong><em>Deactivated</em></strong> nor <strong><em>Initialized</em></strong>.</li>
-<li>Performs the <strong><em>IsRightSignature</em></strong> procedure. It verifies that the signature got produced with the <strong><em>did_recovery_keys</em></strong> by applying the Schnorr signature algorithm on the <strong><em>tyron_hash</em></strong>. For this verification, the DID-SC utilizes the public key that it has stored in the <strong><em>did_recovery_key</em></strong> mutable field.</li>
+<li>Performs the <strong><em>IsRightSignature</em></strong> procedure. It verifies that the signature got produced with the <strong><em>did_recovery_keys</em></strong> by applying the Schnorr signature algorithm on the <strong><em>tyron_hash</em></strong>. For this verification, the DIDC utilizes the public key that it has stored in the <strong><em>did_recovery_key</em></strong> mutable field.</li>
 <li>Sets the DID-Status to <strong><em>Deactivated</em></strong>, the <strong><em>did_document</em></strong> to None{ByStr} and both the <strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong> to None{ByStr33}.</li>
 <li>Executes the <strong><em>Timestamp</em></strong> procedure.</li>
 </ol>
@@ -746,7 +748,7 @@
       <script>
         app = initialize({
           base: "../..",
-          features: ['navigation.instant'],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

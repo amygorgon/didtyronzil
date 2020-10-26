@@ -17,7 +17,7 @@
     
     
       
-        <title>Security & privacy - Tyron</title>
+        <title>Security & privacy - tyron</title>
       
     
     
@@ -75,9 +75,10 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Tyron" class="md-header-nav__button md-logo" aria-label="Tyron">
+    <a href=".." title="tyron" class="md-header-nav__button md-logo" aria-label="tyron">
       
-  <img src="../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -87,7 +88,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            Tyron
+            tyron
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -159,12 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tyron" class="md-nav__button md-logo" aria-label="Tyron">
+    <a href=".." title="tyron" class="md-nav__button md-logo" aria-label="tyron">
       
-  <img src="../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tyron
+    tyron
   </label>
   
     <div class="md-nav__source">
@@ -476,13 +478,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -526,7 +528,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../smart-contracts/DID-SC/" class="md-nav__link">
+    <a href="../smart-contracts/DIDC/" class="md-nav__link">
       DID-Smart-Contract
     </a>
   </li>
@@ -688,11 +690,11 @@
                 <h1 id="security-privacy-considerations">Security &amp; privacy considerations</h1>
 <p>TyronZIL DIDs operate on Zilliqa, a public blockchain platform that implements PBFT (practical byzantine fault tolerance) as the consensus protocol, as explained in the <a href="https://docs.zilliqa.com/whitepaper.pdf">Zilliqa's whitepaper</a>. Given the 'public' nature of the network, Tyron anticipates that messages could be read, or corrupted in case of chain-reorganization. However, as long as there is no 51% attack the ledger's immutability, on which DIDs rely on, remains uncompromised.</p>
 <p>The tyronZIL DID-Client currently interacts with Zilliqa nodes hosted by Zilliqa Research Pte. Ltd. as can be seen in the <a href="https://github.com/julio-cabdu/tyronzil-js">open-source code</a>. It is also possible to submit transactions to any other node.</p>
-<p>To interact with the user's <a href="../smart-contracts/DID-SC/">DID-Smart-Contract(DID-SC)</a>, the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DID-SC-State on, e.g. <a href="https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com">Devex</a> to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DID-SC.</p>
+<p>To interact with the user's <a href="../smart-contracts/DIDC/">DID-Smart-Contract(DIDC)</a>, the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DIDC-State on, e.g. <a href="https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com">Devex</a> to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DIDC.</p>
 <h3 id="smart-contract-security">Smart contract security</h3>
 <p><a href="https://learnscilla.com/home">Scilla</a> implements smart contract safety at the language level with formal verification.  It utilizes the <a href="https://coq.inria.fr/">Coq Proof Assistant</a> for mechanized proofs about programs' properties.</p>
 <h3 id="key-revocation-did-recovery-deactivation">Key revocation, DID recovery &amp; deactivation</h3>
-<p>If a key is compromised, it is possible to remove it through a <a href="../CRUD-operations/did-update/">DID-Update</a> operation with a 'RemoveKeys' patch-action. To perform a DID operation, the user MUST posess the private <strong><em>did_update_key</em></strong> that corresponds to the public <strong><em>did_update_key</em></strong> stored in the DID-SC, ensuring that any insertion, deletion or modification happens under stipulated terms.</p>
+<p>If a key is compromised, it is possible to remove it through a <a href="../CRUD-operations/did-update/">DID-Update</a> operation with a 'RemoveKeys' patch-action. To perform a DID operation, the user MUST posess the private <strong><em>did_update_key</em></strong> that corresponds to the public <strong><em>did_update_key</em></strong> stored in the DIDC, ensuring that any insertion, deletion or modification happens under stipulated terms.</p>
 <p>If the private <strong><em>did_update_key</em></strong> is compromised, the user can request a <a href="../CRUD-operations/did-recover/">DID-Recover</a> operation to replace their DID-State, completely.</p>
 <p>The <a href="../CRUD-operations/did-deactivate/">DID-Deactivate</a> operation is also supported as long as the private <strong><em>did_recovery_key</em></strong> is not compromised.</p>
 <h2 id="privacy-considerations">Privacy Considerations</h2>
@@ -791,7 +793,7 @@
       <script>
         app = initialize({
           base: "..",
-          features: ['navigation.instant'],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

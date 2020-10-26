@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Recover - Tyron</title>
+        <title>DID-Recover - tyron</title>
       
     
     
@@ -75,9 +75,10 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Tyron" class="md-header-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-header-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -87,7 +88,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            Tyron
+            tyron
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -159,12 +160,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Tyron" class="md-nav__button md-logo" aria-label="Tyron">
+    <a href="../.." title="tyron" class="md-nav__button md-logo" aria-label="tyron">
       
-  <img src="../../zap.svg" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tyron
+    tyron
   </label>
   
     <div class="md-nav__source">
@@ -451,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      Tyron DID Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        Tyron DID Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -501,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DID-SC/" class="md-nav__link">
+    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
       DID-Smart-Contract
     </a>
   </li>
@@ -635,11 +637,11 @@
                 
                 <h1 id="tyron-did-recover-operation">Tyron DID-Recover operation</h1>
 <p>A Tyron DID-Recover operation fully resets the user's DID-State, so they can keep using the same DID with a brand new public-key-infrastructure (PKI). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><strong><em>did_recovery_key</em></strong></a>.</p>
-<p>Once the operation request is processed, the client makes a call to the <strong><em>DidRecover</em></strong> transition of the user's <a href="../../smart-contracts/DID-SC/">DID-SC</a>.</p>
+<p>Once the operation request is processed, the client makes a call to the <strong><em>DidRecover</em></strong> transition of the user's <a href="../../smart-contracts/DIDC/">DIDC</a>.</p>
 <h2 id="on-the-clients-side">On the client's side:</h2>
 <ol>
-<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DID-SC address to fetch the DID-State from the blockchain.</li>
-<li>Get the user's private <strong><em>did_recovery_key</em></strong> and verify that corresponds to the public <strong><em>did_recovery_key</em></strong> stored in the DID-SC.</li>
+<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DIDC address to fetch the DID-State from the blockchain.</li>
+<li>Get the user's private <strong><em>did_recovery_key</em></strong> and verify that corresponds to the public <strong><em>did_recovery_key</em></strong> stored in the DIDC.</li>
 <li>Get the user's input regarding new cryptographic keys and service endpoints for the recovered DID.</li>
 <li>Verification methods: With the public key input generate an array of keys of type <a href="../../implementation/models/#public-key-model">PublicKeyModel</a>, generated using the <a href="../../protocol-parameters/#operation-key-pair">operation key pair</a>.</li>
 <li>Service endpoints: An array of endpoints of type <a href="../../implementation/models/#did-service-endpoint-model">DidServiceEndpointModel</a>.</li>
@@ -655,15 +657,15 @@
 <li>
 <p>Produce the <strong><em>DidRecover</em></strong> transition parameters with the output from step 7.</p>
 </li>
-<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidRecover</em></strong> transition of the user's DID-SC. For that, the client MUST provide their private key and choose the gas limit.</li>
+<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidRecover</em></strong> transition of the user's DIDC. For that, the client MUST provide their private key and choose the gas limit.</li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID-Smart-Contract's side</h2>
-<p>When the <strong><em>DidRecover</em></strong> transition gets called with the proper hex-encoded arguments (new document of type ByStr, signature of type ByStr64 &amp; new <a href="../../protocol-parameters/#did-keys">DID-Keys</a> of type ByStr33), the DID-SC proceeds as follows:</p>
+<p>When the <strong><em>DidRecover</em></strong> transition gets called with the proper hex-encoded arguments (new document of type ByStr, signature of type ByStr64 &amp; new <a href="../../protocol-parameters/#did-keys">DID-Keys</a> of type ByStr33), the DIDC proceeds as follows:</p>
 <ol>
-<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DID-SC work only if the payment is correct.</li>
+<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DIDC work only if the payment is correct.</li>
 <li>Executes the <strong><em>IsClient</em></strong> procedure to verify that the call comes from the user's client.</li>
 <li>Executes the <strong><em>IsRightStatus</em></strong> procedure to verify that the DID-Status is neither <strong><em>Deactivated</em></strong> nor <strong><em>Initialized</em></strong>.</li>
-<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got produced with the <strong><em>did_recovery_keys</em></strong> by applying the Schnorr signature algorithm. For this verification, the DID-SC utilizes the public key that it has stored in the <strong><em>did_recovery_key</em></strong> mutable field. </li>
+<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got produced with the <strong><em>did_recovery_keys</em></strong> by applying the Schnorr signature algorithm. For this verification, the DIDC utilizes the public key that it has stored in the <strong><em>did_recovery_key</em></strong> mutable field. </li>
 <li>Saves the new document in the <strong><em>did_document</em></strong> field.</li>
 <li>Applies the <strong><em>IsValidKey</em></strong> procedure to verify that all new DID-Keys are unique (and different from before), and then sets the fields <strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong> with the new values.</li>
 <li>Sets the DID-Status to <strong><em>Recovered</em></strong>.</li>
@@ -760,7 +762,7 @@
       <script>
         app = initialize({
           base: "../..",
-          features: ['navigation.instant'],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
