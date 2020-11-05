@@ -1,6 +1,6 @@
 # Tyron DID-Create operation
 
-A Tyron DID-Create operation generates a brand new Decentralized Identifier, its [DID-Document](../did-document.md) and DID-State, and stores these data in a new [DID-Smart-Contract (DID-SC)](../smart-contracts/DID-SC.md).
+A Tyron DID-Create operation generates a brand new Decentralized Identifier, its [DID-Document](../did-document.md) and DID-State, and stores these data in a new [DID-Smart-Contract (DIDC)](../smart-contracts/didc.md).
 
 ## On the client's side:
 
@@ -15,21 +15,21 @@ A Tyron DID-Create operation generates a brand new Decentralized Identifier, its
 
     > All private keys MUST be in control of the user.
 
-8. Download, decode (Base64) & decompress the DID-SC-template from the ***init.tyron*** smart-contract.
-9. Instantiate the DID-SC with the user's address as the ***contract_owner*** and deploy it on the Zilliqa blockchain platform.
-10. Call the [***ContractInit***](../smart-contracts/DID-SC.md#transitions) transition of the user's DID-SC.
+8. Download, decode (Base64) & decompress the DIDC-template from the ***init.tyron*** smart contract.
+9. Instantiate the DIDC with the user's address as the ***contract_owner*** and deploy it on the Zilliqa blockchain platform.
+10. Call the [***ContractInit***](../smart-contracts/didc.md#transitions) transition of the user's DIDC.
 11. Produce the ***DidCreate*** transition parameters with the output from step 7.
-12. The client MUST submit the tyronZIL transaction by calling the ***DidCreate*** transition of the user's DID-SC.
+12. The client MUST submit the tyronZIL transaction by calling the ***DidCreate*** transition of the user's DIDC.
 
 ## On the DID-Smart-Contract's side
 
-When the ***DidCreate*** transition gets called with the proper hex-encoded arguments (document of type ByStr, signature of type ByStr64 & [DID-Keys](../protocol-parameters.md#did-keys) of type ByStr33), the DID-SC proceeds as follows:
+When the ***DidCreate*** transition gets called with the proper hex-encoded arguments (document of type ByStr, signature of type ByStr64 & [DID-Keys](../protocol-parameters.md#did-keys) of type ByStr33), the DIDC proceeds as follows:
 
-1. First, it executes the  ***Payment*** procedure to make the DID-SC work only if the payment is correct.
+1. First, it executes the  ***Payment*** procedure to make the DIDC work only if the payment is correct.
 2. Executes the ***IsClient*** procedure to verify that the call comes from the user's client.
 3. Executes the ***IsInitialized*** procedure to verify that the DID-Status is ***Initialized***.
-4. Executes the ***DidScheme*** procedure, which generates the user's Decentralized Identifier according to the [DID-Scheme](../scheme/did-scheme.md) with the DID-SC address as the [DID-Suffix](../protocol-parameters.md#did-suffix). This procedure also produces the ***tyron_hash*** by applying the [HASH_ALGORITH](../protocol-parameters.md#hash-algorithm) to the DID.
-5. Executes the ***IsOwnerKey*** procedure to verify that the ***did_contract_owner*** public key matches the DID-SC's ***contract_owner*** address.
+4. Executes the ***DidScheme*** procedure, which generates the user's Decentralized Identifier according to the [DID-Scheme](../scheme/did-scheme.md) with the DIDC address as the [DID-Suffix](../protocol-parameters.md#did-suffix). This procedure also produces the ***tyron_hash*** by applying the [HASH_ALGORITH](../protocol-parameters.md#hash-algorithm) to the DID.
+5. Executes the ***IsOwnerKey*** procedure to verify that the ***did_contract_owner*** public key matches the DIDC's ***contract_owner*** address.
 6. Performs the ***IsRightSignature*** procedure to verify that the signature that comes with the signed document got produced with the ***did_contract_owner*** key-pair by applying the Schnorr signature algorithm.
 7. Saves the hex-encoded-document in the ***did_document*** field.
 8. Applies the ***IsValidKey*** procedure to verify that all DID-Keys are unique, and then sets the fields ***did_update_key*** & ***did_recovery_key***.
@@ -38,4 +38,4 @@ When the ***DidCreate*** transition gets called with the proper hex-encoded argu
 
 ---
 
-A tyronZIL DID-Create transaction (incl. the DID-SC deployment and initialization) consumes approximately 2,100 units of GAS (4.2 ZIL, currently less than 0.09 USD).
+A tyronZIL DID-Create transaction (incl. the DIDC deployment and initialization) consumes approximately 2,100 units of GAS (4.2 ZIL, currently less than 0.09 USD).

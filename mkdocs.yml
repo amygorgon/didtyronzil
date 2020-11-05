@@ -1,4 +1,4 @@
-site_name: Tyron
+site_name: tyron
 theme:
     name: material
     font: 
@@ -6,12 +6,13 @@ theme:
         code: Ubuntu Mono
     palette:
         primary: teal
+        accent: teal
     features:
       - tabs
 markdown_extensions:
   - attr_list
 repo_url: https://github.com/julio-cabdu/didtyronZIL
-site_description: A W3C Sidetree-based DID method for the Zilliqa blockchain platform
+site_description: An open-source W3C DID-Method powered by Zilliqa
 site_author: Julio Cabrapan Duarte
 copyright: Copyright (C) 2020 Julio Cesar Cabrapan Duarte
 extra:
@@ -35,8 +36,9 @@ nav:
     - Security & privacy: 'security-privacy.md'
   - Tyron DID Protocol:
     - Protocol parameters: 'protocol-parameters.md'
-    - Smart-contracts:
-      - DID-Smart-Contract: 'smart-contracts/DID-SC.md'
+    - Smart contracts:
+      - DIDC: 'smart-contracts/didc.md'
+      - tyron.init: 'smart-contracts/init.tyron.md'
   - Implementation:
     - DID-Client: 'https://github.com/julio-cabdu/tyronzil-js'
     - Models: 'implementation/models.md'

@@ -48,7 +48,7 @@ did-suffix              = 1*idchar
 
 ### DID-Suffix
 
-The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding [DID-Smart-Contract (DID-SC)](../smart-contracts/DID-SC.md).
+The DID-Suffix MUST be globally unique. A Tyron DID-Suffix is the Zilliqa hex-encoded address of the corresponding [DID-Smart-Contract (DIDC)](../smart-contracts/didc.md).
 
 Every Zilliqa address is unique. As explained in [Zilliqa's white-paper](https://docs.zilliqa.com/whitepaper.pdf), the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": 
 
@@ -65,7 +65,7 @@ where:
 
 ### Implementation
 
-The Tyron DID-Scheme gets implemented by the ***DidScheme*** procedure of the DID-SC that generates the Decentralized Identifier and its [Tyron Hash](../protocol-parameters.md#tyron-hash).
+The Tyron DID-Scheme gets implemented by the ***DidScheme*** procedure of the DIDC that generates the Decentralized Identifier and its [Tyron Hash](../protocol-parameters.md#tyron-hash).
 
 On testnet:
 

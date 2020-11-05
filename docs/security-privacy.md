@@ -4,7 +4,7 @@ TyronZIL DIDs operate on Zilliqa, a public blockchain platform that implements P
 
 The tyronZIL DID-Client currently interacts with Zilliqa nodes hosted by Zilliqa Research Pte. Ltd. as can be seen in the [open-source code](https://github.com/julio-cabdu/tyronzil-js). It is also possible to submit transactions to any other node.
 
-To interact with the user's [DID-Smart-Contract(DID-SC)](./smart-contracts/DID-SC.md), the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DID-SC-State on, e.g. [Devex](https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com) to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DID-SC.
+To interact with the user's [DID smart contract (DIDC)](./smart-contracts/didc.md), the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DIDC-State on, e.g. [Devex](https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com) to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DIDC.
 
 ### Smart contract security
 
@@ -12,7 +12,7 @@ To interact with the user's [DID-Smart-Contract(DID-SC)](./smart-contracts/DID-S
 
 ### Key revocation, DID recovery & deactivation
 
-If a key is compromised, it is possible to remove it through a [DID-Update](./CRUD-operations/did-update.md) operation with a 'RemoveKeys' patch-action. To perform a DID operation, the user MUST posess the private ***did_update_key*** that corresponds to the public ***did_update_key*** stored in the DID-SC, ensuring that any insertion, deletion or modification happens under stipulated terms.
+If a key is compromised, it is possible to remove it through a [DID-Update](./CRUD-operations/did-update.md) operation with a 'RemoveKeys' patch-action. To perform a DID operation, the user MUST posess the private ***did_update_key*** that corresponds to the public ***did_update_key*** stored in the DIDC, ensuring that any insertion, deletion or modification happens under stipulated terms.
 
 If the private ***did_update_key*** is compromised, the user can request a [DID-Recover](./CRUD-operations/did-recover.md) operation to replace their DID-State, completely.
 

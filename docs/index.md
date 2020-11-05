@@ -1,8 +1,8 @@
-![tyronZIL-logo](./tyronzil-logo.png){: width="400" loading=lazy}
+![tyronZIL-logo](./tyronzil-logo.png){: width="600" loading=lazy}
 
-# Tyron's DID-Method specification v1.0.0
+# tyronZIL: The Tyron DID-Method v1.0.0
 
-***tyronZIL*** is a W3C DID-Method powered by [Zilliqa](https://zilliqa.com)
+An open-source W3C DID-Method powered by [Zilliqa](https://zilliqa.com)
 
 Developed by [Julio Cabrapan Duarte](https://github.com/julio-cabdu)
 
@@ -20,7 +20,7 @@ The word Tyron derives from the Greek *turannos* that means sovereign, and ***Ty
 
 ## Conformance
 
-The tyronZIL DID-Method is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/) specification and the first DID-Method for the Zilliqa blockchain platform registered in the [DID Specification Registries](https://w3c.github.io/did-spec-registries/).
+The tyronZIL DID-Method specification is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/) specification and the first DID-Method for the Zilliqa blockchain platform registered in the [DID Specification Registries](https://w3c.github.io/did-spec-registries/).
 
 - [Intro to W3C DIDs](./W3C-dids.md)
 
@@ -53,11 +53,11 @@ The tyronZIL DID-Method is part of the open-source Tyron SSI Protocol that defin
 The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the [DID-Method](#did-method) and the cryptographic information to instantiate, deploy and manage the DID-Smart-Contract that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier.
 
 - [Protocol default parameters](./protocol-parameters.md)
-- Smart contracts (SCs):
-      - [Decentralized Identifier SC](./smart-contracts/DID-SC.md)
-      - [init.tyron SC](./smart-contracts/init.tyron.md)
+- Smart contracts:
+      - [DIDC: The Decentralized Identifier Smart Contract](./smart-contracts/didc.md)
+      - [init.tyron: The SSI Initialization & DNS Smart Contract](./smart-contracts/init.tyron.md)
 
-Smart contracts on Zilliqa get written in Scilla (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.
+Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.
 
 > Scilla provides formal verification with embedding into the [Coq proof assistant](https://coq.inria.fr/).
 

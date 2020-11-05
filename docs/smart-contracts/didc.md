@@ -1,37 +1,37 @@
-# Decentralized Identifier Smart-Contract
+# didc.tyron: The Decentralized Identifier Smart Contract (DIDC)
 
-The user's DID-Smart-Contract (DID-SC) gets instantiated from a template that is stored online in the **init.tyron** smart-contract. For that, the user MUST give their Zilliqa address as the ***contract_owner***. Once the DID-SC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DID-SC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.
+The user's DID smart contract (DIDC) gets instantiated from a template that is stored online in the **init.tyron** smart contract. For that, the user MUST give their Zilliqa address as the ***contract owner***. Once the DIDC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DIDC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.
 
-Tyron aims to evolve to a client-free architecture where the user can interact more directly with their DID-SC, with fewer intermediaries. Therefore, the Tyron DID Protocol's goal is to make the DID-Smart-Contract smarter while keeping it as simple as possible.
+Tyron aims to evolve to a client-free architecture where the user can interact more directly with their DIDC, with fewer intermediaries. Therefore, the Tyron DID Protocol's goal is to make the DID-Smart-Contract smarter while keeping it as simple as possible.
 
-> Find the [DID-SC's code](https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/DID-SC-latest.scilla) on GitHub.
+> Find the [DIDC's code](https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/didc.scilla) on GitHub.
 
 ## Immutable fields
 
-The DID-SC gets deployed with the following immutable fields:
+Immutable fields are set at deployment and can not get modified. The DIDC gets deployed with the following immutable fields:
 
-1. ***contract_owner***: the address of the user who is the owner of the contract.
-2. ***init_tyron***: the address of the **init.tyron** smart contract.
+1. ***initContractOwner***: the Zilliqa address of the user who is the owner of the contract.
+2. ***initTyron***: the Zilliqa address of the [init.tyron](./init.tyron.md) smart contract.
 
-> All addresses MUST be hex-encoded.
-
-> Immutable fields are set at deployment and can not get modified.
+> All addresses MUST be hex-encoded [ByStr20 type]
 
 ## Mutable fields
 
 Mutable fields can get modified but only if there is a specific code in the contract that allows it:
 
+0. ***contract_owner***
+
 1. ***decentralized_identifier***: The user's DID generated according to the [DID-Scheme](../scheme/did-scheme.md).
 2. ***tyron_hash***: The SHA256 hash of the DID. It is necessary to sign this hash to perform certain operations, such as deactivation of the DID.
 3. ***did_status***: The status can be *Undefined*, *Initialized*, *Created*, *Updated*, *Recovered* or *Deactivated*.
 4. ***did_document***: Formatted as [Sidetree Document Model](../implementation/models.md#document-model) and hexadecimal encoded.
-5. ***did_update_key*** & ***did_recovery_key***: The public [DID-Keys](../protocol-parameters.md#did-keys) to enable future operations are stored in the DID-SC to execute the ***IsRightSignature*** procedure.
+5. ***did_update_key*** & ***did_recovery_key***: The public [DID-Keys](../protocol-parameters.md#did-keys) to enable future operations are stored in the DIDC to execute the ***IsRightSignature*** procedure.
 6. ***client_address***: The address of the user's client.
 7. ***created***: The block number when the DID-Create operation occurred.
 8. ***ledger_time***: The block number when the last DID operation occurred.
 9. ***transaction_number***: A monotonically increasing number representing the amount of DID operations that have taken place.
     
-    The following fields get determined by the **init.tyron** contract, by calling the ***ContractInit*** transition of the DID-SC:
+    The following fields get determined by the **init.tyron** contract, by calling the ***ContractInit*** transition of the DIDC:
 
 10. ***operation_cost***: The cost of each DID operation.
 11. ***foundation_address***: The address of the Tyron Pungtas Foundation
@@ -55,9 +55,9 @@ Procedures can change the state of the contract (mutable fields), but they are n
 10. ***Payment***: Sends the payment to the client and foundation.
 11. ***Timestamp***: Generates a timestamp that sets the ***ledger_time*** & ***transaction_number***.
 
-## Transitions 
+## Transitions
 
-Transitions are the public API of the contract and get invoked by sending messages to the contract.  
+Transitions are the public API of the DIDC and get invoked by sending messages to the contract.  
 
 1. ***ContractInit***: Sets the address of the user's client - permissionless (anyone can be a client). This transition sends a message to the **init.tyron** contract that, in return, calls the ***InitParameters*** transition. It also sets the ***did_status*** to Initialized.
 2. ***InitParameters***: The **init.tyron** contract calls this transition to set the ***operation_cost***, ***foundation_address*** & ***client_commission***.
@@ -65,4 +65,4 @@ Transitions are the public API of the contract and get invoked by sending messag
 4. ***DidUpdate***: Executes a [DID-Update](../CRUD-operations/did-update.md) operation.
 5. ***DidRecover***: Executes a [DID-Recover](../CRUD-operations/did-recover.md) operation.
 6. ***DidDeactivate***: Executes a [DID-Deactivate](../CRUD-operations/did-deactivate.md) operation.
-7. ***UpdateClient***: It allows the user to change their client - only the ***contract_owner*** can execute this transition.
+7. ***UpdateClient***: It allows the user to change their client - only the contract owner can execute this transition.
