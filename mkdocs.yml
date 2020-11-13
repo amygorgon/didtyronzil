@@ -37,8 +37,8 @@ nav:
   - Tyron DID Protocol:
     - Protocol parameters: 'protocol-parameters.md'
     - Smart contracts:
-      - DIDC: 'smart-contracts/didc.md'
-      - tyron.init: 'smart-contracts/init.tyron.md'
+      - didc.tyron: 'smart-contracts/didc.md'
+      - init.tyron: 'smart-contracts/init.tyron.md'
   - Implementation:
     - DID-Client: 'https://github.com/julio-cabdu/tyronzil-js'
     - Models: 'implementation/models.md'

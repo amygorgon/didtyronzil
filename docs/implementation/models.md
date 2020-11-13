@@ -51,24 +51,14 @@ interface DidServiceEndpointModel {
 }
 ```
 
-## Document model
-
-```js
-interface DocumentModel {
-    public_keys: PublicKeyModel[];
-    service_endpoints?: DidServiceEndpointModel[];
-}
-```
-
 ## Patch model
 
 ```js
 interface PatchModel {
     action: PatchAction;
-    publicKeys?: PublicKeyModel[];
-    serviceEndpoints?: ServiceEndpointModel[];
-    ids?: string[];
-    document: DocumentModel;
+    ids?: string[];        //the IDs of the DID-Document elements to remove
+    keyInput?: PublicKeyInput[];
+    services?: TransitionValue[];
 }
 ```
 

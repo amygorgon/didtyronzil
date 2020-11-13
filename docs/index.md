@@ -1,6 +1,6 @@
 ![tyronZIL-logo](./tyronzil-logo.png){: width="600" loading=lazy}
 
-# tyronZIL: The Tyron DID-Method v1.0.0
+# tyronZIL: The Tyron DID-Method v2.0.0
 
 An open-source W3C DID-Method powered by [Zilliqa](https://zilliqa.com)
 
@@ -47,14 +47,14 @@ The tyronZIL DID-Method is part of the open-source Tyron SSI Protocol that defin
 
 - [Security & privacy considerations](./security-privacy.md)
 
-
 ## Protocol
 
-The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the [DID-Method](#did-method) and the cryptographic information to instantiate, deploy and manage the DID-Smart-Contract that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier.
+The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the [DID-Method](#did-method) and the cryptographic information to instantiate, deploy and manage the DID smart contract (DIDC) that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier. The Tyron DID Protocol's goal is to make the DIDC smarter while keeping it as simple as possible.
+
 
 - [Protocol default parameters](./protocol-parameters.md)
 - Smart contracts:
-      - [DIDC: The Decentralized Identifier Smart Contract](./smart-contracts/didc.md)
+      - [didc.tyron: The Decentralized Identifier Smart Contract (DIDC)](./smart-contracts/didc.md)
       - [init.tyron: The SSI Initialization & DNS Smart Contract](./smart-contracts/init.tyron.md)
 
 Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.
