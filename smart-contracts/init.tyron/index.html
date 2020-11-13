@@ -17,7 +17,7 @@
     
     
       
-        <title>tyron.init - tyron</title>
+        <title>init.tyron - tyron</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inittyron-the-initialization-domain-name-system-smart-contract" class="md-skip">
+        <a href="#inittyron-the-ssi-initialization-domain-name-system-smart-contract" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              tyron.init
+              init.tyron
             
           </span>
         </div>
@@ -458,8 +458,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../DIDC/" class="md-nav__link">
-      DIDC
+    <a href="../didc/" class="md-nav__link">
+      didc.tyron
     </a>
   </li>
 
@@ -478,9 +478,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        init.tyron
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
-      tyron.init
+      init.tyron
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#immutable-fields" class="md-nav__link">
+    Immutable fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutable-fields" class="md-nav__link">
+    Mutable fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedures" class="md-nav__link">
+    Procedures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transitions" class="md-nav__link">
+    Transitions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -574,6 +624,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#immutable-fields" class="md-nav__link">
+    Immutable fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutable-fields" class="md-nav__link">
+    Mutable fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedures" class="md-nav__link">
+    Procedures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transitions" class="md-nav__link">
+    Transitions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -589,7 +675,66 @@
                   </a>
                 
                 
-                <h1 id="inittyron-the-initialization-domain-name-system-smart-contract">init.tyron: The Initialization &amp; Domain Name System Smart Contract</h1>
+                <h1 id="inittyron-the-ssi-initialization-domain-name-system-smart-contract">init.tyron: The SSI Initialization &amp; Domain Name System Smart Contract</h1>
+<p>Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract (DIDC) and MUST be the caller to every <a href="../didc/#transitions">transition</a> that affects the DIDC state.</p>
+<p>On the other hand, the user relies on servers and cloud infrastructure that is provided by the SSI agents (e.g., pungtas.agent).</p>
+<p>Tyron Pungtas is the open organization developing tyron as a foundation. Decentralization and tertiarization of services aim at being integrated by regionally diverse SSI agents. In future tyron improvement proposals, there will be an agent.tyron smart contract developed.</p>
+<p>The release of the DID-Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems user.did, avatar.agent and contract.tyron - it gets defined by the DID smart contract (DIDC) as follows:</p>
+<pre><code>(* The SSI Trinity ADT *)
+(*---------------------*)
+  type SsiTrinity =
+    | User              (* the contract owner *)
+    | Agent of String   (* the agent is the entity running the DID-Client)
+    | Tyron             (* the .tyron contracts *)
+</code></pre>
+<blockquote>
+<p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/init.tyron.scilla">init.tyron's code</a> on GitHub.</p>
+</blockquote>
+<h2 id="immutable-fields">Immutable fields</h2>
+<p>Immutable fields are set at deployment and can not get modified. The DIDC gets deployed with the following immutable fields:</p>
+<ol>
+<li><em>initFoundationAddress</em>: The Zilliqa adddress of the Tyron Pungtas Foundation, the owner of the init.tyron contract | [ByStr20 type]</li>
+</ol>
+<h2 id="mutable-fields">Mutable fields</h2>
+<p>Mutable fields can get modified but only if there is a specific code in the contract that allows it. They MUST get initialized with a value at deployment.</p>
+<ol>
+<li><em>foundation_addr</em>: The Zilliqa address of the Tyron Pungtas Foundation that can get updated by the <em>UpdateOwner</em> transition | [ByStr20 type]</li>
+<li><em>didc_code</em>: The init.tyron stores the DIDC code by version. This way, the agents can download the DIDC code by version directly from the Zilliqa blockchain | @key: version | @value: hex-encoded code | [Map String String type]</li>
+<li><em>operation_cost</em>: The cost of a tyronZIL transaction | @key: domain OR contract.tyron | @value: cost as % of the amount | [Map String Uint128 type]</li>
+<li><em>agent_commission</em>: The agent's commission as a % of share (the user has 51% of the share, Tyron Pungtas Foundation 51% of the remaining 49%, and the agent earns the rest and can offer promotions) | @key: avatar.agent | @value: max 24% | [Map String Uint128 type]</li>
+<li><em>dns</em>: The address of a user's DIDC gets stored in the DNS records map field defined as follows:</li>
+</ol>
+<pre><code>   @key: SsiDomain (e.g. &quot;.did&quot;, &quot;.tyron&quot;, &quot;.agent&quot;)
+   @value: Map of
+            @key: avatar
+            @value: address *)
+  field dns: Map String (Map String ByStr20) = Emp String (Map String ByStr20)
+</code></pre>
+<ol>
+<li><em>ssi_tokens</em>: The proxy addresses of the SSI Tokens | @key: token | @value: proxy address | [Map String ByStr20 type]</li>
+<li><em>ssi_token_implementations</em>: The addresses of the SSI Token implementations | @key: proxy address | @value: implementation address | [Map ByStr20 ByStr20 type]</li>
+</ol>
+<h2 id="procedures">Procedures</h2>
+<p>Procedures can change the state of the contract (mutable fields), but they are not part of the public API which means that they can only get invoked from within the contract itself.</p>
+<ol>
+<li><em>ThrowError</em>: The procedure to throw an error.</li>
+<li><em>Payment</em>: Executes the payment to the foundation.</li>
+<li><em>IsRightCaller</em>: Validates the _sender.</li>
+</ol>
+<h2 id="transitions">Transitions</h2>
+<p>Transitions are the public API of the DIDC and get invoked by sending messages to the contract.  </p>
+<ol>
+<li><em>UpdateOwner</em>: Updates the Zilliqa address of the Tyron Pungtas Foundation.</li>
+<li><em>SetDidCode</em>: Saves the DID-Smart-Contract code by version.</li>
+<li><em>OperationCost</em>: Sets the <em>operation_cost</em> by SSI domain (domain name or donation campaign code).</li>
+<li><em>AgentCommission</em>: Sets the <em>agent_commission</em> by domain name.agent of type String.</li>
+<li><em>Init</em>: Called by a DIDC to set the .did operation cost, foundation address &amp; agent's account.</li>
+<li><em>SetSsiDomain</em>: Sets a Self-Sovereign Identity domain name in the DNS records.</li>
+<li><em>SetSsiToken</em>: Sets the token name, proxy address and implementation address of a SSI Token.</li>
+<li><em>SsiToken</em>: Called by a DIDC to initialize a SSI Token in its state.</li>
+<li><em>Donate</em>: Called by a DIDC to initialize a donation campaign code in its state.</li>
+<li><em>DeleteCampaign</em>: Removes a donation campaign code from the <em>operation_cost</em> map field.</li>
+</ol>
                 
               
               
@@ -608,7 +753,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../DIDC/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../didc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -617,7 +762,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                DIDC
+                didc.tyron
               </div>
             </div>
           </a>

@@ -454,8 +454,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
-      DIDC
+    <a href="../../smart-contracts/didc/" class="md-nav__link">
+      didc.tyron
     </a>
   </li>
 
@@ -467,7 +467,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/init.tyron/" class="md-nav__link">
-      tyron.init
+      init.tyron
     </a>
   </li>
 
@@ -588,13 +588,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#document-model" class="md-nav__link">
-    Document model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#patch-model" class="md-nav__link">
     Patch model
   </a>
@@ -696,13 +689,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#document-model" class="md-nav__link">
-    Document model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#patch-model" class="md-nav__link">
     Patch model
   </a>
@@ -776,19 +762,12 @@
     endpoint: string;
 }
 </code></pre>
-<h2 id="document-model">Document model</h2>
-<pre><code class="language-js">interface DocumentModel {
-    public_keys: PublicKeyModel[];
-    service_endpoints?: DidServiceEndpointModel[];
-}
-</code></pre>
 <h2 id="patch-model">Patch model</h2>
 <pre><code class="language-js">interface PatchModel {
     action: PatchAction;
-    publicKeys?: PublicKeyModel[];
-    serviceEndpoints?: ServiceEndpointModel[];
-    ids?: string[];
-    document: DocumentModel;
+    ids?: string[];        //the IDs of the DID-Document elements to remove
+    keyInput?: PublicKeyInput[];
+    services?: TransitionValue[];
 }
 </code></pre>
 <h3 id="patch-action">Patch action</h3>
@@ -827,7 +806,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                tyron.init
+                init.tyron
               </div>
             </div>
           </a>

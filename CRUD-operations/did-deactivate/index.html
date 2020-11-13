@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tyron-did-deactivate-operation" class="md-skip">
+        <a href="#did-deactivate-tyronzil-transaction" class="md-skip">
           Skip to content
         </a>
       
@@ -401,15 +401,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-clients-side" class="md-nav__link">
-    On the client's side:
+  <a href="#on-the-did-clients-side" class="md-nav__link">
+    On the DID-Client's side:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
-    On the DID-Smart-Contract's side
+    On the DID smart contract's side
   </a>
   
 </li>
@@ -503,8 +503,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
-      DIDC
+    <a href="../../smart-contracts/didc/" class="md-nav__link">
+      didc.tyron
     </a>
   </li>
 
@@ -516,7 +516,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/init.tyron/" class="md-nav__link">
-      tyron.init
+      init.tyron
     </a>
   </li>
 
@@ -617,15 +617,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-clients-side" class="md-nav__link">
-    On the client's side:
+  <a href="#on-the-did-clients-side" class="md-nav__link">
+    On the DID-Client's side:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
-    On the DID-Smart-Contract's side
+    On the DID smart contract's side
   </a>
   
 </li>
@@ -647,30 +647,29 @@
                   </a>
                 
                 
-                <h1 id="tyron-did-deactivate-operation">Tyron DID-Deactivate operation</h1>
-<p>A Tyron DID-Deactivate operation completely deactivates the Decentralized Identifier by setting the DID-Status to <strong><em>Deactivated</em></strong> and the DID-State mutable fields to None.</p>
-<p>To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><strong><em>did_recovery_key</em></strong></a>.</p>
-<p>Once the operation request is processed, the client makes the call to the <strong><em>DidDeactivate</em></strong> transition of the user's <a href="../../smart-contracts/DIDC/">DIDC</a>. This transition is irreversible - after deactivation, the DIDC will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <strong><em>DidDeactivated</em></strong> error.</p>
-<h2 id="on-the-clients-side">On the client's side:</h2>
+                <h1 id="did-deactivate-tyronzil-transaction">DID-Deactivate tyronZIL transaction</h1>
+<p>It completely deactivates the Decentralized Identifier by setting the DID-Status to <em>Deactivated</em> and the DID state to <em>None</em>, <em>undefined</em> or <em>Empty</em>.</p>
+<p>To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_recovery_key</em></a>.</p>
+<p>Once the operation request is processed, the user as the contract owner MUST call the <em>DidDeactivate</em> transition of their <a href="../../smart-contracts/didc/">DIDC</a>. This transition is irreversible - after deactivation, the DIDC will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <em>DidDeactivated</em> error.</p>
+<h2 id="on-the-did-clients-side">On the DID-Client's side:</h2>
 <ol>
-<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DIDC address to fetch the DID-State from the blockchain.</li>
-<li>Get the user's private <strong><em>did_recovery_key</em></strong> and verify that icorresponds to the public <strong><em>did_recovery_key</em></strong> stored in the DIDC.</li>
-<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><strong><em>tyron_hash</em></strong></a> from the user's DIDC and sign it with the pair <strong><em>did_recovery_keys</em></strong>. </li>
-<li>Return the Schnorr signature as a hex-encoded string, and with it produce the <strong><em>DidDeactivate</em></strong> transition parameter.</li>
-<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidDeactivate</em></strong> transition of the user's DIDC. For that, the client MUST provide their private key and choose the gas limit.</li>
+<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
+<li>Utilize the user's private <em>did_recovery_key</em> to verify that it corresponds to the public <em>did_recovery_key</em> stored in the DIDC.</li>
+<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><em>tyron_hash</em></a> from the user's DIDC and sign it with the pair <em>did_recovery_keys</em> through the <a href="../../protocol-parameters/#signature-algorithm">SIGNATURE_ALGORITHM</a>.</li>
+<li>Submit the <em>DidDeactivate</em> tyronZIL transaction with its transition parameters (agent and Schnorr signature). The contract owner MUST call this transition for it to be successful.</li>
 </ol>
-<h2 id="on-the-did-smart-contracts-side">On the DID-Smart-Contract's side</h2>
-<p>When the <strong><em>DidDeactivate</em></strong> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DIDC proceeds as follows:</p>
+<h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
+<p>When the <em>DidDeactivate</em> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DIDC proceeds as follows:</p>
 <ol>
-<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DIDC work only if the payment is correct.</li>
-<li>Executes the <strong><em>IsClient</em></strong> procedure to verify that the call comes from the user's client.</li>
-<li>Executes the <strong><em>IsRightStatus</em></strong> procedure to verify that the DID-Status is neither <strong><em>Deactivated</em></strong> nor <strong><em>Initialized</em></strong>.</li>
-<li>Performs the <strong><em>IsRightSignature</em></strong> procedure. It verifies that the signature got produced with the <strong><em>did_recovery_keys</em></strong> by applying the Schnorr signature algorithm on the <strong><em>tyron_hash</em></strong>. For this verification, the DIDC utilizes the public key that it has stored in the <strong><em>did_recovery_key</em></strong> mutable field.</li>
-<li>Sets the DID-Status to <strong><em>Deactivated</em></strong>, the <strong><em>did_document</em></strong> to None{ByStr} and both the <strong><em>did_update_key</em></strong> &amp; <strong><em>did_recovery_key</em></strong> to None{ByStr33}.</li>
-<li>Executes the <strong><em>Timestamp</em></strong> procedure.</li>
+<li>First, it verifies that the DID-Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
+<li>Executes the  <em>Payment</em> procedure to make the DIDC work only if the payment is correct.</li>
+<li>Executes the <em>IsRightCaller</em> procedure to verify that the call comes from the user (contract owner address).</li>
+<li>Fetches the <em>did_recovery_key</em> and the <em>tyron_hash</em> from the contract's state.</li>
+<li>Performs the <em>IsRightSignature</em> procedure. It verifies that the signature got produced with the <em>did_recovery_keys</em> by applying the Schnorr signature algorithm on the <em>tyron_hash</em>. 5. Sets the DID-Status to <em>Deactivated</em>, the <em>verification_methods</em> to <em>Emp String ByStr33</em>, the <em>services</em> to <em>Emp String Pair String String</em> and both the <em>did_update_key</em> &amp; <em>did_recovery_key</em> to None{ByStr33}.</li>
+<li>Emits the "DID_deactivated" event &amp; executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A tyronZIL DID-Deactivate transaction consumes approximately 500 units of GAS (1 ZIL, currently less than 0.02 USD).</p>
+<p>A DID-Deactivate  tyronZIL transaction consumes approximately 500 units of GAS (1 ZIL, currently around 0.02 USD).</p>
                 
               
               

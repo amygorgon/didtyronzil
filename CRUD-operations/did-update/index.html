@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tyron-did-update-operation" class="md-skip">
+        <a href="#did-update-tyronzil-transaction" class="md-skip">
           Skip to content
         </a>
       
@@ -389,15 +389,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-clients-side" class="md-nav__link">
-    On the client's side:
+  <a href="#on-the-did-clients-side" class="md-nav__link">
+    On the DID-Client's side:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
-    On the DID-Smart-Contract's side
+    On the DID smart contract's side
   </a>
   
 </li>
@@ -503,8 +503,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/DIDC/" class="md-nav__link">
-      DIDC
+    <a href="../../smart-contracts/didc/" class="md-nav__link">
+      didc.tyron
     </a>
   </li>
 
@@ -516,7 +516,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/init.tyron/" class="md-nav__link">
-      tyron.init
+      init.tyron
     </a>
   </li>
 
@@ -617,15 +617,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-clients-side" class="md-nav__link">
-    On the client's side:
+  <a href="#on-the-did-clients-side" class="md-nav__link">
+    On the DID-Client's side:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#on-the-did-smart-contracts-side" class="md-nav__link">
-    On the DID-Smart-Contract's side
+    On the DID smart contract's side
   </a>
   
 </li>
@@ -647,42 +647,40 @@
                   </a>
                 
                 
-                <h1 id="tyron-did-update-operation">Tyron DID-Update operation</h1>
-<p>A Tyron DID-Update operation makes modifications to the user's DID-Document (stored in their DIDC). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><strong><em>did_update_key</em></strong></a>.</p>
-<p>Once the operation request is processed, the client makes a call to the <strong><em>DidUpdate</em></strong> transition of the user's <a href="../../smart-contracts/DIDC/">DIDC</a>.</p>
-<h2 id="on-the-clients-side">On the client's side:</h2>
+                <h1 id="did-update-tyronzil-transaction">DID-Update tyronZIL transaction</h1>
+<p>It makes modifications to the user's self-sovereign identity (stored in their DIDC). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_update_key</em></a>.</p>
+<p>Once the operation request is processed, the contract owner MUST make a call to the <em>DidUpdate</em> transition of the user's <a href="../../smart-contracts/didc/">DIDC</a>.</p>
+<h2 id="on-the-did-clients-side">On the DID-Client's side:</h2>
 <ol>
-<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's DIDC address to fetch the DID-State from the blockchain.</li>
-<li>Get the user's private <strong><em>did_update_key</em></strong> and verify that corresponds to the public <strong><em>did_update_key</em></strong> stored in the DIDC.</li>
-<li>Get the user's input regarding the update <a href="../../implementation/models/#patch-action">patch actions</a>, and generate a patches array.</li>
-<li>Process the patches array along with the former document retrieved from the DIDC, to obtain an updated document and hex-encode it.</li>
-<li>Sign the new document with the pair <strong><em>did_update_keys</em></strong>. </li>
-<li>Generate a new key-pair for the <strong><em>did_update_keys</em></strong> necessary for any future Update operation.</li>
+<li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
+<li>Utilize the user's private <em>did_update_key</em> to verify that it corresponds to the public <em>did_update_key</em> stored in the DIDC.</li>
+<li>Get the user's input regarding the update <a href="../../implementation/models/#patch-action">patch actions</a>, and generate the <em>List Document</em>.</li>
+<li>Hash the document with the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITHM</a> and sign the hash with the <a href="../../protocol-parameters/#signature-algorithm">SIGNATURE_ALGORITHM</a> using the <em>did_update_keys</em>. </li>
+<li>Generate a new key-pair for the <em>did_update_keys</em> necessary for any future Update operation.</li>
 <li>
-<p>Return the new document, Schnorr signature &amp; the new public <strong><em>did_update_key</em></strong> as hex-encoded strings.</p>
+<p>Return the new document, hash, Schnorr signature &amp; the new public <em>did_update_key</em>.</p>
 <blockquote>
 <p>All private keys MUST be in control of the user.</p>
 </blockquote>
 </li>
 <li>
-<p>Produce the <strong><em>DidUpdate</em></strong> transition parameters with the output from step 7.</p>
+<p>Submit the <em>DidUpdate</em> tyronZIL transaction with its transition parameters (agent, newDocument, docHash, signature and newUpdateKey). The contract owner MUST call this transition for it to be successful.</p>
 </li>
-<li>The client MUST submit the tyronZIL transaction by calling the <strong><em>DidUpdate</em></strong> transition of the user's DIDC. For that, the client MUST provide their private key and choose the gas limit.</li>
 </ol>
-<h2 id="on-the-did-smart-contracts-side">On the DID-Smart-Contract's side</h2>
-<p>When the <strong><em>DidUpdate</em></strong> transition gets called with the proper hex-encoded arguments (new document of type ByStr, signature of type ByStr64 &amp; new public <strong><em>did_update_key</em></strong> of type ByStr33), the DIDC proceeds as follows:</p>
+<h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
+<p>When the <em>DidUpdate</em> transition gets called, the DIDC proceeds as follows:</p>
 <ol>
-<li>First, it executes the  <strong><em>Payment</em></strong> procedure to make the DIDC work only if the payment is correct.</li>
-<li>Executes the <strong><em>IsClient</em></strong> procedure to verify that the call comes from the user's client.</li>
-<li>Executes the <strong><em>IsRightStatus</em></strong> procedure to verify that the DID-Status is neither <strong><em>Deactivated</em></strong> nor <strong><em>Initialized</em></strong>.</li>
-<li>Performs the <strong><em>IsRightSignature</em></strong> procedure to verify that the signature that comes with the signed document got produced with the <strong><em>did_update_keys</em></strong> by applying the Schnorr signature algorithm. For this verification, the DIDC utilizes the public key that it has stored in the <strong><em>did_update_key</em></strong> mutable field.</li>
-<li>Saves the updated document in the <strong><em>did_document</em></strong> field.</li>
-<li>Applies the <strong><em>IsValidKey</em></strong> procedure to verify that the new public <strong><em>did_update_key</em></strong> is different from any other key. If so, then saves the new key in the <strong><em>did_update_key</em></strong> mutable field.</li>
-<li>Sets the DID-Status to <strong><em>Updated</em></strong>.</li>
-<li>Executes the <strong><em>Timestamp</em></strong> procedure.</li>
+<li>First, it verifies that the DID-Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
+<li>Executes the <em>Payment</em> procedure to make the DIDC work only if the payment is correct.</li>
+<li>Executes the <em>IsRightCaller</em> procedure to verify that the call comes from the user (contract owner address).</li>
+<li>Performs the <em>IsRightSignature</em> procedure to verify that the signature got produced with the <em>did_update_keys</em> by applying the Schnorr signature algorithm. For this verification, the DIDC utilizes the public key that it has stored in the <em>did_update_key</em> mutable field.</li>
+<li>Executes the <em>UpdateDocument</em> procedure to update the <em>verification_methods</em> and <em>services</em> map fields.</li>
+<li>Applies the <em>IsValidKey</em> procedure to verify that the new public <em>did_update_key</em> is different from any other key. If so, then saves the new key in the <em>did_update_key</em> mutable field.</li>
+<li>Sets the DID-Status to <em>Updated</em>.</li>
+<li>Emits a "DID_updated" event &amp; executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A tyronZIL DID-Update transaction consumes approximately 700 units of GAS (1.4 ZIL, currently less than 0.03 USD).</p>
+<p>A DID-Update tyronZIL transaction consumes approximately 700 units of GAS (1.4 ZIL, currently less than 0.03 USD).</p>
                 
               
               
