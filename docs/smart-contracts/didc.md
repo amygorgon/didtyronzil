@@ -1,4 +1,4 @@
-# didc.tyron: The Decentralized Identifier Smart Contract (DIDC)
+# didc.tyron: The Decentralized Identifier Smart Contract
 
 The user's DID smart contract (DIDC) gets instantiated from a template that is stored on-chain in the [init.tyron](./init.tyron.md) smart contract. For that, the user MUST give their Zilliqa address as the *contract owner*. Once the DIDC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DIDC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.
 

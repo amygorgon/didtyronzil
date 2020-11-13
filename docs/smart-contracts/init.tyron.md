@@ -6,7 +6,7 @@ On the other hand, the user relies on servers and cloud infrastructure that is p
 
 Tyron Pungtas is the open organization developing tyron as a foundation. Decentralization and tertiarization of services aim at being integrated by regionally diverse SSI agents. In future tyron improvement proposals, there will be an agent.tyron smart contract developed.
 
-The release of the DID-Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems user.did, avatar.agent and contract.tyron - it gets defined by the DID smart contract (DIDC) as follows:
+The release of the DID-Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems *user.did*, *avatar.agent* and *contract.tyron* - it gets defined by the DID smart contract (DIDC) as follows:
 
 ```
 (* The SSI Trinity ADT *)
