@@ -44,6 +44,8 @@ Mutable fields can get modified but only if there is a specific code in the cont
 22. *xProxies*: The SSI Token proxies | @key: token name | @value: proxy address | [Map String ByStr20 type]
 23. *donation*: The Donation Scheme | @key: campaign name | @value: campaign's starting blok number | [Map String BNum]
 
+    > [Pung.me](https://github.com/pungtas/pung.me) the first donations use case
+
 ## Procedures 
 
 Procedures can change the state of the contract (mutable fields), but they are not part of the public API which means that they can only get invoked from within the contract itself.
