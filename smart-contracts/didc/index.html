@@ -796,7 +796,12 @@
 <li><em>xWallet</em>: The SSI Token implementations | @key: token address | @value: token name | [Map ByStr20 String type]</li>
 <li><em>xBalances</em>: The SSI Token balances | @key: token name | @value: balance | [Map String Uint128 type]</li>
 <li><em>xProxies</em>: The SSI Token proxies | @key: token name | @value: proxy address | [Map String ByStr20 type]</li>
-<li><em>donation</em>: The Donation Scheme | @key: campaign name | @value: campaign's starting blok number | [Map String BNum]</li>
+<li>
+<p><em>donation</em>: The Donation Scheme | @key: campaign name | @value: campaign's starting blok number | [Map String BNum]</p>
+<blockquote>
+<p><a href="https://github.com/pungtas/pung.me">Pung.me</a> the first donations use case</p>
+</blockquote>
+</li>
 </ol>
 <h2 id="procedures">Procedures</h2>
 <p>Procedures can change the state of the contract (mutable fields), but they are not part of the public API which means that they can only get invoked from within the contract itself.</p>
