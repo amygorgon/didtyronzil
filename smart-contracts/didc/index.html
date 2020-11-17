@@ -808,7 +808,7 @@
 <ol>
 <li><em>DidScheme</em>: It generates the user's <em>decentralized_identifier</em> &amp; <em>tyron_hash</em>. This procedure is the only way to generate the Decentralized Identifier, and it can only get executed by the <em>DidCreate</em> transition.</li>
 <li><em>ThrowError</em>: The procedure to throw an error.</li>
-<li><em>IsRightCaller</em>: Validates that the order comes from a SSI Trinity entity. This procedure matches against a <em>SsiTrinity</em> ADT: user (to validate that the call comes from the user/ contract owner address), agent (to verify the agent in the Payment procedure) or tyron (to validate that the call comes from the <a href="../init.tyron/">init.tyron</a> contract.</li>
+<li><em>IsRightCaller</em>: Validates that the call comes from an SSI Trinity entity. This procedure matches against the <em>SsiTrinity</em> ADT that can be: <em>user</em> (to validate that the call comes from the user/ contract owner address), <em>agent</em> (to verify the agent in the Payment procedure) or <em>tyron</em> (to validate that the call comes from the <a href="../init.tyron/">init.tyron</a> contract.</li>
 <li><em>IsRightStatus</em>: Verifies that the DID-Status is correct for the given operation.</li>
 <li><em>Donation</em>: Checks that the donation campaign code is within the limitation period of 1-week.</li>
 <li><em>Payment</em>: Executes the payment to the agents and foundation.</li>
@@ -838,7 +838,7 @@
 <h3 id="the-xwallet-transitions">The xWallet transitions</h3>
 <ol>
 <li><em>SsiToken</em>: To set/update a SSI Token.</li>
-<li><em>SsiTokenCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to update a SSI Token to its latest implementation (token name, proxy address and token implementation address).</li>
+<li><em>SsiTokenCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to update an SSI Token to its latest implementation (token name, proxy address and token implementation address).</li>
 <li><em>ZilIn</em>: Adds native funds (ZIL) to the xWallet.</li>
 <li><em>ZilOut</em>: Sends ZIL from the xWallet to any recipient that implements the input tag (e.g. "ZilIn", "").</li>
 <li>RecipientAcceptTransfer: The ZRC-2 acceptance transition - MUST be defined or transfers to this xWallet will fail otherwise.</li>
