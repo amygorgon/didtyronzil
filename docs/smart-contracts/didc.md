@@ -52,7 +52,7 @@ Procedures can change the state of the contract (mutable fields), but they are n
 
 1. *DidScheme*: It generates the user's *decentralized_identifier* & *tyron_hash*. This procedure is the only way to generate the Decentralized Identifier, and it can only get executed by the *DidCreate* transition.
 2. *ThrowError*: The procedure to throw an error.
-3. *IsRightCaller*: Validates that the order comes from a SSI Trinity entity. This procedure matches against a *SsiTrinity* ADT: user (to validate that the call comes from the user/ contract owner address), agent (to verify the agent in the Payment procedure) or tyron (to validate that the call comes from the [init.tyron](./init.tyron.md) contract.
+3. *IsRightCaller*: Validates that the call comes from an SSI Trinity entity. This procedure matches against the *SsiTrinity* ADT that can be: *user* (to validate that the call comes from the user/ contract owner address), *agent* (to verify the agent in the Payment procedure) or *tyron* (to validate that the call comes from the [init.tyron](./init.tyron.md) contract.
 4. *IsRightStatus*: Verifies that the DID-Status is correct for the given operation.
 5. *Donation*: Checks that the donation campaign code is within the limitation period of 1-week.
 6. *Payment*: Executes the payment to the agents and foundation.
@@ -83,7 +83,7 @@ Transitions are the public API of the DIDC and get invoked by sending messages t
 ### The xWallet transitions
 
 9. *SsiToken*: To set/update a SSI Token.
-10. *SsiTokenCallBack*: The [init.tyron](./init.tyron.md) contract calls this transition to update a SSI Token to its latest implementation (token name, proxy address and token implementation address).
+10. *SsiTokenCallBack*: The [init.tyron](./init.tyron.md) contract calls this transition to update an SSI Token to its latest implementation (token name, proxy address and token implementation address).
 11. *ZilIn*: Adds native funds (ZIL) to the xWallet.
 12. *ZilOut*: Sends ZIL from the xWallet to any recipient that implements the input tag (e.g. "ZilIn", "").
 13. RecipientAcceptTransfer: The ZRC-2 acceptance transition - MUST be defined or transfers to this xWallet will fail otherwise.
