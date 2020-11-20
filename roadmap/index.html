@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tyronzil-roadmap" class="md-skip">
+        <a href="#tyron-roadmap" class="md-skip">
           Skip to content
         </a>
       
@@ -585,8 +585,8 @@
                   </a>
                 
                 
-                <h1 id="tyronzil-roadmap">tyronZIL roadmap</h1>
-<p>The tyronZIL project gets organized in development sprints of 4 weeks duration.</p>
+                <h1 id="tyron-roadmap">Tyron roadmap</h1>
+<p>This project gets organized in development sprints of 4 weeks duration.</p>
 <table>
 <thead>
 <tr>
@@ -597,19 +597,27 @@
 <tbody>
 <tr>
 <td>29/6 - 24/7/2020</td>
-<td>Create the tyronZIL DID-Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate)</td>
+<td>Creates the tyronZIL DID-Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate).</td>
 </tr>
 <tr>
 <td>27/7 - 21/8/2020</td>
-<td>Integrate the DID-Client with the Zilliqa blockchain platform</td>
+<td>Integrates the DID-Client with the Zilliqa blockchain platform.</td>
 </tr>
 <tr>
 <td>24/8 - 18/9/2020</td>
-<td>Implement the Tyron-Smart-Contract to immutably save and distribute DID-States</td>
+<td>Implements the <a href="https://www.tyronzil.com/smart-contracts/didc/">DID-Smart-Contract (DIDC)</a> to immutably save and distribute DID-States.</td>
 </tr>
 <tr>
 <td>21/9 - 11/12/2020</td>
-<td>Tyron Improvement Proposal #1 - TIP1 consists of 3 sprints - details will get published soon enough</td>
+<td><strong>Tyron Improvement Proposal #1</strong> - TIP1 consists of 3 sprints that aim to increase security and discoverability of Tyron Decentralized Identifiers (DIDs).</td>
+</tr>
+<tr>
+<td>21/9 - 16/10/2020</td>
+<td>TIP1.1 implements Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DIDC. The contract also produces the SHA-256 hash of the Decentralized Identifier, which must be signed to deactivate the DID. And the DIDC can verify that all Schnorr signatures correspond to the <a href="https://www.tyronzil.com/protocol-parameters/#did-keys">DID-Keys</a> that have their public keys stored in the contract. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
+</tr>
+<tr>
+<td>19/10 - 13/11/2020</td>
+<td>TIP1.2 develops the <em>init.tyron</em> smart contract for the initialization of <a href="https://twitter.com/tyrondid">@tyron.did</a> self-sovereign identities as well as a domain name system that implements the <em>.did</em>, <em>.agent</em> &amp; <em>.tyron</em> domains. These top-level SSI Domains define the SSI Trinity constituted by the user as the owner of their decentralized identity, the agent providing products &amp; services, and tyron as the technology &amp; open organization. This development sprint also introduces the xWallet that gives ZRC-2 transfer capabilities to the DID smart contract (DIDC). By using a donation campaign code, the DIDC can send a commission-free transfer to another <em>user.did</em> &amp; keep track of the token balance - find the donations prototype at <a href="https://pung.me">pung.me</a>. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v2.0.0-alpha">Release notes</a>.</td>
 </tr>
 </tbody>
 </table>
