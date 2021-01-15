@@ -1,14 +1,14 @@
-# Tyron DID-Document
+# Tyron DID Document
 
 > For an introduction, read [this](./W3C-dids.md#did-document).
 
-A DID-Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.
+A DID Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.
 
-The Tyron DID-Document's serialization format is **JSON**:  
+The Tyron DID Document's serialization format is **JSON**:  
 
 - It defines an unambiguous encoding and decoding of all properties and their associated values
 - It MUST be a single JSON object conforming to [RFC8259, The JavaScript Object Notation (JSON) Data Interchange Format](https://tools.ietf.org/html/rfc8259)  
-- The names of the members of the JSON object MUST correspond to the [core property names](#core-properties) of the DID-Document  
+- The names of the members of the JSON object MUST correspond to the [core property names](#core-properties) of the DID Document  
 - Property values MUST be:  
         - [Numbers](https://tools.ietf.org/html/rfc8259#section-6) for number values representable as IEEE754  
         - [Literal values](https://tools.ietf.org/html/rfc8259#section-3) for boolean ('false', 'true') and empty values ('null')  
@@ -32,7 +32,7 @@ The ```id``` value MUST be a single valid Tyron DID itself, e.g.:
 }
 ```
 
-All W3C DID-Documents MUST include the ```id``` property, which denotes the [DID-Subject](./W3C-dids.md#did-subject).
+A W3C DID Document MUST include the ```id``` property, which denotes the [DID-Subject](./W3C-dids.md#did-subject).
 
 ### 2. publicKey
 
@@ -64,7 +64,7 @@ All verification methods MUST have the following properties:
 - ***type***: Its value MUST be exactly one verification method type. The Tyron default type is currently ```SchnorrSecp256k1VerificationKey2019```
 - ***publicKeyBase58***: the secp256k1 public key value encoded as a raw 32-byte string in [Base58](https://tools.ietf.org/html/draft-msporny-base58-01) Bitcoin format
 
-Before processing them into the DID-Document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose).
+Before processing them into the DID Document, each verification method has a property called ```purpose```. It states the functionality of the key, its [verification relationship](./W3C-dids.md#verification-relationship). For public keys, the purpose value MUST be an array of [PublicKeyPurpose variants](./implementation/models.md#public-key-purpose).
 
 
 ### 3. authentication

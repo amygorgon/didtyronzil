@@ -1,19 +1,19 @@
 # init.tyron: The SSI Initialization & Domain Name System Smart Contract
 
-Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract (DIDC) and MUST be the caller to every [transition](./didc.md#transitions) that affects the DIDC state.
+Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract and MUST be the caller to every [transition](./didc.md#transitions) that affects the DID State.
 
 On the other hand, the user relies on servers and cloud infrastructure that is provided by the SSI agents (e.g., pungtas.agent).
 
 Tyron Pungtas is the open organization developing tyron as a foundation. Decentralization and tertiarization of services aim at being integrated by regionally diverse SSI agents. In future tyron improvement proposals, there will be an agent.tyron smart contract developed.
 
-The release of the DID-Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems *user.did*, *avatar.agent* and *contract.tyron* - it gets defined by the DID smart contract (DIDC) as follows:
+The release of the DID Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems *user.did*, *avatar.agent* and *contract.tyron* - it gets defined by the DID smart contract as follows:
 
 ```
 (* The SSI Trinity ADT *)
 (*---------------------*)
   type SsiTrinity =
     | User              (* the contract owner *)
-    | Agent of String   (* the agent is the entity running the DID-Client)
+    | Agent of String   (* the agent is the entity running the DID Client)
     | Tyron             (* the .tyron contracts *)
 ```
 
@@ -21,7 +21,7 @@ The release of the DID-Client tyronZIL v2.0 introduces the concept of the SSI Tr
 
 ## Immutable fields
 
-Immutable fields are set at deployment and can not get modified. The DIDC gets deployed with the following immutable fields:
+Immutable fields are set at deployment and can not get modified. The DID smart contract gets deployed with the following immutable fields:
 
 0. *initFoundationAddress*: The Zilliqa adddress of the Tyron Pungtas Foundation, the owner of the init.tyron contract | [ByStr20 type]
 
@@ -30,10 +30,10 @@ Immutable fields are set at deployment and can not get modified. The DIDC gets d
 Mutable fields can get modified but only if there is a specific code in the contract that allows it. They MUST get initialized with a value at deployment.
 
 0. *foundation_addr*: The Zilliqa address of the Tyron Pungtas Foundation that can get updated by the *UpdateOwner* transition | [ByStr20 type]
-1. *didc_code*: The init.tyron stores the DIDC code by version. This way, the agents can download the DIDC code by version directly from the Zilliqa blockchain | @key: version | @value: hex-encoded code | [Map String String type]
+1. *didc_code*: The init.tyron stores the DID-smart-contract code by version. This way, the agents can download the code by version directly from the Zilliqa blockchain | @key: version | @value: hex-encoded code | [Map String String type]
 2. *operation_cost*: The cost of a tyronZIL transaction | @key: domain OR contract.tyron | @value: cost as % of the amount | [Map String Uint128 type]
 3. *agent_commission*: The agent's commission as a % of share (the user has 51% of the share, Tyron Pungtas Foundation 51% of the remaining 49%, and the agent earns the rest and can offer promotions) | @key: avatar.agent | @value: max 24% | [Map String Uint128 type]
-4. *dns*: The address of a user's DIDC gets stored in the DNS records map field defined as follows:
+4. *dns*: The address of a user's DID smart contract gets stored in the DNS records map field defined as follows:
 ```
    @key: SsiDomain (e.g. ".did", ".tyron", ".agent")
    @value: Map of
@@ -54,15 +54,15 @@ Procedures can change the state of the contract (mutable fields), but they are n
 
 ## Transitions
 
-Transitions are the public API of the DIDC and get invoked by sending messages to the contract.  
+Transitions are the public API and get invoked by sending messages to the contract.  
 
 0. *UpdateOwner*: Updates the Zilliqa address of the Tyron Pungtas Foundation.
-1. *SetDidCode*: Saves the DID-Smart-Contract code by version.
+1. *SetDidCode*: Saves the DID-smart-contract code by version.
 2. *OperationCost*: Sets the *operation_cost* by SSI domain (domain name or donation campaign code).
 3. *AgentCommission*: Sets the *agent_commission* by domain name.agent of type String.
-4. *Init*: Called by a DIDC to set the .did operation cost, foundation address & agent's account.
+4. *Init*: Called by a DID smart contract to set the .did operation cost, foundation address & agent's account.
 5. *SetSsiDomain*: Sets a Self-Sovereign Identity domain name in the DNS records.
 6. *SetSsiToken*: Sets the token name, proxy address and implementation address of a SSI Token.
-7. *SsiToken*: Called by a DIDC to initialize a SSI Token in its state.
-8. *Donate*: Called by a DIDC to initialize a donation campaign code in its state.
+7. *SsiToken*: Called by a DID contract to initialize a SSI Token in its state.
+8. *Donate*: Called by a DID contract to initialize a donation campaign code in its state.
 9. *DeleteCampaign*: Removes a donation campaign code from the *operation_cost* map field.

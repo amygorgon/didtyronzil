@@ -12,9 +12,9 @@ theme:
 markdown_extensions:
   - attr_list
 repo_url: https://github.com/julio-cabdu/didtyronZIL
-site_description: An open-source W3C DID-Method powered by Zilliqa
-site_author: Julio Cabrapan Duarte
-copyright: Copyright (C) 2020 Julio Cesar Cabrapan Duarte
+site_description: Zilliqa's W3C DID Method
+site_author: Tralcan X
+copyright: Copyright (C) 2021 Tyron Pungtas
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -22,25 +22,25 @@ extra:
 nav: 
   - Home: 'index.md'
   - W3C DIDs: 'W3C-dids.md'
-  - DID-Method:
+  - DID Method:
     - Scheme:
-      - DID-Scheme: 'scheme/did-scheme.md'
+      - DID Scheme: 'scheme/did-scheme.md'
       - DID-URL syntax: 'scheme/did-url-syntax.md'
-    - DID-Document: 'did-document.md'
-    - CRUD Operations:
-      - DID-Create: 'CRUD-operations/did-create.md'
-      - DID-Resolve: 'CRUD-operations/did-resolve.md'
-      - DID-Recover: 'CRUD-operations/did-recover.md'
-      - DID-Update: 'CRUD-operations/did-update.md'
-      - DID-Deactivate: 'CRUD-operations/did-deactivate.md'
+    - DID Document: 'did-document.md'
+    - DID CRUD Operations:
+      - Create: 'CRUD-operations/did-create.md'
+      - Resolve: 'CRUD-operations/did-resolve.md'
+      - Recover: 'CRUD-operations/did-recover.md'
+      - Update: 'CRUD-operations/did-update.md'
+      - Deactivate: 'CRUD-operations/did-deactivate.md'
     - Security & privacy: 'security-privacy.md'
-  - Tyron DID Protocol:
+  - Tyron SSI Protocol:
     - Protocol parameters: 'protocol-parameters.md'
     - Smart contracts:
-      - didc.tyron: 'smart-contracts/didc.md'
+      - DID.tyron: 'smart-contracts/didc.md'
       - init.tyron: 'smart-contracts/init.tyron.md'
   - Implementation:
-    - DID-Client: 'https://github.com/julio-cabdu/tyronzil-js'
+    - DID Client: 'https://github.com/julio-cabdu/tyronzil-js'
     - Models: 'implementation/models.md'
   - Development: 'roadmap.md'
   

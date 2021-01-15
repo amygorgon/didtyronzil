@@ -1,5 +1,5 @@
-# tyronZIL DID-Method spec website
+# tyronZIL DID Method specification website
 
-A W3C DID-Method powered by the [Zilliqa](https://zilliqa.com) blockchain :zap:
+Zilliqa's W3C DID Method.
 
-Get the DID-Client reference implementation for Node.js at [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js)
+DID Client reference implementation for Node.js at [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js)
