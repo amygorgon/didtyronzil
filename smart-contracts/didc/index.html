@@ -17,7 +17,7 @@
     
     
       
-        <title>didc.tyron - tyron</title>
+        <title>DID.tyron - tyron</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#didctyron-the-decentralized-identifier-smart-contract" class="md-skip">
+        <a href="#didtyron-the-decentralized-identifier-smart-contract" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              didc.tyron
+              DID.tyron
             
           </span>
         </div>
@@ -301,13 +301,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      DID CRUD Operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="DID CRUD Operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        DID CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -319,7 +319,7 @@
 
   <li class="md-nav__item">
     <a href="../../CRUD-operations/did-create/" class="md-nav__link">
-      DID-Create
+      Create
     </a>
   </li>
 
@@ -331,7 +331,7 @@
 
   <li class="md-nav__item">
     <a href="../../CRUD-operations/did-resolve/" class="md-nav__link">
-      DID-Resolve
+      Resolve
     </a>
   </li>
 
@@ -343,7 +343,7 @@
 
   <li class="md-nav__item">
     <a href="../../CRUD-operations/did-recover/" class="md-nav__link">
-      DID-Recover
+      Recover
     </a>
   </li>
 
@@ -355,7 +355,7 @@
 
   <li class="md-nav__item">
     <a href="../../CRUD-operations/did-update/" class="md-nav__link">
-      DID-Update
+      Update
     </a>
   </li>
 
@@ -367,7 +367,7 @@
 
   <li class="md-nav__item">
     <a href="../../CRUD-operations/did-deactivate/" class="md-nav__link">
-      DID-Deactivate
+      Deactivate
     </a>
   </li>
 
@@ -406,13 +406,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -467,12 +467,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        didc.tyron
+        DID.tyron
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      didc.tyron
+      DID.tyron
     </a>
     
       
@@ -612,7 +612,7 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
-      DID-Client
+      DID Client
     </a>
   </li>
 
@@ -753,13 +753,13 @@
                   </a>
                 
                 
-                <h1 id="didctyron-the-decentralized-identifier-smart-contract">didc.tyron: The Decentralized Identifier Smart Contract</h1>
-<p>The user's DID smart contract (DIDC) gets instantiated from a template that is stored on-chain in the <a href="../init.tyron/">init.tyron</a> smart contract. For that, the user MUST give their Zilliqa address as the <em>contract owner</em>. Once the DIDC gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DIDC has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.</p>
+                <h1 id="didtyron-the-decentralized-identifier-smart-contract">DID.tyron: The Decentralized Identifier Smart Contract</h1>
+<p>The user's Self-Sovereign Identity gets instantiated from the DID.tyron smart-contract code that is stored on-chain in the <a href="../init.tyron/">init.tyron</a> smart contract. For that, the user MUST give their Zilliqa address as the <em>contract owner</em>. Once the DID smart contract gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DID contract has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.</p>
 <blockquote>
-<p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/didc.scilla">DIDC's code</a> on GitHub.</p>
+<p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/did.tyron.scilla">DID.tyron code</a> on GitHub.</p>
 </blockquote>
 <h2 id="immutable-fields">Immutable fields</h2>
-<p>Immutable fields are set at deployment and can not get modified. The DIDC gets deployed with the following immutable fields:</p>
+<p>Immutable fields are set at deployment and can not get modified. The DID smart contract gets deployed with the following immutable fields:</p>
 <ol>
 <li><em>initContractOwner</em>: The Zilliqa address of the user who is the owner of the contract | [ByStr20 type]</li>
 <li><em>initTyron</em>: The Zilliqa address of the <a href="../init.tyron/">init.tyron</a> smart contract | [ByStr20 type]</li>
@@ -768,17 +768,17 @@
 <p>Mutable fields can get modified but only if there is a specific code in the contract that allows it. They MUST get initialized with a value at deployment.</p>
 <ol>
 <li><em>contract_owner</em>: The Zilliqa address of the user that can get updated by the <em>UpdateOwner</em> transition | [ByStr20 type]</li>
-<li><em>decentralized_identifier</em>: The user's DID generated according to the <a href="../../scheme/did-scheme/">DID-Scheme</a> - [String type].</li>
+<li><em>decentralized_identifier</em>: The user's DID generated according to the <a href="../../scheme/did-scheme/">DID Scheme</a> - [String type].</li>
 <li><em>init_tyron</em>: The address of the <a href="../init.tyron/">init.tyron</a> contract's latest implementation | [ByStr20 type]</li>
 <li><em>resource_records</em>: The Decentralized Identifier's DNS resource records | @key: domain | @value: avatar | [Map String String type]</li>
 <li><em>did_agents</em>: The user's SSI agents | @key: avatar.agent | @value: agent's address | [Map String ByStr20 type]</li>
 <li><em>latest_agent</em>: The Zilliqa address of the current agent | [ByStr20 type]</li>
-<li><em>did_status</em>: The DID-Status can be <em>Undefined</em>, <em>Initialized</em>, <em>Created</em>, <em>Updated</em>, <em>Recovered</em> or <em>Deactivated</em> | [DidStatus ADT type]</li>
-<li><em>verification_methods</em>: The Tyron verification methods are the public keys used by the DIDC | @key: key purpose | @value: public key of type "SchnorrSecP256k1VerificationKey2019" | [Map String ByStr33 type]</li>
+<li><em>did_status</em>: The DID Status can be <em>Undefined</em>, <em>Initialized</em>, <em>Created</em>, <em>Updated</em>, <em>Recovered</em> or <em>Deactivated</em> | [DidStatus ADT type]</li>
+<li><em>verification_methods</em>: The Tyron verification methods are the public keys used by the DID smart contract | @key: key purpose | @value: public key of type "SchnorrSecP256k1VerificationKey2019" | [Map String ByStr33 type]</li>
 <li><em>services</em>: The DID service endpoints | @key: ID | @value: service type &amp; URI | [Map String Pair String String type]</li>
 <li><em>tyron_hash</em>: The SHA256 hash of the DID. It is necessary to sign this hash to perform certain operations, such as deactivation of the DID | [ByStr type]</li>
-<li><em>did_update_key</em> &amp; <em>did_recovery_key</em>: The public <a href="../../protocol-parameters/#did-keys">DID-Keys</a> to enable future operations are stored in the DIDC to execute the <em>IsRightSignature</em> procedure - [ByStr type]</li>
-<li><em>created</em>: The block number when the DID-Create tyronZIL transaction occurred | [BNum type]</li>
+<li><em>did_update_key</em> &amp; <em>did_recovery_key</em>: The public <a href="../../protocol-parameters/#did-keys">DID Keys</a> to enable future operations are stored in the DID contract to execute the <em>IsRightSignature</em> procedure - [ByStr type]</li>
+<li><em>created</em>: The block number when the DID Create tyronZIL transaction occurred | [BNum type]</li>
 <li><em>ledger_time</em>: The block number when the last tyronZIL transaction occurred | [BNum type]</li>
 <li>
 <p><em>transaction_number</em>: A monotonically increasing number representing the amount of tyronZIL transactions that have taken place | [Uint128 type]</p>
@@ -799,7 +799,7 @@
 <li>
 <p><em>donation</em>: The Donation Scheme | @key: campaign name | @value: campaign's starting blok number | [Map String BNum]</p>
 <blockquote>
-<p><a href="https://github.com/pungtas/pung.me">Pung.me</a> the first donations use case</p>
+<p><a href="https://github.com/pungtas/pung.me">Pung.me</a> is the first DID dApp that the user can use to make donations</p>
 </blockquote>
 </li>
 </ol>
@@ -809,12 +809,12 @@
 <li><em>DidScheme</em>: It generates the user's <em>decentralized_identifier</em> &amp; <em>tyron_hash</em>. This procedure is the only way to generate the Decentralized Identifier, and it can only get executed by the <em>DidCreate</em> transition.</li>
 <li><em>ThrowError</em>: The procedure to throw an error.</li>
 <li><em>IsRightCaller</em>: Validates that the call comes from an SSI Trinity entity. This procedure matches against the <em>SsiTrinity</em> ADT that can be: <em>user</em> (to validate that the call comes from the user/ contract owner address), <em>agent</em> (to verify the agent in the Payment procedure) or <em>tyron</em> (to validate that the call comes from the <a href="../init.tyron/">init.tyron</a> contract.</li>
-<li><em>IsRightStatus</em>: Verifies that the DID-Status is correct for the given operation.</li>
+<li><em>IsRightStatus</em>: Verifies that the DID Status is correct for the given operation.</li>
 <li><em>Donation</em>: Checks that the donation campaign code is within the limitation period of 1-week.</li>
 <li><em>Payment</em>: Executes the payment to the agents and foundation.</li>
-<li><em>IsRightSignature</em>: Verifies the Schnorr signature that comes with the signed data corresponds with the public DID-Keys stored in the contract.</li>
+<li><em>IsRightSignature</em>: Verifies the Schnorr signature that comes with the signed data corresponds with the public DID Keys stored in the contract.</li>
 <li><em>UpdateDocument</em>: Updates the verification methods and services map fields.</li>
-<li><em>IsValidKey</em>: Verifies that the new DID-Key is unique and not utilized more than once.</li>
+<li><em>IsValidKey</em>: Verifies that the new DID Key is unique and not utilized more than once.</li>
 <li><em>Timestamp</em>: Generates a timestamp that sets the <em>ledger_time</em> &amp; <em>transaction_number</em>.</li>
 </ol>
 <h3 id="the-xwallet-procedure">The xWallet procedure</h3>
@@ -822,18 +822,18 @@
 <li><em>XWallet</em>: Verifies the validity, checks &amp; updates the balance of the SSI Tokens</li>
 </ol>
 <h2 id="transitions">Transitions</h2>
-<p>Transitions are the public API of the DIDC and get invoked by sending messages to the contract.  </p>
+<p>Transitions are the public API and get invoked by sending messages to the contract.  </p>
 <ol>
 <li><em>UpdateOwner</em>: Updates the Zilliqa address of the user aka contract owner.</li>
 <li><em>UpdateInit</em>: Updates the <a href="../init.tyron/">init.tyron</a> contract to the address of its latest implementation - only the user can execute this transition.</li>
-<li><em>Init</em>: Sets the agent's info into the user's DIDC &amp; sends a message to the <a href="../init.tyron/">init.tyron</a> contract that, in return, calls the <em>InitCallBack</em> transition. It also sets the <em>did_status</em> to Initialized.</li>
+<li><em>Init</em>: Sets the agent's info into the user's DID smart contract &amp; sends a message to the <a href="../init.tyron/">init.tyron</a> contract that, in return, calls the <em>InitCallBack</em> transition. It also sets the <em>did_status</em> to Initialized.</li>
 <li><em>InitCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to set the <em>operation_cost</em>, <em>foundation_address</em> &amp; address and commission of the given agent.</li>
 <li><em>SetSsiDomain</em>: Sets a domain name for the Decentralized Identifier.</li>
 <li><em>SetDomainCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to set a user's domain name.</li>
-<li><em>DidCreate</em>: Executes a <a href="../../CRUD-operations/did-create/">DID-Create</a> tyronZIL transaction.</li>
-<li><em>DidRecover</em>: Executes a <a href="../../CRUD-operations/did-recover/">DID-Recover</a> tyronZIL transaction.</li>
-<li><em>DidUpdate</em>: Executes a <a href="../../CRUD-operations/did-update/">DID-Update</a> tyronZIL transaction.</li>
-<li><em>DidDeactivate</em>: Executes a <a href="../../CRUD-operations/did-deactivate/">DID-Deactivate</a> tyronZIL transaction.</li>
+<li><em>DidCreate</em>: Executes a <a href="../../CRUD-operations/did-create/">DID Create</a> tyronZIL transaction.</li>
+<li><em>DidRecover</em>: Executes a <a href="../../CRUD-operations/did-recover/">DID Recover</a> tyronZIL transaction.</li>
+<li><em>DidUpdate</em>: Executes a <a href="../../CRUD-operations/did-update/">DID Update</a> tyronZIL transaction.</li>
+<li><em>DidDeactivate</em>: Executes a <a href="../../CRUD-operations/did-deactivate/">DID Deactivate</a> tyronZIL transaction.</li>
 </ol>
 <h3 id="the-xwallet-transitions">The xWallet transitions</h3>
 <ol>
@@ -845,7 +845,7 @@
 <li><em>XTransfer</em>: Transfers ZRC-2 SSI Tokens.</li>
 <li><em>TransferSuccessCallBack</em>: the ZRC-2 callback transition - MUST be defined or transfers from this xWallet will fail otherwise.</li>
 <li><em>Donate</em>: To initialize a donation campaign code.</li>
-<li><em>DonateCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to save the donation campaign code into the DIDC.</li>
+<li><em>DonateCallBack</em>: The <a href="../init.tyron/">init.tyron</a> contract calls this transition to save the donation campaign code into the DID smart contract.F</li>
 </ol>
                 
               

@@ -301,13 +301,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      DID CRUD Operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="DID CRUD Operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        DID CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -319,7 +319,7 @@
 
   <li class="md-nav__item">
     <a href="../CRUD-operations/did-create/" class="md-nav__link">
-      DID-Create
+      Create
     </a>
   </li>
 
@@ -331,7 +331,7 @@
 
   <li class="md-nav__item">
     <a href="../CRUD-operations/did-resolve/" class="md-nav__link">
-      DID-Resolve
+      Resolve
     </a>
   </li>
 
@@ -343,7 +343,7 @@
 
   <li class="md-nav__item">
     <a href="../CRUD-operations/did-recover/" class="md-nav__link">
-      DID-Recover
+      Recover
     </a>
   </li>
 
@@ -355,7 +355,7 @@
 
   <li class="md-nav__item">
     <a href="../CRUD-operations/did-update/" class="md-nav__link">
-      DID-Update
+      Update
     </a>
   </li>
 
@@ -367,7 +367,7 @@
 
   <li class="md-nav__item">
     <a href="../CRUD-operations/did-deactivate/" class="md-nav__link">
-      DID-Deactivate
+      Deactivate
     </a>
   </li>
 
@@ -404,13 +404,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -455,7 +455,7 @@
 
   <li class="md-nav__item">
     <a href="../smart-contracts/didc/" class="md-nav__link">
-      didc.tyron
+      DID.tyron
     </a>
   </li>
 
@@ -510,7 +510,7 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
-      DID-Client
+      DID Client
     </a>
   </li>
 
@@ -597,15 +597,15 @@
 <tbody>
 <tr>
 <td>29/6 - 24/7/2020</td>
-<td>Creates the tyronZIL DID-Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate).</td>
+<td>Creates the tyronZIL DID Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate).</td>
 </tr>
 <tr>
 <td>27/7 - 21/8/2020</td>
-<td>Integrates the DID-Client with the Zilliqa blockchain platform.</td>
+<td>Integrates the DID Client with the Zilliqa blockchain platform.</td>
 </tr>
 <tr>
 <td>24/8 - 18/9/2020</td>
-<td>Implements the <a href="https://www.tyronzil.com/smart-contracts/didc/">DID-Smart-Contract (DIDC)</a> to immutably save and distribute DID-States.</td>
+<td>Implements the <a href="https://www.tyronzil.com/smart-contracts/didc/">DID Smart Contract</a> to instantiate a Self-Sovereign Identity.</td>
 </tr>
 <tr>
 <td>21/9 - 11/12/2020</td>
@@ -613,11 +613,11 @@
 </tr>
 <tr>
 <td>21/9 - 16/10/2020</td>
-<td>TIP1.1 implements Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DIDC. The contract also produces the SHA-256 hash of the Decentralized Identifier, which must be signed to deactivate the DID. And the DIDC can verify that all Schnorr signatures correspond to the <a href="https://www.tyronzil.com/protocol-parameters/#did-keys">DID-Keys</a> that have their public keys stored in the contract. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
+<td>TIP1.1 implements Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DID smart contract. The contract also produces the SHA-256 hash of the Decentralized Identifier, which must be signed to deactivate the DID. And the Self-Sovereign Identity can verify that all Schnorr signatures correspond to the <a href="https://www.tyronzil.com/protocol-parameters/#did-keys">DID Keys</a> that have their public keys stored in the contract. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
 </tr>
 <tr>
 <td>19/10 - 13/11/2020</td>
-<td>TIP1.2 develops the <em>init.tyron</em> smart contract for the initialization of <a href="https://twitter.com/tyrondid">@tyron.did</a> self-sovereign identities as well as a domain name system that implements the <em>.did</em>, <em>.agent</em> &amp; <em>.tyron</em> domains. These top-level SSI Domains define the SSI Trinity constituted by the user as the owner of their decentralized identity, the agent providing products &amp; services, and tyron as the technology &amp; open organization. This development sprint also introduces the xWallet that gives ZRC-2 transfer capabilities to the DID smart contract (DIDC). By using a donation campaign code, the DIDC can send a commission-free transfer to another <em>user.did</em> &amp; keep track of the token balance - find the donations prototype at <a href="https://pung.me">pung.me</a>. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v2.0.0-alpha">Release notes</a>.</td>
+<td>TIP1.2 develops the <em>init.tyron</em> smart contract for the initialization of <a href="https://twitter.com/tyrondid">@tyron.did</a> self-sovereign identities as well as a domain name system that implements the <em>.did</em>, <em>.agent</em> &amp; <em>.tyron</em> domains. These top-level SSI Domains define the SSI Trinity constituted by the user as the owner of their decentralized identity, the agent providing products &amp; services, and tyron as the technology &amp; open organization. This development sprint also introduces the xWallet that gives ZRC-2 transfer capabilities to the DID smart contract. By using a donation campaign code, the Self-Sovereign Identity can send a commission-free transfer to another <em>user.did</em> &amp; keep track of the token balance - find the donations prototype at <a href="https://pung.me">pung.me</a>. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v2.0.0-alpha">Release notes</a>.</td>
 </tr>
 </tbody>
 </table>

@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Update - tyron</title>
+        <title>Update - tyron</title>
       
     
     
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              DID-Update
+              Update
             
           </span>
         </div>
@@ -305,13 +305,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      DID CRUD Operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="DID CRUD Operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        DID CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -323,7 +323,7 @@
 
   <li class="md-nav__item">
     <a href="../did-create/" class="md-nav__link">
-      DID-Create
+      Create
     </a>
   </li>
 
@@ -335,7 +335,7 @@
 
   <li class="md-nav__item">
     <a href="../did-resolve/" class="md-nav__link">
-      DID-Resolve
+      Resolve
     </a>
   </li>
 
@@ -347,7 +347,7 @@
 
   <li class="md-nav__item">
     <a href="../did-recover/" class="md-nav__link">
-      DID-Recover
+      Recover
     </a>
   </li>
 
@@ -367,12 +367,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        DID-Update
+        Update
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      DID-Update
+      Update
     </a>
     
       
@@ -390,7 +390,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -416,7 +416,7 @@
 
   <li class="md-nav__item">
     <a href="../did-deactivate/" class="md-nav__link">
-      DID-Deactivate
+      Deactivate
     </a>
   </li>
 
@@ -453,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -504,7 +504,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/didc/" class="md-nav__link">
-      didc.tyron
+      DID.tyron
     </a>
   </li>
 
@@ -559,7 +559,7 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
-      DID-Client
+      DID Client
     </a>
   </li>
 
@@ -618,7 +618,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -647,13 +647,13 @@
                   </a>
                 
                 
-                <h1 id="did-update-tyronzil-transaction">DID-Update tyronZIL transaction</h1>
-<p>It makes modifications to the user's self-sovereign identity (stored in their DIDC). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_update_key</em></a>.</p>
-<p>Once the operation request is processed, the contract owner MUST make a call to the <em>DidUpdate</em> transition of the user's <a href="../../smart-contracts/didc/">DIDC</a>.</p>
-<h2 id="on-the-did-clients-side">On the DID-Client's side:</h2>
+                <h1 id="did-update-tyronzil-transaction">DID Update tyronZIL transaction</h1>
+<p>It makes modifications to the user's self-sovereign identity (stored in their DID smart contract). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_update_key</em></a>.</p>
+<p>Once the operation request is processed, the contract owner MUST make a call to the <em>DidUpdate</em> transition of the user's <a href="../../smart-contracts/didc/">DID smart contract</a>.</p>
+<h2 id="on-the-did-clients-side">On the DID Client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
-<li>Utilize the user's private <em>did_update_key</em> to verify that it corresponds to the public <em>did_update_key</em> stored in the DIDC.</li>
+<li>Utilize the user's private <em>did_update_key</em> to verify that it corresponds to the public <em>did_update_key</em> stored in the DID smart contract.</li>
 <li>Get the user's input regarding the update <a href="../../implementation/models/#patch-action">patch actions</a>, and generate the <em>List Document</em>.</li>
 <li>Hash the document with the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITHM</a> and sign the hash with the <a href="../../protocol-parameters/#signature-algorithm">SIGNATURE_ALGORITHM</a> using the <em>did_update_keys</em>. </li>
 <li>Generate a new key-pair for the <em>did_update_keys</em> necessary for any future Update operation.</li>
@@ -668,19 +668,19 @@
 </li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
-<p>When the <em>DidUpdate</em> transition gets called, the DIDC proceeds as follows:</p>
+<p>When the <em>DidUpdate</em> transition gets called, the DID smart contract proceeds as follows:</p>
 <ol>
-<li>First, it verifies that the DID-Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
-<li>Executes the <em>Payment</em> procedure to make the DIDC work only if the payment is correct.</li>
+<li>First, it verifies that the DID Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
+<li>Executes the <em>Payment</em> procedure to make the Self-Sovereign Identity work only if the payment is correct.</li>
 <li>Executes the <em>IsRightCaller</em> procedure to verify that the call comes from the user (contract owner address).</li>
-<li>Performs the <em>IsRightSignature</em> procedure to verify that the signature got produced with the <em>did_update_keys</em> by applying the Schnorr signature algorithm. For this verification, the DIDC utilizes the public key that it has stored in the <em>did_update_key</em> mutable field.</li>
+<li>Performs the <em>IsRightSignature</em> procedure to verify that the signature got produced with the <em>did_update_keys</em> by applying the Schnorr signature algorithm. For this verification, the DID contract utilizes the public key that it has stored in the <em>did_update_key</em> mutable field.</li>
 <li>Executes the <em>UpdateDocument</em> procedure to update the <em>verification_methods</em> and <em>services</em> map fields.</li>
 <li>Applies the <em>IsValidKey</em> procedure to verify that the new public <em>did_update_key</em> is different from any other key. If so, then saves the new key in the <em>did_update_key</em> mutable field.</li>
-<li>Sets the DID-Status to <em>Updated</em>.</li>
+<li>Sets the DID Status to <em>Updated</em>.</li>
 <li>Emits a "DID_updated" event &amp; executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A DID-Update tyronZIL transaction consumes approximately 700 units of GAS (1.4 ZIL, currently less than 0.03 USD).</p>
+<p>A DID Update tyronZIL transaction consumes approximately 700 units of GAS (1.4 ZIL).</p>
                 
               
               
@@ -708,7 +708,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                DID-Recover
+                Recover
               </div>
             </div>
           </a>
@@ -720,7 +720,7 @@
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                DID-Deactivate
+                Deactivate
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

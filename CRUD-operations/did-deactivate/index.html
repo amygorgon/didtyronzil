@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Deactivate - tyron</title>
+        <title>Deactivate - tyron</title>
       
     
     
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              DID-Deactivate
+              Deactivate
             
           </span>
         </div>
@@ -305,13 +305,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      DID CRUD Operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="DID CRUD Operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        DID CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -323,7 +323,7 @@
 
   <li class="md-nav__item">
     <a href="../did-create/" class="md-nav__link">
-      DID-Create
+      Create
     </a>
   </li>
 
@@ -335,7 +335,7 @@
 
   <li class="md-nav__item">
     <a href="../did-resolve/" class="md-nav__link">
-      DID-Resolve
+      Resolve
     </a>
   </li>
 
@@ -347,7 +347,7 @@
 
   <li class="md-nav__item">
     <a href="../did-recover/" class="md-nav__link">
-      DID-Recover
+      Recover
     </a>
   </li>
 
@@ -359,7 +359,7 @@
 
   <li class="md-nav__item">
     <a href="../did-update/" class="md-nav__link">
-      DID-Update
+      Update
     </a>
   </li>
 
@@ -379,12 +379,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        DID-Deactivate
+        Deactivate
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      DID-Deactivate
+      Deactivate
     </a>
     
       
@@ -402,7 +402,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -453,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -504,7 +504,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/didc/" class="md-nav__link">
-      didc.tyron
+      DID.tyron
     </a>
   </li>
 
@@ -559,7 +559,7 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
-      DID-Client
+      DID Client
     </a>
   </li>
 
@@ -618,7 +618,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -647,29 +647,29 @@
                   </a>
                 
                 
-                <h1 id="did-deactivate-tyronzil-transaction">DID-Deactivate tyronZIL transaction</h1>
-<p>It completely deactivates the Decentralized Identifier by setting the DID-Status to <em>Deactivated</em> and the DID state to <em>None</em>, <em>undefined</em> or <em>Empty</em>.</p>
+                <h1 id="did-deactivate-tyronzil-transaction">DID Deactivate tyronZIL transaction</h1>
+<p>It completely deactivates the Decentralized Identifier by setting the DID Status to <em>Deactivated</em> and the DID state to <em>None</em>, <em>undefined</em> or <em>Empty</em>.</p>
 <p>To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_recovery_key</em></a>.</p>
-<p>Once the operation request is processed, the user as the contract owner MUST call the <em>DidDeactivate</em> transition of their <a href="../../smart-contracts/didc/">DIDC</a>. This transition is irreversible - after deactivation, the DIDC will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <em>DidDeactivated</em> error.</p>
-<h2 id="on-the-did-clients-side">On the DID-Client's side:</h2>
+<p>Once the operation request is processed, the user as the contract owner MUST call the <em>DidDeactivate</em> transition of their <a href="../../smart-contracts/didc/">DID smart contract</a>. This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <em>DidDeactivated</em> error.</p>
+<h2 id="on-the-did-clients-side">On the DID Client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
-<li>Utilize the user's private <em>did_recovery_key</em> to verify that it corresponds to the public <em>did_recovery_key</em> stored in the DIDC.</li>
-<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><em>tyron_hash</em></a> from the user's DIDC and sign it with the pair <em>did_recovery_keys</em> through the <a href="../../protocol-parameters/#signature-algorithm">SIGNATURE_ALGORITHM</a>.</li>
+<li>Utilize the user's private <em>did_recovery_key</em> to verify that it corresponds to the public <em>did_recovery_key</em> stored in the DID smart contract.</li>
+<li>Retrieve the <a href="../../protocol-parameters/#tyron-hash"><em>tyron_hash</em></a> from the user's DID contract and sign it with the pair <em>did_recovery_keys</em> through the <a href="../../protocol-parameters/#signature-algorithm">SIGNATURE_ALGORITHM</a>.</li>
 <li>Submit the <em>DidDeactivate</em> tyronZIL transaction with its transition parameters (agent and Schnorr signature). The contract owner MUST call this transition for it to be successful.</li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
-<p>When the <em>DidDeactivate</em> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DIDC proceeds as follows:</p>
+<p>When the <em>DidDeactivate</em> transition gets called with the proper hex-encoded signature of type ByStr64 as its argument, the DID smart contract proceeds as follows:</p>
 <ol>
-<li>First, it verifies that the DID-Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
-<li>Executes the  <em>Payment</em> procedure to make the DIDC work only if the payment is correct.</li>
+<li>First, it verifies that the DID Status is <em>operational</em> by executing the <em>IsRightStatus</em> procedure.</li>
+<li>Executes the  <em>Payment</em> procedure to make the Self-Sovereign Identity work only if the payment is correct.</li>
 <li>Executes the <em>IsRightCaller</em> procedure to verify that the call comes from the user (contract owner address).</li>
 <li>Fetches the <em>did_recovery_key</em> and the <em>tyron_hash</em> from the contract's state.</li>
-<li>Performs the <em>IsRightSignature</em> procedure. It verifies that the signature got produced with the <em>did_recovery_keys</em> by applying the Schnorr signature algorithm on the <em>tyron_hash</em>. 5. Sets the DID-Status to <em>Deactivated</em>, the <em>verification_methods</em> to <em>Emp String ByStr33</em>, the <em>services</em> to <em>Emp String Pair String String</em> and both the <em>did_update_key</em> &amp; <em>did_recovery_key</em> to None{ByStr33}.</li>
+<li>Performs the <em>IsRightSignature</em> procedure. It verifies that the signature got produced with the <em>did_recovery_keys</em> by applying the Schnorr signature algorithm on the <em>tyron_hash</em>. 5. Sets the DID Status to <em>Deactivated</em>, the <em>verification_methods</em> to <em>Emp String ByStr33</em>, the <em>services</em> to <em>Emp String Pair String String</em> and both the <em>did_update_key</em> &amp; <em>did_recovery_key</em> to None{ByStr33}.</li>
 <li>Emits the "DID_deactivated" event &amp; executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A DID-Deactivate  tyronZIL transaction consumes approximately 500 units of GAS (1 ZIL, currently around 0.02 USD).</p>
+<p>A DID Deactivate tyronZIL transaction consumes approximately 500 units of GAS (1 ZIL).</p>
                 
               
               
@@ -697,7 +697,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                DID-Update
+                Update
               </div>
             </div>
           </a>

@@ -17,7 +17,7 @@
     
     
       
-        <title>DID-Create - tyron</title>
+        <title>Create - tyron</title>
       
     
     
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              DID-Create
+              Create
             
           </span>
         </div>
@@ -305,13 +305,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      DID CRUD Operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="DID CRUD Operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        DID CRUD Operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -331,12 +331,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        DID-Create
+        Create
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      DID-Create
+      Create
     </a>
     
       
@@ -354,7 +354,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -380,7 +380,7 @@
 
   <li class="md-nav__item">
     <a href="../did-resolve/" class="md-nav__link">
-      DID-Resolve
+      Resolve
     </a>
   </li>
 
@@ -392,7 +392,7 @@
 
   <li class="md-nav__item">
     <a href="../did-recover/" class="md-nav__link">
-      DID-Recover
+      Recover
     </a>
   </li>
 
@@ -404,7 +404,7 @@
 
   <li class="md-nav__item">
     <a href="../did-update/" class="md-nav__link">
-      DID-Update
+      Update
     </a>
   </li>
 
@@ -416,7 +416,7 @@
 
   <li class="md-nav__item">
     <a href="../did-deactivate/" class="md-nav__link">
-      DID-Deactivate
+      Deactivate
     </a>
   </li>
 
@@ -453,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron DID Protocol
+      Tyron SSI Protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron DID Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron DID Protocol
+        Tyron SSI Protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -504,7 +504,7 @@
 
   <li class="md-nav__item">
     <a href="../../smart-contracts/didc/" class="md-nav__link">
-      didc.tyron
+      DID.tyron
     </a>
   </li>
 
@@ -559,7 +559,7 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
-      DID-Client
+      DID Client
     </a>
   </li>
 
@@ -618,7 +618,7 @@
       
         <li class="md-nav__item">
   <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID-Client's side:
+    On the DID Client's side:
   </a>
   
 </li>
@@ -647,43 +647,43 @@
                   </a>
                 
                 
-                <h1 id="did-create-tyronzil-transaction">DID-Create tyronZIL transaction</h1>
-<p>It generates a brand new Decentralized Identifier, its <a href="../../did-document/">DID-Document</a> and DIDC state, and stores these data in a new <a href="../../smart-contracts/didc/">DID smart contract (DIDC)</a>.</p>
-<h2 id="on-the-did-clients-side">On the DID-Client's side:</h2>
+                <h1 id="did-create-tyronzil-transaction">DID Create tyronZIL transaction</h1>
+<p>It generates a brand new Self-Sovereign Identity out of the DID smart contract code. It defines the Decentralized Identifier, its <a href="../../did-document/">DID Document</a> and DID State.</p>
+<h2 id="on-the-did-clients-side">On the DID Client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet), the user's private key and the gas limit.</li>
 <li>Get the user's input regarding cryptographic keys and service endpoints for the DID-Document.</li>
 <li>Verification methods: With the public key input generate an array of keys, generated using the <a href="../../protocol-parameters/#operation-key-pair">operation key pair</a>.</li>
 <li>Services: An array of endpoints.</li>
-<li>With the verification methods and service endpoints, generate a <em>List Document</em> to send to the DIDC.</li>
+<li>With the verification methods and service endpoints, generate a <em>List Document</em> to send to the DID smart contract.</li>
 <li>
-<p>Generate the <a href="../../protocol-parameters/#did-keys">DID-Keys</a> using the <a href="../../protocol-parameters/#operation-key-algorithm">KEY_ALGORITH</a>: The update key-pair (necessary for the following <em>Update</em> operation) &amp; the recovery key-pair (needed for any future <em>Recover</em> or <em>Deactivate</em> operation).</p>
+<p>Generate the <a href="../../protocol-parameters/#did-keys">DID Keys</a> using the <a href="../../protocol-parameters/#operation-key-algorithm">KEY_ALGORITH</a>: The update key-pair (necessary for the following <em>Update</em> operation) &amp; the recovery key-pair (needed for any future <em>Recover</em> or <em>Deactivate</em> operation).</p>
 <blockquote>
 <p>All private keys MUST be in control of the user.</p>
 </blockquote>
 </li>
 <li>
-<p>Download, decode (Base64) &amp; decompress the DIDC-template from the <em>init.tyron</em> smart contract.</p>
+<p>Download, decode (Base64) &amp; decompress the DID-smart-contract code from the <em>init.tyron</em> smart contract.</p>
 </li>
-<li>Instantiate the DIDC with the user's Zilliqa address as the contract owner and deploy it on the blockchain.</li>
-<li>Call the <a href="../../smart-contracts/didc/#transitions">Init</a> transition of the user's DIDC.</li>
+<li>Instantiate the DID contract with the user's Zilliqa address as the contract owner and deploy it on the blockchain.</li>
+<li>Call the <a href="../../smart-contracts/didc/#transitions">Init</a> transition of the user's DID contract.</li>
 <li>Submit the <em>DidCreate</em> tyronZIL transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.</li>
-<li>Ask which domain name.did the user would like for their DIDC address and execute the SetSsiDomain transition.</li>
+<li>Ask which domain name.did the user would like for their DID contract address and execute the SetSsiDomain transition.</li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
-<p>When the <em>DidCreate</em> transition gets called, the DIDC proceeds as follows:</p>
+<p>When the <em>DidCreate</em> transition gets called, the DID smart contract proceeds as follows:</p>
 <ol>
-<li>First, it verifies that the DID-Status is initialized by executing the <em>IsRightStatus</em> procedure.</li>
-<li>Executes the <em>Payment</em> procedure to make the DIDC work only if the payment is correct.</li>
+<li>First, it verifies that the DID Status is initialized by executing the <em>IsRightStatus</em> procedure.</li>
+<li>Executes the <em>Payment</em> procedure to make the Self-Sovereign Identity work only if the payment is correct.</li>
 <li>Executes the <em>IsRightCaller</em> procedure to verify that the call comes from the user (contract owner address).</li>
-<li>Executes the <em>DidScheme</em> procedure, which generates the user's Decentralized Identifier according to the <a href="../../scheme/did-scheme/">DID-Scheme</a> with the DIDC address as the <a href="../../protocol-parameters/#did-suffix">DID-Suffix</a>. This procedure also produces the <em>tyron_hash</em> by applying the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITH</a> to the DID.</li>
+<li>Executes the <em>DidScheme</em> procedure, which generates the user's Decentralized Identifier according to the <a href="../../scheme/did-scheme/">DID Scheme</a> with the DID contract address as the <a href="../../protocol-parameters/#did-suffix">DID Suffix</a>. This procedure also produces the <em>tyron_hash</em> by applying the <a href="../../protocol-parameters/#hash-algorithm">HASH_ALGORITH</a> to the DID.</li>
 <li>Executes the <em>UpdateDocument</em> procedure to initialize the verification_methods and services map fields.</li>
-<li>Applies the <em>IsValidKey</em> procedure to verify that all DID-Keys are unique, and then sets the fields <em>did_update_key</em> &amp; <em>did_recovery_key</em>.</li>
-<li>Sets the DID-Status to <em>Created</em> and saves the blocknumber into the <em>created</em> field.</li>
+<li>Applies the <em>IsValidKey</em> procedure to verify that all DID Keys are unique, and then sets the fields <em>did_update_key</em> &amp; <em>did_recovery_key</em>.</li>
+<li>Sets the DID Status to <em>Created</em> and saves the blocknumber into the <em>created</em> field.</li>
 <li>Executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A DID-Create tyronZIL transaction (incl. the DIDC deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL, currently less than 0.09 USD).</p>
+<p>A DID Create tyronZIL transaction (incl. the DID smart contract deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL).</p>
                 
               
               
@@ -723,7 +723,7 @@
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                DID-Resolve
+                Resolve
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
