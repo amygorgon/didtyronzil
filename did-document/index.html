@@ -699,16 +699,16 @@
                   </a>
                 
                 
-                <h1 id="tyron-did-document">Tyron DID-Document</h1>
+                <h1 id="tyron-did-document">Tyron DID Document</h1>
 <blockquote>
 <p>For an introduction, read <a href="../W3C-dids/#did-document">this</a>.</p>
 </blockquote>
-<p>A DID-Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.</p>
-<p>The Tyron DID-Document's serialization format is <strong>JSON</strong>:  </p>
+<p>A DID Document is a graph-based data structure, a collection of property-value pairs, serialized according to a particular syntax.</p>
+<p>The Tyron DID Document's serialization format is <strong>JSON</strong>:  </p>
 <ul>
 <li>It defines an unambiguous encoding and decoding of all properties and their associated values</li>
 <li>It MUST be a single JSON object conforming to <a href="https://tools.ietf.org/html/rfc8259">RFC8259, The JavaScript Object Notation (JSON) Data Interchange Format</a>  </li>
-<li>The names of the members of the JSON object MUST correspond to the <a href="#core-properties">core property names</a> of the DID-Document  </li>
+<li>The names of the members of the JSON object MUST correspond to the <a href="#core-properties">core property names</a> of the DID Document  </li>
 <li>Property values MUST be:<br />
         - <a href="https://tools.ietf.org/html/rfc8259#section-6">Numbers</a> for number values representable as IEEE754<br />
         - <a href="https://tools.ietf.org/html/rfc8259#section-3">Literal values</a> for boolean ('false', 'true') and empty values ('null')<br />
@@ -727,7 +727,7 @@
   &quot;id&quot;: &quot;did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9&quot;
 }
 </code></pre>
-<p>All W3C DID-Documents MUST include the <code>id</code> property, which denotes the <a href="../W3C-dids/#did-subject">DID-Subject</a>.</p>
+<p>A W3C DID Document MUST include the <code>id</code> property, which denotes the <a href="../W3C-dids/#did-subject">DID-Subject</a>.</p>
 <h3 id="2-publickey">2. publicKey</h3>
 <p>The <code>publicKey</code> property is the main <a href="../W3C-dids/#verification-method">verification method</a>.</p>
 <p>The <code>publicKey</code> value MUST be an array of objects of type <a href="../implementation/models/#verification-method-model">VerificationMethodModel</a>, e.g.:</p>
@@ -753,7 +753,7 @@
 <li><strong><em>type</em></strong>: Its value MUST be exactly one verification method type. The Tyron default type is currently <code>SchnorrSecp256k1VerificationKey2019</code></li>
 <li><strong><em>publicKeyBase58</em></strong>: the secp256k1 public key value encoded as a raw 32-byte string in <a href="https://tools.ietf.org/html/draft-msporny-base58-01">Base58</a> Bitcoin format</li>
 </ul>
-<p>Before processing them into the DID-Document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>.</p>
+<p>Before processing them into the DID Document, each verification method has a property called <code>purpose</code>. It states the functionality of the key, its <a href="../W3C-dids/#verification-relationship">verification relationship</a>. For public keys, the purpose value MUST be an array of <a href="../implementation/models/#public-key-purpose">PublicKeyPurpose variants</a>.</p>
 <h3 id="3-authentication">3. authentication</h3>
 <p>When the key purpose is <code>PublicKeyPurpose.Auth = 'auth'</code>.</p>
 <p>The <code>authentication</code> value MUST be an array of verification methods. Each verification method MAY be embedded or referenced, e.g.:</p>
