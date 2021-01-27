@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tyronzil-the-tyron-did-method-v200" class="md-skip">
+        <a href="#decentralized-identifier-method-self-sovereign-identity-protocol-v200" class="md-skip">
           Skip to content
         </a>
       
@@ -242,22 +242,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#did-method" class="md-nav__link">
-    DID Method
+  <a href="#decentralized-identifier-method" class="md-nav__link">
+    Decentralized Identifier Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#protocol" class="md-nav__link">
-    Protocol
+  <a href="#self-sovereign-identity-protocol" class="md-nav__link">
+    Self-Sovereign Identity Protocol
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
+  <a href="#off-chain-software" class="md-nav__link">
+    Off-chain software
   </a>
   
 </li>
@@ -669,22 +669,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#did-method" class="md-nav__link">
-    DID Method
+  <a href="#decentralized-identifier-method" class="md-nav__link">
+    Decentralized Identifier Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#protocol" class="md-nav__link">
-    Protocol
+  <a href="#self-sovereign-identity-protocol" class="md-nav__link">
+    Self-Sovereign Identity Protocol
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
+  <a href="#off-chain-software" class="md-nav__link">
+    Off-chain software
   </a>
   
 </li>
@@ -714,8 +714,7 @@
                 
                 
                 <p><img alt="tyronZIL-logo" loading="lazy" src="tyronzil-logo.png" width="600" /></p>
-<h1 id="tyronzil-the-tyron-did-method-v200">tyronZIL: The tyron DID Method v2.0.0</h1>
-<p>Zilliqa's W3C Decentralized Identifier Method</p>
+<h1 id="decentralized-identifier-method-self-sovereign-identity-protocol-v200">Decentralized Identifier Method &amp; Self-Sovereign Identity Protocol v2.0.0</h1>
 <h2 id="problem-summary">Problem summary</h2>
 <p>Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties. Furthermore, decentralized applications are still difficult to grasp for most regular users, and Decentralized Identifiers (DIDs) can make the user experience much better while increasing privacy and security.</p>
 <h2 id="tyron">Tyron</h2>
@@ -728,8 +727,8 @@
 </ul>
 <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this specification are to be interpreted as described in <a href="https://tools.ietf.org/html/rfc2119">RFC 2119</a>.</p>
 <p>Versions get organized by <a href="https://semver.org/">Semantic Versioning</a>.</p>
-<h2 id="did-method">DID Method</h2>
-<p>The tyronZIL DID Method is part of the open-source Tyron SSI Protocol that defines its:</p>
+<h2 id="decentralized-identifier-method">Decentralized Identifier Method</h2>
+<p>This DID Method is part of the open-source Tyron SSI Protocol that defines its:</p>
 <ul>
 <li>
 <p>Scheme:</p>
@@ -755,11 +754,11 @@
 <p><a href="security-privacy/">Security &amp; privacy considerations</a></p>
 </li>
 </ul>
-<h2 id="protocol">Protocol</h2>
-<p>The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the <a href="#did-method">DID Method</a> and the cryptographic information to instantiate, deploy and manage the DID smart contract that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier. The Tyron SSI Protocol's goal is to make the DID smart contract smarter while keeping it as simple as possible.</p>
+<h2 id="self-sovereign-identity-protocol">Self-Sovereign Identity Protocol</h2>
+<p>The Tyron SSI Protocol solves the DID scalability issue by implementing the .tyron smart contracts. The protocol provides the cryptographic information to instantiate a Self-Sovereign Identity (ssi.tyron smart contract) which manages upgradable versions of the Decentralized Identifier (did.tyron smart contract). The user is the contract owner. The protocol is non-custodial - the user must show control of their Zilliqa private key for the Self-Sovereign Identity to process their transaction.</p>
 <ul>
 <li><a href="protocol-parameters/">Protocol default parameters</a></li>
-<li>Smart contracts:<ul>
+<li>Smart-contract implementations:<ul>
 <li><a href="smart-contracts/didc/">DID.tyron: The Decentralized Identifier Smart Contract</a></li>
 <li><a href="smart-contracts/init.tyron/">init.tyron: The SSI Initialization &amp; DNS Smart Contract</a></li>
 </ul>
@@ -769,9 +768,10 @@
 <blockquote>
 <p>Scilla provides formal verification with embedding into the <a href="https://coq.inria.fr/">Coq proof assistant</a>.</p>
 </blockquote>
-<h2 id="implementation">Implementation</h2>
+<h2 id="off-chain-software">Off-chain software</h2>
 <ul>
-<li>DID Client: <a href="https://github.com/julio-cabdu/tyronZIL-js">tyronZIL-js</a> is the open-source reference implementation for Node.js, written in TypeScript</li>
+<li>DID Client: <a href="https://github.com/julio-cabdu/tyronZIL-js">tyronZIL-js</a> for Node.js, written in TypeScript</li>
+<li>Software Development Kit: <a href="https://github.com/pungtas/tyronzil-sdk">tyronzil-sdk</a> for React Native</li>
 <li><a href="implementation/models/">Models</a></li>
 </ul>
 <h2 id="development">Development</h2>
