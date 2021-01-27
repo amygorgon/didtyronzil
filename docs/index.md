@@ -1,8 +1,6 @@
 ![tyronZIL-logo](./tyronzil-logo.png){: width="600" loading=lazy}
 
-# tyronZIL: The tyron DID Method v2.0.0
-
-Zilliqa's W3C Decentralized Identifier Method
+# Decentralized Identifier Method & Self-Sovereign Identity Protocol v2.0.0
 
 ## Problem summary
 
@@ -24,9 +22,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 Versions get organized by [Semantic Versioning](https://semver.org/).
 
-## DID Method
+## Decentralized Identifier Method
 
-The tyronZIL DID Method is part of the open-source Tyron SSI Protocol that defines its:
+This DID Method is part of the open-source Tyron SSI Protocol that defines its:
 
 - Scheme:
       - [DID Scheme](./scheme/did-scheme.md)
@@ -43,13 +41,12 @@ The tyronZIL DID Method is part of the open-source Tyron SSI Protocol that defin
 
 - [Security & privacy considerations](./security-privacy.md)
 
-## Protocol
+## Self-Sovereign Identity Protocol
 
-The Tyron Self-Sovereign Identity Protocol, based on smart-contract technology to solve the issue of DID scalability, describes the [DID Method](#did-method) and the cryptographic information to instantiate, deploy and manage the DID smart contract that has the user as its owner. As an SSI protocol, it is non-custodial - the user is in control of their Decentralized Identifier. The Tyron SSI Protocol's goal is to make the DID smart contract smarter while keeping it as simple as possible.
-
+The Tyron SSI Protocol solves the DID scalability issue by implementing the .tyron smart contracts. The protocol provides the cryptographic information to instantiate a Self-Sovereign Identity (ssi.tyron smart contract) which manages upgradable versions of the Decentralized Identifier (did.tyron smart contract). The user is the contract owner. The protocol is non-custodial - the user must show control of their Zilliqa private key for the Self-Sovereign Identity to process their transaction.
 
 - [Protocol default parameters](./protocol-parameters.md)
-- Smart contracts:
+- Smart-contract implementations:
       - [DID.tyron: The Decentralized Identifier Smart Contract](./smart-contracts/didc.md)
       - [init.tyron: The SSI Initialization & DNS Smart Contract](./smart-contracts/init.tyron.md)
 
@@ -57,9 +54,10 @@ Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Sm
 
 > Scilla provides formal verification with embedding into the [Coq proof assistant](https://coq.inria.fr/).
 
-## Implementation
+## Off-chain software
 
-- DID Client: [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) is the open-source reference implementation for Node.js, written in TypeScript
+- DID Client: [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) for Node.js, written in TypeScript
+- Software Development Kit: [tyronzil-sdk](https://github.com/pungtas/tyronzil-sdk) for React Native
 - [Models](./implementation/models.md)
 
 ## Development
