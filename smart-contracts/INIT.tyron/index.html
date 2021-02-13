@@ -17,7 +17,7 @@
     
     
       
-        <title>init.tyron - SSI.tyron</title>
+        <title>INIT.tyron - SSI.tyron</title>
       
     
     
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              init.tyron
+              INIT.tyron
             
           </span>
         </div>
@@ -191,7 +191,7 @@
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      Home
+      Self-Sovereign Identity protocol
     </a>
   </li>
 
@@ -458,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../didc/" class="md-nav__link">
+    <a href="../DID.tyron/" class="md-nav__link">
       DID.tyron
     </a>
   </li>
@@ -479,12 +479,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        init.tyron
+        INIT.tyron
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      init.tyron
+      INIT.tyron
     </a>
     
       
@@ -572,7 +572,7 @@
 
 
   <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
+    <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
       DID Client
     </a>
   </li>
@@ -670,13 +670,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/smart-contracts/init.tyron.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/smart-contracts/INIT.tyron.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="inittyron-the-ssi-initialization-domain-name-system-smart-contract">init.tyron: The SSI Initialization &amp; Domain Name System Smart Contract</h1>
-<p>Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract and MUST be the caller to every <a href="../didc/#transitions">transition</a> that affects the DID State.</p>
+                <h1 id="inittyron-the-ssi-initialization-domain-name-system-smart-contract">INIT.tyron: The SSI Initialization &amp; Domain Name System Smart Contract</h1>
+<p>Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract and MUST be the caller to every <a href="../DID.tyron/#transitions">transition</a> that affects the DID State.</p>
 <p>On the other hand, the user relies on servers and cloud infrastructure that is provided by the SSI agents (e.g., pungtas.agent).</p>
 <p>Tyron Pungtas is the open organization developing tyron as a foundation. Decentralization and tertiarization of services aim at being integrated by regionally diverse SSI agents. In future tyron improvement proposals, there will be an agent.tyron smart contract developed.</p>
 <p>The release of the DID Client tyronZIL v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems <em>user.did</em>, <em>avatar.agent</em> and <em>contract.tyron</em> - it gets defined by the DID smart contract as follows:</p>
@@ -688,12 +688,12 @@
     | Tyron             (* the .tyron contracts *)
 </code></pre>
 <blockquote>
-<p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/init.tyron.scilla">init.tyron's code</a> on GitHub.</p>
+<p>Find the <a href="https://github.com/tralcanx/tyronzil/blob/master/src/lib/blockchain/smart-contracts/INIT.tyron.scilla">INIT.tyron's code</a> on GitHub.</p>
 </blockquote>
 <h2 id="immutable-fields">Immutable fields</h2>
 <p>Immutable fields are set at deployment and can not get modified. The DID smart contract gets deployed with the following immutable fields:</p>
 <ol>
-<li><em>initFoundationAddress</em>: The Zilliqa adddress of the Tyron Pungtas Foundation, the owner of the init.tyron contract | [ByStr20 type]</li>
+<li><em>initFoundationAddress</em>: The Zilliqa adddress of the Tyron Pungtas Foundation, the owner of the INIT.tyron contract | [ByStr20 type]</li>
 </ol>
 <h2 id="mutable-fields">Mutable fields</h2>
 <p>Mutable fields can get modified but only if there is a specific code in the contract that allows it. They MUST get initialized with a value at deployment.</p>
@@ -753,7 +753,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../didc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../DID.tyron/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>

@@ -191,7 +191,7 @@
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      Home
+      Self-Sovereign Identity protocol
     </a>
   </li>
 
@@ -517,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/didc/" class="md-nav__link">
+    <a href="../../smart-contracts/DID.tyron/" class="md-nav__link">
       DID.tyron
     </a>
   </li>
@@ -529,8 +529,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/init.tyron/" class="md-nav__link">
-      init.tyron
+    <a href="../../smart-contracts/INIT.tyron/" class="md-nav__link">
+      INIT.tyron
     </a>
   </li>
 
@@ -572,7 +572,7 @@
 
 
   <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
+    <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
       DID Client
     </a>
   </li>
@@ -710,10 +710,10 @@ network-namespace       = &quot;main:&quot; / &quot;test:&quot;
 
 did-suffix              = 1*idchar
 </code></pre>
-<p><strong>Example of a Tyron DID</strong>:</p>
+<p><strong>Example of a Tyron Decentralized Identifier</strong>:</p>
 <p><code>did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9</code></p>
 <h3 id="did-suffix">DID Suffix</h3>
-<p>The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/didc/">DID smart contract</a>.</p>
+<p>The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/DID.tyron/">DID smart contract</a>.</p>
 <p>Every Zilliqa address is unique. As explained in <a href="https://docs.zilliqa.com/whitepaper.pdf">Zilliqa's white-paper</a>, the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": </p>
 <pre><code>contract_address = LSB160(SHA3-256(address||nonce))
 </code></pre>

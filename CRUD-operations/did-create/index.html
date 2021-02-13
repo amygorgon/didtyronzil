@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#did-create-tyronzil-transaction" class="md-skip">
+        <a href="#did-create-transaction" class="md-skip">
           Skip to content
         </a>
       
@@ -191,7 +191,7 @@
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      Home
+      Self-Sovereign Identity protocol
     </a>
   </li>
 
@@ -503,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/didc/" class="md-nav__link">
+    <a href="../../smart-contracts/DID.tyron/" class="md-nav__link">
       DID.tyron
     </a>
   </li>
@@ -515,8 +515,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../smart-contracts/init.tyron/" class="md-nav__link">
-      init.tyron
+    <a href="../../smart-contracts/INIT.tyron/" class="md-nav__link">
+      INIT.tyron
     </a>
   </li>
 
@@ -558,7 +558,7 @@
 
 
   <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
+    <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
       DID Client
     </a>
   </li>
@@ -647,7 +647,7 @@
                   </a>
                 
                 
-                <h1 id="did-create-tyronzil-transaction">DID Create tyronZIL transaction</h1>
+                <h1 id="did-create-transaction">DID Create transaction</h1>
 <p>It generates a brand new Self-Sovereign Identity out of the DID smart contract code. It defines the Decentralized Identifier, its <a href="../../did-document/">DID Document</a> and DID State.</p>
 <h2 id="on-the-did-clients-side">On the DID Client's side:</h2>
 <ol>
@@ -663,10 +663,10 @@
 </blockquote>
 </li>
 <li>
-<p>Download, decode (Base64) &amp; decompress the DID-smart-contract code from the <em>init.tyron</em> smart contract.</p>
+<p>Download, decode (Base64) &amp; decompress the DID-smart-contract code from the INIT.tyron smart contract.</p>
 </li>
 <li>Instantiate the DID contract with the user's Zilliqa address as the contract owner and deploy it on the blockchain.</li>
-<li>Call the <a href="../../smart-contracts/didc/#transitions">Init</a> transition of the user's DID contract.</li>
+<li>Call the <a href="../../smart-contracts/DID.tyron/#transitions">Init</a> transition of the user's DID contract.</li>
 <li>Submit the <em>DidCreate</em> tyronZIL transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.</li>
 <li>Ask which domain name.did the user would like for their DID contract address and execute the SetSsiDomain transition.</li>
 </ol>

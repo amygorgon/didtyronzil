@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Self-Sovereign Identity protocol
             
           </span>
         </div>
@@ -197,12 +197,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home
+        Self-Sovereign Identity protocol
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="." class="md-nav__link md-nav__link--active">
-      Home
+      Self-Sovereign Identity protocol
     </a>
     
       
@@ -226,13 +226,6 @@
         <li class="md-nav__item">
   <a href="#conformance" class="md-nav__link">
     Conformance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#self-sovereign-identity-protocol" class="md-nav__link">
-    Self-Sovereign Identity Protocol
   </a>
   
 </li>
@@ -516,7 +509,7 @@
 
 
   <li class="md-nav__item">
-    <a href="smart-contracts/didc/" class="md-nav__link">
+    <a href="smart-contracts/DID.tyron/" class="md-nav__link">
       DID.tyron
     </a>
   </li>
@@ -528,8 +521,8 @@
 
 
   <li class="md-nav__item">
-    <a href="smart-contracts/init.tyron/" class="md-nav__link">
-      init.tyron
+    <a href="smart-contracts/INIT.tyron/" class="md-nav__link">
+      INIT.tyron
     </a>
   </li>
 
@@ -571,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="https://github.com/julio-cabdu/tyronzil-js" class="md-nav__link">
+    <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
       DID Client
     </a>
   </li>
@@ -642,13 +635,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#self-sovereign-identity-protocol" class="md-nav__link">
-    Self-Sovereign Identity Protocol
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#off-chain-software" class="md-nav__link">
     Off-chain software
   </a>
@@ -679,16 +665,30 @@
                   </a>
                 
                 
-                  <h1>Home</h1>
+                  <h1>Self-Sovereign Identity protocol</h1>
                 
                 <p><strong><p style="text-align: center;">
-<img alt="tyron" src="tyron.png" width="500" />
+<img alt="tyron" loading="lazy" src="tyron.png" width="500" />
 </p></strong></p>
 <p><code>own your data, empower your world</code></p>
 <p>A Self-Sovereign Identity (SSI) protocol on <a href="https://www.zilliqa.com">Zilliqa</a>.</p>
 <p>The user account on Tyron is its own immutable smart contract code (the SSI.tyron) which deploys diverse and privacy-preserving Decentralized Identifier (DID) dapps. The tyronzil DID Method is part of the <a href="https://w3c.github.io/did-spec-registries/">W3C DID Specification Registries</a> and the first DID Method for the Zilliqa blockchain platform, funded by <a href="https://www.zilhive.org">ZILHive</a> Innovation track.</p>
 <p>SSI allows people to manage their digital identities, proving who they are without a middleman, by anchoring DIDs on decentralized networks as a shared root of trust. With smart-contract technology, the Tyron SSI Protocol aims to provide decentralized identity at scale and enable user-controlled self-sovereign  identities.</p>
 <p>The meaning of the word 'Tyron' derives from the Greek <em>turannos</em> that means sovereign, and <strong>the purpose of this protocol is to give people sovereignty over their data</strong>.</p>
+<p>The Tyron SSI Protocol solves the DID scalability issue by implementing the .tyron smart contracts. The protocol provides the code to instantiate a Self-Sovereign Identity (the SSI.tyron smart contract) which manages upgradable versions of Decentralized Identifier (DID.tyron) smart contracts.</p>
+<p>The protocol is non-custodial - the user must show control of their Zilliqa private key for the Self-Sovereign Identity to process their transaction. The user is the owner of the SSI and the SSI the owner of DID dapps.</p>
+<ul>
+<li><a href="protocol-parameters/">Protocol default parameters</a></li>
+<li>Smart-contract implementations:<ul>
+<li><a href="smart-contracts/DID.tyron/">DID.tyron: The Decentralized Identifier Smart Contract</a></li>
+<li><a href="smart-contracts/INIT.tyron/">INIT.tyron: The SSI Initialization &amp; DNS Smart Contract</a></li>
+</ul>
+</li>
+</ul>
+<p>Smart contracts on Zilliqa get written in <a href="https://scilla-lang.org/">Scilla</a> (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.</p>
+<blockquote>
+<p>Scilla provides formal verification with embedding into the <a href="https://coq.inria.fr/">Coq proof assistant</a>.</p>
+</blockquote>
 <h2 id="the-tyronzil-decentralized-identifier-method-v200">The tyronzil Decentralized Identifier Method v2.0.0</h2>
 <p>Identities on the internet remain centralized, mainly by identity providers such as Facebook, Google and PayPal. Thus, when people shop online and login with these accounts, they don't have enough control nor understanding of how their data is used and shared with third parties. Furthermore, decentralized applications are still difficult to grasp for most regular users, and Decentralized Identifiers (DIDs) can make the user experience much better while increasing privacy and security.</p>
 <p>This DID Method is part of the open-source Tyron SSI Protocol that defines its:</p>
@@ -724,24 +724,9 @@
 </ul>
 <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this specification are to be interpreted as described in <a href="https://tools.ietf.org/html/rfc2119">RFC 2119</a>.</p>
 <p>Versions get organized by <a href="https://semver.org/">Semantic Versioning</a>.</p>
-<h2 id="self-sovereign-identity-protocol">Self-Sovereign Identity Protocol</h2>
-<p>The Tyron SSI Protocol solves the DID scalability issue by implementing the .tyron smart contracts. The protocol provides the code to instantiate a Self-Sovereign Identity (the SSI.tyron smart contract) which manages upgradable versions of Decentralized Identifier (DID.tyron) smart contracts.</p>
-<p>The protocol is non-custodial - the user must show control of their Zilliqa private key for the Self-Sovereign Identity to process their transaction. The user is the owner of the SSI and the SSI the owner of DID dapps.</p>
-<ul>
-<li><a href="protocol-parameters/">Protocol default parameters</a></li>
-<li>Smart-contract implementations:<ul>
-<li><a href="smart-contracts/didc/">DID.tyron: The Decentralized Identifier Smart Contract</a></li>
-<li><a href="smart-contracts/init.tyron/">init.tyron: The SSI Initialization &amp; DNS Smart Contract</a></li>
-</ul>
-</li>
-</ul>
-<p>Smart contracts on Zilliqa get written in <a href="https://scilla-lang.org/">Scilla</a> (Smart Contract Intermediate-Level Language) that has a design with a focus on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language-level.</p>
-<blockquote>
-<p>Scilla provides formal verification with embedding into the <a href="https://coq.inria.fr/">Coq proof assistant</a>.</p>
-</blockquote>
 <h2 id="off-chain-software">Off-chain software</h2>
 <ul>
-<li>DID Client: <a href="https://github.com/julio-cabdu/tyronZIL-js">tyronzil</a> for Node.js, written in TypeScript</li>
+<li>DID Client: <a href="https://github.com/tralcanx/tyronzil">tyronzil</a> for Node.js, written in TypeScript</li>
 <li>Software Development Kit: <a href="https://github.com/pungtas/tyronzil-sdk">tyronzil-sdk</a> for React Native</li>
 <li><a href="implementation/models/">Models</a></li>
 </ul>
