@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -17,7 +17,7 @@
     
     
       
-        <title>W3C DIDs - SSI.tyron</title>
+        <title>W3C DIDs intro - SSI.tyron</title>
       
     
     
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              W3C DIDs
+              W3C DIDs intro
             
           </span>
         </div>
@@ -211,12 +211,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        W3C DIDs
+        W3C DIDs intro
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      W3C DIDs
+      W3C DIDs intro
     </a>
     
       
@@ -337,13 +337,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -420,13 +420,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -523,13 +523,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -629,7 +629,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -792,11 +816,11 @@
                 
                 
                 <h1 id="w3c-decentralized-identifiers">W3C Decentralized Identifiers</h1>
-<p>The tyronZIL DID Method refers to the following terms specified in <a href="https://w3c.github.io/did-core/">W3C Decentralized Identifiers (DIDs) v1.0</a>:</p>
+<p>This DID Method refers to the following terms specified in <a href="https://w3c.github.io/did-core/">W3C Decentralized Identifiers (DIDs) v1.0</a>:</p>
 <h2 id="did-method">DID Method</h2>
-<p>A DID Method is a specification for the precise scheme of a DID, and it also specifies the methods creating, resolving, updating and deactivating such a DID and its DID Document, using a specific type of verifiable data registry, in tyronZIL's case, Zilliqa.</p>
+<p>A DID Method is a specification for the precise scheme of a DID, and it also specifies the methods creating, resolving, updating and deactivating such a DID and its DID Document, using a specific type of verifiable data registry, in tyronzil's case, Zilliqa.</p>
 <h2 id="decentralized-identifier-did">Decentralized Identifier (DID)</h2>
-<p>A DID is a globally unique Uniform Resource Identifier (URI) that associates a DID Subject with a DID Document. Given the decentralized nature of Zilliqa, a tyronZIL DID has its existence guaranteed without depending on a central authority.</p>
+<p>A DID is a globally unique Uniform Resource Identifier (URI) that associates a DID Subject with a DID Document. Given the decentralized nature of Zilliqa, a Tyron DID has its existence guaranteed without depending on a central authority.</p>
 <p>A DID consists of three parts:</p>
 <ul>
 <li>The scheme identifier: "did"</li>
@@ -820,7 +844,7 @@
 <h2 id="did-document">DID Document</h2>
 <p>A DID is resolvable to a DID Document, which contains data associated with the DID, such as cryptographic material, verification methods and service endpoints relevant to interactions with the DID Subject. The DID itself is the value of the <strong><em>id</em></strong> property.</p>
 <blockquote>
-<p>The Tyron <a href="../did-document/">DID Document</a>.</p>
+<p>Read the Tyron DID Document specification <a href="../did-document/">here</a>.</p>
 </blockquote>
 <h2 id="verification-method">Verification method</h2>
 <p>A verification method is a set of parameters used to independently verify a proof according to the particular DID Method, e.g. a public key.</p>

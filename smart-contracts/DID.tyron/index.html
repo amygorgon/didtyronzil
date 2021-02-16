@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../../W3C-dids/" class="md-nav__link">
-      W3C DIDs
+      W3C DIDs intro
     </a>
   </li>
 
@@ -218,13 +218,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -301,13 +301,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -406,13 +406,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -612,7 +612,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -756,7 +780,7 @@
                 <h1 id="didtyron-the-decentralized-identifier-smart-contract">DID.tyron: The Decentralized Identifier Smart Contract</h1>
 <p>The user's Self-Sovereign Identity gets instantiated from the DID.tyron smart-contract code that is stored on-chain in the <a href="../INIT.tyron/">INIT.tyron</a> smart contract. For that, the user MUST give their Zilliqa address as the <em>contract owner</em>. Once the DID smart contract gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DID contract has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.</p>
 <blockquote>
-<p>Find the <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/blockchain/smart-contracts/did.tyron.scilla">DID.tyron code</a> on GitHub.</p>
+<p>Find the <a href="https://github.com/tralcanx/tyronzil/blob/master/src/lib/blockchain/smart-contracts/did.tyron.scilla">DID.tyron code</a> on GitHub.</p>
 </blockquote>
 <h2 id="immutable-fields">Immutable fields</h2>
 <p>Immutable fields are set at deployment and can not get modified. The DID smart contract gets deployed with the following immutable fields:</p>
@@ -778,14 +802,14 @@
 <li><em>services</em>: The DID service endpoints | @key: ID | @value: service type &amp; URI | [Map String Pair String String type]</li>
 <li><em>tyron_hash</em>: The SHA256 hash of the DID. It is necessary to sign this hash to perform certain operations, such as deactivation of the DID | [ByStr type]</li>
 <li><em>did_update_key</em> &amp; <em>did_recovery_key</em>: The public <a href="../../protocol-parameters/#did-keys">DID Keys</a> to enable future operations are stored in the DID contract to execute the <em>IsRightSignature</em> procedure - [ByStr type]</li>
-<li><em>created</em>: The block number when the DID Create tyronZIL transaction occurred | [BNum type]</li>
-<li><em>ledger_time</em>: The block number when the last tyronZIL transaction occurred | [BNum type]</li>
+<li><em>created</em>: The block number when the DID Create tyronzil transaction occurred | [BNum type]</li>
+<li><em>ledger_time</em>: The block number when the last tyronzil transaction occurred | [BNum type]</li>
 <li>
-<p><em>transaction_number</em>: A monotonically increasing number representing the amount of tyronZIL transactions that have taken place | [Uint128 type]</p>
+<p><em>transaction_number</em>: A monotonically increasing number representing the amount of tyronzil transactions that have taken place | [Uint128 type]</p>
 <p>The following fields get determined by calling the <em>init</em> transition which sends a message to the <a href="../INIT.tyron/">INIT.tyron</a> contract that, in return, call the <em>InitCallBack</em> transition:</p>
 </li>
 <li>
-<p><em>operation_cost</em>: The cost of each tyronZIL transaction type, e.g. ".did" for DID operations | [Map String Uint128 type] </p>
+<p><em>operation_cost</em>: The cost of each tyronzil transaction type, e.g. ".did" for DID operations | [Map String Uint128 type] </p>
 </li>
 <li><em>foundation_address</em>: The address of the Tyron Pungtas Foundation | [ByStr20 type]</li>
 <li><em>agent_comission</em>: The agent's comission as a % of the <em>operation_cost</em> | @key: avatar.agent | @value: comission | [Map String Uint 128 type]</li>
@@ -830,10 +854,10 @@
 <li><em>InitCallBack</em>: The <a href="../INIT.tyron/">INIT.tyron</a> contract calls this transition to set the <em>operation_cost</em>, <em>foundation_address</em> &amp; address and commission of the given agent.</li>
 <li><em>SetSsiDomain</em>: Sets a domain name for the Decentralized Identifier.</li>
 <li><em>SetDomainCallBack</em>: The <a href="../INIT.tyron/">INIT.tyron</a> contract calls this transition to set a user's domain name.</li>
-<li><em>DidCreate</em>: Executes a <a href="../../CRUD-operations/did-create/">DID Create</a> tyronZIL transaction.</li>
-<li><em>DidRecover</em>: Executes a <a href="../../CRUD-operations/did-recover/">DID Recover</a> tyronZIL transaction.</li>
-<li><em>DidUpdate</em>: Executes a <a href="../../CRUD-operations/did-update/">DID Update</a> tyronZIL transaction.</li>
-<li><em>DidDeactivate</em>: Executes a <a href="../../CRUD-operations/did-deactivate/">DID Deactivate</a> tyronZIL transaction.</li>
+<li><em>DidCreate</em>: Executes a <a href="../../CRUD-operations/did-create/">DID Create</a> tyronzil transaction.</li>
+<li><em>DidRecover</em>: Executes a <a href="../../CRUD-operations/did-recover/">DID Recover</a> tyronzil transaction.</li>
+<li><em>DidUpdate</em>: Executes a <a href="../../CRUD-operations/did-update/">DID Update</a> tyronzil transaction.</li>
+<li><em>DidDeactivate</em>: Executes a <a href="../../CRUD-operations/did-deactivate/">DID Deactivate</a> tyronzil transaction.</li>
 </ol>
 <h3 id="the-xwallet-transitions">The xWallet transitions</h3>
 <ol>

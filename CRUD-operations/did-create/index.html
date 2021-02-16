@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../../W3C-dids/" class="md-nav__link">
-      W3C DIDs
+      W3C DIDs intro
     </a>
   </li>
 
@@ -220,13 +220,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -305,13 +305,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -353,8 +353,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID Client's side:
+  <a href="#on-the-ssi-clients-side" class="md-nav__link">
+    On the SSI client's side:
   </a>
   
 </li>
@@ -453,13 +453,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -559,7 +559,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -617,8 +641,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-the-did-clients-side" class="md-nav__link">
-    On the DID Client's side:
+  <a href="#on-the-ssi-clients-side" class="md-nav__link">
+    On the SSI client's side:
   </a>
   
 </li>
@@ -649,10 +673,10 @@
                 
                 <h1 id="did-create-transaction">DID Create transaction</h1>
 <p>It generates a brand new Self-Sovereign Identity out of the DID smart contract code. It defines the Decentralized Identifier, its <a href="../../did-document/">DID Document</a> and DID State.</p>
-<h2 id="on-the-did-clients-side">On the DID Client's side:</h2>
+<h2 id="on-the-ssi-clients-side">On the SSI client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet), the user's private key and the gas limit.</li>
-<li>Get the user's input regarding cryptographic keys and service endpoints for the DID-Document.</li>
+<li>Get the user's input regarding cryptographic keys and service endpoints for the DID Document.</li>
 <li>Verification methods: With the public key input generate an array of keys, generated using the <a href="../../protocol-parameters/#operation-key-pair">operation key pair</a>.</li>
 <li>Services: An array of endpoints.</li>
 <li>With the verification methods and service endpoints, generate a <em>List Document</em> to send to the DID smart contract.</li>
@@ -667,7 +691,7 @@
 </li>
 <li>Instantiate the DID contract with the user's Zilliqa address as the contract owner and deploy it on the blockchain.</li>
 <li>Call the <a href="../../smart-contracts/DID.tyron/#transitions">Init</a> transition of the user's DID contract.</li>
-<li>Submit the <em>DidCreate</em> tyronZIL transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.</li>
+<li>Submit the <em>DidCreate</em> tyronzil transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.</li>
 <li>Ask which domain name.did the user would like for their DID contract address and execute the SetSsiDomain transition.</li>
 </ol>
 <h2 id="on-the-did-smart-contracts-side">On the DID smart contract's side</h2>
@@ -683,7 +707,7 @@
 <li>Executes the <em>Timestamp</em> procedure.</li>
 </ol>
 <hr />
-<p>A DID Create tyronZIL transaction (incl. the DID smart contract deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL).</p>
+<p>A DID Create tyronzil transaction (incl. the DID smart contract deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL).</p>
                 
               
               

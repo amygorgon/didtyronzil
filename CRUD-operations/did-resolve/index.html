@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../../W3C-dids/" class="md-nav__link">
-      W3C DIDs
+      W3C DIDs intro
     </a>
   </li>
 
@@ -220,13 +220,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -305,13 +305,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -480,13 +480,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -586,7 +586,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -709,7 +733,7 @@
 <ul>
 <li><strong><em>network</em></strong>: The 'NetworkNamespace' referring to the testnet or mainnet.</li>
 <li><strong><em>tyronAddr</em></strong>: The Zilliqa address of the user's <a href="../../smart-contracts/DID.tyron/">DID smart contract</a>.</li>
-<li><strong><em>metadata</em></strong>: The DID Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID Document with or without the document metadata. The former produces an output called DID Resolution Result.</li>
+<li><strong><em>metadata</em></strong>: The DID Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. tyronzil-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID Document with or without the document metadata. The former produces an output called DID Resolution Result.</li>
 </ul>
 <h3 id="output-variables">Output variables</h3>
 <ul>
@@ -724,7 +748,7 @@ Tyron's <strong><em>resolutionMetadata</em></strong> refers to Zilliqa's <strong
 Tyron's <strong><em>documentMetadata</em></strong> includes three properties: the <strong><em>contentType</em></strong> equal to "application/did+json" and the <a href="../../protocol-parameters/#did-keys">DID Keys</a> update &amp; recovery.</li>
 </ul>
 <blockquote>
-<p>Find tyron's DID Resolution method <a href="https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/did-document.ts">here</a>.</p>
+<p>Find the DID Resolution method <a href="https://github.com/tralcanx/tyronzil/blob/master/src/lib/decentralized-identity/did-document.ts">here</a>.</p>
 </blockquote>
 <h2 id="resolving-a-deactivated-did">Resolving a deactivated DID</h2>
 <p>If the DID Status is <strong><em>Deactivated</em></strong> in its corresponding DID smart contract, then the DID Resolver MUST throw a <strong><em>DidDeactivated</em></strong> error.</p>
@@ -732,7 +756,7 @@ Tyron's <strong><em>documentMetadata</em></strong> includes three properties: th
 <p>DID-URL dereferencing is the process that returns the particular resource specified by the DID URL. It can use the DID Resolution process to fetch the DID Document and then it performs additional processing on the DID Document to return the dereferenced resource that was requested.</p>
 <p>The software component is called DID-URL Dereferencer, and it takes as input a DID URL, a DID Document and a set of dereferencing options and returns the specific resource. The dereferencing options control how the resource is dereferenced.</p>
 <blockquote>
-<p>DID-URL dereferencing will be supported in future versions of tyronZIL.</p>
+<p>DID-URL dereferencing will be supported in future versions of the protocol.</p>
 </blockquote>
                 
               

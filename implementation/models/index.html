@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../../W3C-dids/" class="md-nav__link">
-      W3C DIDs
+      W3C DIDs intro
     </a>
   </li>
 
@@ -218,13 +218,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -301,13 +301,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -404,13 +404,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -512,7 +512,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -726,7 +750,7 @@
                 
                 
                 <h1 id="models">Models</h1>
-<p><a href="https://github.com/julio-cabdu/tyronZIL-js">TyronZIL-js</a> extends the implementation of the following data structures from the <a href="https://identity.foundation/sidetree/spec/">Sidetree protocol</a>:</p>
+<p>This Self-Sovereign Identity protocol extends the implementation of the following data structures from the <a href="https://identity.foundation/sidetree/spec/">Sidetree protocol</a>:</p>
 <h2 id="public-key-model">Public key model</h2>
 <pre><code class="language-js">interface PublicKeyModel {
     id: string;
@@ -765,7 +789,7 @@
 <h2 id="patch-model">Patch model</h2>
 <pre><code class="language-js">interface PatchModel {
     action: PatchAction;
-    ids?: string[];        //the IDs of the DID-Document elements to remove
+    ids?: string[];    //the IDs of the DID Document elements to remove
     keyInput?: PublicKeyInput[];
     services?: TransitionValue[];
 }

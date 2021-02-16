@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Zilliqa's W3C DID Method">
+        <meta name="description" content="Self-Sovereign Identity protocol">
       
       
       
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../W3C-dids/" class="md-nav__link">
-      W3C DIDs
+      W3C DIDs intro
     </a>
   </li>
 
@@ -218,13 +218,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      DID Method
+      Tyron DID Method
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="DID Method" data-md-level="1">
+    <nav class="md-nav" aria-label="Tyron DID Method" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        DID Method
+        Tyron DID Method
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -301,13 +301,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      CRUD Operations
+      CRUD operations
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="CRUD Operations" data-md-level="2">
+    <nav class="md-nav" aria-label="CRUD operations" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
-        CRUD Operations
+        CRUD operations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -404,13 +404,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Tyron SSI Protocol
+      SSI protocol
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Tyron SSI Protocol" data-md-level="1">
+    <nav class="md-nav" aria-label="SSI protocol" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
-        Tyron SSI Protocol
+        SSI protocol
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -510,7 +510,31 @@
 
   <li class="md-nav__item">
     <a href="https://github.com/tralcanx/tyronzil" class="md-nav__link">
-      DID Client
+      SSI client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyronzil-js" class="md-nav__link">
+      SSI library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/pungtas/tyron" class="md-nav__link">
+      React Native app
     </a>
   </li>
 
@@ -597,27 +621,31 @@
 <tbody>
 <tr>
 <td>29/6 - 24/7/2020</td>
-<td>Creates the tyronZIL DID Client that performs DID CRUD operations (create, read, recover, update &amp; deactivate).</td>
+<td>Created the <a href="https://www.github.com/tralcanx/tyronzil">SSI client</a> that performs the CRUD operations (create, read, recover, update &amp; deactivate).</td>
 </tr>
 <tr>
 <td>27/7 - 21/8/2020</td>
-<td>Integrates the DID Client with the Zilliqa blockchain platform.</td>
+<td>Integrated the SSI client with the Zilliqa blockchain platform.</td>
 </tr>
 <tr>
 <td>24/8 - 18/9/2020</td>
-<td>Implements the <a href="https://www.tyronzil.com/smart-contracts/DID.tyron/">DID Smart Contract</a> to instantiate a Self-Sovereign Identity.</td>
+<td>Implemented the <a href="https://www.tyronzil.com/smart-contracts/DID.tyron/">Decentralized Identifier smart contract</a> according to the tyronzil W3C DID Method.</td>
 </tr>
 <tr>
 <td>21/9 - 11/12/2020</td>
-<td><strong>Tyron Improvement Proposal #1</strong> - TIP1 consists of 3 sprints that aim to increase security and discoverability of Tyron Decentralized Identifiers (DIDs).</td>
+<td><strong>Tyron Improvement Proposal #1</strong>: Three sprints to increase security and discoverability of Tyron Decentralized Identifiers.</td>
 </tr>
 <tr>
 <td>21/9 - 16/10/2020</td>
-<td>TIP1.1 implements Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DID smart contract. The contract also produces the SHA-256 hash of the Decentralized Identifier, which must be signed to deactivate the DID. And the Self-Sovereign Identity can verify that all Schnorr signatures correspond to the <a href="https://www.tyronzil.com/protocol-parameters/#did-keys">DID Keys</a> that have their public keys stored in the contract. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
+<td>TIP1.1 implemented Zilliqa's 32-byte private-keys to generate Schnorr signatures that can be verified by the DID smart contract. Introduced the <a href="https://www.tyronzil.com/protocol-parameters/#did-keys">DID Keys</a> that have their public keys stored in the DID contract. <a href="https://github.com/tralcanx/tyronzil/releases/tag/v1.0.0-alpha">Release notes</a>.</td>
 </tr>
 <tr>
 <td>19/10 - 13/11/2020</td>
-<td>TIP1.2 develops the INIT.tyron smart contract for the initialization of <a href="https://twitter.com/tyrondid">@tyron.did</a> self-sovereign identities as well as a domain name system that implements the <em>.did</em>, <em>.agent</em> &amp; <em>.tyron</em> domains. These top-level SSI Domains define the SSI Trinity constituted by the user as the owner of their decentralized identity, the agent providing products &amp; services, and tyron as the technology &amp; open organization. This development sprint also introduces the xWallet that gives ZRC-2 transfer capabilities to the DID smart contract. By using a donation campaign code, the Self-Sovereign Identity can send a commission-free transfer to another <em>user.did</em> &amp; keep track of the token balance - find the donations prototype at <a href="https://pung.me">pung.me</a>. <a href="https://github.com/julio-cabdu/tyronZIL-js/releases/tag/v2.0.0-alpha">Release notes</a>.</td>
+<td>TIP1.2 developed the <a href="https://www.tyronzil.com/smart-contracts/INIT.tyron/">INIT.tyron smart contract</a> for the initialization of self-sovereign identities as well as a domain name system that implements the <em>.did</em>, <em>.agent</em> &amp; <em>.tyron</em> domains. These top-level SSI Domains define the SSI Trinity constituted by the user as the owner of their Self-Sovereign Identity, the agent providing the application, and tyron as the technology &amp; open association. This development sprint also implemented the xWallet that gives ZRC-2 transfer capabilities to the DID smart contract. Furthermore, TIP1.2 developed a prototype for donations named <a href="https://www.pung.me">pung.me</a>. <a href="https://github.com/tralcanx/tyronzil/releases/tag/v2.0.0-alpha">Release notes</a>.</td>
+</tr>
+<tr>
+<td>16/11 - 11/12/2020</td>
+<td>TIP1.3 developed the <a href="https://github.com/pungtas/tyronzil-js">tyronzil library</a> to be utilized by the SSI client, and the newly implemented <a href="https://github.com/pungtas/tyron">tyron</a> React Native application. The tyron dapp first component is the DID browser, check out the demo <a href="https://www.youtube.com/watch?v=9aiKGehR_gU">here</a>.</td>
 </tr>
 </tbody>
 </table>
