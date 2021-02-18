@@ -9,8 +9,8 @@ A DID Resolver is the software component that executes the DID Resolution proces
 ### Input variables
 
 - ***network***: The 'NetworkNamespace' referring to the testnet or mainnet.
-- ***tyronAddr***: The Zilliqa address of the user's [DID smart contract](../smart-contracts/didc.md).
-- ***metadata***: The DID Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. TyronZIL-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID Document with or without the document metadata. The former produces an output called DID Resolution Result.
+- ***tyronAddr***: The Zilliqa address of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
+- ***metadata***: The DID Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. tyronzil-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID Document with or without the document metadata. The former produces an output called DID Resolution Result.
 
 ### Output variables
 
@@ -21,7 +21,7 @@ Tyron's ***resolutionMetadata*** refers to Zilliqa's ***GetBlockchainInfo*** met
 - ***documentMetadata***: This structure contains metadata that typically does not change between invocations of the resolve method unless the DID Document changes.  
 Tyron's ***documentMetadata*** includes three properties: the ***contentType*** equal to "application/did+json" and the [DID Keys](../protocol-parameters.md#did-keys) update & recovery.
 
-> Find tyron's DID Resolution method [here](https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/did-document.ts).
+> Find the DID Resolution method [here](https://github.com/tralcanx/tyronzil/blob/master/src/lib/decentralized-identity/did-document.ts).
 
 ## Resolving a deactivated DID
 
@@ -33,4 +33,4 @@ DID-URL dereferencing is the process that returns the particular resource specif
 
 The software component is called DID-URL Dereferencer, and it takes as input a DID URL, a DID Document and a set of dereferencing options and returns the specific resource. The dereferencing options control how the resource is dereferenced.
 
-> DID-URL dereferencing will be supported in future versions of tyronZIL.
+> DID-URL dereferencing will be supported in future versions of the protocol.

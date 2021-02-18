@@ -1,10 +1,10 @@
-# DID Update tyronZIL transaction
+# DID Update transaction
 
 It makes modifications to the user's self-sovereign identity (stored in their DID smart contract). To be able to execute this operation, the user MUST possess the private [*did_update_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the contract owner MUST make a call to the *DidUpdate* transition of the user's [DID smart contract](../smart-contracts/didc.md).
+Once the operation request is processed, the contract owner MUST make a call to the *DidUpdate* transition of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
 
-## On the DID Client's side:
+## On the SSI client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch their DID contract from the blockchain.
 1. Utilize the user's private *did_update_key* to verify that it corresponds to the public *did_update_key* stored in the DID smart contract.
@@ -15,7 +15,7 @@ Once the operation request is processed, the contract owner MUST make a call to 
 
     > All private keys MUST be in control of the user.
 
-6. Submit the *DidUpdate* tyronZIL transaction with its transition parameters (agent, newDocument, docHash, signature and newUpdateKey). The contract owner MUST call this transition for it to be successful.
+6. Submit the *DidUpdate* tyronzil transaction with its transition parameters (agent, newDocument, docHash, signature and newUpdateKey). The contract owner MUST call this transition for it to be successful.
 
 ## On the DID smart contract's side
 
@@ -32,4 +32,4 @@ When the *DidUpdate* transition gets called, the DID smart contract proceeds as 
 
 ---
 
-A DID Update tyronZIL transaction consumes approximately 700 units of GAS (1.4 ZIL).
+A DID Update tyronzil transaction consumes approximately 700 units of GAS (1.4 ZIL).

@@ -1,46 +1,48 @@
-site_name: tyron
+site_name: SSI.tyron
 theme:
     name: material
     font: 
         text: Ubuntu
         code: Ubuntu Mono
     palette:
-        primary: teal
-        accent: teal
+        primary: black
+        accent: black
     features:
       - tabs
 markdown_extensions:
   - attr_list
 repo_url: https://github.com/julio-cabdu/didtyronZIL
-site_description: Zilliqa's W3C DID Method
+site_description: Self-Sovereign Identity Protocol
 site_author: Tralcan X
-copyright: Copyright (C) 2021 Tyron Pungtas
+copyright: Copyright (C) 2021 Tyron Pungtas Open Association
 extra:
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/tyrondid
+      link: https://twitter.com/ssiprotocol
 nav: 
-  - Home: 'index.md'
-  - W3C DIDs: 'W3C-dids.md'
-  - DID Method:
+  - Self-Sovereign Identity Protocol: 'index.md'
+  - W3C DIDs terminology: 'W3C-dids.md'
+  - Tyron DID Method:
     - Scheme:
       - DID Scheme: 'scheme/did-scheme.md'
       - DID-URL syntax: 'scheme/did-url-syntax.md'
     - DID Document: 'did-document.md'
-    - DID CRUD Operations:
+    - CRUD operations:
       - Create: 'CRUD-operations/did-create.md'
       - Resolve: 'CRUD-operations/did-resolve.md'
       - Recover: 'CRUD-operations/did-recover.md'
       - Update: 'CRUD-operations/did-update.md'
       - Deactivate: 'CRUD-operations/did-deactivate.md'
     - Security & privacy: 'security-privacy.md'
-  - Tyron SSI Protocol:
+  - SSI protocol:
     - Protocol parameters: 'protocol-parameters.md'
     - Smart contracts:
-      - DID.tyron: 'smart-contracts/didc.md'
-      - init.tyron: 'smart-contracts/init.tyron.md'
+      - DID.tyron: 'smart-contracts/DID.tyron.md'
+      - INIT.tyron: 'smart-contracts/INIT.tyron.md'
   - Implementation:
-    - DID Client: 'https://github.com/julio-cabdu/tyronzil-js'
+    - SSI client: 'https://github.com/tralcanx/tyronzil'
+    - SSI library: 'https://github.com/pungtas/tyronzil-js'
+    - React Native app: 'https://github.com/pungtas/tyron'
     - Models: 'implementation/models.md'
   - Development: 'roadmap.md'
   

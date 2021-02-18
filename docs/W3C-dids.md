@@ -1,14 +1,14 @@
 # W3C Decentralized Identifiers
 
-The tyronZIL DID Method refers to the following terms specified in [W3C Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/):
+This DID Method refers to the following terms specified in [W3C Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/):
 
 ## DID Method
 
-A DID Method is a specification for the precise scheme of a DID, and it also specifies the methods creating, resolving, updating and deactivating such a DID and its DID Document, using a specific type of verifiable data registry, in tyronZIL's case, Zilliqa.
+A DID Method is a specification for the precise scheme of a DID, and it also specifies the methods creating, resolving, updating and deactivating such a DID and its DID Document, using a specific type of verifiable data registry, in tyronzil's case, Zilliqa.
 
 ## Decentralized Identifier (DID)
 
-A DID is a globally unique Uniform Resource Identifier (URI) that associates a DID Subject with a DID Document. Given the decentralized nature of Zilliqa, a tyronZIL DID has its existence guaranteed without depending on a central authority.
+A DID is a globally unique Uniform Resource Identifier (URI) that associates a DID Subject with a DID Document. Given the decentralized nature of Zilliqa, a Tyron DID has its existence guaranteed without depending on a central authority.
 
 A DID consists of three parts:
 
@@ -39,7 +39,7 @@ The DID Controller is the entity that has the capability - as defined by the DID
 
 A DID is resolvable to a DID Document, which contains data associated with the DID, such as cryptographic material, verification methods and service endpoints relevant to interactions with the DID Subject. The DID itself is the value of the ***id*** property.
 
-> The Tyron [DID Document](./did-document.md).
+> Read the Tyron DID Document specification [here](./did-document.md).
 
 ## Verification method
 

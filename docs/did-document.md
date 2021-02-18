@@ -101,7 +101,7 @@ The ```service``` value MUST be an array of objects of type [DidServiceEndpointM
     {
       "id": "did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9#did-method",
       "type": "website",
-      "endpoint": "https://tyronZIL.com"
+      "endpoint": "https://www.ssiprotocol.com"
     },
     {
       "id": "did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9#account-X",

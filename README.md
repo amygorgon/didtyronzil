@@ -1,5 +1,3 @@
-# tyronZIL DID Method specification website
+# Tyron W3C DID Method specification website
 
-Zilliqa's W3C DID Method.
-
-DID Client reference implementation for Node.js at [tyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js)
+SSI client reference implementation for Node.js at [tyronzil](https://github.com/tralcanx/tyronzil).

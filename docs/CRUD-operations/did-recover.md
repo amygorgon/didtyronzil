@@ -1,10 +1,10 @@
-# DID Recover tyronZIL transaction
+# DID Recover transaction
 
 It fully resets the user's DID State, so they can keep using the same DID with a brand new public-key-infrastructure (PKI). To be able to execute this operation, the user MUST possess the private [*did_recovery_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the user as the contract owner MUST call the *DidRecover* transition of the user's [DID smart contract](../smart-contracts/didc.md).
+Once the operation request is processed, the user as the contract owner MUST call the *DidRecover* transition of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
 
-## On the DID Client's side:
+## On the SSI client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch the DID contract from the blockchain.
 1. Utilize the user's private *did_recovery_key* to verify that it corresponds to the public *did_recovery_key* stored in the DID contract. 
@@ -17,7 +17,7 @@ Once the operation request is processed, the user as the contract owner MUST cal
 
     > All private keys MUST be in control of the user.
 
-8. Submit the *DidRecover* tyronZIL transaction with its transition parameters (agent, newDocument, docHash, signature, newUpdateKey and newRecoveryKey). The contract owner MUST call this transition for it to be successful.
+8. Submit the *DidRecover* tyronzil transaction with its transition parameters (agent, newDocument, docHash, signature, newUpdateKey and newRecoveryKey). The contract owner MUST call this transition for it to be successful.
 
 ## On the DID Smart Contract's side
 
@@ -34,4 +34,4 @@ When the *DidRecover* transition gets called, the DID smart contract proceeds as
 
 ---
 
-A DID Recover tyronZIL transaction consumes approximately 700 units of GAS (1.4 ZIL).
+A DID Recover tyronzil transaction consumes approximately 700 units of GAS (1.4 ZIL).

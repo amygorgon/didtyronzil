@@ -1,17 +1,17 @@
-# DID Deactivate tyronZIL transaction
+# DID Deactivate transaction
 
 It completely deactivates the Decentralized Identifier by setting the DID Status to *Deactivated* and the DID state to *None*, *undefined* or *Empty*.
 
 To be able to execute this operation, the user MUST possess the private [*did_recovery_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the user as the contract owner MUST call the *DidDeactivate* transition of their [DID smart contract](../smart-contracts/didc.md). This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a *DidDeactivated* error.
+Once the operation request is processed, the user as the contract owner MUST call the *DidDeactivate* transition of their [DID smart contract](../smart-contracts/DID.tyron.md). This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a *DidDeactivated* error.
 
-## On the DID Client's side:
+## On the SSI client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch their DID contract from the blockchain.
 1. Utilize the user's private *did_recovery_key* to verify that it corresponds to the public *did_recovery_key* stored in the DID smart contract.
 3. Retrieve the [*tyron_hash*](../protocol-parameters.md#tyron-hash) from the user's DID contract and sign it with the pair *did_recovery_keys* through the [SIGNATURE_ALGORITHM](../protocol-parameters.md#signature-algorithm).
-5. Submit the *DidDeactivate* tyronZIL transaction with its transition parameters (agent and Schnorr signature). The contract owner MUST call this transition for it to be successful.
+5. Submit the *DidDeactivate* tyronzil transaction with its transition parameters (agent and Schnorr signature). The contract owner MUST call this transition for it to be successful.
 
 ## On the DID smart contract's side
 
@@ -26,4 +26,4 @@ When the *DidDeactivate* transition gets called with the proper hex-encoded sign
 
 ---
 
-A DID Deactivate tyronZIL transaction consumes approximately 500 units of GAS (1 ZIL).
+A DID Deactivate tyronzil transaction consumes approximately 500 units of GAS (1 ZIL).

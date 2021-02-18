@@ -1,11 +1,11 @@
-# DID Create tyronZIL transaction
+# DID Create transaction
 
 It generates a brand new Self-Sovereign Identity out of the DID smart contract code. It defines the Decentralized Identifier, its [DID Document](../did-document.md) and DID State.
 
-## On the DID Client's side:
+## On the SSI client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet), the user's private key and the gas limit.
-1. Get the user's input regarding cryptographic keys and service endpoints for the DID-Document.
+1. Get the user's input regarding cryptographic keys and service endpoints for the DID Document.
 2. Verification methods: With the public key input generate an array of keys, generated using the [operation key pair](../protocol-parameters.md#operation-key-pair).
 3. Services: An array of endpoints.
 4. With the verification methods and service endpoints, generate a *List Document* to send to the DID smart contract.
@@ -13,10 +13,10 @@ It generates a brand new Self-Sovereign Identity out of the DID smart contract c
 
     > All private keys MUST be in control of the user.
 
-6. Download, decode (Base64) & decompress the DID-smart-contract code from the *init.tyron* smart contract.
+6. Download, decode (Base64) & decompress the DID-smart-contract code from the INIT.tyron smart contract.
 7. Instantiate the DID contract with the user's Zilliqa address as the contract owner and deploy it on the blockchain.
-8. Call the [Init](../smart-contracts/didc.md#transitions) transition of the user's DID contract.
-9. Submit the *DidCreate* tyronZIL transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.
+8. Call the [Init](../smart-contracts/DID.tyron.md#transitions) transition of the user's DID contract.
+9. Submit the *DidCreate* tyronzil transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.
 10. Ask which domain name.did the user would like for their DID contract address and execute the SetSsiDomain transition.
 
 ## On the DID smart contract's side
@@ -34,4 +34,4 @@ When the *DidCreate* transition gets called, the DID smart contract proceeds as 
 
 ---
 
-A DID Create tyronZIL transaction (incl. the DID smart contract deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL).
+A DID Create tyronzil transaction (incl. the DID smart contract deployment and initialization) consumes approximately 2,200 units of GAS (4.4 ZIL).

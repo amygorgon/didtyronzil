@@ -1,4 +1,4 @@
-# tyronZIL DID-URL syntax
+# DID-URL syntax
 
 The following is the ABNF definition using the syntax in [RFC5324](https://tools.ietf.org/html/rfc5234):
 
@@ -31,24 +31,24 @@ These parameters are part of the query component of the DID-URL to specify what 
 
 W3C DID parameter-names:
 
-- **hl**: A resource hash of the DID-Document to add integrity protection.
+- **hl**: A resource hash of the DID Document to add integrity protection.
 
-- **service**: Identifies a service from the DID-Document by service ID.
+- **service**: Identifies a service from the DID Document by service ID.
 
     ```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?service=agentId1```
 
-- **version-id**: Identifies a specific version of the DID-Document to be resolved.
+- **version-id**: Identifies a specific version of the DID Document to be resolved.
 
-- **version-time**: Identifies a specific version timestamp of the DID-Document to be resolved (the doc that was valid at that particular time).
+- **version-time**: Identifies a specific version timestamp of the DID Document to be resolved (the doc that was valid at that particular time).
 
     ```did:tyron:zil:test:EiAT_GxAt7gBozHlw2B1i7mfQaaORL3NOfFQr9FUt7jp6g?version-time=2020-09-07T17:00:00Z```
 
-Additional parameters MUST be prefixed by the method name 'tyron', e.g.: 'tyron-dns'. TyronZIL method-specific parameter names MAY be used by other DID methods.
+Additional parameters MUST be prefixed by the method name 'tyron', e.g.: 'tyron-dns'. 
 
-Method-specific parameter names MAY be combined with generic parameter names in any order. Method-specific parameter namespaces MAY include colons to be partitioned hierarchically.
+Method-specific parameter names MAY be used by other DID methods, and they MAY be combined with generic parameter names in any order. Method-specific parameter namespaces MAY include colons to be partitioned hierarchically.
 
-> Find the [tyronZIL DID-URL implementation](https://github.com/julio-cabdu/tyronZIL-js/blob/master/src/lib/decentralized-identity/tyronZIL-schemes/did-url-scheme.ts) on GitHub.
+> Find the Tyron DID-URL implementation [here](https://github.com/tralcanx/tyronzil/blob/master/src/lib/decentralized-identity/tyronZIL-schemes/did-url-scheme.ts) on GitHub.
 
 ## Fragment
 
-A W3C DID fragment is used as a method-independent reference into the DID-Document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in [RFC3986](https://tools.ietf.org/html/rfc3986).
+A W3C DID fragment is used as a method-independent reference into the DID Document to identify a component of the document by ID, e.g. a specific public key or service endpoint. It MUST conform to the generic URI fragment syntax in [RFC3986](https://tools.ietf.org/html/rfc3986).

@@ -1,6 +1,6 @@
 # Models
 
-[TyronZIL-js](https://github.com/julio-cabdu/tyronZIL-js) extends the implementation of the following data structures from the [Sidetree protocol](https://identity.foundation/sidetree/spec/):
+This Self-Sovereign Identity protocol extends the implementation of the following data structures from the [Sidetree protocol](https://identity.foundation/sidetree/spec/):
 
 ## Public key model
 
@@ -56,7 +56,7 @@ interface DidServiceEndpointModel {
 ```js
 interface PatchModel {
     action: PatchAction;
-    ids?: string[];        //the IDs of the DID-Document elements to remove
+    ids?: string[];    //the IDs of the DID Document elements to remove
     keyInput?: PublicKeyInput[];
     services?: TransitionValue[];
 }

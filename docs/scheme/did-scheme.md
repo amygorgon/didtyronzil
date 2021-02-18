@@ -26,7 +26,7 @@ DIGIT                   = %x30-39
 
 > Both the scheme identifier (did) and the method name MUST be an [ASCII lowercase string](https://infra.spec.whatwg.org/#ascii-lowercase).
 
-The tyronZIL DID Method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:
+This DID Method defines its method-name as "tyron" and the method-specific-id syntax as hierarchically partitioned:
 
 ```json
 method-name             = "tyron"
@@ -40,13 +40,13 @@ network-namespace       = "main:" / "test:"
 did-suffix              = 1*idchar
 ```
 
-**Example of a Tyron DID**:
+**Example of a Tyron Decentralized Identifier**:
 
 ```did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9```
 
 ### DID Suffix
 
-The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding [DID smart contract](../smart-contracts/didc.md).
+The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding [DID smart contract](../smart-contracts/DID.tyron.md).
 
 Every Zilliqa address is unique. As explained in [Zilliqa's white-paper](https://docs.zilliqa.com/whitepaper.pdf), the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": 
 
