@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Self-Sovereign Identity protocol">
+        <meta name="description" content="Self-Sovereign Identity Protocol">
       
       
       
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inittyron-the-ssi-initialization-domain-name-system-smart-contract" class="md-skip">
+        <a href="#inittyron-ssi-initialization-domain-name-system-smart-contract" class="md-skip">
           Skip to content
         </a>
       
@@ -191,7 +191,7 @@
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      Self-Sovereign Identity protocol
+      Self-Sovereign Identity Protocol
     </a>
   </li>
 
@@ -203,7 +203,7 @@
 
   <li class="md-nav__item">
     <a href="../../W3C-dids/" class="md-nav__link">
-      W3C DIDs intro
+      W3C DIDs terminology
     </a>
   </li>
 
@@ -699,18 +699,8 @@
                   </a>
                 
                 
-                <h1 id="inittyron-the-ssi-initialization-domain-name-system-smart-contract">INIT.tyron: The SSI Initialization &amp; Domain Name System Smart Contract</h1>
+                <h1 id="inittyron-ssi-initialization-domain-name-system-smart-contract">INIT.tyron: SSI Initialization &amp; Domain Name System smart contract</h1>
 <p>Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract and MUST be the caller to every <a href="../DID.tyron/#transitions">transition</a> that affects the DID State.</p>
-<p>On the other hand, the user relies on servers and cloud infrastructure that is provided by the SSI agents (e.g., pungtas.agent).</p>
-<p>Tyron Pungtas is the open organization developing tyron as a foundation. Decentralization and tertiarization of services aim at being integrated by regionally diverse SSI agents. In future tyron improvement proposals, there will be an agent.tyron smart contract developed.</p>
-<p>The release of the SSI client tyronzil v2.0 introduces the concept of the SSI Trinity integrated by the domain name systems <em>user.did</em>, <em>avatar.agent</em> and <em>contract.tyron</em> - it gets defined by the DID smart contract as follows:</p>
-<pre><code>(* The SSI Trinity ADT *)
-(*---------------------*)
-  type SsiTrinity =
-    | User              (* the contract owner *)
-    | Agent of String   (* the agent is the entity running the SSI client)
-    | Tyron             (* the .tyron contracts *)
-</code></pre>
 <blockquote>
 <p>Find the <a href="https://github.com/tralcanx/tyronzil/blob/master/src/lib/blockchain/smart-contracts/INIT.tyron.scilla">INIT.tyron's code</a> on GitHub.</p>
 </blockquote>
@@ -814,7 +804,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright (C) 2021 Tyron Pungtas
+            Copyright (C) 2021 Tyron Pungtas Open Association
           </div>
         
         Made with
