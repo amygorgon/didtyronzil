@@ -1,6 +1,6 @@
 # Models
 
-This Self-Sovereign Identity protocol extends the implementation of the following data structures from the [Sidetree protocol](https://identity.foundation/sidetree/spec/):
+The tyronzil DID Method extends the implementation of the following data structures from the [Sidetree protocol](https://identity.foundation/sidetree/spec/):
 
 ## Public key model
 

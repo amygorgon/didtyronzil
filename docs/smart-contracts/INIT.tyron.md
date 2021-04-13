@@ -2,7 +2,7 @@
 
 Self-sovereign identity (SSI) focuses on principle #7 of Privacy by Design: "Respect for user privacy — keep it user-centric". In that spirit, the user is the owner of their DID smart contract and MUST be the caller to every [transition](./DID.tyron.md#transitions) that affects the DID State.
 
-> Find the [INIT.tyron's code](https://github.com/tralcanx/tyronzil/blob/master/src/lib/blockchain/smart-contracts/INIT.tyron.scilla) on GitHub.
+> Find the [INIT.tyron's code](https://github.com/pungtas/tyron.js/blob/master/lib/blockchain/smart-contracts/zilliqa/init.tyron.scilla) on GitHub.
 
 ## Immutable fields
 

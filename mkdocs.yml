@@ -1,6 +1,6 @@
-site_name: SSI.tyron
+site_name: tyronzil
 theme:
-    name: material
+    name: readthedocs
     font: 
         text: Ubuntu
         code: Ubuntu Mono
@@ -12,17 +12,17 @@ theme:
 markdown_extensions:
   - attr_list
 repo_url: https://github.com/julio-cabdu/didtyronZIL
-site_description: Self-Sovereign Identity Protocol
+site_description: Tyron SSI Protocol's DID Method
 site_author: Tralcan X
-copyright: Copyright (C) 2021 Tyron Pungtas Open Association
+copyright: Copyright (C) 2021 Tyron Pungtas
 extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ssiprotocol
 nav: 
-  - Self-Sovereign Identity Protocol: 'index.md'
+  - Welcome: 'index.md'
   - W3C DIDs terminology: 'W3C-dids.md'
-  - Tyron DID Method:
+  - DID Method:
     - Scheme:
       - DID Scheme: 'scheme/did-scheme.md'
       - DID-URL syntax: 'scheme/did-url-syntax.md'
@@ -34,16 +34,15 @@ nav:
       - Update: 'CRUD-operations/did-update.md'
       - Deactivate: 'CRUD-operations/did-deactivate.md'
     - Security & privacy: 'security-privacy.md'
-  - SSI protocol:
-    - Protocol parameters: 'protocol-parameters.md'
-    - Smart contracts:
+    - Parameters: 'protocol-parameters.md'
+    - Models: 'implementation/models.md'
+  - Smart contracts:
       - DID.tyron: 'smart-contracts/DID.tyron.md'
       - INIT.tyron: 'smart-contracts/INIT.tyron.md'
   - Implementation:
-    - SSI client: 'https://github.com/tralcanx/tyronzil'
-    - SSI library: 'https://github.com/pungtas/tyronzil-js'
-    - React Native app: 'https://github.com/pungtas/tyron'
-    - Models: 'implementation/models.md'
+    - Client: 'https://github.com/tralcanx/tyronzil'
+    - Library: 'https://github.com/pungtas/tyron.js'
+    - DID Browser: 'https://github.com/pungtas/tyron-react-native'
   - Development: 'roadmap.md'
   
   
