@@ -2,7 +2,7 @@
 
 A tyronzil Decentralized Identifier gets instantiated from the DID.tyron smart-contract code that is stored on-chain in the [INIT.tyron](./INIT.tyron.md) smart contract. For that, the user MUST give their Zilliqa address as the *contract owner*. Once the DID smart contract gets deployed, its code is immutable (the code can never get modified under the same contract's address). However, the DID contract has mutable fields declared in its code, and there are predetermined ways, called transitions, that can modify those fields in specific manners.
 
-> Find the [DID.tyron code](https://github.com/pungtas/tyron.js/blob/master/lib/blockchain/smart-contracts/zilliqa/did.tyron.scilla) on GitHub.
+> Find the [DID.tyron smart contract code](https://github.com/pungtas/smart-contracts.tyron/blob/main/DID/did.tyron.scilla) on GitHub.
 
 ## Immutable fields
 
