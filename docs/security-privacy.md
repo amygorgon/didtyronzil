@@ -4,7 +4,7 @@ Tyron DIDs operate on Zilliqa, a public blockchain platform that implements PBFT
 
 The tyronzil SSI client currently interacts with Zilliqa nodes hosted by Zilliqa Research Pte. Ltd. as can be seen in the [open-source code](https://github.com/tralcanx/tyronzil). It is also possible to submit transactions to any other node.
 
-To interact with the user's [DID smart contract](./smart-contracts/DID.tyron.md), the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DID smart contract on, e.g. [Devex](https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com) to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DID contract.
+To interact with the user's DID smart contract, the client MUST submit a blockchain transaction. All Zilliqa transactions require an increasing nonce, mitigating this way replay attacks. The user can check their DID smart contract on, e.g. [Devex](https://devex.zilliqa.com/?network=https%3A%2F%2Fapi.zilliqa.com) to confirm that their operation did not get delayed. Furthermore, timestamps are supported and coded into the DID contract.
 
 ### Smart contract security
 

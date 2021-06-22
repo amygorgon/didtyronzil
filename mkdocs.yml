@@ -11,10 +11,9 @@ theme:
       - tabs
 markdown_extensions:
   - attr_list
-repo_url: https://github.com/julio-cabdu/didtyronZIL
-site_description: Tyron SSI Protocol's DID Method
-site_author: Tralcan X
-copyright: Copyright (C) 2021 Tyron Pungtas
+site_description: SSI Protocol's DID Method
+site_author: Tyron Pungtas
+copyright: Tyron Pungtas and its affiliates
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -35,14 +34,5 @@ nav:
       - Deactivate: 'CRUD-operations/did-deactivate.md'
     - Security & privacy: 'security-privacy.md'
     - Parameters: 'protocol-parameters.md'
-    - Models: 'implementation/models.md'
-  - Smart contracts:
-      - DID.tyron: 'smart-contracts/DID.tyron.md'
-      - INIT.tyron: 'smart-contracts/INIT.tyron.md'
-  - Implementation:
-    - Client: 'https://github.com/tralcanx/tyronzil'
-    - Library: 'https://github.com/pungtas/tyron.js'
-    - DID Browser: 'https://github.com/pungtas/tyron-react-native'
-  - Development: 'roadmap.md'
-  
+    - Models: 'implementation/models.md'  
   

@@ -4,7 +4,7 @@ It completely deactivates the Decentralized Identifier by setting the DID Status
 
 To be able to execute this operation, the user MUST possess the private [*did_recovery_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the user as the contract owner MUST call the *DidDeactivate* transition of their [DID smart contract](../smart-contracts/DID.tyron.md). This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a *DidDeactivated* error.
+Once the operation request is processed, the user as the contract owner MUST call the *DidDeactivate* transition of their DID smart contract. This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a *DidDeactivated* error.
 
 ## On the SSI client's side:
 

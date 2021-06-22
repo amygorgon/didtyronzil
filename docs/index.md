@@ -2,13 +2,16 @@
 ![tyron](./tyronzil.png){: width="505" loading="lazy"}
 </p>**
 
-## Decentralized Identifier Method Specification
+## SSI Protocol's Decentralized Identifier Method Specification
 
-The user on Tyron is the owner of its immutable self-sovereign identity smart contract - the SSI.tyron - that owns diverse and privacy-preserving Decentralized Identifiers instantiated by DID.tyron smart contracts so that the SSI can interact with dapps and platforms.
+[Tyron Self-Sovereign Identity Protocol](https://www.ssiprotocol.com)
 
-- SSI.tyron: Self-Sovereign Identity smart contract (in development)
-- [DID.tyron: Decentralized Identifier smart contract](./smart-contracts/DID.tyron.md)
-- [INIT.tyron: SSI Initialization & DNS smart contract](./smart-contracts/INIT.tyron.md)
+The user of Tyron is the owner of its immutable, decentralized identity smart contract.
+
+DID dapps:
+
+- [DIDxWallet: decentralized identifier smart wallet](https://github.com/pungtas/smart-contracts.tyron/blob/main/DID/DIDdapps/DIDxWallet.tyron.scilla)
+- [INIT.tyron: SSI initialization & DNS smart contract](https://github.com/pungtas/smart-contracts.tyron/blob/main/INIT/init.tyron.scilla)
 
 Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Smart Contract Intermediate-Level Language) that has a design focused on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language level.
 
@@ -47,10 +50,6 @@ Versions get organized by [Semantic Versioning](https://semver.org/).
 
 ## Off-chain software
 
-- Node.js client: [tyronzil](https://github.com/tralcanx/tyronzil)
+- SSI client for Node.js: [tyronzil](https://github.com/tralcanx/tyronzil)
 - JavaScript library: [tyron.js](https://github.com/pungtas/tyron.js)
-- React Native DID Browser prototype: [tyron-react-native](https://github.com/pungtas/tyron-react-native)
-
-## Development
-
-- [Roadmap](./roadmap.md)
+- React web app: [SSI Browser](https://github.com/Zillacracy-org/ssibrowser.com)

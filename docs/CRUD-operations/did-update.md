@@ -2,7 +2,7 @@
 
 It makes modifications to the user's self-sovereign identity (stored in their DID smart contract). To be able to execute this operation, the user MUST possess the private [*did_update_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the contract owner MUST make a call to the *DidUpdate* transition of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
+Once the operation request is processed, the contract owner MUST make a call to the *DidUpdate* transition of the user's DID smart contract.
 
 ## On the SSI client's side:
 

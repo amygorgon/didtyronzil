@@ -46,7 +46,7 @@ did-suffix              = 1*idchar
 
 ### DID Suffix
 
-The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding [DID smart contract](../smart-contracts/DID.tyron.md).
+The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding DID smart contract.
 
 Every Zilliqa address is unique. As explained in [Zilliqa's white-paper](https://docs.zilliqa.com/whitepaper.pdf), the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": 
 

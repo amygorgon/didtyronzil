@@ -2,7 +2,7 @@
 
 It fully resets the user's DID State, so they can keep using the same DID with a brand new public-key-infrastructure (PKI). To be able to execute this operation, the user MUST possess the private [*did_recovery_key*](../protocol-parameters.md#did-keys).
 
-Once the operation request is processed, the user as the contract owner MUST call the *DidRecover* transition of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
+Once the operation request is processed, the user as the contract owner MUST call the *DidRecover* transition of the user's DID smart contract.
 
 ## On the SSI client's side:
 

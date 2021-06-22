@@ -9,7 +9,7 @@ A DID Resolver is the software component that executes the DID Resolution proces
 ### Input variables
 
 - ***network***: The 'NetworkNamespace' referring to the testnet or mainnet.
-- ***tyronAddr***: The Zilliqa address of the user's [DID smart contract](../smart-contracts/DID.tyron.md).
+- ***tyronAddr***: The Zilliqa address of the user's DID smart contract.
 - ***metadata***: The DID Resolution input metadata is a structure consisting of input options to the resolve function in addition to the DID itself. This input is REQUIRED. The options control how the DID is resolved. tyronzil-v1.0.0 only supports the 'Accept' option that defines if the result shall be the corresponding DID Document with or without the document metadata. The former produces an output called DID Resolution Result.
 
 ### Output variables

@@ -15,7 +15,7 @@ It generates a brand new Self-Sovereign Identity out of the DID smart contract c
 
 6. Download, decode (Base64) & decompress the DID-smart-contract code from the INIT.tyron smart contract.
 7. Instantiate the DID contract with the user's Zilliqa address as the contract owner and deploy it on the blockchain.
-8. Call the [Init](../smart-contracts/DID.tyron.md#transitions) transition of the user's DID contract.
+8. Call the init transition of the user's DID contract.
 9. Submit the *DidCreate* tyronzil transaction with its transition parameters (agent, document, updateKey and recoveryKey). The contract owner MUST call this transition for it to be successful.
 10. Ask which domain name.did the user would like for their DID contract address and execute the SetSsiDomain transition.
 
