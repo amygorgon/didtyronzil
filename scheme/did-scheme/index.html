@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta name="author" content="Tralcan X">
+  <meta name="author" content="Tyron Pungtas">
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>DID Scheme - tyronzil</title>
@@ -98,26 +98,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../implementation/models/">Models</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Smart contracts</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/DID.tyron/">DID.tyron</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/INIT.tyron/">INIT.tyron</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Implementation</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="" href="https://github.com/tralcanx/tyronzil">Client</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="https://github.com/pungtas/tyron.js">Library</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="https://github.com/pungtas/tyron-react-native">DID Browser</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../roadmap/">Development</a>
-                    </li>
-                </ul>
       </div>
     </div>
     </nav>
@@ -149,9 +129,6 @@
     
     <li>DID Scheme</li>
     <li class="wy-breadcrumbs-aside">
-      
-        <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/scheme/did-scheme.md"
-          class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
@@ -199,7 +176,7 @@ did-suffix              = 1*idchar
 <p><strong>Example of a Tyron Decentralized Identifier</strong>:</p>
 <p><code>did:tyron:zil:test:0x5a156a1d18a9a76a0a86b62fcdcb2e547173f3c9</code></p>
 <h3 id="did-suffix">DID Suffix</h3>
-<p>The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding <a href="../../smart-contracts/DID.tyron/">DID smart contract</a>.</p>
+<p>The DID Suffix MUST be globally unique. A Tyron DID Suffix is the Zilliqa hex-encoded address of the corresponding DID smart contract.</p>
 <p>Every Zilliqa address is unique. As explained in <a href="https://docs.zilliqa.com/whitepaper.pdf">Zilliqa's white-paper</a>, the "address for a contract account is computed from the address of its creator and how many transactions the creator account has sent, aka account nonce": </p>
 <pre><code>contract_address = LSB160(SHA3-256(address||nonce))
 </code></pre>
@@ -254,7 +231,7 @@ end
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>Copyright (C) 2021 Tyron Pungtas</p>
+      <p>Tyron Pungtas and its affiliates</p>
     
   </div>
 
@@ -270,8 +247,6 @@ end
 
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/julio-cabdu/didtyronZIL/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../../W3C-dids/" style="color: #fcfcfc;">&laquo; Previous</a></span>

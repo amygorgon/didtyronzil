@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tyron SSI Protocol's DID Method">
-  <meta name="author" content="Tralcan X">
+  <meta name="description" content="SSI Protocol's DID Method">
+  <meta name="author" content="Tyron Pungtas">
   
   <link rel="shortcut icon" href="img/favicon.ico">
   <title>tyronzil</title>
@@ -90,26 +90,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="implementation/models/">Models</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Smart contracts</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="smart-contracts/DID.tyron/">DID.tyron</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="smart-contracts/INIT.tyron/">INIT.tyron</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Implementation</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="" href="https://github.com/tralcanx/tyronzil">Client</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="https://github.com/pungtas/tyron.js">Library</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="https://github.com/pungtas/tyron-react-native">DID Browser</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="roadmap/">Development</a>
-                    </li>
-                </ul>
       </div>
     </div>
     </nav>
@@ -134,9 +114,6 @@
     <li>Welcome</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/julio-cabdu/didtyronZIL/edit/master/docs/index.md"
-          class="icon icon-github"> Edit on GitHub</a>
-      
     </li>
   </ul>
   
@@ -149,11 +126,11 @@
 <img alt="tyron" loading="lazy" src="tyronzil.png" width="505" />
 </p></strong></p>
 <h2 id="decentralized-identifier-method-specification">Decentralized Identifier Method Specification</h2>
-<p>The user on Tyron is the owner of its immutable self-sovereign identity smart contract - the SSI.tyron - that owns diverse and privacy-preserving Decentralized Identifiers instantiated by DID.tyron smart contracts so that the SSI can interact with dapps and platforms.</p>
+<p>The user of Tyron is the owner of its immutable, decentralized identity smart contract.</p>
+<p>DID dapps:</p>
 <ul>
-<li>SSI.tyron: Self-Sovereign Identity smart contract (in development)</li>
-<li><a href="smart-contracts/DID.tyron/">DID.tyron: Decentralized Identifier smart contract</a></li>
-<li><a href="smart-contracts/INIT.tyron/">INIT.tyron: SSI Initialization &amp; DNS smart contract</a></li>
+<li><a href="https://github.com/pungtas/smart-contracts.tyron/blob/main/DID/DIDdapps/DIDxWallet.tyron.scilla">DIDxWallet: decentralized identifier smart wallet</a></li>
+<li><a href="https://github.com/pungtas/smart-contracts.tyron/blob/main/INIT/init.tyron.scilla">INIT.tyron: SSI initialization &amp; DNS smart contract.</a></li>
 </ul>
 <p>Smart contracts on Zilliqa get written in <a href="https://scilla-lang.org/">Scilla</a> (Smart Contract Intermediate-Level Language) that has a design focused on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language level.</p>
 <blockquote>
@@ -200,13 +177,9 @@
 <p>Versions get organized by <a href="https://semver.org/">Semantic Versioning</a>.</p>
 <h2 id="off-chain-software">Off-chain software</h2>
 <ul>
-<li>Node.js client: <a href="https://github.com/tralcanx/tyronzil">tyronzil</a></li>
+<li>SSI client for Node.j: <a href="https://github.com/tralcanx/tyronzil">tyronzil</a></li>
 <li>JavaScript library: <a href="https://github.com/pungtas/tyron.js">tyron.js</a></li>
-<li>React Native DID Browser prototype: <a href="https://github.com/pungtas/tyron-react-native">tyron-react-native</a></li>
-</ul>
-<h2 id="development">Development</h2>
-<ul>
-<li><a href="roadmap/">Roadmap</a></li>
+<li>React web app: <a href="https://github.com/Zillacracy-org/ssibrowser.com">SSI Browser</a></li>
 </ul>
               
             </div>
@@ -226,7 +199,7 @@
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>Copyright (C) 2021 Tyron Pungtas</p>
+      <p>Tyron Pungtas and its affiliates</p>
     
   </div>
 
@@ -242,8 +215,6 @@
 
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/julio-cabdu/didtyronZIL/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
       
@@ -265,5 +236,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-14 17:44:22.225616+00:00
+Build Date UTC : 2021-06-22 01:18:08.580914+00:00
 -->
