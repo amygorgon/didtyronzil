@@ -4,20 +4,7 @@
 
 ## SSI Protocol's Decentralized Identifier Method Specification
 
-[Tyron Self-Sovereign Identity Protocol](https://www.ssiprotocol.com)
-
-The user of Tyron is the owner of its immutable, decentralized identity smart contract.
-
-DID dapps:
-
-- [DIDxWallet: decentralized identifier smart wallet](https://github.com/pungtas/smart-contracts.tyron/blob/main/DID/DIDdapps/DIDxWallet.tyron.scilla)
-- [INIT.tyron: SSI initialization & DNS smart contract](https://github.com/pungtas/smart-contracts.tyron/blob/main/INIT/init.tyron.scilla)
-
-Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Smart Contract Intermediate-Level Language) that has a design focused on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language level.
-
-> Scilla provides formal verification with embedding into the [Coq proof assistant](https://coq.inria.fr/).
-
-The tyronzil DID Method is part of the [W3C DID Specification Registries](https://w3c.github.io/did-spec-registries/) and the first DID Method for the [Zilliqa](https://www.zilliqa.com) blockchain platform, funded by [ZILHive](https://www.zilhive.org) Innovation track.
+The tyronzil DID Method is part of the [Tyron Self-Sovereign Identity Protocol](https://www.ssiprotocol.com), published at the [W3C DID Specification Registries](https://w3c.github.io/did-spec-registries/), and the first DID Method on the [Zilliqa](https://www.zilliqa.com) blockchain platform - funded by [ZILHive](https://www.zilhive.org) Innovation grants.
 
 - Scheme:
       - [DID Scheme](./scheme/did-scheme.md)
@@ -38,6 +25,17 @@ The tyronzil DID Method is part of the [W3C DID Specification Registries](https:
 
 - [Models](./implementation/models.md)
 
+The user on Tyron is the owner of their DID identity smart contract.
+
+DID dapps:
+
+- [DIDxWallet: decentralized identifier smart wallet](https://github.com/pungtas/smart-contracts.tyron/blob/main/DID/DIDdapps/DIDxWallet.tyron.scilla)
+- [INIT.tyron: SSI initialization & DNS smart contract](https://github.com/pungtas/smart-contracts.tyron/blob/main/INIT/init.tyron.scilla)
+
+Smart contracts on Zilliqa get written in [Scilla](https://scilla-lang.org/) (Smart Contract Intermediate-Level Language) that has a design focused on safety, imposing a language structure that makes applications less vulnerable to attacks by eliminating known vulnerabilities directly at the language level.
+
+> Scilla provides formal verification with embedding into the [Coq proof assistant](https://coq.inria.fr/).
+
 ## Conformance
 
 The tyronzil DID Method specification is conformant with the World Wide Web Consortium (W3C) [Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/) specification.
@@ -51,5 +49,5 @@ Versions get organized by [Semantic Versioning](https://semver.org/).
 ## Off-chain software
 
 - SSI client for Node.js: [tyronzil](https://github.com/tralcanx/tyronzil)
-- JavaScript library: [tyron.js](https://github.com/pungtas/tyron.js)
-- React web app: [SSI Browser](https://github.com/Zillacracy-org/ssibrowser.com)
+- JavaScript/TypeScript library: [tyron.js](https://github.com/pungtas/tyron.js)
+- React web app: [SSI Browser](https://github.com/tyroncoop/ssibrowser)
