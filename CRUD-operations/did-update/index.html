@@ -77,7 +77,7 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Update</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#on-the-ssi-clients-side">On the SSI client's side:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#on-the-ssi-clients-side">On the SSI Client's side:</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#on-the-did-smart-contracts-side">On the DID smart contract's side</a>
     </li>
@@ -137,7 +137,7 @@
                 <h1 id="did-update-transaction">DID Update transaction</h1>
 <p>It makes modifications to the user's self-sovereign identity (stored in their DID smart contract). To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_update_key</em></a>.</p>
 <p>Once the operation request is processed, the contract owner MUST make a call to the <em>DidUpdate</em> transition of the user's DID smart contract.</p>
-<h2 id="on-the-ssi-clients-side">On the SSI client's side:</h2>
+<h2 id="on-the-ssi-clients-side">On the SSI Client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
 <li>Utilize the user's private <em>did_update_key</em> to verify that it corresponds to the public <em>did_update_key</em> stored in the DID smart contract.</li>

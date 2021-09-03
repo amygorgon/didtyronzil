@@ -79,7 +79,7 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Deactivate</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#on-the-ssi-clients-side">On the SSI client's side:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#on-the-ssi-clients-side">On the SSI Client's side:</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#on-the-did-smart-contracts-side">On the DID smart contract's side</a>
     </li>
@@ -138,7 +138,7 @@
 <p>It completely deactivates the Decentralized Identifier by setting the DID Status to <em>Deactivated</em> and the DID state to <em>None</em>, <em>undefined</em> or <em>Empty</em>.</p>
 <p>To be able to execute this operation, the user MUST possess the private <a href="../../protocol-parameters/#did-keys"><em>did_recovery_key</em></a>.</p>
 <p>Once the operation request is processed, the user as the contract owner MUST call the <em>DidDeactivate</em> transition of their DID smart contract. This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a <em>DidDeactivated</em> error.</p>
-<h2 id="on-the-ssi-clients-side">On the SSI client's side:</h2>
+<h2 id="on-the-ssi-clients-side">On the SSI Client's side:</h2>
 <ol>
 <li>Initialize with the Zilliqa network (mainnet or testnet) &amp; the user's domain name.did to fetch their DID contract from the blockchain.</li>
 <li>Utilize the user's private <em>did_recovery_key</em> to verify that it corresponds to the public <em>did_recovery_key</em> stored in the DID smart contract.</li>
