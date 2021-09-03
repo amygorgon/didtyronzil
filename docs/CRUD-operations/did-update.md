@@ -4,7 +4,7 @@ It makes modifications to the user's self-sovereign identity (stored in their DI
 
 Once the operation request is processed, the contract owner MUST make a call to the *DidUpdate* transition of the user's DID smart contract.
 
-## On the SSI client's side:
+## On the SSI Client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch their DID contract from the blockchain.
 1. Utilize the user's private *did_update_key* to verify that it corresponds to the public *did_update_key* stored in the DID smart contract.

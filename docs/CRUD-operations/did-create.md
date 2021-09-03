@@ -2,7 +2,7 @@
 
 It generates a brand new Self-Sovereign Identity out of the DID smart contract code. It defines the Decentralized Identifier, its [DID Document](../did-document.md) and DID State.
 
-## On the SSI client's side:
+## On the SSI Client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet), the user's private key and the gas limit.
 1. Get the user's input regarding cryptographic keys and service endpoints for the DID Document.

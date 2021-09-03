@@ -6,7 +6,7 @@ To be able to execute this operation, the user MUST possess the private [*did_re
 
 Once the operation request is processed, the user as the contract owner MUST call the *DidDeactivate* transition of their DID smart contract. This transition is irreversible - after deactivation, the DID contract will never be useful again. Resolving the Decentralized Identifier in future occasions MUST throw a *DidDeactivated* error.
 
-## On the SSI client's side:
+## On the SSI Client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch their DID contract from the blockchain.
 1. Utilize the user's private *did_recovery_key* to verify that it corresponds to the public *did_recovery_key* stored in the DID smart contract.

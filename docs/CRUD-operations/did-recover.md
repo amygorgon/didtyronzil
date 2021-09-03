@@ -4,7 +4,7 @@ It fully resets the user's DID State, so they can keep using the same DID with a
 
 Once the operation request is processed, the user as the contract owner MUST call the *DidRecover* transition of the user's DID smart contract.
 
-## On the SSI client's side:
+## On the SSI Client's side:
 
 0. Initialize with the Zilliqa network (mainnet or testnet) & the user's domain name.did to fetch the DID contract from the blockchain.
 1. Utilize the user's private *did_recovery_key* to verify that it corresponds to the public *did_recovery_key* stored in the DID contract. 
